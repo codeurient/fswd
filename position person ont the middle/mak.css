@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    height: 100vh;
+    background-color: lightgray;
+    display: flex;
+    position: relative;
+
+}
+
+.left-side {
+    width: 40%;
+    height: 100%;
+    background-color: green;
+
+}
+
+.right-side {
+    width: 60%;
+    height: 100%;
+    background-color: darkgreen;
+}
+
+.image {
+    position: absolute;
+    left: 40%;
+    right: 60%;
+    bottom: 0;
+    transform: translate(-52%, 0);
+}
+
