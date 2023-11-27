@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+<div id="numune4"></div><hr>
+
+
+<script>
+
+    // 0 ile 1 arasinda her hansisa ededi bize verir ancaq hec vaxt 1 vermir. Elde edilen ededler kesir ededlerdir
+    document.getElementById("numune1").innerHTML =  Math.random();
+
+
+    // 0 ile 10 arasinda her hansisa ededi bize verir ancaq hec vaxt 10 vermir
+    document.getElementById("numune2").innerHTML =  Math.random()*10;
+
+
+    // tam sayi almaq ucun yuvarlaqlasdirma metodundan istifade edilir.
+    document.getElementById("numune3").innerHTML =  Math.floor(Math.random()*10);
+
+
+
+    // 10 daxil olmaqla bir eded elde etmek isteyirikse onda (+1) deyirik. Bele olan halda 1den 10a qeder ededler elde edirik
+    document.getElementById("numune4").innerHTML =  Math.floor(Math.random()*10)+1;
+
+</script>
+
+</body>
+</html>

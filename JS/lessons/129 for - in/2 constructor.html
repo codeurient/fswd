@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="numune1"></div>
+
+    <script>
+        var people, x, message="";
+
+        function Person(first, last, age, color) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = color;
+            this.fullName = function (){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        people = new Person("Fatih", "Sultan", 20, "black");
+
+        // Obyektlere colden mudaxile etmek mumkundur. Yeni, nese elave ede bilerik. Asagida gosterildiyi kimi.
+        people.hair = true;
+
+
+
+
+        for(x in people) {
+            if (typeof(people[x]) != "function"){
+                document.querySelector("#numune1").innerHTML += people[x] + "<br>";
+            } else {
+                document.querySelector("#numune1").innerHTML += people.fullName() + "<br>";
+            }
+        }
+
+
+        
+
+        
+    </script>
+</body>
+</html>
+
+

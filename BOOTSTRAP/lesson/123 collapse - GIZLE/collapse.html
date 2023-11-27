@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--
+    collapse - elementi gizledir ve duyme elave edirik ki ona basildiqda gizli olan gorsensin
+    collapse-horizontal   -   style="width: 300px;" vermek lazimdir
+-->
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <a class="btn btn-dark" data-bs-toggle="collapse" href="#open" >Link ile ac</a>
+                <button class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#open">Duyme ile ac</button>
+                <div class="collapse mt-4" id="open">
+                    <div class="card border-info border-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem ipsum.</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque, consectetur. Assumenda consequuntur ducimus magnam placeat quis reiciendis, rerum sed?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+<hr>
+
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <a class="btn btn-dark" data-bs-toggle="collapse" href="#open2" >Link ile ac</a>
+                <button class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#open2">Duyme ile ac</button>
+                <div class="collapse collapse-horizontal mt-4" id="open2">
+                    <div class="card border-info border-2" style="width: 300px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem ipsum.</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque, consectetur. Assumenda consequuntur ducimus magnam placeat quis reiciendis, rerum sed?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>

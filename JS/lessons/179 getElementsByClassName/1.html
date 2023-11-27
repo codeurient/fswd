@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+
+<div class="items item1">1</div>
+<div class="items item2">2</div>        <!-- icerisine bir sey yaziriq -->
+
+
+
+
+    <script>
+
+
+        // 1
+        console.log(document.getElementsByClassName("items"));  // HTMLCollection(2) [div.items.item1, div.items.item2]
+
+
+
+        // 2
+        document.getElementsByClassName("items")[1].innerHTML = "icerisine bir sey yaziriq";        // icerisine bir sey yaziriq
+
+
+
+    </script>
+</body>
+</html>
+
+

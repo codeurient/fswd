@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        Wexsiyyet vesiqesinin dogrulanmasinin bir alqorimasi vardir
+
+        Biz TC-nin alqoritmasini yazasiyiq.
+
+        1. TC sexsiyyet vesiqesi 11 xanadan ibaretdir
+        2. Ilk reqem 0 (sifir) ola bilmez
+        3. 1,3,5,7 ve 9 xanalarinin ceminin 7 qati ile 2,4,6 ve 8 xanalarinin cemi cixilir.
+        4. neticeni 10-a boldukde qaliq elde edilir. hemin qaliq 10-cu xanani verir.
+        
+        5. ilk 10 xananin cemini 10-a boldukde qaliq elde edilir. hemin qaliq 11-ci xanani vermelidir.
+     -->
+   
+    
+    <input type="text" id="tc" name="tc">
+    <button type="button" id="Btn">Click</button>
+
+    <p id="resultFalse" style="display: none;"></p>
+    <p id="resultTrue" style="display: none;"></p>
+
+
+    <script>
+        let ID, Btn, resultFalse, resultTrue, result,  i, j, z;
+
+        ID = document.querySelector('#tc');
+        resultFalse = document.querySelector('#resultFalse');
+        resultTrue = document.querySelector('#resultTrue');
+        Btn = document.querySelector('#Btn');
+
+       
+        Btn.addEventListener('click', function(){
+            // funksiyanin colunde yazdiqda ust-uste toplama iwlemi heyata kecirir. Ancaq iceride yazdiqda
+            // her defe button duymesine basdiqda bu deyiskenlere 0 deyerini verecekdir ve ust uste toplanmayacaqdir ededler.
+            let odd=0,even=0,tcTotal=0;
+
+             // 1,3,5,7 ve 9 xanalarinin CEMI
+            for(i=0; i<9; i+=2) {
+                odd+=Number(ID.value[i]);
+            }
+
+            // 1,3,5,7 ve 9 xanalarinin ceminin 7 QATI
+            odd*=7;
+
+            // 2,4,6 ve 8 xanalarinin CEMI
+            for(j=1; j<8; j+=2) {
+                even+=Number(ID.value[j]);
+            }
+
+            // 1,3,5,7 ve 9 xanalarinin ceminin 7 qati ile 2,4,6 ve 8 xanalarinin cemi CIXILIR
+            // abs() - musbet eded almaq ucun
+            result = Math.abs(odd - even);
+
+            // ilk 10 xananin cemini 10-a boldukde qaliq elde edilir. hemin qaliq 11-ci xanani vermelidir.
+            for(z=0; z<10; z++) {
+                tcTotal+=Number(ID.value[z]);
+            }
+
+            resultFalse.style.display="block";
+            resultTrue.style.display="none";
+
+            if(ID.value == ""){
+                resultFalse.textContent = "Can't be null";
+            } else if(ID.value.length !== 11){
+                resultFalse.textContent = "Must be 11 symbols";
+            } else if(isNaN(ID.value)){
+                resultFalse.textContent = "Must be number";
+            } 
+            // ID.value[0] - bu bize girilen reqemlerden 1cisini verir. Yeni 0-ci indeksde olan ededi.
+            else if(ID.value[0] == 0){
+                resultFalse.textContent = "First number can't be zero";
+            } 
+            // 1,3,5,7 ve 9 xanalarinin ceminin 7 qati ile 2,4,6 ve 8 xanalarinin cemi cixildiqda alinan NETICE 10-a bolunur
+            // elde olunan QALIQ 10-cu xanani qaytarmalidir. Eger QALIQ != beraber deyilse 10cu xanaya onda bu cur sexsiyyet vesiqesi movcud deyildir demekdir.
+            else if(result%10 != Number(ID.value[9])){
+                resultFalse.textContent = "Uncorrect Passport ID";
+            }
+            // ilk 10 xananin cemini 10-a boldukde qaliq elde edilir. hemin qaliq 11-ci xanani vermelidir.
+            else if(tcTotal%10 != Number(ID.value[10])){
+                resultFalse.textContent = "Uncorrect Passport ID";
+            } else{
+                resultFalse.style.display="none";
+                resultTrue.style.display="block";
+                resultTrue.innerHTML = "Correct Passport ID";
+            }
+        });
+       
+    </script>
+</body>
+</html>

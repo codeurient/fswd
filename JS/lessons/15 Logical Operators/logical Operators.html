@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!--   
+    
+&&      and                 - mutleq her iki sorgu true vermelidi
+
+||      or                  - bir true kifayetdir
+
+!       not                 - eger bir deyer false olarsa onda "false=false=true" verer
+
+-->
+
+
+<script>
+
+    // 1 
+    var x = 2; 
+    var y = 4;
+    if(x < y && x != y){
+        console.log("emeliyyat ugurla heyata kecirildi");           // emeliyyat ugurla heyata kecirildi
+    } else{
+        console.log("emeliyyat ugursuz oldu");
+    }
+
+
+    // 2 
+    var x = 5; 
+    var y = 4;
+    if(x < y || x == y){
+        console.log("emeliyyat ugurla heyata kecirildi");       
+    } else{
+        console.log("emeliyyat ugursuz oldu");                       // emeliyyat ugursuz oldu
+    }
+
+
+    // 3 
+    var x = 5; 
+    var y = 4;
+    
+    if(!(x<y)){
+        console.log("emeliyyat ugurla heyata kecirildi");       
+    } else{
+        console.log("emeliyyat ugursuz oldu");                       
+    }
+    
+</script>
+
+
+</body>
+</html>

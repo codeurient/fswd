@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ 
+    <div>
+        <button id="btn" type="button">Click</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+
+        var btn = document.querySelector('#btn');
+        btn.onclick = squareRoot;
+
+        function squareRoot(){
+            var getNumber, result;
+
+            getNumber = prompt("Please write some numbers");
+
+            result = Math.sqrt(getNumber);
+
+            document.querySelector('#result').innerHTML = result;
+        }
+        
+    </script>
+</body>
+</html>
+
+

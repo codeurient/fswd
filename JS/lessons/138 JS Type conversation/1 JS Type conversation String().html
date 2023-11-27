@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        String() global metodundan - JS deyisenlerini string tipine cevirmek ucun istifade edilir.
+
+    -->
+
+    <div id="netice"></div>
+
+    <script>
+
+        var x = 7;
+        document.getElementById("netice").innerHTML = 
+
+        String(x)                   + "<br>" +
+        String(700)                 + "<br>" +
+        String(10+8)                + "<br>" +
+        String(true)                + "<br>" +
+        String(false)               + "<br>" +
+        String(new Date())          + "<hr>" +  // Tarixleride stringe cevirmek mumkundur
+        typeof String(x)            + "<br>" +
+        typeof String(700)          + "<br>" +
+        typeof String(10+8)         + "<br>" +
+        typeof String(true)         + "<br>" +
+        typeof String(false)        + "<br>" +
+        typeof String(new Date())   + "<br>";
+        
+    </script>
+</body>
+</html>

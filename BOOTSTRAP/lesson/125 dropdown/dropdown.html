@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--
+dropdown
+dropdown evezine btn-group demek olar
+dropdown-menu
+dropdown-item
+dropdown-divider - duz xett stili ucun
+dropdown-toggle - ox ikonkasi yaradir
+dropdown-toggle-split - duymeni ayirir
+dropdown-menu-COLOR
+dropdown-header - basliqlar elave etmek ucun istifade edilir
+dropup - ustune basildiqda yuxari acilmasi ucun
+dropend
+dropstart
+dropdown-menu-end - acilan menunun yerini deyismek ucun
+data-bs-dispay="static" - bu atribut breakpoint ucun yeni ferqli ekran olculeri ucun yazilan
+                          lg, sm ve.s kimi klas adlarini istifade ede bilek deye yazilmalidir.
+-->
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">Duyme ile</button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>  <a class="dropdown-item"          href="#">    html        </a>   </li>
+                        <li>  <a class="dropdown-item active"   href="#">    css         </a>   </li>
+                        <li>  <a class="dropdown-item"          href="#">    bootstrap   </a>   </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>  <a class="dropdown-item"          href="#">    react       </a>   </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<hr>
+
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+
+                <div class="btn-group dropup" style="margin-top: 10rem;">
+                    <a href="#" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" >Link ile</a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <h5 class="dropdown-header">Basliqlar elave etmek ucun</h5>
+                        </li>
+                        <li>  <a class="dropdown-item" href="#">            html        </a>   </li>
+                        <li>  <a class="dropdown-item active" href="#">     css         </a>   </li>
+                        <li>  <a class="dropdown-item" href="#">            bootstrap   </a>   </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>  <a class="dropdown-item" href="#">            react       </a>   </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+<script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>

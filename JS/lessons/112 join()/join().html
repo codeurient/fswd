@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+
+array deyerleri bir birinden DEFAULT olaraq verguller ile ayrilarlar.
+
+Bu ayrilmani verguller yox bawqa bir iware ile evez etmek ucun JOIN metodundan istifade edilir.
+
+split metodu STRING-i Array-a cevirir join metodu ARRAY-i STRING-e
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+
+<script>
+
+
+
+    // 1 - array deyerleri bir birinden DEFAULT olaraq verguller ile ayrilarlar.
+    var test1 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    document.getElementById("numune1").innerHTML = test1;                   // php,js,css,html,bootstrap,react,vue
+
+
+
+    // 2 - join metodu deyerleri ayirmaq ucun olan simvollari teyin etmekde istifade edilir.
+    var test2 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    document.getElementById("numune2").innerHTML = test2.join("-");         // php-js-css-html-bootstrap-react-vue
+
+
+</script>
+</body>
+</html>

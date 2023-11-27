@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  
+</head>
+<body>
+
+    <!-- 
+
+       addEventListener()  IE ve Opera brauserlerinde iwlemez ise onda attachEvent() metodundan istifade edmek lazimdir.
+
+     -->
+   
+        <button type="button" id="Btn">Click</button>
+
+    <script>
+
+        var btn = document.querySelector("#Btn");
+
+        // Eger 'addEventListener' metodu tesdiqlenirse onda bu metod iwlesin
+        if(btn.addEventListener){
+            btn.addEventListener("click", mClick, false);
+        } 
+        // Eger 'attachEvent' metodu tesdiqlenirse onda bu metod iwlesin
+        else if(btn.attachEvent){
+            btn.attachEvent("onclick", mClick);
+        }
+        function mClick(){
+            alert("js");
+        }
+
+
+    </script>
+</body>
+</html>
+    
+

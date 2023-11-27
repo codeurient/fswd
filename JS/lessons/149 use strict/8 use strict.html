@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        JS-in oz daxili kodlari siline bilmez. Bu siline bilinmeyen kodlari 
+        "delete" ile silmeye calisdiqda biz xeta mesaji aliriq.
+
+     -->
+
+     <div id="netice"></div>
+
+
+<script>
+
+    "use strict";
+    var obj = {};
+    delete Object.prototype;
+    // Uncaught TypeError: Cannot delete property 'prototype' of function Object() { [native code] } at
+    document.getElementById('netice').innerHTML = "";
+
+   
+   
+   
+
+</script>
+
+</body>
+</html>

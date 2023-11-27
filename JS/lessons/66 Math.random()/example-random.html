@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="numune1"></div><hr>
+<button type="button" onclick="goster(1, 10)">Goster</button>
+
+<script>
+
+    function randomReqem(a, b) {
+        return Math.floor(Math.random()*b)+a;
+    }
+
+    function goster(p1, p2) {
+        document.getElementById("numune1").innerHTML = randomReqem(p1, p2);
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        eger elemente daxil edilen deyer "maxLength" atributunda olan deyerden coxdursa "TRUE" elde edirik.
+
+        "maxlength" atributuna verilen deyerden artiq deyer girmek mumkun deyildir. Ancaq saxta form-lar yaradaraq
+        bu gosterilen deyerin ustunde bir deyer yazmaq mumkundur. "tooLong" JS kodu ise eger hemin deyerden artiq 
+        deyer girilerse, xeta mesaji ekrana yazdirmaq ucun istifade edilir. 
+    -->
+    
+            <input  type="text" name="text" id="text" maxlength="4">
+            <button type="button" onclick="formunValidasiyaEdilmesi()">Duymeni bas</button>
+
+            <p id="netice"></p>
+
+<script>    
+
+    function formunValidasiyaEdilmesi(){
+        var formDeyeri;
+
+        formDeyeri = document.getElementById("text");
+        
+        if(formDeyeri.validity.tooLong){
+            document.getElementById("netice").innerHTML = formDeyeri.validationMessage; 
+        } else{
+            document.getElementById("netice").innerHTML = "Hec bir xeta tapilmadi";
+        }
+    }
+    
+
+</script>
+</body>
+</html>

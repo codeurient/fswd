@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">sayt basliqlari bu tag icerisinde yazilir</title>
+  
+</head>
+<body>
+
+    <!-- 
+
+        childNodes[0] - bu xasse ana element icindeki alt elementleri qaytarir. Hemin alt element metin duyumudur.
+
+        nodeValue (mətn düyümü) - bu xasseden, node deyerini qaytarmaq yaxud element icine deyer yazmaq ucun istifade edilir. Node deyeri elementin icindeki metn deyerdir.
+
+    -->
+   
+
+    <!-- 
+        document.querySelector('#divParent').childNodes[0].nodeValue; - dedikde, 'div' teginin icindeki "h1" teg-ine muraciet etmis sayilmiriq
+
+        Hemin 'div' tegine muraciet edirik ve o 'div' teginin icinde metn varsa 'nodeValue' xassesi ile metni elde edirik.
+     -->
+    <div id="divParent">
+        <h1 id="head">microsoft</h1>
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">js</p>
+        <p id="p4">php</p>
+        <p id="p5">css</p>
+        <p id="p6">html</p>
+        <p id="p7">boot</p>
+        <p id="p8">vue</p>
+    </div>
+      
+
+    <script>
+
+        // 1
+        var elementNodes1 = document.querySelector('#head').childNodes[0].nodeValue;
+        console.log(elementNodes1);          // microsoft
+
+    </script>
+</body>
+</html>
+    
+

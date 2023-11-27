@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!-- 
+    
+{} - object yaratmaq ucun istifade edilir.
+
+obyektler ibaretdir: 1) xasselerden.    2) metodlardan
+
+Obyekt xasselerine 2 formada muraciet etmek mumkundur:
+a) obyektAdi.xasseAdi           - noqte ile
+b) obyektAdi["xasseAdi"]        - kvadrat moterize ile
+
+Obyekt metodlarina 1 formada muraciet etmek mumkundur:
+a) obyektAdi.metodAdi()           - noqte ile
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div>
+
+
+    <script>
+
+        // obyektlere adlar deyiskenlere verilen formada verilir.
+        var masin = {
+            // xasseler yaradilarken acar sozden ve ona verilen deyerden istifade edilir.
+            ad: "BMW",
+            model: "M5",
+            reng: "qara",
+
+            // metodlar yaratmaq ucun acar soze fuknsiya tetbiq edirik.
+            baslat: function () {
+                // eyni obyekt icinde olduqda this acar soz hemin obyekti nezerde tutmaq ucun istifade edilir.
+                return this.ad + " " + this.model + " xoda salindi ";
+            },
+            sur: function () {
+                return this.ad + " " + this.model + " surulur ";
+            },
+            yavasla: function () {
+                return this.ad + " " + this.model + " yavasladildi ";
+            },
+            dur: function () {
+                return this.ad + " " + this.model + " durdu ";
+            },
+        };
+
+        console.log(masin.baslat());
+
+
+
+
+
+
+        // Obyektlere miraciet etmek ucun . noqte simvolundan da istifade edilir
+        document.getElementById("numune1").innerHTML = masin.ad;
+
+
+        
+        
+        document.getElementById("numune2").innerHTML =
+            masin.baslat()  + "<br>" +
+            masin.sur()     + "<br>" +
+            masin.yavasla() + "<br>" +
+            masin.dur()     + "<br>";
+
+        // Obyektlere miraciet etmek ucun [] kvadrat motoreizelerden de istifade edilir
+        document.getElementById("numune3").innerHTML = masin["ad"];
+    </script>
+</body>
+</html>
+
+

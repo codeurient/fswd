@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+
+        switch(ifade){
+            case n:
+                code
+                break;
+            case n:
+                code
+                break;
+            default:
+                code
+        }
+
+        1. JS bir break acar sozune catdiqda switch bloku sonlanar.
+        2. "default" eger hec bir "case" netice vermedikde istifade edilir. else -de oldugu kimi
+        
+-->
+
+     <button type="button" onclick="neticeniGoster()">Neticeni Goster</button>
+     <p id="netice"></p>
+
+<script>
+    function neticeniGoster(){
+
+        var day;
+
+        var d = new Date().getDay();
+        switch(d){
+            case 0:
+                day = "Bazar";
+                break;
+            case 1:
+                day = "Bazar ertesi";
+                break;
+            case 2:
+                day = "Cersenbe axsami";
+                break;
+            case 3:
+                day = "Cersenbe";
+                break;
+            case 4:
+                day = "Cume axsami";
+                break;
+            case 5:
+                day = "Cume";
+                break;
+            case 6:
+                day = "Senbe";
+                break;
+            default:
+                day = "Bele bir gun yoxdur";
+        }
+        document.getElementById('netice').innerHTML = day;
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        defineProperty() - bu metod obyektlere deyer elave etmek yaxud olan deyeri digeri ile evez etmek ucun istifade edilir.
+
+    -->
+
+
+
+
+<script>
+
+    // sade qayda 
+    var obj1 = {x: 7, y:10};
+    document.write(obj1.x + "<br>");
+
+    obj1.x = 8;
+    
+
+    // defineProperty() ile
+    var obj2 = {};
+    // "obj2" adindaki obyekte "x" acarini ekle ve ona "5" deyerini elave et ve bu "x" acar sozunu 
+    // "writable:false" yeni deyismek mumkun olmasin.
+    Object.defineProperty(obj2, "x", {value:5, writable:false});
+    // "writable:false" oldugunu ucun deyeri deyisdire bilmerik.
+    obj2.x = 10;
+    document.write(obj2.x);
+
+</script>
+
+</body>
+</html>

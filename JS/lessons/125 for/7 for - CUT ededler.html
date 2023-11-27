@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+
+        Cut ededleri elde etdikde meselen, eger ededi edede boldukde netice 0 (sifir) dirsa onda bu CUT ededdir
+        Eger qaliq qalirsa bu tek ededdir. 
+
+        if instruksiyasindan istifade ederek eger ededi edede boldukde 0 (sifirmi) yoxsa qaliqmi qalir deyerek 
+        CUT ve TEK ededleri elde ede bilrek.
+
+     -->
+
+<script>
+
+
+   // 1
+   var text = "";
+   for(i = 0; i <= 10; i++ ){ 
+    // eger % boldukde qaliq 0 (sifir)-dirsa onda qaligi 0 (sifira) beraber olanlari mene ver demis oluruq.
+        if((i % 2) === 0){
+            text += i + "<br>";
+        } 
+   }
+   document.write(text);        // 0, 2, 4, 6, 8, 10             
+
+</script>
+</body>
+</html>

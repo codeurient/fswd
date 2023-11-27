@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        querySelectorAll() metodu Array qaytarir
+    -->
+
+    <div>
+        <h2>Lorem, ipsum dolor.</h2>
+        <span>Lorem, ipsum dolor.</span>
+        <p id="netice1">Netice 1</p>
+        <p id="netice2">Netice 2</p>
+        <p id="netice3">Netice 3</p>
+
+        <p class="reng1">Sari</p>
+        <p class="reng2">Qirmizi</p>
+
+        <p class="dil">PHP</p>
+        <p class="dil">C++</p>
+        <span class="dil">JS</span>
+
+        <p name="secim1">Secim 1</p>
+        <p name="secim2">Secim 2</p>
+        
+        <h5>MYSQL</h5>
+        <h5>MYSQL</h5>
+        <h5>ORACLE</h5>
+        <h3>Lorem, ipsum dolor.</h3>
+    </div>
+<script>
+    // 1 - querySelectorAll() metodundan istifade etdikde
+    // klass-lar "." noqte ile identifikatorlar "#" hash ile normal "tag"-lar ise adlari ile cagrilir
+    // bu metod, birden cox eyni ada sahib "klass" adlari yaxud "tag"-ler olduqda istifade edilir.
+    var elementiTap = document.querySelectorAll('.dil');
+    var mesaj="", i;
+    for (i=0; i<elementiTap.length; i++){
+        mesaj+=elementiTap[i].innerHTML + '\n';
+    }
+    alert(mesaj);
+
+
+    // 2 - eger ATRIBUT-lara muraciet etmek istesek nece edeceyik ?
+    // eger deyeri ile birlikde cagirmaq isteyirikse onda bele yazmaliyiq: querySelectorAll('[name=secim1]')
+    var elementiTap2 = document.querySelectorAll('[name]');
+    var mesaj2="", i2;
+    for (i2=0; i2<elementiTap2.length; i2++){
+        mesaj2+=elementiTap2[i2].innerHTML + '\n';
+    }
+    alert(mesaj2);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{ font-size: 12px;}
+        .parent{
+            width: 100%;
+            min-width: 100px;
+            height: 200px;
+            border: 2px solid red;
+            display: flex;
+        }
+        .child{
+            width: 33.333%;
+            background-color: #ffcc00;
+            margin: 10px;
+            right: 0;
+        }
+        .parent-stretch{ align-items: stretch;}
+        .parent-start{ align-items: flex-start;}
+        .parent-end{ align-items: flex-end;}
+        .parent-center{ align-items: center;}
+        .parent-b{ align-items: baseline;}
+
+        .child-b{display: flex; align-items: center;}
+        .child-b-1{min-height: 10px;}
+        .child-b-2{min-height: 50px;}
+        .child-b-3{min-height: 100px;}
+    </style>
+</head>
+<body>
+
+    <h3>Stretch</h3>
+    <div class="parent parent-stretch">
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic labore magnam magni maxime minima necessitatibus saepe sapiente. Alias, eligendi, est fugit impedit labore libero nam optio perspiciatis quibusdam quisquam sapiente?</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque illum ipsum officiis recusandae reiciendis vero.</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolor expedita facere fugit incidunt nemo neque nesciunt nobis quam quidem. A, eius!</div>
+    </div><hr>
+
+    <h3>flex-start</h3>
+    <div class="parent parent-start">
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic labore magnam magni maxime minima necessitatibus saepe sapiente. Alias, eligendi, est fugit impedit labore libero nam optio perspiciatis quibusdam quisquam sapiente?</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque illum ipsum officiis recusandae reiciendis vero.</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolor expedita facere fugit incidunt nemo neque nesciunt nobis quam quidem. A, eius!</div>
+    </div><hr>
+
+    <h3>flex-end</h3>
+    <div class="parent parent-end">
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic labore magnam magni maxime minima necessitatibus saepe sapiente. Alias, eligendi, est fugit impedit labore libero nam optio perspiciatis quibusdam quisquam sapiente?</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque illum ipsum officiis recusandae reiciendis vero.</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolor expedita facere fugit incidunt nemo neque nesciunt nobis quam quidem. A, eius!</div>
+    </div><hr>
+
+    <h3>center</h3>
+    <div class="parent parent-center">
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic labore magnam magni maxime minima necessitatibus saepe sapiente. Alias, eligendi, est fugit impedit labore libero nam optio perspiciatis quibusdam quisquam sapiente?</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque illum ipsum officiis recusandae reiciendis vero.</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolor expedita facere fugit incidunt nemo neque nesciunt nobis quam quidem. A, eius!</div>
+    </div><hr>
+
+    <h3>baseline</h3>
+    <div class="parent parent-b">
+        <div class="child child-b child-b-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic labore magnam magni maxime minima necessitatibus saepe sapiente. Alias, eligendi, est fugit impedit labore libero nam optio perspiciatis quibusdam quisquam sapiente?</div>
+        <div class="child child-b child-b-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque illum ipsum officiis recusandae reiciendis vero.</div>
+        <div class="child child-b child-b-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolor expedita facere fugit incidunt nemo neque nesciunt nobis quam quidem. A, eius!</div>
+    </div><hr>
+
+</body>
+</html>

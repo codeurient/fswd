@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Codeurient">
+    <meta name="description" content="web developer">
+    <meta name="keywords" content="web,developer,design,programing,coding,academy">
+
+    <!-- Web sehifenin yuxari hissesinden gorsenen ikonlarin elave edilmesi -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <title>Hosting</title>
+    <!-- Bootstrap ikonlarini ve font linklerini all.css faylina qoyub import ile cagirirq -->
+    <style>  @import url("css/all.css");  </style>
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom/extra.css">
+</head>
+
+<body id="page-body">
+<!-- (2) navigation start
+
+navbar-expand - acilan menu duymesi yaradir
+fixed-top - yuxardan asagi endikde navbar sehife ile hereket etsin
+
+id="mainNavbar" - js ile oz kodumuzu yazmaq ucun
+
+#page-body - ustune basdiqda body-ye getsin
+-->
+<!-- (2) -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+    <div class="container">
+        <a href="#page-body" >New Design</a>
+        <!--
+        1 document. navbar-toggler - bu klas 3 xetli duyme yaradir ve o duyme ekran kicildikde gorsenir
+        2. data-bs-toggle="offcanvas" - duymeye basildiqda JS ile
+        3. data-bs-target="#myNavbar" - yeni id="myNavbar" olan menu-nu ac demekdir.
+        -->
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--
+        1 document. offcanvas-end - sehifenin sag terefinden gorsen deyir.
+        -->
+        <div class="offcanvas offcanvas-end"  id="myNavbar" >
+            <div class="offcanvas-header">
+                <h5>Menu</h5>
+                <!--
+                1 document. data-bs-dismiss="offcanvas" - baglamaq ucun
+                -->
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" ></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- ms-auto - sol terefden avto bosluq gotur -->
+                <ul class="navbar-nav ms-auto py-lg-2">
+                    <li class="nav-item"><a href="#services" class="nav-link btn-close-canvas">Service</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link btn-close-canvas">Portfolio</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link btn-close-canvas">About</a></li>
+                    <li class="nav-item"><a href="#team" class="nav-link btn-close-canvas">Team</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link btn-close-canvas">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<!-- navigation end-->
+
+<!-- (1 document) header start-->
+<!-- backImage, backImage-sub, backImage-heading-->
+<header class="backImage text-white text-center">
+    <div class="container">
+        <div class="backImage-sub mb-4">Lorem ipsum dolor!</div>
+        <div class="backImage-heading">Lorem ipsum dolor.</div>
+        <a href="#services" class="btn btn-danger btn-lg p-lg-4">Lorem ipsum dolor.</a>
+    </div>
+</header>
+<!--header end-->
+
+<!-- (3) services start-->
+<!--
+id="services - ona goreki biz href="#services" deye yazdiqda seife suruserek hemin servis yerine getsin.
+-->
+<section id="services">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2>Service</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dignissimos dolores quam?</h3>
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <div class="rounded-circle bg-danger d-flex align-items-center justify-content-center m-auto" style="width: 8rem;height:8rem;" >
+                    <i class="bi bi-cart" ></i>
+                </div>
+                <h4 class="my-3">Lorem ipsum.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, minima non recusandae unde magnam voluptate sed explicabo nulla voluptatum dignissimos esse reprehenderit modi amet repudiandae ducimus consequatur? Enim, veritatis eligendi!</p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="rounded-circle bg-danger d-flex align-items-center justify-content-center m-auto" style="width: 8rem;height:8rem;" >
+                    <i class="bi bi-laptop" ></i>
+                </div>
+                <h4 class="my-3">Lorem ipsum.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, minima non recusandae unde magnam voluptate sed explicabo nulla voluptatum dignissimos esse reprehenderit modi amet repudiandae ducimus consequatur? Enim, veritatis eligendi!</p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="rounded-circle bg-danger d-flex align-items-center justify-content-center m-auto" style="width: 8rem;height:8rem;" >
+                    <i class="bi bi-shield-lock" ></i>
+                </div>
+                <h4 class="my-3">Lorem ipsum.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, minima non recusandae unde magnam voluptate sed explicabo nulla voluptatum dignissimos esse reprehenderit modi amet repudiandae ducimus consequatur? Enim, veritatis eligendi!</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- services end-->
+
+
+
+
+
+<!--portfolio start-->
+<section id="portfolio" class="mySection bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="s-heading ">Portfolio</h2>
+            <h3 class="s-subheading ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
+        </div>
+
+        <div class="row gy-4">
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="p-item">
+                    <a href="#PModal1" class="p-link" data-bs-toggle="modal">
+                        <div class="p-hover"><div> <i class="bi bi-plus-lg"></i> </div></div>
+                        <img class="img-fluid" src="img/portfolio/1.png"/>
+                    </a>
+                    <div class="text-center bg-white p-4">
+                        <div>loremata</div>
+                        <div>loremlorem</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="p-item">
+                    <a href="#PModal2" class="p-link" data-bs-toggle="modal">
+                        <div class="p-hover"><div> <i class="bi bi-plus-lg"></i> </div></div>
+                        <img class="img-fluid" src="img/portfolio/2.jpg"/>
+                    </a>
+                    <div class="text-center bg-white p-4">
+                        <div>Lorem</div>
+                        <div>Lorem ipsum</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="p-item">
+                    <a href="#PModal3" class="p-link" data-bs-toggle="modal">
+                        <div class="p-hover"><div> <i class="bi bi-plus-lg"></i> </div></div>
+                        <img class="img-fluid" src="img/portfolio/3.jpg"/>
+                    </a>
+                    <div class="text-center bg-white p-4">
+                        <div>Lorem ipsum</div>
+                        <div>Lorem</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="p-item">
+                    <a href="#PModal4" class="p-link" data-bs-toggle="modal">
+                        <div class="p-hover"><div> <i class="bi bi-plus-lg"></i> </div></div>
+                        <img class="img-fluid" src="img/portfolio/4.jpg"/>
+                    </a>
+                    <div class="text-center bg-white p-4">
+                        <div>Lorem</div>
+                        <div>Loremipsum</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="p-item">
+                    <a href="#PModal5" class="p-link" data-bs-toggle="modal">
+                        <div class="p-hover"><div> <i class="bi bi-plus-lg"></i> </div></div>
+                        <img class="img-fluid" src="img/portfolio/5.jpeg"/>
+                    </a>
+                    <div class="text-center bg-white p-4">
+                        <div>Lorem ipsum</div>
+                        <div>Lorem ipsum dolor</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="p-item">
+                    <a href="#PModal6" class="p-link" data-bs-toggle="modal">
+                        <div class="p-hover"><div> <i class="bi bi-plus-lg"></i> </div></div>
+                        <img class="img-fluid" src="img/portfolio/6.jpg"/>
+                    </a>
+                    <div class="text-center bg-white p-4">
+                        <div>Lorem ipsum</div>
+                        <div>Loremispsum</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!--portfolio end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--about start-->
+<section id="about" class="mySection">
+    <div class="container">
+        <div class="text-center mb-5 pb-3">
+            <h2 class="s-heading text-uppercase fw-bold">Loremipsum</h2>
+            <h3 class="s-subheading text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, provident.</h3>
+        </div>
+        <ul class="timeline">
+
+            <li>
+                <div class="t-image">
+                    <img class="img-fluid rounded-circle" src="img/about/1.png" alt=".." />
+                </div>
+                <div class="t-panel">
+                    <div class="t-heading">
+                        <h4>1993-2023</h4>
+                        <h4 class="subheading">Lorem ipsum</h4>
+                    </div>
+                    <div class="t-body">
+                        <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, omnis harum! Minima, fugit sit? Molestiae error blanditiis, voluptas officia minus enim recusandae quam repudiandae a totam quo exercitationem laborum quisquam.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="t-inverted">
+                <div class="t-image">
+                    <img class="img-fluid rounded-circle" src="img/about/2.jpg" alt=".." />
+                </div>
+                <div class="t-panel">
+                    <div class="t-heading">
+                        <h4>Lorem 2022</h4>
+                        <h4 class="subheading">Lorem ipsum dolor</h4>
+                    </div>
+                    <div class="t-body">
+                        <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, omnis harum! Minima, fugit sit? Molestiae error blanditiis, voluptas officia minus enim recusandae quam repudiandae a totam quo exercitationem laborum quisquam.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="t-image">
+                    <img class="img-fluid rounded-circle" src="img/about/3.jpg" alt=".." />
+                </div>
+                <div class="t-panel">
+                    <div class="t-heading">
+                        <h4>Lorem 2022</h4>
+                        <h4 class="subheading">Lorem ipsum dolor</h4>
+                    </div>
+                    <div class="t-body">
+                        <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, omnis harum! Minima, fugit sit? Molestiae error blanditiis, voluptas officia minus enim recusandae quam repudiandae a totam quo exercitationem laborum quisquam.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="t-inverted">
+                <div class="t-image">
+                    <img class="img-fluid rounded-circle" src="img/about/4.jpg" alt=".." />
+                </div>
+                <div class="t-panel">
+                    <div class="t-heading">
+                        <h4>Lorem 2022</h4>
+                        <h4 class="subheading">Lorem ipsum dolor</h4>
+                    </div>
+                    <div class="t-body">
+                        <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, omnis harum! Minima, fugit sit? Molestiae error blanditiis, voluptas officia minus enim recusandae quam repudiandae a totam quo exercitationem laborum quisquam.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="t-inverted">
+                <div class="t-image">
+                    <h4>Loremipsum <br /> mi dolarips<br /> mi!</h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!--about end-->
+
+<!--team start-->
+<section id="team" class="mySection bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="s-heading text-uppercase fw-bold">Loremmi</h2>
+            <h3 class="s-subheading text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, provident.</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="t-member text-center">
+                    <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="" />
+                    <h4>Lorem ipsum</h4>
+                    <p class="text-muted">Lorem ipsum</p>
+                    <a href="#" class="btn btn-info mx-2 btn-social">
+                        <i class="bi bi-twitter text-white"></i>
+                    </a>
+                    <a href="#" class="btn btn-primary mx-2 btn-social">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-danger mx-2 btn-social">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="t-member text-center">
+                    <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="" />
+                    <h4>Lorem ipsum</h4>
+                    <p class="text-muted">Lorem ipsum</p>
+                    <a href="#" class="btn btn-info mx-2 btn-social">
+                        <i class="bi bi-twitter text-white"></i>
+                    </a>
+                    <a href="#" class="btn btn-primary mx-2 btn-social">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-danger mx-2 btn-social">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="t-member text-center">
+                    <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" />
+                    <h4>Lorem ipsum</h4>
+                    <p class="text-muted">Lorem ipsum</p>
+                    <a href="#" class="btn btn-info mx-2 btn-social">
+                        <i class="bi bi-twitter text-white"></i>
+                    </a>
+                    <a href="#" class="btn btn-primary mx-2 btn-social">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-danger mx-2 btn-social">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi fugit eaque saepe earum, ut blanditiis ipsa, itaque enim qui officiis corporis dolores at laborum ab placeat natus commodi, facere dolor.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--team end-->
+
+<!-- clients start -->
+<div class="container py-4">
+    <div class="row align-items-center">
+        <div class="col-sm-6 col-md-3 my-3">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto img-logo" src="img/clients/google.svg" alt=".." />
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3 my-3">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto img-logo" src="img/clients/ibm.svg" alt=".." />
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3 my-3">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto img-logo" src="img/clients/facebook.svg" alt=".." />
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3 my-3">
+            <a href="#">
+                <img class="img-fluid d-block mx-auto img-logo" src="img/clients/microsoft.svg" alt=".." />
+            </a>
+        </div>
+    </div>
+</div>
+<!-- contact start-->
+<section id="contact" class="mySection">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="s-heading text-uppercase fw-bold text-white">Loremim</h2>
+            <h3 class="s-subheading text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, provident.</h3>
+        </div>
+        <form class="needs-validation" action="result.php" id="FrmContact" novalidate>
+            <div class="row align-items-stretch mb-5">
+
+
+                <div class="col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="text" id="name" class="form-control" placeholder="Adınız" required
+                               maxlength="40" aria-describedby="ErrName">
+                        <label for="name">Name
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">required</span>
+                        </label>
+                        <div class="invalid-feedback fst-italic fs-6" id="ErrName"></div>
+                    </div>
+
+
+                    <div class="form-floating mb-4">
+                        <input type="email" id="email" class="form-control" placeholder="Eposta" required
+                               maxlength="100" aria-describedby="ErrEmail">
+                        <label for="email">Email
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">required</span>
+                        </label>
+                        <div class="invalid-feedback fst-italic fs-6" id="ErrEmail"></div>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input type="tel" id="phone" class="form-control" placeholder="Telefon Numaranız" required
+                               maxlength="15" aria-describedby="ErrPhone">
+                        <label for="phone">Phone number
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">required</span>
+                        </label>
+                        <div class="invalid-feedback fst-italic fs-6" id="ErrPhone"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-floating form-textarea mb-md-0">
+                        <textarea id="message" class="form-control" placeholder="Mesajınız" required maxlength="300"
+                                  aria-describedby="ErrMessage"></textarea>
+                        <label for="message">Messages
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">required</span>
+                        </label>
+                        <div class="invalid-feedback fst-italic fs-6" id="ErrMessage"></div>
+                    </div>
+                    <div class="text-white text-end">
+                        <span id="current-character">0</span>
+                        <span> / 300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger btn-lg text-uppercase py-3 d-block w-100"
+                        id="BtnContact">
+                    Send message
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- contact end-->
+
+<!-- footer start -->
+<footer class="footer py-3">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start text-muted">
+                Copyright &copy; Codeurient 2022
+            </div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a href="#" class="btn btn-info mx-2 btn-social">
+                    <i class="bi bi-twitter text-white"></i>
+                </a>
+                <a href="#" class="btn btn-primary mx-2 btn-social">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="btn btn-danger mx-2 btn-social">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="#" class="link-info text-decoration-none me-3">Lorem ipsum dolor</a>
+                <a href="#page-body" class="link-secondary text-decoration-none">Home</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--portfolio modals-->
+<!-- portfolio modal item 1 document-->
+<div class="modal fade p-modal" id="PModal1">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content text-center py-5 mt-2">
+            <div class="close-modal" data-bs-dismiss="modal" >
+                <img src="img/close-icon.svg" alt="..." />
+            </div>
+            <div class="modal-body">
+                <h2 class=" mb-3" id="myTitle1">Lorem</h2>
+                <p class="p-intro  mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam?</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/1.png" alt="..." />
+                <p class="my-4 col-lg-6 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus laudantium magni mollitia libero. Nemo doloribus, molestiae, asperiores porro magnam facere veritatis doloremque ipsam ex odit, tempora sapiente odio nesciunt adipisci! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit iusto sunt dicta et perferendis dolorem impedit. Totam recusandae, placeat, velit consequatur asperiores, mollitia possimus vero nostrum quidem amet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor impedit commodi eligendi rem eos eum consequuntur maxime, reprehenderit officia architecto iusto facere ducimus. Explicabo perferendis itaque corrupti laudantium dignissimos.</p>
+                <ul class="list-inline mb-4">
+                    <li><strong>Lorem:</strong> Lorem</li>
+                    <li><strong>Lorem:</strong> Lorem</li>
+                </ul>
+                <button class="btn btn-danger btn-lg  py-3" data-bs-dismiss="modal"
+                        type="button">Lorem ipsum <i class="bi bi-x-lg ms-1"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- portfolio modal item 2-->
+<div class="modal fade p-modal" id="PModal2">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content text-center py-5 mt-2">
+            <div class="close-modal" data-bs-dismiss="modal" >
+                <img src="img/close-icon.svg" alt="..." />
+            </div>
+
+            <div class="modal-body">
+                <h2 class=" mb-3" id="myTitle2">Lorem ipsum</h2>
+                <p class="p-intro  mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam?</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/2.jpg" alt="..." />
+                <p class="my-4 col-lg-6 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus laudantium magni mollitia libero. Nemo doloribus, molestiae, asperiores porro magnam facere veritatis doloremque ipsam ex odit, tempora sapiente odio nesciunt adipisci! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit iusto sunt dicta et perferendis dolorem impedit. Totam recusandae, placeat, velit consequatur asperiores, mollitia possimus vero nostrum quidem amet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor impedit commodi eligendi rem eos eum consequuntur maxime, reprehenderit officia architecto iusto facere ducimus. Explicabo perferendis itaque corrupti laudantium dignissimos.</p>
+                <ul class="list-inline mb-4">
+                    <li><strong>Lorem:</strong> Lorem</li>
+                    <li><strong>Lorem:</strong> Lorem ipsum</li>
+                </ul>
+                <button class="btn btn-danger btn-lg  py-3" data-bs-dismiss="modal"
+                        type="button">Lorem ipsum <i class="bi bi-x-lg ms-1"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- portfolio modal item 3-->
+<div class="modal fade p-modal" id="PModal3">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content text-center py-5 mt-2">
+            <div class="close-modal" data-bs-dismiss="modal" >
+                <img src="img/close-icon.svg" alt="..." />
+            </div>
+
+            <div class="modal-body">
+                <h2 class=" mb-3" id="myTitle3">Loremim ipsumloe</h2>
+                <p class="p-intro  mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam?</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/3.jpg" alt="..." />
+                <p class="my-4 col-lg-6 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus laudantium magni mollitia libero. Nemo doloribus, molestiae, asperiores porro magnam facere veritatis doloremque ipsam ex odit, tempora sapiente odio nesciunt adipisci! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit iusto sunt dicta et perferendis dolorem impedit. Totam recusandae, placeat, velit consequatur asperiores, mollitia possimus vero nostrum quidem amet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor impedit commodi eligendi rem eos eum consequuntur maxime, reprehenderit officia architecto iusto facere ducimus. Explicabo perferendis itaque corrupti laudantium dignissimos.</p>
+                <ul class="list-inline mb-4">
+                    <li><strong>Lorem:</strong> Lorem Lorem</li>
+                    <li><strong>Lorem:</strong> Lorem</li>
+                </ul>
+                <button class="btn btn-danger btn-lg  py-3" data-bs-dismiss="modal"
+                        type="button">Projeyi Kapat <i class="bi bi-x-lg ms-1"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- portfolio modal item 4-->
+<div class="modal fade p-modal" id="PModal4">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content text-center py-5 mt-2">
+            <div class="close-modal" data-bs-dismiss="modal" >
+                <img src="img/close-icon.svg" alt="..." />
+            </div>
+
+            <div class="modal-body">
+                <h2 class=" mb-3" id="myTitle4">Lorem Lorem</h2>
+                <p class="p-intro  mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam?</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/4.jpg" alt="..." />
+                <p class="my-4 col-lg-6 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus laudantium magni mollitia libero. Nemo doloribus, molestiae, asperiores porro magnam facere veritatis doloremque ipsam ex odit, tempora sapiente odio nesciunt adipisci! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit iusto sunt dicta et perferendis dolorem impedit. Totam recusandae, placeat, velit consequatur asperiores, mollitia possimus vero nostrum quidem amet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor impedit commodi eligendi rem eos eum consequuntur maxime, reprehenderit officia architecto iusto facere ducimus. Explicabo perferendis itaque corrupti laudantium dignissimos.</p>
+                <ul class="list-inline mb-4">
+                    <li><strong>Lorem:</strong> Lorem</li>
+                    <li><strong>Lorem:</strong> Lorem</li>
+                </ul>
+                <button class="btn btn-danger btn-lg  py-3" data-bs-dismiss="modal"
+                        type="button">Lorem ipsum <i class="bi bi-x-lg ms-1"></i></button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- portfolio modal item 5-->
+<div class="modal fade p-modal" id="PModal5">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content text-center py-5 mt-2">
+            <div class="close-modal" data-bs-dismiss="modal" >
+                <img src="img/close-icon.svg" alt="..." />
+            </div>
+
+            <div class="modal-body">
+                <h2 class=" mb-3" id="myTitle5">Lorem ipsum dolor</h2>
+                <p class="p-intro  mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam?</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/5.jpeg" alt="..." />
+                <p class="my-4 col-lg-6 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus laudantium magni mollitia libero. Nemo doloribus, molestiae, asperiores porro magnam facere veritatis doloremque ipsam ex odit, tempora sapiente odio nesciunt adipisci! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit iusto sunt dicta et perferendis dolorem impedit. Totam recusandae, placeat, velit consequatur asperiores, mollitia possimus vero nostrum quidem amet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor impedit commodi eligendi rem eos eum consequuntur maxime, reprehenderit officia architecto iusto facere ducimus. Explicabo perferendis itaque corrupti laudantium dignissimos.</p>
+                <ul class="list-inline mb-4">
+                    <li><strong>Lorem:</strong> Lorem ipsum</li>
+                    <li><strong>Lorem:</strong> Lorem ipsum dolor</li>
+                </ul>
+                <button class="btn btn-danger btn-lg  py-3" data-bs-dismiss="modal"
+                        type="button">Lorem Lorem <i class="bi bi-x-lg ms-1"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- portfolio modal item 6-->
+<div class="modal fade p-modal" id="PModal6">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content text-center py-5 mt-2">
+            <div class="close-modal" data-bs-dismiss="modal" >
+                <img src="img/close-icon.svg" alt="..." />
+            </div>
+            <div class="modal-body">
+                <h2 class=" mb-3" id="myTitle6">Lorem ipsum</h2>
+                <p class="p-intro  mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam?</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/6.jpg" alt="..." />
+                <p class="my-4 col-lg-6 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus laudantium magni mollitia libero. Nemo doloribus, molestiae, asperiores porro magnam facere veritatis doloremque ipsam ex odit, tempora sapiente odio nesciunt adipisci! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit iusto sunt dicta et perferendis dolorem impedit. Totam recusandae, placeat, velit consequatur asperiores, mollitia possimus vero nostrum quidem amet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor impedit commodi eligendi rem eos eum consequuntur maxime, reprehenderit officia architecto iusto facere ducimus. Explicabo perferendis itaque corrupti laudantium dignissimos.
+                </p>
+                <ul class="list-inline mb-4">
+                    <li><strong>Lorem:</strong> Lorem ipsum</li>
+                    <li><strong>Lorem:</strong> Loremipsumol</li>
+                </ul>
+                <button class="btn btn-danger btn-lg  py-3" data-bs-dismiss="modal"
+                        type="button">Lorem Lorem <i class="bi bi-x-lg ms-1"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/custom/extra.js"></script>
+</body>
+
+</html>

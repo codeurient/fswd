@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 
+        
+        <div id="divParent"> - bu tag-in ana elementi 'body' tag-idir   
+
+    -->
+
+    <div id="divParent">
+        <h1 id="head" ajax="open">microsoft</h1>
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">js</p>
+        <p id="p4">php</p>
+        <p id="p5">css</p>
+        <p id="p6">html</p>
+        <p id="p7">boot</p>
+        <p id="p8">vue</p>
+        <!-- komment duyumu 8-dir -->
+    </div>
+
+
+
+    <script>
+       
+        // 1
+        var elementNodes1 = document.querySelector('#divParent').parentNode.nodeName;           // BODY
+        console.log(elementNodes1);
+
+        // 2
+        var elementNodes2 = document.querySelector('#head').parentNode.nodeName;                // DIV  
+        console.log(elementNodes2);
+
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+<script>
+
+    const adlar = ['Mehdi', 'Elcan', 'Kamal', 'Mehdi'];
+
+    let adlarinSayi = adlar.reduce((butunAdlar, ad) => {
+        // console.log(butunAdlar);
+        if(ad in butunAdlar){
+            butunAdlar[ad]++;
+        } else{
+            butunAdlar[ad] = 1;
+        }
+        return butunAdlar;
+    }, {});
+    
+    console.log(adlarinSayi);
+
+</script>
+</body>
+</html>

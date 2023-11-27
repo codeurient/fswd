@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+        
+        Popup - acilan qutu
+
+        JS-de 3 cur acilan qutu var: 
+
+        1) Xeberdarliq qutusu - Istifadecinin neyise tesdiqlemesini veya qebul etmesini isteyirikse onda xeberdarliq qutusu istifade edilir.
+        2) Tesdiq qutusu      - Tesdiq qutusunda, sonraki addima kecid etmek olarmi menasini veren "Yes" yaxud "No" kimi duymlerenden istifade edilir.
+        3) Emr qutusu         - Meselen, istifadeci bir sehifeye girmek isteyir ve biz ona misal hell etmesini emr edirik bu sehifeye kecid ede bilmesi ucun.
+
+
+        
+    -->
+
+    <button class="btn btn-outline-danger" type="button" onclick="acilanQutu1()">Acilan qutu duymesi 1</button>
+    <button class="btn btn-outline-danger" type="button" onclick="acilanQutu2()">Acilan qutu duymesi 2</button>
+ 
+    <script>
+
+        // 1
+        var netice1;
+        function acilanQutu1(){
+            alert('Acilan qutu numunesi 1');
+        }
+
+
+
+        
+        // 2
+        var netice2;
+        // \n - bu simvolun menasi setr demekdir. Yeni hansi sozun onunde yazilarsa, ondan sonra gelen 
+        // metnler bir setr alta duwecekdir.
+        function acilanQutu2(){
+            alert('Acilan qutu \n numunesi 2');
+        }
+
+    </script>
+</body>
+</html>

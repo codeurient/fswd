@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+bu metod secilmis olan deyeri basqa bir deyer ile evez eder
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+
+<script>
+    // 1
+    var testNomre1 = "Cenab Qara yasiyir qara evde ve qara masina sahibdir.";
+    // Eger eyni deyerler varsa onda birinci secilecekdir
+    document.getElementById('numune1').innerHTML = testNomre1.replace("Qara", "Ag");      // Cenab Ag yasiyir qara evde ve qara masina sahibdir.
+
+
+    // Boyuk herf ve kicik herf ferqine diqqet etmek lazimdir. Ikisi ferqli seylerdir.
+    // Eger bu ferqi aradan qaldirmaq isteyirikse onda yazilis qaydasi bele olmalidir - /qara/i - i ferqi aradan qaldirir
+    document.getElementById('numune2').innerHTML = testNomre1.replace(/qara/i, "Ag");
+
+
+    // Axtaris ederken RegExp -den istifade etmeye icaze verilir ve butun deyerleri bu cur secmek mumkundur. - g her seyi demekdir
+    document.getElementById('numune3').innerHTML = testNomre1.replace(/qara/gi, "ag");
+</script>
+</body>
+</html>
+

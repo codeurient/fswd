@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!-- 
+    
+    call() ve apply() metodlari her hansisa bir metodu basqa bir OBJECT ucun istifade etdikde cagrilir.
+
+    appl() metodunun call()-dan ferqi ondadirki, arqumentler apply() ile Array formasinda gonderilir.
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div>
+
+
+    <script>
+
+        // 1 - call funksiyasi, arqumentleri tek-tek gonderir
+        var person =  { 
+            firstName: "Haci",
+            lastName: "Davud",
+            age: 5,
+            eyeColor: "black",
+            fullName: function (){
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        var people = {
+            firstName: "Imam",
+            lastName: "Samil"
+        }
+        var x = person.fullName.call(people);
+        document.getElementById('numune1').innerHTML = x;
+
+
+
+        // 2 - apply funksiyasi, arqumentleri bir array olaraq gonderir
+        var obj = {  
+            a: 100,
+            b: 200
+        };
+        var func = function( c ) { 
+            return this.a  +  this.b  +  c 
+        };
+        var x2 = func.apply( obj, [300] );
+
+        console.log(x2);
+        document.getElementById('numune2').innerHTML = x2;
+
+
+  
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+
+        Array icindeki deyerleri secmek ve onlarla emeliyyatlar heyata kecirmek ucun istifade edilir.
+
+        Kohne massiv deyismeden oldugu kimi qalir.
+
+        map(deyer, index, array-in ozunu qaytarir)
+     -->
+    
+
+<script>
+
+    // 1 - a Array-i deyisir
+    let a = [2,3,4];
+    // a[5] = 9;
+    // delete a[5];
+    for (let i = 0; i < a.length; i++){
+        a[i] = a[i] * 2;
+    }
+    console.log(a);
+
+
+    // 2 - a Arrayi deyismez qalir
+    let a2 = [2,3,4];
+    // a2[5] = 9;
+    // delete a2[5]
+    let b2 = [];
+    for (let i = 0; i < a2.length; i++){
+        b2[i] = a[i] * 2;
+    }
+    console.log(a2);
+    console.log(b2);
+
+
+    // 3
+    let a3 = [2,3,4];
+    // a3[5] = 9;
+    // delete a3[5]
+    let c = a3.map(x => {
+        return x*2;
+    })
+    console.log(c);
+
+
+
+</script>
+</body>
+</html>

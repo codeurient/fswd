@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            border: 1px solid red;
+        }
+        .grid-item1{
+            background-color: #40c4c8;
+            /*grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1 document;
+            grid-row-end: 4;*/
+
+            /*grid-column: 3 / 4;
+            grid-row: 1 document / 4;*/
+
+            grid-area: 1 / 3 / 4 / 4;
+        }
+        .grid-item2{ background-color: #ffcc00; }
+        .grid-item3{ background-color: #ff5900; }
+    </style>
+</head>
+<body>
+
+<div class="grid">
+    <div class="grid-item grid-item1">item1</div>
+    <div class="grid-item grid-item2">item2</div>
+    <div class="grid-item grid-item3">item3</div>
+</div>
+
+</body>
+</html>

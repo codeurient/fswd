@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.Qaydali Ifadeler axtarma metodudur.
+        2.Qaydali ifadelerden metnleri axtarmaq onlari deyisdirmek kimi emeliyyatlarda istifade olunur.
+        3.Qaydali ifadeler bir simvoldan yaxud daha qarisiq simvollardan ibaret ola biler.
+        4.Meselen input sahesinden yazilan gmail adinin formatinin dogrulugunu yoxlamaq ucun istifade edile biler.
+        5.Qaydali Ifadeler tez-tez 2 string metodu ile istifade edilir: search() ve replace()
+        6.Qaydali ifadelerinde metodlari vardir meselen, test(). 
+
+        i - boyuk herf kicik herf ferqi qoymadan axtar.
+        g - sadece en birinci qarsina cixani yox butun metnin tamaminda axtaris et.
+        m - birden cox setrde axtarma et demek ucundur.
+
+        \d - bir reqem tap
+        \s - bosluq simvolunu tap
+        \uxxxx - onaltiliq sayida olan xxxx ile teyin edilimis Unicode simvolunu tap
+
+        [abc] - kvadrat moterize icerisindeki herflerden her hansisa birisini tap demekdir.
+        [0-9] - kvadrat moterize icerisindeki 0-dan 9-a qeder olan her hansisa bir reqemi tapin demekdir.
+        (x|y) - ya X-i ya Y-i tap demekdir.
+
+        Quantifier: Kəmiyyət göstəricisi
+        1. n+   - en az bir N deyerine sahib olan her hansisa bir string-e uygun gelir. 
+        Yeni meselen a+ yazdiqda en az bir A herfine sahib olan her hansisa bir stringe uygun gelir.
+
+        2. n*   - sifir yaxud daha cox N deyerine sahib olan her hansisa bir string-e uygun gelir. 
+
+        3. n?   - sifirlari veya bir defe olsun N deyerine sahib olan her hansisa bir string-e uygun gelir. 
+     -->
+
+      <div id="netice1"></div>
+      <div id="netice2"></div>
+
+      <script>
+        // \n - bir setr alta endirmek ucun istifade edilir.
+        var metin = "Lorem Ipsum dolor sit amet \n consectetur Ipsum adipisicing elit.";
+        // netice olaraq burda -1 elde etdik cunki "lorem" deyilen bir sozu yoxdu ancaq "Lorem" deyilen soz vardir
+        document.getElementById('netice1').innerHTML = metin.search(/ipsum/);        // -1
+        // asagida deyirik ki,  i - yeni boyuk herf kicik herf ferqi qoymadan axtar. Buda bize 6ci indeksi verir.
+        document.getElementById('netice2').innerHTML = metin.search(/ipsum/i);        // 6
+      </script>
+</body>
+</html>

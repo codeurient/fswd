@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        Eger her hansisa bir "input" elementi kecerli deyer qaytararsa onda "checkValidity()" metodu "true" deyerini bize verir.
+
+        "checkValidity()" ve "validationMessage" kodldarindan, AUTO xeta mesajlari ekrana yazdirmaq ucun istifade edilir.
+        Bele olduqda uzun uzun "if-else" instruksiyasindan istifade etmeye ehtiyac qalmir. Yalniz bu xeta mesajlari ingilis dilinde olacaqdir. 
+    -->
+            <input  type="number" name="number" id="number" min="4" max="7" style="width: 100px;" required>
+            <button type="button" onclick="formunValidasiyaEdilmesi()">Duymeni bas</button>
+
+            <p id="netice"></p>
+
+    <script>
+        function formunValidasiyaEdilmesi(){
+            var formDeyeri;
+
+            formDeyeri = document.getElementById("number");
+            
+            if(formDeyeri.checkValidity() == false){
+                document.getElementById("netice").innerHTML = formDeyeri.validationMessage;
+            } else{
+                document.getElementById("netice").innerHTML = "Hec bir xeta tapilmadi";
+            }
+        }
+    </script>
+</body>
+</html>

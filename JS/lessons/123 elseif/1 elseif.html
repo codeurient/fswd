@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+     <p><input type="text" id="birinci"></p>
+     <p><input type="text" id="ikinci"></p>
+     <button type="button" onclick="neticeniGoster()">Neticeni Goster</button>
+     <p id="netice"></p>
+
+<script>
+    function neticeniGoster(){
+
+        
+        var birinciImtahan, ikinciImtahan, mesaj, finalNetice;
+
+        birinciImtahan = Number(document.getElementById('birinci').value);
+        ikinciImtahan  = Number(document.getElementById('ikinci').value);
+        finalNetice    = birinciImtahan + ikinciImtahan;
+
+        if(isNaN(birinciImtahan)){
+            mesaj = "Birinci girdiyiniz deyer reqemsal olmaldir."
+        } else if(isNaN(ikinciImtahan)){
+            mesaj = "Ikinci girdiyiniz deyer reqemsal olmaldir."
+        } else{
+            mesaj = (finalNetice >= 60) ? "Imtahandan kecdiniz" : "Imtahandan qaldiniz";
+        }
+        document.getElementById("netice").innerHTML = mesaj;
+    }
+
+</script>
+</body>
+</html>
+

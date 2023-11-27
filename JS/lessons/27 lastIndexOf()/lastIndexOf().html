@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+        lastIndexOf() - bu string metodu, sonuncu deyerin necenci indeksde yerlewdiyini teyin etmek ucundur.
+        Eger axtarilan metin tapilmaz ise onda elde edeceyimiz indeks -1 (menfi bir) olacaqdir.
+        Sayma prosesi 0-dan baslayir. Yeni, 0 1 2 3 ve.s
+        lastIndexOf() - bu metoda ikinci parametr teyin ederek bawlangic diapazonu teyin etmek mumkundur.
+    -->
+
+    <div id="numune1"></div>
+    <div id="numune2"></div>
+    <div id="numune3"></div>
+
+    <script>
+        // 1
+        var necenciIndeks = "JavaScript Angular JS, React JS, Node JS";
+        document.getElementById('numune1').innerHTML = necenciIndeks.lastIndexOf("JS"); // sonuncu JS 38 isare sonra yerlesibdir.
+
+        // 2
+        var x = "JavaScript Angular JS, React JS, Node JS";
+        if(x.lastIndexOf("Jquery") == -1 ){
+            document.getElementById('numune2').innerHTML = "Axtardiginiz soz tapilmadi";
+        }
+
+        // 3 - lastIndexOf() - bu metoda ikinci parametr teyin ederek bawlangic diapazonu teyin etmek mumkundur.
+        var y = "JavaScript Angular JS, React";
+        // 25 deyerek 0dan 25e qeder diapazon teyin edirem ve hemin diapazon icerisinde "a" herfini axtariram 0dan baslayaraq
+        document.getElementById('numune3').innerHTML = y.lastIndexOf("a", 24); // 25
+    </script>
+</body>
+</html>
+

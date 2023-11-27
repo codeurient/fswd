@@ -1,0 +1,24 @@
+JS 32 bitlik Bitwise Isaretlerinden istifade edir. Yeni 32 dene 0 ve 1 -den istifade edir.
+
+
+
+
+
+JS sayilari yaddasda saxliyanda 64 bitlik 0 ve 1 -ler ile saxliyir ancaq emeliyyatlari 32 bitlik ikili sayilar ile heyata kecirir.
+
+
+
+
+
+Yeni butun herfler, isaretler, reqemler yeni her sey ilk once arxa fonda 64 bitlik 0 ve 1 ler formasinda yaddasa yazilir.
+Ancaq geri cevirme etdikde bunu 32 bitlik ikili say sistemi ile edir.
+
+
+
+
+
+JS-de ikili say sistemindeki 0 ve 1 leri ondaliq say sistemine cevirdikde cavab olaraq musbet say elde edirikse 
+bu o demekdir ki, iki say sistemindeki en soldaki REQEM 0-dir. Yox eger menfi say elde edirikse onda en sondaki 
+REQEM 1-dir demekdir. Yeni 1 bize menfi 0 ise musbet demekdir.
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        BOM - Browser Object Model
+
+        BOM JS-in browser ile danişmasina icaze veren bir modeldir. 
+        Yeni JS ile browser arasinda elaqe yaradan modele BOM deyilir.
+     -->
+
+     <div id="numune1"></div>
+     <div id="numune2"></div>
+
+    <script>
+        // borwser penceresinin "yuksekliyi - height" ve "genisliyi - width" vardir.
+        // bu yukseklik ve genislikleri elde etmek ucun ise 2 JS kodundan istifade edilir:  "innerWidth" ve "innerHeight"
+        var w, h, netice;
+        netice = document.getElementById("numune1");
+        console.log(window)
+        w = window.innerWidth;
+        h = window.innerHeight;
+        netice.innerHTML = "Genislik " + w + "<br>" + "Hundurluk " + h;     // Genislik 1366px, Hundurluk 625px
+
+
+
+
+        // Ancaq Explorer browserinin kohne versiyalari ucun "innerWidth" ve "innerHeight" caliwmiyacaqdir
+        // Bunun ucun awagidaki kodlardan istifade etmek lazimdir.
+        // document.documentElement.clientHeight;
+        // document.documentElement.clientWidth;
+        // document.body.clientHeight;
+        // document.body.clientWidth;
+        var w2, h2, netice2;
+        netice2 = document.getElementById("numune2");
+        w2 = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        h2 = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        netice2.innerHTML = "Genislik " + w2 + "<br>" + "Hundurluk " + h2;     // Genislik 1366px, Hundurluk 625px
+    </script>
+
+
+</body>
+</html>

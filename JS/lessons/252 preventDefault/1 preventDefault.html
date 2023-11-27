@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main_menu {margin: 10px; padding: 0; list-style: none; background: #eee; width: 200px; cursor: pointer;}
+        #main_menu li {margin-bottom: 10px; padding: 5px;}
+        #main_menu li:hover {background: #ff4ef5;}
+</style>
+</head>
+<body>
+
+        <ul id="main_menu">
+            <li>Acmaq</li>
+            <li>Saxlamaq</li>
+            <li>Cekmek</li>
+            <li>Redakte</li>
+            <li>Ayarlar</li>
+        </ul>
+
+<script>
+    // 2 elementin arasina basdiqda ise li tag-lerini elde edirik. XETA
+    
+    main_menu.addEventListener("click", function(event) {
+        // console.log(event);
+        // console.log(event.target);
+        // li tag-lerini almamaq ucun closest() metodundan istifade edirik.
+        let li = event.target.closest('li');
+        // Bu bize NULL qaytaracaq. Hemin null xeta oldugu ucun sorgu yaradiriq
+        // eger null olarsa return deyirik. yeni sadece return ol.
+        // Yeni eger li yoxdursa onda hecne etme. sadece return ol demek yeni hecne etme demekdir.
+        // eks teqdirde ise elementin mezmununu qaytar demis oluruq.
+        if(li == null) return;
+        console.log(li.innerHTML);
+    })
+
+</script>
+</body>
+</html>

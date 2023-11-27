@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  
+</head>
+<body>
+
+    <!-- 
+
+       Bu metotdan birden cox HADISELER yaratmaq ucun istifade edilir.
+
+     -->
+   
+
+        <div id="result"></div>
+        <button type="button" id="Btn">Click</button>
+
+    <script>
+
+        var btn = document.querySelector("#Btn");
+
+        // 1
+        btn.addEventListener("click", showDate);
+        function showDate(){
+            document.querySelector("#result").innerHTML = Date();
+        }
+
+
+        // 2
+        // btn.addEventListener("click", function(){
+        //     document.querySelector("#result").innerHTML = Date();
+        // });
+
+    </script>
+</body>
+</html>
+    
+

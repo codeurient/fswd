@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main_menu {margin: 10px; padding: 0; list-style: none; background: #eee; width: 200px; cursor: pointer;}
+        #main_menu li {margin-bottom: 10px; padding: 5px;}
+        #main_menu li:hover {background: #ff4ef5;}
+</style>
+</head>
+<body>
+    <!-- 
+        bize elemntin terkibini almaq lazim deyil 
+        bize lazim olan hemin duymeni basdiqda nese olsun demekdir.
+     -->
+
+     <!-- 
+        Bu atributun deyeri bizim cagirmaq istediyimiz metodun adidir.
+        Bunun ucun data xassesinden istifade edirik.
+    -->
+        <ul id="main_menu">
+            <li data-command="open">Acmaq</li>
+            <li data-command="save">Saxlamaq</li>
+            <li data-command="draw">Cekmek</li>
+            <li data-command="edit">Redakte</li>
+            <li data-command="customize">Ayarlar</li>
+        </ul>
+
+<script>
+
+
+    // let menuActs = {
+    //      "open": function() {alert("ac....")},
+    //      "save": function() {alert("saxla....")},
+    // }
+
+    let menuActs = {
+        open()      {alert("ac....")},
+        save()      {alert("saxla....")},
+        draw()      {alert("cek....")},
+        edit()      {alert("redaket et....")},
+        // customize() {alert("yaxsilasdir....")},
+    }
+    
+    main_menu.addEventListener("click", function(event) {
+        // ona gore closest() metodundan istifade edilir ki, li tag-lerinin arasinda basdiqda EVENT islemesin.
+        // Bu metod en yaxin li tag-ini elde edir ve iki li taginin arasina basdiqda EVENT islemir.
+        let li = event.target.closest('li');
+
+        // Eger li NULL olarsa onda hecne etme ve ne vaxt li NULL olur ? Iki li arasi secildikde NULL olur.
+        if(li == null) return;
+
+        //console.log(li.dataset.command);
+        // Eks teqdirde act deyiskenine atributun deyerini yazdiririq.
+        let act = li.dataset.command;
+        
+        // act yeni li taginin data atributunda bele bir ad varsa.
+        // menuActs[act] - ve hemin ad bizim obyektimizin icinde de varsa.
+        // meselen customize() yoxdu ve olmadigi ucun undefined verir 
+        // Eger biz menuActs[act] !== undefined bunu yazmasaq ve olmuyan li tag-ine bassaq onda undefined qayidacaq
+        // buda o demekdir ki ele bir metod yoxdur. Ona gore undefined-e bearber deyilse cagrilsin demisik.
+        if(act && menuActs[act] !== undefined) menuActs[act]();
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+      test() metodu true yaxud false qaytarir
+
+
+      exec() metodu vardir hansiki sozun ozunu qaytarir.
+        
+     -->
+
+
+      <div id="netice1"></div>
+
+
+      <script>
+
+        var metin = "Lorem Ipsum dolor sit amet \n consectetur Ipsum adipisicing elit.";
+        // yeni metin deyiskenin icerisinde "sum" deye bir soz varmi onu test et demekdir. varsa TRUE cavabini aliriq.
+        document.getElementById('netice1').innerHTML = /sum/.test(metin);        //  true
+
+      </script>
+
+</body>
+</html>

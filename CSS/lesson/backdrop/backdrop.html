@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        dialog {
+            width: 300px;
+        }
+        dialog::backdrop {
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <button id="openDialog">Sayta giriş</button>
+    <dialog>
+        <form id="authentication" action="">
+            <p><input name="login" required autofocus placeholder="Login"></p>
+            <p><input type="password" name="pass" required placeholder="Şifrə"></p>
+            <p><button type="submit">Giriş</button>
+                <button id="closeDialog">Bağla</button></p>
+        </form>
+    </dialog>
+    <script>
+        var dialog = document.querySelector('dialog');
+        document.querySelector('#openDialog').onclick = function() {
+            dialog.showModal();
+        }
+        document.querySelector('#closeDialog').onclick = function() {
+            dialog.close();
+        }
+    </script>
+</body>
+</html>
+
+
+

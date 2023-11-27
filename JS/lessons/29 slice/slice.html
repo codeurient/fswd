@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    bu metod, STRİNG-leri yaxud ARRAY-lari bolmelere ayriqmaq ucun istifade edilir.
+
+    slice - dilim, dilimlemek demekdir. 2 parametr alir.
+    1ci parametr baslangici 2ci ise bitiwi gosterir.
+
+    slice(start, end)
+
+    neqativ parametlerde teyin etmek mumkundur
+ -->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+<script>
+
+    // 1
+    var testNomre1 = "JavaScript Angular JS, React JS, Node JS";
+
+    
+    // 11ci pozisiyadan basla (bosluq olan yer) ve 21-11=10 pozisiya get
+    // yaxud 2ci parametri hec yazmamaqda olar eger her seyi almaq isteyirikse
+    document.getElementById('numune1').innerHTML = testNomre1.slice(11, 21);      // Angular JS
+
+
+    // -1 en sondu yeni en sondan basla ve -8 pozisiya önə get
+    document.getElementById('numune2').innerHTML = testNomre1.slice(-8, -1);      // Node JS
+
+
+</script>
+</body>
+</html>
+
+

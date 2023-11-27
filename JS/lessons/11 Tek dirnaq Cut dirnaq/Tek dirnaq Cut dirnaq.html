@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="numune1"></div>
+<div id="numune2"></div>
+
+
+    <script>
+
+        // cut dirnaqlarda slesh iwaresinden istifade edilir
+        var sleshIsaresi;
+        sleshIsaresi = "lorem ipsum \"dolor\" sit";
+        document.getElementById('numune1').innerHTML = sleshIsaresi;
+
+
+        // yaxud tek dirnaq sonra cut dirnaq
+        var tekdirnaq;
+        tekdirnaq = 'lorem ipsum "dolor" sit';
+        document.getElementById('numune2').innerHTML = tekdirnaq;
+
+    </script>
+</body>
+</html>
+

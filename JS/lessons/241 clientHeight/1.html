@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #obj{
+            background-color: burlywood;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 
+    this dedikde nezerde tutalan 'obj' elementidir. 
+    clientHeight xassesi ise hemin elementin ölcusunu bize verir.
+-->
+
+
+    <button type="button" id="obj"></button>
+
+    <script>
+        obj = document.querySelector('#obj');
+
+        obj.onmouseover = function(){
+            alert(this.clientHeight);
+        }
+    </script>
+</body>
+</html>

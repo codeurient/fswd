@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+isArray() - bu metod bir obyektin ARRAY tipli olub olmadigini yoxlamaq ucun istifade edilir
+Eger Array-dirsa onda true deyeri aliriq.
+
+
+ -->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+
+
+
+<script>
+
+  
+
+    var testNomre1 = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
+    var testNomre2 = testNomre1.split(/\s*(?:;|$)\s*/);
+
+
+    document.getElementById('numune1').innerHTML = Array.isArray(testNomre2);       // Array - true
+    document.getElementById('numune2').innerHTML = typeof testNomre2;               // Object
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    // 2 - obyektin bir array olub olmadigini yoxlamaq ucun oz funksiyamizi yaziriq
+    var test2 = ["a", "b", "c", "d", "e", "f"];
+    function tipiArrayDirmi(p) {
+        // 9 > -1 -den eger boyukdurse onda TRUE deyeri elde edirik ve oyektin Array oludugunu deqiqlesdirmis oluruq
+        return p.constructor.toString().indexOf("Array") > -1;
+    }
+    document.getElementById("numune3").innerHTML = tipiArrayDirmi(test2);
+
+
+    // constructor
+    // unicode
+
+    
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+bu metod stringleri bolmelere ayriqmaq ucun istifade edilir
+
+
+bu metod slice metoduna oxsuyur ancaq neqativ parametrler qebul etmir
+
+-->
+
+<div id="numune1"></div><hr>
+
+<script>
+
+    // 1
+    var testNomre1 = "JavaScript Angular JS, React JS, Node JS ";
+    // 11ci pozisiyadan basla (bosluq olan yer) ve 1000-e qeder ne varsa her seyi gotur demekdir
+    // yaxud 2ci parametri hec yazmamaqda olar eger her seyi almaq isteyirikse
+    document.getElementById('numune1').innerHTML = testNomre1.substring(11, 1000);      // Angular JS, React JS, Node JS
+
+
+    
+
+</script>
+</body>
+</html>
+

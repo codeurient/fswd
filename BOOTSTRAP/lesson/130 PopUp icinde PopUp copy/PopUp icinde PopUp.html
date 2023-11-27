@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--  
+
+-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-dark" >Push for exit</button>
+                <div class="modal fade" id="myModal" data-bs-backdrop="static"  data-bs-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">New messages</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body"><p>Lorem ipsum dolor sit amet....</p></div>
+                            <div class="modal-footer">
+                                 <!--  Second Modal Button -->
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#myModal2" class="btn btn-dark" >Second modal</button>
+                                <button type="button" data-bs-dismiss="modal" class="btn btn-dark" >Cancel</button>
+                                <button type="button" class="btn btn-success" >Allow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Second Modal -->
+                <div class="modal fade" id="myModal2" >
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">New messages</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body"><div class="ratio ratio-16x9"><iframe src="http://fswd/BOOTSTRAP/lesson/" frameborder="0"></iframe></div></div>
+                            <div class="modal-footer"><button type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-dark" >Prev</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>

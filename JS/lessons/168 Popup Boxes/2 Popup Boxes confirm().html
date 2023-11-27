@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+        
+        Popup
+
+        confirm() - bu metod bize secim etme şansı verir. "Beli" yaxud "Xeyr" kimi.
+        Eger biz Tesdiq olan "Beli" duymesini bassaq onda deyer olaraq "TRUE" cavabi elde edirik. "Xeyr" duymesini bassaq "FALSE" cavabini aliriq.
+
+
+    -->
+
+    <hr>
+    <p id="numune1"></p>
+    <button class="btn btn-outline-danger" type="button" onclick="acilanQutu1()">Acilan qutu duymesi</button>
+    <hr>
+ 
+    <script>
+
+        // 1
+        var netice1;
+        netice1 = document.getElementById('numune1');
+        function acilanQutu1(){
+
+            var mesaj;
+            // confirm() metodu tesdiqlense TRUE deyeri aliriq ve deyirik ki, eger true == true olarsa onda if konstruksiyasinin ierisindeki emr icra olunsun.
+            if(confirm("Silmek istediyinizden eminsinizmi?") == true) {
+                mesaj = "Secilen obyekt silindi.";
+            } else {
+                mesaj = "Mesaji silmekden imtina etdiniz";
+            }
+            netice1.innerHTML = mesaj;
+        }
+
+    </script>
+</body>
+</html>

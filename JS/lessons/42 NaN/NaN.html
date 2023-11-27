@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+
+<script>
+
+    // 1 - NaN ozu NUMBER-dir
+    document.getElementById("numune1").innerHTML = typeof NaN;      // Number
+
+
+    // 2 - NaN ozu NUMBER-dir. Ancaq NaN ile Number netice olaraq bize NaN verir
+    var testNumune1 = NaN * 10;
+    document.getElementById("numune2").innerHTML = testNumune1;      // NaN
+
+</script>
+
+</body>
+</html>

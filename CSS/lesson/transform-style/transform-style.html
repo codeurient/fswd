@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #kapsul{
+            margin-top: 250px;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: rotateX(-20deg) rotateY(-30deg);
+        }
+        #kapsul div.bir{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 200px;
+            height: 200px;
+            background:gray;
+        }
+        #kapsul div.iki{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width:200px;
+            height:200px;
+            background:blue;
+            opacity:0.3;
+            transform: translateZ(50px);
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="kapsul">
+    <div class="bir"></div>
+    <div class="iki"><h3>deneme</h3></div>
+</div>
+
+</body>
+</html>

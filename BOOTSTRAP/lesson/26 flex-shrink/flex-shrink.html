@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+</head>
+<body>
+
+<!--
+
+26 flex-shrink-1 document - bu default deyerdir
+
+0 dedikde ise teg-in elastikliyini qaldirmisiq oluruq ve ekran genisliyini azaltdigimiz
+zaman hemin teg icerisindeki mezmun bir setr boyunca nizamlanacaqdir yeni alt setre
+kecmiyecekdir
+
+-->
+
+<div class="container mt-4">
+    <div class="d-flex bg-secondary p-3 mb-4">
+        <div class="p-2 bg-danger">kontent 1</div>
+        <div class="p-2 bg-info">kontent 2</div>
+        <div class="p-2 bg-primary flex-shrink-0">Lorem ipsum dolor sit amet, quam praesentium repudiandae rerum sapiente, sint tenetur unde!</div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!-- 
+
+    GLOBAL deyiskenler - her yerde cagira bildiyimiz deyiskenlerdir
+
+    LOCAL deyiskenler - sadece cari funksiya icinde istifade ede bildiyimiz deyisklenlere deyilir
+    Ferqli funksiyalardaki eyni adli deyisklenler eslinde ferqli deyiskenlerdir.
+
+
+    Eger VAR acar sozunden istifade etmeden deyisken yaratsak funksiya icinde, onda
+    hemin deyisken global olacaqdir.
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+
+
+
+<script>
+ 
+    // 1
+    var deyisken = "global deyisken";
+    function funksiyaAdi() {
+        var deyisken = "local deyisken";
+        alert(deyisken);
+    }
+    funksiyaAdi();
+    document.getElementById("numune1").innerHTML = deyisken;   // global deyisken
+
+
+
+
+    // 2
+    function ikinciFunksiya() {
+        ikincideyisken = "Bu VAR olmadigi ucun global oldu";
+    }
+    ikinciFunksiya();
+    document.getElementById("numune2").innerHTML = ikincideyisken;  // Bu VAR olmadigi ucun global oldu
+
+
+
+
+    // Yuxarida dediyimiz kimi: Eger VAR acar sozunden istifade etmeden deyisken yaratsak funksiya icinde. 
+    // Onda hemin deyisken global olacaqdir. Funksiya icinde "VAR" acar sozunden istifade etmeden 
+    // "X" deyiskenini  cagirdigimiz ucun hemin global deyisken funksiya icindede istifade edilibdir
+    // ve bu istifade qaydasi cox yanlisdir ve bele xetalardan uzaq durmaq lazimdir.
+    var x1=5;
+    function goster1(){
+        return x1*x1;
+    }
+    document.write(goster1() + "<br>");
+
+
+    
+
+    
+    var x2=5;
+    function goster2(){
+        var x2 = 6;
+        return x2*x2;
+    }
+    document.write(goster2());
+
+
+
+    
+
+</script>
+
+</body>
+</html>

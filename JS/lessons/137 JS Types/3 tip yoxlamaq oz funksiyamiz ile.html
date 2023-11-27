@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="netice"></div>
+
+    <script>
+
+        var diller = [
+            "php",
+            "html",
+            "css",
+            "bootstrap",
+            "js",
+            "react"
+        ];
+        document.getElementById("netice").innerHTML = buBirArrayDirMi(diller);
+
+        function buBirArrayDirMi(parametr){
+            // tek indexOf() metodu "-1" dondurur bize. Ancaq icinde bir deyer yazdiqda hemin deyerin hansi indeksde 
+            // yerlesdiyini dondurur. Bu meselen Array stringini qeyd etdikde o 9cu indeksde oldugu ucun biz 9 elde edirik.
+            // Eger 9 > -1 den desek onda bu dogru oldugu ucun bizim elde etdiyimiz netice TRUE olacaqdir.
+            return parametr.constructor.toString().indexOf("Array") > -1;
+        }
+
+    </script>
+</body>
+</html>

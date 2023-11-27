@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: hereketET;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+
+@keyframes hereketET {
+    0% {
+     border-radius: 0px;
+        transform: translatex(0px) translatey(0px);
+    }
+  	50% {
+     
+      transform: translatex(200px) translatey(200px);
+    }
+    100% {
+		border-radius: 100px;
+        background-color: green;
+        transform: translatex(200px) translatey(200px);
+    }
+}
+</style>
+</head>
+<body>
+
+
+<div></div>
+
+</body>
+</html>

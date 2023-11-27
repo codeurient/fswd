@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        use strict modu funksiyalar icerisinde ayrica qeyd edile biler.
+
+
+     -->
+
+     <div id="netice1"></div>
+     <div id="netice2"></div>
+     <div id="netice3"></div>
+
+
+
+<script>
+
+    x = 5;
+    function goster1(){
+        y = 7;
+        document.getElementById('netice1').innerHTML = x + "<br>" + y;
+    }
+    goster1()
+
+
+    // yuxarida "use strict" istifade etmediyimiz ucun, deyisken deyerlerini ekrana yazdira bilesiyik
+    // asagida ise "use strict" modunu aktiv etdiyimiz ucun "Uncaught ReferenceError" xetasini alasiyiq. sadece "y2" deyiskeni ucun. "x2" ucun yox.
+    // bu xetani almamaq ucun ise "var" acar sozunden istifade etmeliyik.
+    x2 = 5;
+    function goster2(){
+        "use strict";
+        y2 = 7;
+        document.getElementById('netice2').innerHTML = x2 + "<br>" + y2;
+    }
+    goster2()
+
+
+    // "var" acar sozunun istifade etdiyimiz ucun xeta almiyasiyiq.
+    x3 = 3;
+    function goster3(){
+        "use strict";
+        var y3 = 4;
+        document.getElementById('netice3').innerHTML = x3 + "<br>" + y3;
+    }
+    goster3()
+
+</script>
+
+</body>
+</html>

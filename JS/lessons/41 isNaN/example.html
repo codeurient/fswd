@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="netice"></div>
+
+<input type="text" placeholder="Tekce reqem yazin" id="number">
+
+<button type="button" onClick="hesabla();">Click</button>
+
+
+
+<script>
+
+    function hesabla() {
+
+        var sayEldeEt = document.getElementById("number").value;
+        
+        if(isNaN(sayEldeEt)){
+            document.getElementById("netice").innerHTML = "Xahis edirik sadece reqem girin";
+        } else if(sayEldeEt === ""){
+            document.getElementById("netice").innerHTML = "Xanani bos qoymaq olmaz";
+        } else{
+            document.getElementById("netice").innerHTML = "Tebrikler, bir regem girdiniz";
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

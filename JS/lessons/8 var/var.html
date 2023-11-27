@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+        
+    var - deyiskenler yaratmaq ucun istifade edilir. yeni variable
+
+    -->
+<div id="numune1"></div>
+<div id="numune2"></div>
+<div id="numune3"></div>
+<div id="numune4"></div>
+
+    <script>
+        /* 1 */
+        var qutu1;
+        document.getElementById('numune1').innerHTML = qutu1;   // undefined
+        
+
+        /* 2 */
+        var qutu2;
+        qutu2 = 7;
+        document.getElementById('numune2').innerHTML = qutu2;   // 7
+
+        /* 3 */
+        var qutu3;
+        qutu3 = 'JavaScript oyrenirik';
+        document.getElementById('numune3').innerHTML = qutu3;   // JavaScript oyrenirik
+
+        /* 4 -  qutu4 deyiskeni UNDEFINED cavabi geri donderesidi cunki kodlar yuxardan asagi dogru oxunur */
+        document.getElementById('numune4').innerHTML = qutu4;   // undefined
+        var qutu4;
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+fixed - sabit demekdir
+Bu metod vergulden sonraki PILLE sayini teyin edir ve hemin sayi yuvarlaqlasdirir:
+
+1. 7.4 olduqda sadece toFixed, bu sayini 7 ye yuvarlaqlasdirir
+2. 7.8 dirse onda toFixed, bu sayi yuxari dogru yeni 8-ze yuvarlaqlasdirir
+ve.s
+
+-->
+
+<div id="numune1"></div>
+
+
+<script>
+
+    // 1
+    var sayi1 = 7.856;
+    document.getElementById("numune1").innerHTML =
+        "sayi1             "  +   sayi1             +    "<br>"    +       // sayi1 7.856
+        "sayi1.toFixed():  "  +   sayi1.toFixed()   +    "<br>"    +       // sayi1.toFixed(): 8
+        "sayi1.toFixed(2): "  +   sayi1.toFixed(2)  +    "<br>"    +       // sayi1.toFixed(2): 7.86
+        "sayi1.toFixed(4): "  +   sayi1.toFixed(4)  +    "<br>"    +       // sayi1.toFixed(4): 7.8560
+        "sayi1.toFixed(6): "  +   sayi1.toFixed(6)  +    "<br>";           // sayi1.toFixed(6): 7.856000
+
+</script>
+
+</body>
+</html>

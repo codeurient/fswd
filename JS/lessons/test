@@ -1,0 +1,41 @@
+1. document
+2. document.write
+3. window.alert()
+4. getElementById
+5. innerHTML
+6. function parametr nedir
+7. function arqument nedir
+8. console.log()
+9. var ne ucun istifade edilir
+10. NaN
+11. stringler neye deyilir ve nece yazilir
+12. operatorlar hansilardir
+13. assignment (qisaltma) operatorlari hansilardir
+14. COMPARISON (muqayise) OPERATORlari hansilardir
+15. logical operatorlar hansilardir
+16. typeof nedir
+17. boolean deyerler hansilardir
+18. array nedir ve nece yazilir
+19. array-lara muraciet qaydalari hansilardir
+20. object nedir?
+21. object xasseler ve metodlara nece muraciet olunur? 
+22. global deyisknler nedir?
+23. local deyiskenler nedir?
+24. event-lar nedir? 
+25. length nedir?
+26. indexOf() nedir?
+27. lastindexOf()
+28. search
+29. slice
+30. substring
+31. substr
+32. replace
+33. toUpperCase
+34. toLowerCase
+35. concat
+36. charAt
+37. charCodeAt
+38. split
+39. isArray
+40. isNaN
+41. Infinity

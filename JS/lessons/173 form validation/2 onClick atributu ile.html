@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <!-- 
+
+        onClick atributu cox vaxt, her hansisa bir sahenin icerisinde yazdigimiz deyerleri 
+        hec yere gondermeden validate etmek istedikde istifade olunur.
+
+     -->
+        Ad  <input  type="text"   name="ad" id="ad" >
+            <button type="button" onclick="formunValidasiyaEdilmesi()">Duymeni bas</button>
+
+            <p class="alert alert-danger mt-3" id="netice" style="display: none;"></p>
+
+<script>
+    function formunValidasiyaEdilmesi(){
+        var formDeyeri, elementeElaveEt, mesaj;
+
+        elementeElaveEt = document.getElementById("netice");
+        elementeElaveEt.style.display = "block";
+
+        formDeyeri = document.getElementById("ad").value;
+        
+        if(formDeyeri == ""){
+            mesaj = "Istifadeci adi bos qoyula bilmez";
+        } else if(isNaN(formDeyeri)){
+            mesaj = "Zehmet olmasa bir eded daxil edin";
+        } else if(formDeyeri < 1 || formDeyeri > 6 ){
+            mesaj = "Zehmet olmasa 1 ile 6 arasinda olan sayi daxil edin";
+        } else {
+            mesaj = "Girilen melumatlar dogrudur";
+            elementeElaveEt.className = "alert alert-success mt-3";
+            //elementeElaveEt.classList.add('alert', 'alert-success', 'mt-3'); - bu qaydanin istifade edilmesi ucun gerek "p" tegi icerisinde "class" atributu olmasin
+        }
+        elementeElaveEt.innerHTML = mesaj;
+
+    }
+</script>
+</body>
+</html>

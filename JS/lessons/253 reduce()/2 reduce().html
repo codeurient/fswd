@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+
+
+     -->
+    
+
+<script>
+
+    // Burda reduce metoduna sifir baslangic deyeri vermesek kod isleyemecekdr.
+
+    const sebet  = [
+        {
+            name: "Iphone 8",
+            price: 2000
+        },
+        {
+            name: "Apple Macbook Pro",
+            price: 5000
+        },
+        {
+            name: "Proyektor",
+            price: 1200
+        }
+    ];
+    let cem = sebet.reduce((acc, item) => acc + item.price, 0);
+    console.log(cem);
+
+
+</script>
+</body>
+</html>

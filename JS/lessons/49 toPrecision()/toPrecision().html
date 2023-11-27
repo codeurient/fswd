@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+Bu metod vergulden sonraki PILLE sayini teyin edir ancaq sayma islemine vergulden evvel basliyir.
+
+Yeni diger metodlar 7.856 da vergul yeni eslinde noqteden sonra 1,2,3, ve.s
+
+
+-->
+
+<div id="numune1"></div>
+
+
+<script>
+
+    // 1
+    var sayi1 = 7.856;
+    var sayi2 = 7; // bu eslinde hemde 7.000000 ve.s-dir.
+    document.getElementById("numune1").innerHTML =
+        "sayi1                "  +   sayi1                   +    "<br>"    +       // sayi1 7.856
+        "sayi1.toPrecision()  "  +   sayi1.toPrecision()     +    "<br>"    +       // sayi1.toPrecision() 7.856
+        "sayi1.toPrecision(): "  +   sayi1.toPrecision(2)    +    "<br>"    +       // sayi1.toPrecision(): 7.9
+        "sayi1.toPrecision(): "  +   sayi1.toPrecision(4)    +    "<br>"    +       // sayi1.toPrecision(): 7.856
+        "sayi1.toPrecision(): "  +   sayi1.toPrecision(6)    +    "<br>"    +       // sayi1.toPrecision(): 7.85600
+
+
+        // toPrecision(40) - dedikde 40 dene 0 (sifir) elave etmis oluruq.
+        "sayi2.toPrecision(): "  +   sayi2.toPrecision(40)  +    "<br>";           // 7.000000000000000000000000000000000000000
+
+</script>
+
+</body>
+</html>
+
+

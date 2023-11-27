@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!-- 
+    
+{} - obyektler qarwilasdirila bilmez. yeni == yaxud === operatorlarindan
+istifade edrek obyektleri qarsilasdirmaq olmaz.
+
+-->
+
+<div id="numune1"></div>
+<div id="numune2"></div>
+<div id="numune3"></div>
+<div id="numune4"></div>
+
+
+
+<script>
+
+
+var deyer1 =  typeof "JavaScript"; // String
+var deyer2 =  new String("JavaScript");  // Object
+var deyer3 =  new String("JavaScript");  // Object
+document.getElementById('numune1').innerHTML = deyer1 == deyer2;    // biri stringdi biri obyekt ve deyerleri eynidi deye true qaytarir
+document.getElementById('numune2').innerHTML = deyer1 === deyer2;   // biri stringdi biri obyekt ve deyerleri eyni ancaq novleri ferqli oldugu ucun false qaytarir
+document.getElementById('numune3').innerHTML = deyer2 == deyer3;    // eyni deyer ve novde olsada false qaytarir
+document.getElementById('numune4').innerHTML = deyer2 === deyer3;   // eyni deyer ve novde olsada false qaytarir
+
+
+</script>
+
+</body>
+</html>

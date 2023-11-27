@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!-- 
+    
+    1. obyekti deyiskene yazdiraraq hemin deyisken vasitesi ile yeni xasse elave etmek mumkundur
+          people.hair = true;
+
+    2. ancaq bir basa obyektin ozune muraciet ederek deyer elave etdikde "undefined" neticesi aliriq
+          Person.lastName = "Sultan";
+
+    3. bir basa obyekte muraciet ederek deyer elave etmek ucun "PROTOTYPE"-dan istifade etmek lazimdir.
+          Person.prototype.lastName = "Sultan";
+
+-->
+
+<div id="numune1"></div><hr>
+
+
+    <script>
+
+        function Person(first) {
+            this.firstName = first;
+        }
+
+        var people = new Person("Fatih");
+        
+        people.hair = true;                                                                     // true      
+        Person.lastName = "Sultan";                                                             // undefined
+        Person.prototype.lastName = "Sultan";                                                   // Sultan
+        Person.prototype.fullName = function (){ return this.firstName + " " + this.lastName};  // Fatih Sultan
+
+        document.getElementById("numune1").innerHTML = 
+            people.firstName       + "<br>" +   // Fatih  
+            people.lastName        + "<br>" +   // Sultan   
+            people.hair            + "<br>" +   // true
+            people.fullName()      + "<br>";    // Fatih Sultan
+
+
+
+
+    </script>
+</body>
+</html>
+
+

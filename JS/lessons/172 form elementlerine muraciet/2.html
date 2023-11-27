@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    
+    <form action="" id="formElementi"  name="formElementi">
+        <div>Ad      <input type="text" id="ad"     name="ad"></div>
+        <div>Soyad   <input type="text" id="soyad"  name="soyad"></div>
+        <div>Parol   <input type="text" id="parol"  name="parol"></div>
+        <div><button type="button" onclick="ekranaYazdir()" >Duymeni bas</button></div>
+    </form>
+
+    <p class="alert alert-success mt-3" id="netice" style="display: none;"></p>
+
+<script>
+    function ekranaYazdir(){
+        var formDeyeri, elementeElaveEt="";
+
+        elementeElaveEt = document.getElementById("netice");
+        formDeyeri = document.forms[0].ad.value;
+
+        elementeElaveEt.style.display = "block";
+        elementeElaveEt.innerHTML = formDeyeri;
+    }
+</script>
+</body>
+</html>

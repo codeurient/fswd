@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    
+            <!-- 
+                Yeni qayda olaraq artiq "JavaScript:show()" bu gorduyunuz formada yazmaq lazimdir.
+                Cunki tek script dili JavaScript dili deyildir. Yaratdigimiz funksiyanin hansi dile 
+                aid oldugunu bildirmek ucun bu yazilis qaydasindan istifade etmek lazimdir. Sadece 
+                kohne browserler bu kodu tanimadigi ucun her zaman istifade etmek olmur.
+            -->
+            <div class="container mt-3">
+                <form id="formValidate" name="formValidate" action="" class="mb-4">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" class="form-control mt-2">
+                    </div>
+                    <button type="button" onclick="JavaScript:show()" class="btn btn-dark mt-3">Click</button>
+                </form>
+
+                <p name="test" class="alert alert-info mt-2"></p> <!-- 0 -->
+                <p name="test" class="alert alert-info mt-2"></p> <!-- 1 -->
+                <p name="test" class="alert alert-info mt-2"></p> <!-- 2 -->
+                <p name="test" class="alert alert-info mt-2"></p> <!-- 3 -->
+            </div>
+
+
+    <script>
+
+        // Birden cox elementin "name" atributu eyni deyere sahib ola biler. Meselen yuxaridaki "p" tegi kimi.
+        // Bu "name" atributuna muraciet etmek ucun istifade etdiyimiz JS kodu budur: getElementsByName
+        // Bu kod bize Array verir ve elementlere muraciet etmek ucun 0 (sifirdan) bawliyan acarlardan 
+        // istifade edirik.
+        function show(){
+            var username, usernames;
+            username = document.getElementById('username').value;
+            usernames = document.getElementsByName('test')[0];
+            usernames.innerHTML = username;
+        }
+
+        
+    </script>
+</body>
+</html>

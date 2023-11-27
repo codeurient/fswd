@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+
+1. pop() - bu metod array-dan sonuncu deyeri silmek ucun istifade edilir
+
+
+2. pop() - bu metod hansi deyeri silirse hemin deyeri de gostermek ucun istifade edile bilir
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+<script>
+
+    // 1 - sonuncu deyeri silir.
+    var test1 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    test1.pop();
+    document.getElementById("numune1").innerHTML = test1;                   // php, js, css, html, bootstrap, react
+
+
+    // 2 - sildiyi deyeri bize gosterir
+    var test2 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    document.getElementById("numune2").innerHTML = test2.pop();             // vue
+
+</script>
+</body>
+</html>

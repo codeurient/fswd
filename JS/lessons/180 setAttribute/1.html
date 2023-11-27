@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+
+    <!-- 
+
+        setAttribute() - bu metod elementin atributunun deyerini deyisdirmek ucun istifade edilir.
+
+        Eger atribut yoxdursa onda hem atribut hemde deyer elave edir.
+
+     -->
+
+<div title="numune bir" class="items item1">1</div>
+<div title="numune iki" class="items item2">2</div>    <!-- title="numune uc" -->    
+<div                    class="items item3"></div>    <!-- title="numune dord" -->    
+
+    <script>
+        
+        // 1
+        document.getElementsByClassName("items")[1].setAttribute("title", "numune uc");
+
+
+
+        // 2
+        document.getElementsByClassName("item3")[0].setAttribute("title", "numune dord");
+
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS Grid Örneği</title>
+    <style>
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.box {
+    background-color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .box:nth-child(3) {
+        grid-column: span 2;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="box">Kutu 1</div>
+        <div class="box">Kutu 2</div>
+        <div class="box">Kutu 3</div>
+    </div>
+</body>
+</html>

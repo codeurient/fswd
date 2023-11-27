@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+
+        const myText = "s7t89ring0";    // инициализируем переменную, содержащую строку
+
+        const pattern = /\d+/g          // cоответствует всем вхождениям одной или более цифр
+        const pattern2 = /\d/g          // cоответствует всем вхождениям одной цифры
+        const pattern3 = /\D+/g         // cоответствует всем вхождениям одного или более символа, который не является цифрой в базовом латинском алфавите
+        const pattern4 = /\D/g          // cоответствует всем вхождениям одного символа, который не является цифрой в базовом латинском алфавите
+
+        // производим поиск по заданной строке с использованием регулярного выражения 
+        const arr = myText.match(pattern); 
+        const arr2 = myText.match(pattern2);
+        const arr3 = myText.match(pattern3);
+        const arr4 = myText.match(pattern4);
+
+        // выводим значение переменных
+        console.log( arr ); // ["7", "89", "0"]
+        console.log( arr2 ); // ["7", "8", "9", "0"]
+        console.log( arr3 ); // ["s", "t", "ring"]
+        console.log( arr4 ); // ["s", "t", "r", "i", "n", "g"]
+
+    </script>
+    
+</body>
+</html>

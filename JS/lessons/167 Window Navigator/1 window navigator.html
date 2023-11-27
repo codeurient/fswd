@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+        window.navigator obyekti, sayta daxil olan istifadecinin browser haqqinda meulmatlari bildirir.
+
+        window.navigator obyekti "window" sozu olmadan da istifade edilir.
+
+        Xususiyyetler:
+            navigator.appName        // Deprecated - bu xusisyyet, browser-in adini bize verir                              - "Netscape"; IE11, Chrome, Firefox, ve Safari ucun proqram adidir. 
+            navigator.appCodeName    // Deprecated - bu xusisyyet, browser-e aid proqram kodunun adini bize verir           - "Mozilla"; Chrome, Firefox, IE, Safari ve Opera ucun proqram kodunun adidir.  
+            navigator.platform       // Deprecated - bu xusisyyet, browser-in hansi platforma uzerinde oldugunu bildirir.
+            navigator.appVersion     // Deprecated - browserin versiyasini bize verir
+            navigator.product        // Deprecated - produktun adini bize verir.
+            
+            navigator.userAgent      // appVersion ile eyni xusiyyete sahibdir. Bir ferq vardir ki, bu kod bize istifadecinin borwserine aid proqram kodunun adinida verir.
+            navigator.cookieEnabled  // Cookie-ler aktivdirse onda, "cookieEnabled" xususiyyeti bize "true" eks teqdirde "false" deyerini bize verir.
+            navigator.language       // Browser dilini bize verir.
+            navigator.javaEnabled()  // Eger komputerde JAVA yukludurse onda true deyilse false verecekdir. Bu kodda hemin JAVA-nin qurulu olub olmadigni yoxlayir.
+        -->
+
+    <p id="numune1"></p>
+    <p id="numune2"></p>
+    <p id="numune3"></p>
+    <p id="numune4"></p>
+    <p id="numune5"></p>
+    <p id="numune6"></p>
+    <p id="numune7"></p>
+    <p id="numune8"></p>
+    <p id="numune9"></p>
+    <p id="numune10"></p>
+
+
+    <script>
+        // 1 
+        var netice;
+        netice = document.getElementById("numune1");
+        netice.innerHTML = navigator.cookieEnabled;     // true
+
+        // 2 - Deprecated
+        var netice2;
+        netice2 = document.getElementById("numune2");
+        netice2.innerHTML = navigator.appName;          // Netscape
+        
+        // 3 - Deprecated
+        var numune3;
+        numune3 = document.getElementById("numune3");
+        numune3.innerHTML = navigator.appCodeName;      // Mozilla
+        
+        // 4 - Deprecated
+        var numune4;
+        numune4 = document.getElementById("numune4");
+        numune4.innerHTML = navigator.platform;         // Win32
+
+        // 5 - Deprecated
+        var numune5;
+        numune5 = document.getElementById("numune5");
+        numune5.innerHTML = navigator.appVersion;       // 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+    
+        // 6 - Deprecated
+        var numune6;
+        numune6 = document.getElementById("numune6");
+        numune6.innerHTML = navigator.product;          // Gecko
+
+        // 7
+        var numune7;
+        numune7 = document.getElementById("numune7");
+        numune7.innerHTML = navigator.userAgent;        // Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+        
+        // 8
+        var numune8;
+        numune8 = document.getElementById("numune8");
+        numune8.innerHTML = navigator.language;         // en-US
+
+        // 9
+        var numune9;
+        numune9 = document.getElementById("numune9");
+        numune9.innerHTML = navigator.onLine;           // en-US
+
+        // 10
+        var numune10;
+        numune10 = document.getElementById("numune10");
+        numune10.innerHTML = navigator.javaEnabled();   // false
+    </script>
+</body>
+</html>

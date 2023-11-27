@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+
+1. delete() - bu metod array-in icerisinden her hansisa deyeri silmek ucun istifade edilir
+              ancaq meslshet goruleni pop() ve shift() metodlaridi.
+
+
+-->
+
+<div id="numune1"></div><hr>
+
+<script>
+
+    // 1 - quyular yarandigi ucun delete -den istifade etmek meslehet deyildir.
+    var test1 = ["a", "b", "c", "d"];
+    delete test1[2];
+    document.getElementById("numune1").innerHTML = test1;                       // a,b,,d
+
+    console.log(test1);
+
+
+
+
+</script>
+</body>
+</html>

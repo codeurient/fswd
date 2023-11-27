@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="netice1"></div>
+    <hr>
+    <div id="netice2"></div>
+
+<script>
+
+   // 1 - bir dovrun daha suretli islemesi ucun deyiskenlerin daxilde yox xaricde yazilmasi daha meslehete uygundur. Meselen:
+
+
+   // dusuk performan yaradan yazi qaydasi
+   var say = [7,2,3,21,54];
+   for(var i=0; i < say.length; i++){
+        document.getElementById('netice1').innerHTML += say[i] + "<br>";
+   }
+   
+
+
+ 
+
+
+   // yuksek performans yaradan yazi qaydasi
+   // for dongusunun icerisinde ne qeder az deyisken yazarsaq proqramimizin da performansi o qeder yukseler.
+   // Onun ucun deyiskenleri colde yazmaq performans baximindan daha meslehete uygundur.
+   var i2 = 0;
+   var say2 = [7,2,3,21,54];
+   var uzunluq2 = say2.length;
+   for(; i2 < uzunluq2; i2++){
+        document.getElementById('netice2').innerHTML += say2[i2] + "<br>";
+   }
+   
+
+
+
+</script>
+
+</body>
+</html>

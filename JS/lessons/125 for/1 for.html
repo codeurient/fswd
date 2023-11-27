@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+    for - bu instruksiyadan, dovru komandalar icra etmek ucun istifade edilir. 
+            
+    -->
+
+<script>
+    // 1  -  1den basliyir ve 10a qeder artira-artira gedir. En sonuncu deyer 9 olur ve biz bu deyeri "metn" 
+    // deyiskenine yazdiririq.
+    var i, metn="";
+    for(i = 1; i < 10; i++){
+        metn = i + "<hr>";
+    }
+    document.write(metn);       // 9
+
+
+
+
+
+
+
+
+
+    // 2  -  eger 1den 10a qeder olan butun ededleri qeyd etmek isteyirikse onda  " metn = metn + i " deye qeyd etmeliyik.
+    var i2, metn2="";
+    for(i2 = 1; i2 < 10; i2++){
+        metn2 += i2 + "<br>"; // metn2 = metn2 + i 
+    }
+    document.write(metn2);      //123456789
+</script>
+</body>
+</html>

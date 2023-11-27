@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!--
+       "col-sm-4" yəni ekran ölçüsü 576px-dən böyük olduqda sütunlar 4 olsun. Artıq ekran ölçüsü 576px-dən
+       nə qədər böyük olsada sütunlar 4 olmaqla yan-yana düzüləcəklər.
+    -->
+
+
+    <div class="container-fluid my-2 p-3 text-white">
+        <div class="row">
+            <!--
+            Aşağıda 4 ədəd col-6 dəyərində klass verilibidir. Belə olan halda 6+6=12 ölçüsü
+            2 ədə col klasi ilə 2 sütun tutuduqda və digərlərinə yer qalmadıqda onlar
+            avtomatik oaraq alt sətrə keçid edərlər. Yəni 3 sətr və hər sətrdə 2 sütün olacaq.
+            -->
+            <div class="col-12    col-sm-4    col-lg-6    col-xxl-10      py-3 my-2 bg-dark">sütun</div>
+            <div class="col-6     col-sm-4    col-lg-6    col-xxl-2       py-3 my-2 bg-danger">sütun</div>
+            <div class="col-6     col-sm-4    col-lg-6    col-xxl-4       py-3 my-2 bg-success">sütun</div>
+            <div class="col-6     col-sm-4    col-lg-6    col-xxl-8       py-3 my-2 bg-secondary">sütun</div>
+            <div class="col-6     col-sm-4    col-lg-6    col-xxl-5       py-3 my-2 bg-warning">sütun</div>
+            <div class="col-12    col-sm-4    col-lg-6    col-xxl-7       py-3 my-2 bg-primary">sütun</div>
+        </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

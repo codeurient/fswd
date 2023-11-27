@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="netice"></div>
+
+<script>
+
+   /*
+
+   
+   JS-de bir DOM elementine her defe ayri-ayri sorgu gondermek proqramin performansini azaldir.
+
+   Bunun ucun DOM elementini bir deyiskene yazmaq lazimdir ve her defe bu deyiskenin vasitesi ile muraciet etdikde performans yukselir.
+
+
+   */
+
+
+   // 1 - bu forma performansi azaldir
+   document.getElementById('netice').innerHTML = "";
+
+
+
+   // 2 - bu forma performansi yukseldir
+   var deyisken = document.getElementById('netice');
+   deyisken.innerHTML = "";
+
+</script>
+
+</body>
+</html>

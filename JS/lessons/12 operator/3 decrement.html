@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!-- 
+   --
+-->
+        <div id="numune1"></div><hr>
+        <div id="numune2"></div><hr>
+        <div id="numune3"></div>
+        <div id="numune4"></div><hr>
+
+        <script>
+            // 1
+            var x, z;
+            x = 10;
+            z = x--;    // ilk once yazdirir sonra cixir
+            document.getElementById("numune1").innerHTML = "Z dəyəri: " + z + "<br> X dəyəri:"  + x; // Z = 10; X = 9;
+
+            // 2
+            var x, z;
+            x = 10;
+            z = --x; // ilk once cixir sonra yazdirir
+            document.getElementById("numune2").innerHTML = "Z dəyəri: " + z + "<br> X dəyəri:"  + x; // Z = 9; X = 9;
+
+            // 3
+            var x;
+            x = 10;
+            document.getElementById("numune3").innerHTML = "X dəyəri:"  + x; 
+            x--; 
+            document.getElementById("numune4").innerHTML = "X dəyəri:"  + x; 
+        </script>
+</body>
+</html>

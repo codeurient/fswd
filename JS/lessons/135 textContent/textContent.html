@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div class="container">
+        <p id="text-example">
+            Как изменять существующие элементы документа<br> 
+            и добавлять на страницу<i>новые элементы</i> при 
+            помощи языка <b>JavaScript</b>.
+        </p>
+    </div>
+
+    <div>
+        <b>Lorem ipsum dolor sit amet.</b>
+    </div>
+
+    <!-- 
+
+        innerHTML - icindeki TAG-ler ile birlikde verir bize elementi
+
+        textContent - sirf TAG icindeki metni verir bize
+
+    -->
+
+
+    <script>
+
+       var a1 =  document.getElementById('text-example');
+       console.log(a1);
+
+
+       var a2 =  document.getElementById('text-example').innerHTML;
+       console.log(a2);
+
+
+       var a3 =  document.getElementById('text-example').textContent;
+       console.log(a3);
+
+    </script>
+</body>
+</html>

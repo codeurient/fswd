@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+
+1. splice() - bu metod array-in her hansisa bir yerine deyer elave etmek ucun istifade edilir.
+              yeni pop() sonuna elva edirdi unshift() ise baslangicina, splice() ise her-hansisa bir yerine.
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+
+
+
+<script>
+
+    // 1
+    var test1 = ["a", "b", "c", "e"];
+    // yeni, 3cu deyerden sonra "d" deyerini elave et
+    // 0 ise onu bildirir ki, neyi silmek isteyirsiniz. 0 dedikde yeni hecneyi nezerde tutulur.
+    test1.splice(3, 0, "d");
+    document.getElementById("numune1").innerHTML = test1;                       // a,b,c,d,e
+  
+
+
+
+    // 2
+    var test2 = ["a", "b", "c", "e"];
+    // yeni, iki xana sonra "d" deyerini elave et
+    // 2ci deyer onu bildirir ki, yeni 1ci deyer ile 2 xana suruwdurdukden sonra gelen diger 2 deyeri sil.
+    test2.splice(2, 2, "d");
+    document.getElementById("numune2").innerHTML = test2;                       // a,b,d
+
+
+
+    // 3
+    var test3 = ["a", "b", "c", "d"];
+    //0-dan  2 xana qeder get ve orda olan her seyi sil menasini verir.
+    test3.splice(0, 2);
+    document.getElementById("numune3").innerHTML = test3;                       // c,d
+
+
+    
+
+</script>
+</body>
+</html>

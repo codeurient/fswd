@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    integer - tam sayi demekdir.
+
+    parse integer - yeni filtirliyib tam sayini mene ver demek ucun istifade edilir
+-->
+
+<div id="numune1"></div>
+
+<script>
+    // 1
+    document.getElementById("numune1").innerHTML =  
+    parseInt(true)           +   "<br>"   +     // NaN
+    parseInt(false)          +   "<br>"   +     // NaN
+    parseInt(new Date())     +   "<br>"   +     // NaN
+    parseInt("7")            +   "<br>"   +     // 7
+    parseInt("6 ")           +   "<br>"   +     // 6
+    parseInt(" 5")           +   "<br>"   +     // 5
+    parseInt("7 80")         +   "<br>"   +     // 7
+    parseInt("JS")           +   "<br>"   +     // NaN
+    parseInt("3.14")         +   "<br>"   +     // 3
+    parseInt("3.84")         +   "<br>"   +     // 3
+    parseInt("32 days")      +   "<br>"   +     // 32
+    parseInt("days 32")      +   "<br>"   ;     // NaN
+</script>
+
+</body>
+</html>

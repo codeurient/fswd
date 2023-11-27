@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    
+    <!-- 
+
+    -->
+
+        <div class="container mt-4">
+            <form id="formValidate" name="formValidate">
+                <div class="form-group mt-3">
+                    <label for="username">Username: </label>
+                    <input class="form-control mt-2" type="text" name="username" id="username" maxlength="4">
+                </div>
+                <div class="form-group form-check mt-3">
+                    <input class="form-check-input" type="checkbox" id="chckBox" name="chckBox" > 
+                    <label for="chckBox" class="form-check-label">Qaydalar ile raziyam </label>
+                </div>
+
+                <button type="button" onclick="validateForm()" class="btn btn-success mt-3">Click</button>
+                <p id="resultFalse" class="alert alert-danger  mt-3" style="display: none;"></p>
+                <p id="resultTrue"  class="alert alert-success mt-3" style="display: none;"></p>
+            </form>
+        </div>
+
+            
+
+<script>    
+
+    function validateForm(){
+        var resultFalse, resultTrue, message;
+
+        resultFalse = document.getElementById("resultFalse");
+        resultTrue  = document.getElementById("resultTrue");
+
+        // "formValidate"  - form elementinin "name" atributuna verdiyimiz deyerdir
+        // "chckBox"       - input elementinin "id" atributuna verdiyimiz deyerdir
+        // "checked"       - JS kodudur ve bu kod ile checkBox qutusu isaretlenibdirmi deye sorgu gonderirik.
+        if(document.formValidate.chckBox.checked){
+            resultFalse.style.display = "none";
+            resultTrue.style.display = "block";
+            resultTrue.innerHTML = "Mesajiniz gonderildi";
+        } else{
+            resultFalse.style.display = "block";
+            resultTrue.style.display = "none";
+            resultFalse.innerHTML = "Bu qutunu isaretlemeden devam ede bilmezsiniz";
+        }
+       
+
+    }
+    
+
+</script>
+</body>
+</html>

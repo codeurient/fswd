@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id="sekil" src="" alt="">
+
+    <script>
+
+
+        function rastgeleSekil() {
+            var sekiller = [
+                "image/sekil1.jpeg",
+                "image/sekil2.jpeg",
+                "image/sekil3.jpeg",
+                "image/sekil4.jpeg",
+                "image/sekil5.jpeg",
+            ];
+            var rastgeleIndex = Math.floor(Math.random() * sekiller.length);
+            return sekiller[rastgeleIndex];
+        }
+
+        var secilenSekil = rastgeleSekil();
+        document.querySelector("#sekil").src = secilenSekil;
+
+
+
+    </script>
+</body>
+</html>

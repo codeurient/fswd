@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        1) JS -de 5 ferqli tip vardir:
+        string
+        number
+        boolean
+        object
+        function
+
+
+        2) JS -de 3 ferqli obyekt vardir:
+        object
+        Date
+        Array
+
+
+        3) JS -de 2 ferqli tip vardir hansiki onlar hec bir deyer almirlar menasini verir:
+        null 
+        undefined
+
+    -->
+
+    <div id="netice"></div>
+
+    <script>
+
+        // data-larin tiplerini oyrenmek ucun "type" operatorundan istifade edilir.
+        var x;
+        document.getElementById("netice").innerHTML = 
+        
+        "JS: "                          +   typeof "JS"                         + "<br>" +
+        "7: "                           +   typeof (7)                          + "<br>" +
+        "3.14 : "                       +   typeof (3.14)                       + "<br>" +
+        "NaN : "                        +   typeof NaN                          + "<br>" +
+        "true : "                       +   typeof true                         + "<br>" +
+        "[0, 5, 23] : "                 +   typeof [0, 5, 23]                   + "<br>" +
+        "{name:'Asus', ram: '16gb' : "  +   typeof {name:'Asus', ram: '16gb'}   + "<br>" +
+        "new Date() : "                 +   typeof new Date()                   + "<br>" +
+        "function(){} : "               +   typeof function(){}                 + "<br>" +
+        "null : "                       +   typeof null                         + "<br>" +
+        "x deyiskeni : "                +   typeof x                            + "<br>";
+        
+      
+
+    </script>
+</body>
+</html>

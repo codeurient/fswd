@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        for ile ARRAY icindeki butun deyerlerin yazdirilmasi en mentiqli ve en qisa yoldur.
+
+     -->
+
+<script>
+    // 1 
+   var test1 = [
+    "PHP",
+    "JS",
+    "HTML",
+    "CSS",
+    "REACT",
+    "LARAVEL",
+    "SQL",
+    "VUE",
+   ];
+
+
+
+   var text = "";
+   for(i = 0; i < test1.length; i++ ){
+        text += test1[i] + "<br>";
+   }
+   document.write(text);
+   
+
+   
+
+   document.write("<hr>");
+
+
+    // 2 - deyiskenleri colde yaxud for-un icinde yazmaq mumkundur.
+    // for icinde yazilmadiqda noqteli fergul qoymagi unutmaq olmaz.
+    var test2 = [
+    "PHP",
+    "JS",
+    "HTML",
+    "CSS",
+    "REACT",
+    "LARAVEL",
+    "SQL",
+    "VUE",
+   ];
+
+   var i2=3, text2 = "";
+   for(; i2 < test2.length; i2++ ){
+        text2 += test2[i2] + "<br>";
+        
+   }
+   document.write(text2);
+
+</script>
+</body>
+</html>

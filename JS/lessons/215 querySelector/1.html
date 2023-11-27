@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+
+        querySelector() Array qaytarmir. 
+
+     -->
+    <div>
+        <h2>Lorem, ipsum dolor.</h2>
+        <span>Lorem, ipsum dolor.</span>
+        <p id="netice1">netice 1</p>
+        <p id="netice2">netice 2</p>
+        <p id="netice3">netice 3</p>
+
+        <p class="reng1">Sari</p>
+        <p class="reng2">Qirmizi</p>
+
+        <p class="dil">PHP</p>
+        <p class="dil">C++</p>
+        <span class="dil">JS</span>
+
+        <p name="baslangic">Lorem, ipsum dolor.</p>
+        <p name="baslangic">Lorem, ipsum dolor.</p>
+
+        <h5>MYSQL</h5>
+        <h5>MYSQL</h5>
+        <h5>ORACLE</h5>
+        <h3> H3 tagi tekdir </h3>
+    </div>
+
+<script>
+
+    // 1 - querySelector() metodundan istifade etdikde
+    // klass-lar "." noqte ile identifikatorlar "#" hash ile normal "tag"-lar ise adlari ile cagrilir
+    // Bu metod coxluq emeliyyatlar ucun yox, bir emeliyyat ucun istifade edilir. Onun ucun FOR dongusunden istifade edilmir.
+    var elementiTap = document.querySelector('.reng1');
+    // Qaytardigi deyerler ARRAY deyildir.
+    alert(elementiTap.innerText);
+
+
+    // 2 - eger eyni klass adina sahib 3 tag olarsa onda esas olaraq 1ci tag goturulecekdir.
+    // ancaq tag-larin adlarini asagidaki kimi klass adlarinin onunden yazaraq, istediyimiz tag-e muraciet ede bilerik
+    var elementiTap2 = document.querySelector('span.dil');
+    alert(elementiTap2.innerText);
+
+
+</script>
+
+
+</body>
+</html>

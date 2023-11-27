@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        toString() metodundan - JS deyisenlerini string tipine cevirmek ucun istifade edilir.
+
+    -->
+
+    <div id="netice"></div>
+
+    <script>
+
+        var x = 7;
+        document.getElementById("netice").innerHTML = 
+
+        x.toString()                    + "<br>" +
+        (700).toString()                + "<br>" +
+        (10+8).toString()               + "<br>" +
+        (true).toString()               + "<br>" +
+        (false).toString()              + "<br>" +
+        (new Date()).toString()         + "<hr>" +
+        typeof x.toString()             + "<br>" +
+        typeof (700).toString()         + "<br>" +
+        typeof (10+8).toString()        + "<br>" +
+        typeof (true).toString()        + "<br>" +
+        typeof (false).toString()       + "<br>" +
+        typeof (new Date()).toString()  + "<br>";  // Tarixleride stringe cevirmek mumkundur
+        
+    </script>
+</body>
+</html>

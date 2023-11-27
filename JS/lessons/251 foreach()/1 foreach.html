@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+
+        Array icindeki deyerleri secmek ve onlarla emeliyyatlar heyata kecirmek ucun istifade edilir.
+
+        map metodundan ferqli olaraq forEach yeni array qaytarmir.
+
+        foreach(deyer, index, array-in ozunu qaytarir)
+     -->
+    
+
+<script>
+
+
+    // 1
+    let a3 = [2,3,4];
+    // a3[5] = 9;
+    // delete a3[5]
+    a3.forEach(x => {
+        console.log(x*2);
+    })
+
+
+
+    // 2 - Bu yazilis qaydasi hecne qaytarmir.
+    let a4 = [2,3,4];
+    // a4[5] = 9;
+    // delete a4[5]
+    a4.forEach(x => {
+        return x*2;
+    })
+    console.log(a4);
+
+
+</script>
+</body>
+</html>

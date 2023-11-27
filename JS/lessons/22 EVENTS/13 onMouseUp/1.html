@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+     <!-- 
+
+        mausu basdiqda "onmousedown" buraxdiqda ise "onmouseup" hadisesi bas verir
+
+     -->
+
+<div id="numune1" onMouseUp="uzerineBasdiqda();" onmousedown="basilmaniQaldirdiqda();">Lorem ipsum dolor.</div>
+
+<script>
+    function uzerineBasdiqda() {
+       document.getElementById("numune1").style.color = "red";
+    }
+
+    function basilmaniQaldirdiqda() {
+        document.getElementById("numune1").style.color = "green";
+    }
+</script>
+</body>
+</html>

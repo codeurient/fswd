@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- 
+
+number() - bu metodan elde etdiyimiz deyerleri REQEMSAL tipe cevirmek ucun istifade edilir
+
+meselen, input sahesine bir deyer yazdiqda hemin yazilan deyer REQEM olsun demek ucun bu metodan istifade edirik.
+        
+-->
+
+<p id="netice"></p>
+<input type="text" id="deyeriGotur">
+<button type="button" onclick="goster()">Goster</button>
+
+<script>
+
+    // 1  
+    
+    function goster(){
+        var gotur;
+        gotur = Number(document.getElementById("deyeriGotur").value);
+        document.getElementById("netice").innerHTML = gotur;
+    }
+
+</script> 
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <!-- 
+
+        "setAttribute" - metodu nelerise deyisdirmek istedikde istifade edilir. 
+
+     -->
+
+<input type="button" value="Isigi ac" onclick="isigiAc();"/>
+    <img src="../img/off.png" alt="" id="picture" width="200" height="200" style="object-fit: contain">
+<input type="button" value="Isigi qapa" onclick="isigiQapa();"/>
+
+
+
+
+<script>
+
+    function isigiAc() {
+        document.querySelector('#picture').setAttribute("height", "250");
+    }
+
+    function isigiQapa() {
+        document.querySelector('#picture').setAttribute("width", "250");
+    }
+
+</script>
+</body>
+</html>
+
+

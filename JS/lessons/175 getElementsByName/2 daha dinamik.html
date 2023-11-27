@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container mt-3">
+        <button type="button" onclick="JavaScript:show()" class="btn btn-dark mt-3 mb-3">Click</button>
+
+        <p name="test" class="alert alert-info mt-2" style="display: none;"></p> <!-- 0 -->
+        <p name="test" class="alert alert-info mt-2" style="display: none;"></p> <!-- 1 -->
+        <p name="test" class="alert alert-info mt-2" style="display: none;"></p> <!-- 2 -->
+        <p name="test" class="alert alert-info mt-2" style="display: none;"></p> <!-- 3 -->
+    </div>
+
+
+    <script>
+
+        function show(){
+            var usernames, i, j;
+            usernames = document.getElementsByName('test');
+
+            for(i=0; i<usernames.length; i++){
+                usernames[i].style.display = "block";
+            }
+            for(j=0; j<usernames.length; j++){
+                usernames[j].innerHTML = (j+1) + " - nomreli element";
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

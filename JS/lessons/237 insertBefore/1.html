@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="divParent">
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">Vue</p>
+        <p id="p4">Laravel</p>
+
+        <button type="button" onClick="javascript:createElementDom()">Element elave et</button>
+        <button type="button" onClick="javascript:removeElementDom()">Elementi sil</button>
+        <button type="button" onClick="javascript:replaceElementDom()">Elementi deyisdir</button>
+    </div>
+
+<script>
+
+    function createElementDom(){
+        var p = document.createElement('p');
+        var parentDiv = document.querySelector('#divParent');
+        var p3 = document.querySelector('#p3');
+        // createTextNode() - bu metod metin duyumu yaradir
+        var text = document.createTextNode("JavaScript");
+        // appendChild() - bu metod 'text' deyiskenini 'p' teginin icerisinde en sona elave edir.
+        p.appendChild(text);
+        // insertBefore() - bu metod 'p' deyiskenini 'p3'-den evvele elave edir.
+        parentDiv.insertBefore(p, p3)
+    }
+
+    // function removeElementDom(){
+    //     // alt elementi silmek ucun ilk once ana elemente muraciet etmek lazimdir.
+    //     var parentDiv = document.querySelector('#divParent');
+    //     var p3 = document.querySelector('#p3');
+    //     parentDiv.removeChild(p3);
+    // }
+    function removeElementDom(){
+        // yaxud, alt elemente muraciet edirik ve 'parentNode' deyerek ana 
+        // elemente qalxirik sonra hemin ana elementin alt elementini sil deyirik
+        var p3 = document.querySelector('#p3');
+        // . noqte ile p3-e muraciet etdik. parentNode ile ana elemente yukselkdik. removeChild ile hemin ana elementin alt elementini sildik.
+        p3.parentNode.removeChild(p3);
+    }
+
+    function replaceElementDom(){
+        var parentDiv = document.querySelector('#divParent');
+        var p1 = document.querySelector('#p1');
+
+        var p = document.createElement('p');
+        var text = document.createTextNode("JavaScript");
+        p.appendChild(text);
+
+        // replaceChild() - bu metod 'p2' deyiskenini 'p' ile eve edir
+        parentDiv.replaceChild(p, p1)
+    }
+
+</script>
+
+</body>
+</html>

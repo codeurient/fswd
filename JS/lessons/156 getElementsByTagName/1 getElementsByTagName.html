@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        getElementsByTagName - kodu ile JS "TAG"-lerine muraciet ede bilirik.
+
+
+        Asagidaki numunede "heade" tegine muraciet ederek, 155ci dersde neceki "script" teglerini "body" teglerinin icerisine
+        yerlesdirmisdik buradada "getElementsByTagName" kodu ile "head" teglerine muraciet ederek "script" teglerini 
+        "head" teglerinin icerisine yerlesdiririk.
+     -->
+    
+     <button type="button" id="xariciJSKodu">Clik me</button>
+
+<script>
+
+        var xariciJS = document.getElementById("xariciJSKodu");
+
+        xariciJS.onclick = function(){
+
+        var elementiEldeEtmek = document.createElement("script");
+        elementiEldeEtmek.type = "text/javascript";
+        elementiEldeEtmek.src = "js/mesaj.js";
+        // document.getElementsByTagName("head") - bu kod bize Collection verir
+        // Collection obyektdir ve onunda 0-ci acarinda "head" tegleri movcuddur
+        // hemin bu "head" tegine muraciet etmek ucun ise [0] yazmaliyiq.
+        
+        // console.log(document.getElementsByTagName("head")); 
+        document.getElementsByTagName("head")[0].appendChild(elementiEldeEtmek);
+    }
+</script>
+
+
+<!-- 
+    tam da burda "script" teglerimiz yaranacaqdir.
+-->
+</body>
+</html>

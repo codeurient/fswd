@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 
+
+        1-ci numunede ("createElement.html") WEB sehife yuklendikde elementi yarat demisdik 
+
+        Bu 2-ci numunede ise BUTTON yeni duymeye basildiqda element yarat deyirik.
+
+     -->
+    
+
+     <button type="button" id="xariciJSKodu">Clik me</button>
+
+
+<script>
+
+        var xariciJS = document.getElementById("xariciJSKodu");
+
+        xariciJS.onclick = function(){
+            var elementiEldeEtmek = document.createElement("script");
+            elementiEldeEtmek.type = "text/javascript";
+            elementiEldeEtmek.src = "js/mesaj.js";
+            document.body.appendChild(elementiEldeEtmek);
+        }
+     
+
+</script>
+
+
+<!-- 
+
+    tam da burda "script" teglerimiz yaranacaqdir.
+ 
+-->
+</body>
+</html>

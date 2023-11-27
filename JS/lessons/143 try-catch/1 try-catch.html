@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+      try - kodu yoxlamaq demekdir 
+
+      catch - ise xetani tutmaq menasina gelir.
+
+
+      try-catch metodu kodun dogru yazilib yazilmadigini test etmek ucun istifade edilir.
+        
+     -->
+
+
+    <div id="netice1"></div>
+    <div id="netice2"></div>
+
+
+      <script>
+
+        try{
+          alerd("JavaSCript");
+        } // cox vaxt errorun qisacasi olan e herfini yazirlar. Xeta varsa bu xeta hemin e herfine avtomatik oturulur 
+        catch(e) {
+          // ve asagida qeyd edilen formada hemin xetani ekrana yazdiririq.
+          // "xeta mesajini" ve "xeta adini" 2 kod ile yazdirmaq olar. message ve name 
+          document.getElementById('netice1').innerHTML = e.message;          // alerd is not defined
+          document.getElementById('netice2').innerHTML = e.name;             // ReferenceError
+        }
+
+      </script>
+
+</body>
+</html>

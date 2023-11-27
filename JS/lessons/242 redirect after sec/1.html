@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="result"></p>
+
+    <script>
+        
+        function go(ID, Address, second) {
+            if(second === 0){
+                window.location.href = Address;
+                return;
+            }
+            document.querySelector(ID).textContent = second + ' saniye sonra yonlendirileceksiniz.';
+            second--;
+
+            setTimeout(function(){ go(ID, Address, second) }, 1000);
+        }
+
+        go("#result", "https://www.google.com", 4);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--  
+    modal,      modal-dialog,       modal-content,      modal-header,       modal-body,     modal-footer
+    modal-title
+    modal-dialog-centered - modal penceresinin ortada gosterir
+    modal-dialog-scrollable - scrollingi brauzer penceresinde yox modal pencerede yaransin deye
+    modal-lg
+    modal-sm
+    modal-xl
+    modal-fullscreen
+    modal-fullscreen-xl-down
+    fade - modal penceresinin effektli formada getirir
+    data-bs-backdrop="static" - arxa ekrana basdiqda pencere qapanmasin sadece modal penceresine basildiqda qapansin.
+    data-bs-keyboard="false" - klavyaturadaki Esc duymesi ilede qapanmasin deye 
+-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-dark" >Push</button>
+                <div class="modal fade" id="myModal" data-bs-backdrop="static"  data-bs-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">New messages</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A neque quas ratione facilis repudiandae? Quod commodi adipisci, eaque temporibus asperiores placeat ex saepe tempora natus voluptatem excepturi cupiditate fuga autem incidunt iusto, eos et totam maxime. Consequatur soluta, culpa non aperiam, fuga provident id ratione nemo, illo qui reiciendis eveniet nobis corrupti unde perspiciatis cumque incidunt fugiat quo dolore ipsam pariatur harum? Culpa et ullam nesciunt? Quo atque eaque nam repudiandae? Reiciendis quae blanditiis, itaque pariatur commodi beatae, aliquid tenetur fuga vel provident maxime. Et, ipsa esse eius cumque adipisci ad optio odit quibusdam temporibus quia sit iusto unde sapiente, quod minima! Aliquam magnam deleniti nam amet libero harum ducimus suscipit rerum reiciendis sequi modi tempore unde beatae quidem nobis saepe, exercitationem et, omnis, hic cupiditate. Id beatae at repellendus corporis nulla vitae aspernatur iusto doloribus quia delectus magnam autem vero a quae vel adipisci, debitis quaerat? Eos temporibus officiis id vitae ipsum reiciendis quas similique magnam obcaecati odio! Illo aliquam dolore iste quod autem, aspernatur est neque? Exercitationem quasi reprehenderit ipsum adipisci delectus accusamus voluptate obcaecati, provident aut ipsa debitis quos et, beatae quia illo eum distinctio laboriosam incidunt saepe dolores. Illum soluta odio veniam consectetur, esse dolorum est.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A neque quas ratione facilis repudiandae? Quod commodi adipisci, eaque temporibus asperiores placeat ex saepe tempora natus voluptatem excepturi cupiditate fuga autem incidunt iusto, eos et totam maxime. Consequatur soluta, culpa non aperiam, fuga provident id ratione nemo, illo qui reiciendis eveniet nobis corrupti unde perspiciatis cumque incidunt fugiat quo dolore ipsam pariatur harum? Culpa et ullam nesciunt? Quo atque eaque nam repudiandae? Reiciendis quae blanditiis, itaque pariatur commodi beatae, aliquid tenetur fuga vel provident maxime. Et, ipsa esse eius cumque adipisci ad optio odit quibusdam temporibus quia sit iusto unde sapiente, quod minima! Aliquam magnam deleniti nam amet libero harum ducimus suscipit rerum reiciendis sequi modi tempore unde beatae quidem nobis saepe, exercitationem et, omnis, hic cupiditate. Id beatae at repellendus corporis nulla vitae aspernatur iusto doloribus quia delectus magnam autem vero a quae vel adipisci, debitis quaerat? Eos temporibus officiis id vitae ipsum reiciendis quas similique magnam obcaecati odio! Illo aliquam dolore iste quod autem, aspernatur est neque? Exercitationem quasi reprehenderit ipsum adipisci delectus accusamus voluptate obcaecati, provident aut ipsa debitis quos et, beatae quia illo eum distinctio laboriosam incidunt saepe dolores. Illum soluta odio veniam consectetur, esse dolorum est.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A neque quas ratione facilis repudiandae? Quod commodi adipisci, eaque temporibus asperiores placeat ex saepe tempora natus voluptatem excepturi cupiditate fuga autem incidunt iusto, eos et totam maxime. Consequatur soluta, culpa non aperiam, fuga provident id ratione nemo, illo qui reiciendis eveniet nobis corrupti unde perspiciatis cumque incidunt fugiat quo dolore ipsam pariatur harum? Culpa et ullam nesciunt? Quo atque eaque nam repudiandae? Reiciendis quae blanditiis, itaque pariatur commodi beatae, aliquid tenetur fuga vel provident maxime. Et, ipsa esse eius cumque adipisci ad optio odit quibusdam temporibus quia sit iusto unde sapiente, quod minima! Aliquam magnam deleniti nam amet libero harum ducimus suscipit rerum reiciendis sequi modi tempore unde beatae quidem nobis saepe, exercitationem et, omnis, hic cupiditate. Id beatae at repellendus corporis nulla vitae aspernatur iusto doloribus quia delectus magnam autem vero a quae vel adipisci, debitis quaerat? Eos temporibus officiis id vitae ipsum reiciendis quas similique magnam obcaecati odio! Illo aliquam dolore iste quod autem, aspernatur est neque? Exercitationem quasi reprehenderit ipsum adipisci delectus accusamus voluptate obcaecati, provident aut ipsa debitis quos et, beatae quia illo eum distinctio laboriosam incidunt saepe dolores. Illum soluta odio veniam consectetur, esse dolorum est.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A neque quas ratione facilis repudiandae? Quod commodi adipisci, eaque temporibus asperiores placeat ex saepe tempora natus voluptatem excepturi cupiditate fuga autem incidunt iusto, eos et totam maxime. Consequatur soluta, culpa non aperiam, fuga provident id ratione nemo, illo qui reiciendis eveniet nobis corrupti unde perspiciatis cumque incidunt fugiat quo dolore ipsam pariatur harum? Culpa et ullam nesciunt? Quo atque eaque nam repudiandae? Reiciendis quae blanditiis, itaque pariatur commodi beatae, aliquid tenetur fuga vel provident maxime. Et, ipsa esse eius cumque adipisci ad optio odit quibusdam temporibus quia sit iusto unde sapiente, quod minima! Aliquam magnam deleniti nam amet libero harum ducimus suscipit rerum reiciendis sequi modi tempore unde beatae quidem nobis saepe, exercitationem et, omnis, hic cupiditate. Id beatae at repellendus corporis nulla vitae aspernatur iusto doloribus quia delectus magnam autem vero a quae vel adipisci, debitis quaerat? Eos temporibus officiis id vitae ipsum reiciendis quas similique magnam obcaecati odio! Illo aliquam dolore iste quod autem, aspernatur est neque? Exercitationem quasi reprehenderit ipsum adipisci delectus accusamus voluptate obcaecati, provident aut ipsa debitis quos et, beatae quia illo eum distinctio laboriosam incidunt saepe dolores. Illum soluta odio veniam consectetur, esse dolorum est.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A neque quas ratione facilis repudiandae? Quod commodi adipisci, eaque temporibus asperiores placeat ex saepe tempora natus voluptatem excepturi cupiditate fuga autem incidunt iusto, eos et totam maxime. Consequatur soluta, culpa non aperiam, fuga provident id ratione nemo, illo qui reiciendis eveniet nobis corrupti unde perspiciatis cumque incidunt fugiat quo dolore ipsam pariatur harum? Culpa et ullam nesciunt? Quo atque eaque nam repudiandae? Reiciendis quae blanditiis, itaque pariatur commodi beatae, aliquid tenetur fuga vel provident maxime. Et, ipsa esse eius cumque adipisci ad optio odit quibusdam temporibus quia sit iusto unde sapiente, quod minima! Aliquam magnam deleniti nam amet libero harum ducimus suscipit rerum reiciendis sequi modi tempore unde beatae quidem nobis saepe, exercitationem et, omnis, hic cupiditate. Id beatae at repellendus corporis nulla vitae aspernatur iusto doloribus quia delectus magnam autem vero a quae vel adipisci, debitis quaerat? Eos temporibus officiis id vitae ipsum reiciendis quas similique magnam obcaecati odio! Illo aliquam dolore iste quod autem, aspernatur est neque? Exercitationem quasi reprehenderit ipsum adipisci delectus accusamus voluptate obcaecati, provident aut ipsa debitis quos et, beatae quia illo eum distinctio laboriosam incidunt saepe dolores. Illum soluta odio veniam consectetur, esse dolorum est.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-bs-dismiss="modal" class="btn btn-dark" >Cancel</button>
+                                <button type="button" data-bs-dismiss="modal" class="btn btn-success" >Allow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>

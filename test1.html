@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+
+  <input type="text" id="eded">
+  <button type="button" id="duyme">Ayir</button>
+
+
+
+    <script>
+
+      function tekEdedVeCutEededAyir(eded) {
+
+        var cutEdedler = [];
+        var tekEdedler = [];
+
+        for(var i = 0; i < eded.length; i++) {
+            var sec = eded[i];
+
+            if(sec % 2 === 0){
+              cutEdedler.push(sec);
+            } else {
+              tekEdedler.push(sec);
+            }
+        }
+        return [cutEdedler, tekEdedler];
+
+      }
+
+      var eded = document.getElementById("eded");
+      var duyme = document.getElementById("duyme");
+
+
+
+      duyme.onclick = function(){
+
+        var ededler = document.getElementById("eded").value;
+        
+        var netice = tekEdedVeCutEededAyir(ededler);
+
+        console.log(netice[0]);
+        console.log(netice[1]);
+        
+      }
+
+
+
+    </script>
+</body>
+</html>

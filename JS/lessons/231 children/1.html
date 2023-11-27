@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">sayt basliqlari bu tag icerisinde yazilir</title>
+  
+</head>
+<body>
+
+    <!-- 
+
+
+    -->
+   
+    <div id="divParent">
+        <h1 id="head">microsoft</h1>
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">js</p>
+        <p id="p4">php</p>
+        <p id="p5">css</p>
+        <p id="p6">html</p>
+        <p id="p7">boot</p>
+        <p id="p8">vue</p>
+    </div>
+      
+
+    <script>
+
+        // 1
+        var elementNodes1 = document.querySelector('#divParent').children.length;
+        console.log(elementNodes1);     // 9
+
+
+        // 2
+        var elementNodes2 = document.querySelector('#divParent').children[0];
+        console.log(elementNodes2);     //  <h1 id="head">microsoft</h1>
+
+        // 3
+        var elementNodes3 = document.querySelector('#divParent').children[4].childNodes[0].nodeValue;
+        console.log(elementNodes3);     // php
+
+        // 4
+        var elementNodes4 = document.querySelector('#divParent').children;
+        var i;
+        for(i=0; i<elementNodes4.length; i++){
+            elementNodes4[i].style.color = 'red';
+        }
+
+
+        // 5
+        var elementNodes5 = document.querySelector('#divParent').children;
+        var i, result ="";
+        for(i=0; i<elementNodes5.length; i++){
+            result += elementNodes5[i].firstChild.nodeValue + '\n';
+        }
+        console.log(result);     // microsoft Angular Reactj s php css html boot vue
+
+
+        // 6
+        var elementNodes6 = document.querySelector('#divParent').children;
+        var i2, result2 ="";
+        for(i2=0; i2<elementNodes6.length; i2++){
+            result2 += elementNodes6[i2].innerHTML + '\n';
+        }
+        console.log(result2);     // microsoft Angular Reactj s php css html boot vue
+
+
+    </script>
+</body>
+</html>
+    
+

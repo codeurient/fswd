@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+
+1. sort() - bu metod bir Array-i elibfa ardicilligi ile siralayir.
+
+2. Bu metod STRING deyerler ile iwleyir. Number deyerler ile iwlemir. Bunun ucun bir funksiya yaziriq. sort()2 faylina bax.
+
+-->
+
+<script>
+
+    // 1
+    var test1 = ["f", "c", "d", "a", "e", "b"];
+    test1.sort();
+    document.write(test1 + "<br>");      // a,b,c,d,e,f
+
+
+
+    // 2    - kicikden boyuye dogru getdiyimiz ucun 1 kicik 2 boyuk deye siraladi 
+    var test2 = [2, 1];
+    test2.sort();
+    document.write(test2 + "<br>");      // 1,2
+
+
+    // 2    - 100 reqemi ise 20-den kicik deyil. Ancaq birinci 100 yazildi sonra ise 20. Ancaq birinci 20 olmali idi.
+    // Onun ucun bu dogru olmuyan siralamadir.
+    var test3 = [20, 100];
+    test3.sort();
+    document.write(test3 + "<br>");      // 100,20
+
+
+</script>
+</body>
+</html>

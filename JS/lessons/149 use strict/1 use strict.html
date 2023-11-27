@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        use strict bir moddudur. Bu mod JS kodlarinin daha qati rejimde iwlemesi gerekdiyini bildirir.
+
+        Yeni, her proqramlasdirma dilinin kodlarinin daha duzgun bir yaziliw qramatikasi, qaydasi vardir.
+
+
+     -->
+
+
+
+
+      <script>
+
+            //Meselen bir deyiskeni yazarken eger onun qarwisinda "var" acar sozunu qeyd etmez isek, yenede o deyiskenin deyerini ekrana yazdira bilerik.
+            x = 5;
+            document.write(x);
+
+
+            // Eger kodun en basinda "Use strict" yazarsaq onda en dogru qayda olan "var" acar sozunu yazmaq mecburiyyeti yaranacaqdir.
+            // yazmasaq ise xeta olaraq bele bir xeta mesaji alasiyiq:  Uncaught ReferenceError: x is not defined.
+            "use strict";
+            x2 = 5;
+            document.write(x2);
+
+      </script>
+
+</body>
+</html>

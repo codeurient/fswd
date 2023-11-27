@@ -1,0 +1,150 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+}
+ul{
+
+    /*ul tegləri avtomatik olaraq sol tərəfdən 
+    cüzi bir padding dəyərinə sahibdir. Və biz
+    padding: 0; deyərək bu dəyəri sıfırlayırıq.*/
+    padding: 0;
+    list-style: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.timeline{
+    /*
+    relative dəyəri ona görə verilir ki, şəkillərə
+    z-index verək. z-index vermək üçün isə şəkillərə
+    absolute dəyəri təyin etməliyik. absolute dəyəri təyin edəndə
+    isə həmin şəkillər body tegindən asılı olmasın deyə
+    ul teginə relative dəyərini veririk. 
+
+    Şəkillərə z-index ona görə veririk kiç əlavə etdiyimiz 
+    düz xətt şəkillərin üstündə olmasın.
+    */
+    position: relative;
+    margin-top: 100px;
+}
+.timeline>li .t-image {
+
+    /*
+    absolute dəyəri veridikdə məcbur olaraq şəkillər 
+    ul teginin sol tərəfinə düzülür. Onları ortaya gətimək üçün 
+    isə left: 50% deyirik.
+    */
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    border: 7px solid #dadde0;
+    border-radius: 100%;
+    left: 50%;
+}
+.timeline > li{
+    margin: 50px 0;
+}
+.timeline::before{
+    /*
+    düz xətt avtomatik olaraq sol tərəfdə yaranır və 
+    absolute veririkki left dəyəri ilə onu ortaya gətirə bilək.
+    */
+    position: absolute;
+    /*
+    top - yuxarıdan 
+    bottom - aşağıya qədər.
+    */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    /*
+    left 50% tam ortaya almasa margin-left: -10px; deyərək
+    nizamlamaq olar
+    */
+    margin-left: -10px;
+    content: "";
+    background-color: #dadde0;
+    left: 50%;
+}
+
+.timeline>li .t-image {
+    /*
+    div teginə 100px genişlik və hündürlük veririk
+    */
+    width: 100px;
+    height: 100px;
+    margin-left: -59px;
+}
+.radius{
+    /*
+    img teglərinə 100px ölçünün 100%-ni əhatə et deyirik.
+    */
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.timeline>li .t-panel{
+    width: 43%;
+    /*
+    tək li teglərindəki t-panel div teginə left 
+
+    .t-inverted li tegindəki t-panel div teginə right 
+    
+    verdik
+    */
+    text-align: right;
+    float: left;
+    padding: 0 30px;
+}
+.timeline>li.t-inverted > .t-panel{
+      /*
+    tək li teglərindəki t-panel div teginə left 
+
+    .t-inverted li tegindəki t-panel div teginə right 
+    
+    verdik
+    */
+    float: right;
+    text-align: left;
+}
+
+
+.last-list .last-img{
+    background-color: red;
+}
+.last-list .last-img h4{
+    font-size: 9px;
+    line-height: 16px;
+    margin-top: 23px;
+}
+
+
+.temizle {
+    clear: both;
+}
+
+/*
+li tegləri ortasına <div class="temizle"></div>
+tegini əlavə edib clear deyə bilərik.
+
+
+
+yaxud da <div class="temizle"></div> əlavə etmədən
+aşağıdakı formada yazab biləriki li tegləri 
+float dəyərinə görə bir birinə qarışmasın.
+
+.timeline>li:after, .timeline>li:before {
+    content: "";
+    display: table;
+}
+.timeline>li:after {
+    clear: both;
+}
+
+*/
+

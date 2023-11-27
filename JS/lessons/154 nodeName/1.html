@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        nodeName (düyüm adı) - bu xasse, html tag-lerinin "ad"-larini qaytarir. 
+    -->
+
+     <div id="divParent">
+        <h1 id="head">microsoft</h1>
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">js</p>
+        <p id="p4">php</p>
+        <p id="p5">css</p>
+        <p id="p6">html</p>
+        <p id="p7">boot</p>
+        <p id="p8">vue</p>
+    </div>
+
+
+    <script>
+        // 1
+        var elementNodes1 = document.querySelector('#divParent').nodeName;
+        console.log(elementNodes1); // DIV 
+
+        // 2
+        var elementNodes2 = document.nodeName;
+        console.log(elementNodes2); // #document
+
+        // 3
+        var elementNodes3 = document.documentElement.nodeName;
+        console.log(elementNodes3); // HTML
+
+        // 4 - querySelector('#p4') - deyerek, muraciet edirik 'p' tag-ine
+        // childNodes[0] - deyerek, giririk icinde
+        // nodeName - deyerek, düyüm adini qaytaririq
+        var elementNodes4 = document.querySelector('#p4').childNodes[0].nodeName;
+        console.log(elementNodes4); // #text
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    valueOf - bu metod ferqli tipde olan deyeri oz deyerine geri qaytarmaq ucun istifade edilir
+-->
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+<div id="numune4"></div><hr>
+<script>
+    // 1
+    var sayi1 = 7;
+    document.getElementById("numune1").innerHTML =  sayi1.valueOf();
+
+    // 2
+    var sayi2 = 7;
+    document.getElementById("numune2").innerHTML = typeof sayi2.valueOf();
+
+    // 4
+    var sayi3 = new Number(7);
+    document.getElementById("numune3").innerHTML = typeof sayi3; // Object
+
+    // 5
+    var sayi4 = new Number(7);
+    document.getElementById("numune4").innerHTML = typeof sayi4.valueOf(); // Number
+</script>
+
+</body>
+</html>

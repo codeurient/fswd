@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    
+
+<script>
+
+    window.onload = function checkCookies() {
+        var message="";
+
+       
+        if(navigator.cookieEnabled == false){
+            message = "Cookie-ler aktiv deyildir";
+        } else{
+            message = "Cookie-ler aktivdir";
+        }
+        alert(message);
+    }
+
+    
+
+</script>
+</body>
+</html>

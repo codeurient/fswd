@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main_menu {margin: 10px; padding: 0; list-style: none; background: #eee; width: 200px; cursor: pointer;}
+        #main_menu li {margin-bottom: 10px; padding: 5px;}
+        #main_menu li:hover {background: #ff4ef5;}
+</style>
+</head>
+<body>
+ 
+        <input id="bas" type="button" data-toggle-id="main_menu" value="Open/Close">
+
+        <ul id="main_menu">
+            <li data-command="open">Acmaq</li>
+            <li data-command="save">Saxlamaq</li>
+            <li data-command="draw">Cekmek</li>
+            <li data-command="edit">Redakte</li>
+            <li data-command="customize">Ayarlar</li>
+        </ul>
+
+<script>
+
+    document.addEventListener("click", function(event) {
+        // main_menu adini elde edirik bu da UL tag-inin id sinin adidi ama biz bunu 
+        // duymenin atribut adindan goturmusuk ki duymeni basdiqda elde edilsin.
+        let id = event.target.dataset.toggleId;
+        // document demisik deye senedin istenilen yerine basdiqda EVENT isleyir
+        // !id bu o demekdir ki, main_menu olmuyan yere basilsa hecne etme
+        if(!id) return;
+        // eks teqdirde ul tag-ini elem deyiskenine veririk
+        let elem = document.getElementById(id);
+        // asagidaki kod isleyirmi yoxlamaq ucun !id nidani itirmek olar.
+        if(!elem) return;
+        // eks teqdirde ul tag-ine hidden atributunu elave et
+        // hidden atirubutu false yaxud true qaytarir 
+        elem.hidden = !elem.hidden;
+    })
+
+    let menuActs = {
+        open()      {alert("ac....")},
+        save()      {alert("saxla....")},
+        draw()      {alert("cek....")},
+        edit()      {alert("redaket et....")},
+        customize() {alert("yaxsilasdir....")},
+    }
+    
+    main_menu.addEventListener("click", function(event) {
+        let li = event.target.closest('li');
+        if(li == null) return;
+        let act = li.dataset.command;
+        if(act && menuActs[act] !== undefined) menuActs[act]();
+    });
+
+</script>
+</body>
+</html>

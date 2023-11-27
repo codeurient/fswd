@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- legnth - deyerin uzunlugunu teyin edir -->
+
+<div id="numune"></div><hr>
+
+
+<script>
+
+    // 1
+    function uzunluqTeyinEt() {
+        var metin = "lorem ipsum do";
+        document.getElementById("numune").innerHTML = metin.length; // 14
+    }
+    uzunluqTeyinEt();
+
+
+
+    // 2
+    function uzunluqTeyinEt2() {
+        var metin = "lorem ipsum doo";
+        document.write(metin.length);
+    }
+    uzunluqTeyinEt2();
+
+</script>
+</body>
+</html>
+

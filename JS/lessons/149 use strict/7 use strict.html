@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        "use strict" modda defineProperty() ile "writable:false" dedikde, xeta mesaji aliriq
+        "use strict" olmasa ise hec bir xeta almariq.
+
+     -->
+
+     <div id="netice1"></div>
+
+
+
+<script>
+
+    "use strict";
+    // defineProperty() ile
+    var obj2 = {};
+    // "obj2" adindaki obyekte "x" acarini ekle ve ona "5" deyerini elave et ve bu "x" acar sozunu 
+    // "writable:false" yeni deyismek mumkun olmasin.
+    Object.defineProperty(obj2, "x", {value:5, writable:false});
+
+    
+    // Uncaught TypeError: Cannot assign to read only property 'x' of object '# <Object>'
+    obj2.x = 10;
+   
+   
+   
+
+</script>
+
+</body>
+</html>

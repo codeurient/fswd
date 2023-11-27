@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+         replaceChild() metodu elementleri basqa elementler ile evez etmek ucun istifade edilir
+
+         replaceChild(tezeUsaq, kohneUsaq)
+    -->
+
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+
+<script>
+    // "ul" icerisindeki uwaq element olan 1-ci "li" tegine muraciet edirik
+    var element = document.getElementById("myList").children[0];
+
+    // createTextNode() metodu ile metn yaradiriq. bu metodun tipi ise Object-dir
+    var newNode = document.createTextNode("Water");
+
+    // "ul" teginin icindeki birinci UWAQ element olan "li" teginine metni elave edirik
+    element.replaceChild(newNode, element.childNodes[0]);
+
+</script>
+
+
+</body>
+</html>

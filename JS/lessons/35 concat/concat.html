@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+bu metod elementleri birlesdirikde istifade edilir
+
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+<script>
+
+    // 1 - normalda toplama isaretinden istifade edilir birlesdirmek ucun
+    var testNomre1 = "JavaScript";
+    var testNomre2 = "PHP";
+    document.getElementById('numune1').innerHTML = testNomre1 + ", " + testNomre2;
+
+
+    // 1 - burda ise concat() metodundan istifade ede bilerik
+    var testNomre3 = "JavaScript";
+    var testNomre4 = "PHP";
+    document.getElementById('numune2').innerHTML = testNomre3.concat(", ", testNomre4);
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            --reng1: red;
+            --reng2: blue;
+        }
+        .a{ color: var(--reng1)}
+        .b{ color: var(--reng2)}
+        .c{ color: var(--reng3, aqua)}
+        .d{
+            color: var(--reng2);
+            --reng2: green;
+        }
+    </style>
+</head>
+<body>
+    <p class="a">red</p>
+    <p class="b">blue</p>
+    <p class="c">aqua</p>
+    <p class="d">blue rəngi green ilə əvəz edildi</p>
+</body>
+</html>
+

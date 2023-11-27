@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+float - kesir sayi demekdir
+
+parse float - yeni filtirliyib kesir sayini mene ver demek ucun istifade edilir
+
+-->
+
+<div id="numune1"></div>
+
+<script>
+
+    // 1
+    document.getElementById("numune1").innerHTML =  
+    parseFloat(true)           +   "<br>"   +     // NaN
+    parseFloat(false)          +   "<br>"   +     // NaN
+    parseFloat(new Date())     +   "<br>"   +     // NaN
+    parseFloat("7")            +   "<br>"   +     // 7
+    parseFloat("6 ")           +   "<br>"   +     // 6
+    parseFloat(" 5")           +   "<br>"   +     // 5
+    parseFloat("7 80")         +   "<br>"   +     // 7
+    parseFloat("JS")           +   "<br>"   +     // NaN
+    parseFloat("3.14")         +   "<br>"   +     // 3.14
+    parseFloat("3.84")         +   "<br>"   +     // 3.84
+    parseFloat("32 days")      +   "<br>"   +     // 32
+    parseFloat("days 32")      +   "<br>"   ;     // NaN
+
+</script>
+
+</body>
+</html>

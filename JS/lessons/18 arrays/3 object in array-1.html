@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 
+    
+    var test1 = [   "a" => "b"  ]; - bu forma ARRAY yaratmaq mumkun deyildir JS-de
+
+    Bunun ucun obyektlerden istifade edilir.
+
+    Ancaq Array icinde Object yaratmaq mumkundur.
+-->
+
+    <script>
+        // 1
+        var test1 = [
+                "sadece bir deyer",
+                {
+                    a: "Bir",
+                    b: [
+                        {
+                            "reng1" : "goy",
+                            "reng2" : "qirmizi",
+                            "reng3" : "yasil",
+                        }
+                    ],
+                    c: "Uc",
+                }
+
+
+        ];
+                console.log(test1[1]["b"][0]["reng3"])
+
+     
+
+
+
+    </script>
+
+</body>
+</html>

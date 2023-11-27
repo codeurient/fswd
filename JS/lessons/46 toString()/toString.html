@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+Bu metod sayilari String deyerlere cevirir.
+
+-->
+
+<div id="numune1"></div>
+<div id="numune2"></div><hr>
+<div id="numune3"></div>
+<div id="numune4"></div>
+
+
+<script>
+
+    // 1
+    var sayi1 = 7;
+    var sayi2 = 7;
+    document.getElementById("numune1").innerHTML =  sayi1 + sayi2;  // 14
+    document.getElementById("numune2").innerHTML = typeof sayi1;    // Number
+
+
+
+    // 2
+    var sayi3 = 7;
+    var sayi4 = 7;
+    document.getElementById("numune3").innerHTML = sayi3.toString() + sayi4.toString();     // 77
+    document.getElementById("numune4").innerHTML = typeof sayi3.toString();                 // String
+
+</script>
+
+</body>
+</html>

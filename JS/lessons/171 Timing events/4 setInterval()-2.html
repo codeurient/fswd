@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- 
+
+        setInterval() - bu metod mueyyen interval ile funksiyani isledir.
+
+    -->
+    
+   <div class="container mt-5">
+        <div class="row">
+            <p><input type="text" id="data1" ></p>
+            <p><input type="text" id="data2" ></p>
+            <p id="numune1"></p>
+        </div>
+   </div>
+
+    
+    <script>
+            var netice = document.getElementById("numune1");
+
+            function mueyyenVaxtSonraGoster(){
+                var data1, data2, deyerHasili;
+                data1 = Number(document.getElementById('data1').value);
+                data2 = Number(document.getElementById('data2').value);
+
+                deyerHasili = data1 * data2;
+                netice.innerHTML = deyerHasili;
+            }
+            setInterval(mueyyenVaxtSonraGoster, 100);
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 
+
+     Meslehetdir ki, metod yaradaraq onun icine "h2" tag-ini 'this' acar sozu ile yerlesdirek.
+
+ -->
+ 
+    <div>
+        <h2  onclick="javascript:changeText(this)">Click</h2>
+    </div>
+
+    <script>
+
+        function changeText(par){
+            par.innerHTML = "JavaScript";
+        }
+        
+    </script>
+</body>
+</html>
+
+

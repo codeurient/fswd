@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+
+        window.screen obyekti, istifadecinin ekrani ile bagli olan melumatlari bildirir.
+
+        window.screen obyekti "window" sozu olmadan da istifade edilir.
+
+
+        Xususiyyetler:
+            screen.width
+            screen.height
+            screen.availWidth
+            screen.availHeight
+            screen.colorDepth
+            screen.pixelDepth
+    -->
+
+
+    <div id="numune1"></div>
+
+    <script>
+
+       
+
+        var netice;
+        netice = document.getElementById("numune1")
+        netice.innerHTML = 
+                "screen.width "       + screen.width       + "<br>" +    // screen.width 1366
+                "screen.height "      + screen.height      + "<br>" +    // screen.height 768
+                "screen.availWidth "  + screen.availWidth  + "<br>" +    // screen.availWidth 1366
+                "screen.availHeight " + screen.availHeight + "<br>" +    // screen.availHeight 728
+                "screen.colorDepth "  + screen.colorDepth  + "<br>" +    // screen.colorDepth 24
+                "screen.pixelDepth "  + screen.pixelDepth  + "<br>";     // screen.pixelDepth 24
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        main {
+            display: flex;
+
+        }
+        section {
+            flex-grow: 1;
+            background-color: red;
+        }
+        aside {
+            flex-grow: 2;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <section class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci amet, asperiores atque commodi consequatur culpa excepturi explicabo facere fuga hic id illum impedit iure laboriosam magni minus molestiae molestias neque nesciunt nihil nisi obcaecati odio omnis quia quibusdam quis quisquam quo ratione repellendus rerum sequi sint vel. A ad aliquam delectus distinctio dolor ducimus earum, enim eveniet fuga illum itaque magni nemo numquam odit porro quas reprehenderit sapiente sit voluptas, voluptates! Aspernatur autem est eveniet, labore magni, minus modi mollitia nisi nostrum officia porro quae reprehenderit, sint! A delectus dolorem excepturi impedit natus numquam optio quaerat reiciendis soluta ut!</section>
+    <aside class="col">
+        Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Ab aliquid est officia possimus sint
+        suscipit tempore unde? Harum, magnam quae.
+    </aside>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol>
+    <li>section genişliyi: <span></span> </li>
+    <li>aside genişliyi: <span></span></li>
+</ol>
+<script>
+    getsize();
+    function getsize() {
+        var n = 0;
+        for (var node of document.querySelectorAll('.col')) {
+            document.querySelectorAll('span')[n].textContent = node.getBoundingClientRect().width+"px";
+            n++;
+        }
+    }
+    window.onresize = function(event) {
+        getsize();
+    };
+</script>
+</body>
+</html>

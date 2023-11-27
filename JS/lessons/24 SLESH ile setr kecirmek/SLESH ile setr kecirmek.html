@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    \ - slesh ile setr kecirmek meslehet deyildir
+
+    eger uzun cumleler setr kecirse en yaxwisi onlari + toplama isareti ile birlesdirmekdir.
+ -->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+
+<script>
+    // 1 - meslehet gorulmeyen qayda
+    function setrKecirmek2() {
+        document.getElementById("numune2").innerHTML = "Lorem ipsum dolor sit amet, \
+        consectetur adipisicing elit.";
+    }
+    setrKecirmek2();
+
+
+    // 2 - en dogru qayda
+    function setrKecirmek3() {
+        document.getElementById("numune3").innerHTML = "Lorem ipsum dolor sit amet, " +
+            " consectetur adipisicing elit.";
+    }
+    setrKecirmek3();
+
+
+    // 3 - xetali
+    // kommente al ki, digerleri gorunsun
+    function setrKecirmek1() {
+        document.getElementById("numune1").innerHTML = "Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit.";
+    }
+    setrKecirmek1();
+</script>
+</body>
+</html>
+
+
+
+

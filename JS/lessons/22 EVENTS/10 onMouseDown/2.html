@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #demo{
+            width: 200px;
+            height: 60px;
+            color: white;
+            background-color: crimson;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+
+        mausu basdiqda "onmousedown" buraxdiqda ise "onmouseup" hadisesi bas verir
+
+    -->
+
+    <div id="demo">Lorem ipsum dolor sit.</div>
+
+    <script>
+        var demo = document.querySelector('#demo');
+
+        demo.onmousedown = function() {
+           this.style.backgroundColor = "blue";
+           this.innerHTML = "Hello";
+        }
+
+        demo.onmouseup = function() {
+            this.style.backgroundColor = "green";
+            this.innerHTML = "Good bye";
+        }
+    </script>
+</body>
+</html>

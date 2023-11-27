@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+
+    istenilen riyazi reqemin sinusu, -1 ile 1 arasindaki her hansisa ededi bize verir.
+
+    sin() - metodundan onun ucun istifade edilir ki, DERECE-nin sin-us ile olan qarsiligini deqiqliyi ile elde edek.
+
+    1rad = 180/pi =  57.296°
+
+    90° = 1 sin.
+
+
+    1 sinus = 1.57 ededine. Ancaq 1.57 yazdiqda 1 sinus ala bilmirik. 
+    90 * ( Math.PI / 180 ) = 1.57 -ye. Ancaq bele yazdiqda deqiqliyi ile 1 sinus elde edirik. 1 sinus ise = 90°.
+
+
+-->
+
+<div id="numune1"></div><hr>
+
+
+
+<script>
+
+    // 1 - ilk once 90 * PI / 180 derece deyirik. Sonra ise SIN() metodu ile elde edilen ededi 1-e ceviririk.
+    document.getElementById("numune1").innerHTML =  Math.sin(90 * ( Math.PI / 180 ) );        // 1
+
+</script>
+
+</body>
+</html>

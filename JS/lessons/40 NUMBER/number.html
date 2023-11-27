@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    JS - de tam sayilarda, kesir sayilarda, boyuk yaxud kicik sayilarda NUMBER olaraq qeyde alinir.
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+<div id="numune4"></div><hr>
+<div id="numune5"></div><hr>
+<div id="numune6"></div><hr>
+<div id="numune7"></div><hr>
+<div id="numune8"></div><hr>
+<div id="numune9"></div><hr>
+<div id="numune10"></div><hr>
+<div id="numune11"></div><hr>
+
+    <script>
+        // 1 - Tam sayilar 15 xanadir. 15 xanadan cox olduqda sayi ozunu sifirliyir.
+        var say1 = 999999999999999;
+        var say2 = 9999999999999999;
+        document.getElementById("numune1").innerHTML = say1;    // 999999999999999
+        document.getElementById("numune2").innerHTML = say2;    // 1000000000000000
+
+        // 2 - JS riyazai toplamalari cox vaxt dogru heyata kecirmir
+        // meselen asagidaki numunede 0.3 almaq evezine 0.30000000000000004 aliriq.
+        // eger dogru cavab almaq isteyirikse kesir ededleri birinci tam ededlere cevirmeliyik sonra ise yeniden kesir edede.
+        var say3 = 0.1;
+        var say4 = 0.2;
+        document.getElementById("numune3").innerHTML = say3 + say4;     // 0.30000000000000004
+
+        // 3 - eger dogru cavab almaq isteyirikse kesir ededleri birinci tam ededlere cevirmeliyik sonra ise yeniden kesir edede.
+        var say5 = (0.1*10 + 0.2*10) / 10;
+        document.getElementById("numune4").innerHTML = say5;     // 0.3
+
+        // 4 - JS-de  STRING-den sonra gelen reqemler string olaraq qebul edilir ve toplama emeliyyat birlesdirme kimi nezere alinir
+        var testNumune1 = "String" + 10 + 60;   // 70 olmur - ancaq moterize alaraq (10 + 60) ustunluyu birini toplamaya vermek mumkundur
+        document.getElementById("numune5").innerHTML = testNumune1;     // String1060
+
+        // 5 - JS-de  STRING-den evvel gelen reqemler number olaraq qebul edilir ve birlesdirme emeliyyat toplama kimi nezere alinir
+        var testNumune2 = 10 + 60 + "String";   // 70 olur
+        document.getElementById("numune6").innerHTML = testNumune2;     // 70String
+
+        // 6 - Eger biri STRING digeri NUMBER olarsa, onda toplama islemi birlesdirme islemi kimi nezere alinir
+        var testNumune3 = "10" + 60;
+        document.getElementById("numune7").innerHTML = testNumune3;     // 1060
+
+        // 7 - Eger biri NUMBER digeri STRING olarsa, onda toplama islemi birlesdirme islemi kimi nezere alinir
+        var testNumune5 = 60 + "10";
+        document.getElementById("numune8").innerHTML = testNumune5;     // 6010
+
+        // 6 - Ancaq vurma, bolme, cixma kimi emeliyyatlarda STRING deyerler NUMBER deyerler ile evez olunur
+        var testNumune6 = "10" * 60;
+        document.getElementById("numune9").innerHTML = testNumune6;     // 600
+
+        // 7 - Ancaq vurma, bolme, cixma kimi emeliyyatlarda STRING deyerler NUMBER deyerler ile evez olunur
+        var testNumune7 = 60 / "10";
+        document.getElementById("numune10").innerHTML = testNumune7;     // 6
+
+        // 8 - STRING deyer ile NUMBER olan deyer arasinda *, /, - emeliyyatlari apardiqda NaN elde edirik
+        var testNumune8 = 60 * "10 JS";
+        document.getElementById("numune11").innerHTML = testNumune8;     // NaN - yeni bu bir NUMBER deyildir.
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--
+
+
+-->
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+            <!-- JS ile was-validated klasini ozumuz elave edirik -->
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="row mb-3">
+                    <label for="validationName" class="form-label col-xl-2">Name</label>
+                    <div class="col-xl-10">
+                        <input type="text" class="form-control" id="validationName" name="validationName" required>
+                        <div class="invalid-feedback">Name is required</div>
+                        <div class="valid-feedback">Correct name</div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="validationLastname" class="form-label col-xl-2">Lastname</label>
+                    <div class="col-xl-10">
+                        <input type="text" class="form-control" id="validationLastname" name="validationLastname" required>
+                        <div class="invalid-feedback">Lastname is required</div>
+                        <div class="valid-feedback">Correct lastname</div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="validationUsername" class="form-label col-xl-2">Username</label>
+                    <div class="col-xl-10">
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="IGroup">@</span>
+                            <input type="text" class="form-control" id="validationUsername" name="validationUsername" required>
+                            <div class="invalid-feedback">Username is required</div>
+                            <div class="valid-feedback">Correct Uuername</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="validationCity" class="form-label col-xl-2">City</label>
+                    <div class="col-xl-10">
+                        <div class="input-group has-validation">
+                            <select class="form-select" name="validationCity" id="validationCity" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="1">one city</option>
+                                <option value="2">two city</option>
+                                <option value="3">three city</option>
+                                <option value="4">four city</option>
+                                <option value="5">five city</option>
+                            </select>
+                            <div class="invalid-feedback">City name is required</div>
+                            <div class="valid-feedback">Correct city name</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="offset-xl-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="agreeCond" name="agreeCond" required>
+                            <label class="form-check-label" for="agreeCond">Agree cond please</label>
+
+                            <div class="invalid-feedback">Cond is required</div>
+                            <div class="valid-feedback">Correct cond</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-xl-2 col-xl-10">
+                        <button class="btn btn-dark d-block w-100" type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../bootstrap.bundle.min.js"></script>
+<script>
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!---->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--  
+    accordion,      accordion-item,     accordion-header
+    accordion-collapse,     accordion-body,     accordion-button
+    accordion-flush - kenarlari duz edir.
+    show - veb sehife yuklendikde hemin elementler aciq formada olsun baslangic olaraq. 
+    Ancaq sag terefdeki balaca ox ikonkasi guya acixmis kimi gosterir. Bunun ucunde COLLAPSED deyirik
+    collapsed - veb sehife yuklendikde ox isaresi yuxari yox asagi dogru baxsin demek ucundur.
+    data-bs-toggle="collapse - nelerise acib qapatmagini deyirik.
+    data-bs-parent="#myAccordion" - bir elemtn acildiginda diger element qapansin isteyirsinizse onda bu atributdan istifade edin.
+-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="accordion" id="myAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#first" class="accordion-button">Bootstrap lesson</button>
+                        </h2>
+                        <div class="accordion-collapse collapse show" id="first" data-bs-parent="#myAccordion">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in minus tenetur praesentium expedita, molestias et assumenda officia earum esse sit eius culpa! Porro ipsa ducimus recusandae pariatur expedita quam repellendus cumque doloribus, vitae fugiat eveniet provident minima aperiam magni atque. Dolores, laborum? Minima laboriosam commodi vero delectus eveniet repellendus.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#second" class="accordion-button collapsed">Bootstrap lesson</button>
+                        </h2>
+                        <div class="accordion-collapse collapse" id="second" data-bs-parent="#myAccordion">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in minus tenetur praesentium expedita, molestias et assumenda officia earum esse sit eius culpa! Porro ipsa ducimus recusandae pariatur expedita quam repellendus cumque doloribus, vitae fugiat eveniet provident minima aperiam magni atque. Dolores, laborum? Minima laboriosam commodi vero delectus eveniet repellendus.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#third" class="accordion-button">Bootstrap lesson</button>
+                        </h2>
+                        <div class="accordion-collapse collapse" id="third" data-bs-parent="#myAccordion">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in minus tenetur praesentium expedita, molestias et assumenda officia earum esse sit eius culpa! Porro ipsa ducimus recusandae pariatur expedita quam repellendus cumque doloribus, vitae fugiat eveniet provident minima aperiam magni atque. Dolores, laborum? Minima laboriosam commodi vero delectus eveniet repellendus.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>

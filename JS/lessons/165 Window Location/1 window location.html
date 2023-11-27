@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+
+        window.location obyekti, cari web sehifesi haqqinda melumat elde etmek ve browseri yeni sehifeye 
+        yondendirmek ucun istifade edilir.
+
+        window.location obyekti "window" sozu olmadan da istifade edilir.
+
+
+        Xususiyyetler:
+            location.href       - web sehifenin URL adresini verir         
+            location.hostname   - web sehifenin adini verir                
+            location.pathname   - web sehifenin qovluq ve sened adini verir
+            location.protocol   - web protokolunu verir                    
+            location.assign     - basqa web sehifeye kecid yaradar, evvelki web sehifeye qayitmaq olur
+    -->
+
+
+    <div id="numune1"></div>
+
+    <script>
+
+        var netice;
+        netice = document.getElementById("numune1")
+        netice.innerHTML = 
+                "location.href "          + location.href           + "<br>" +    // http://www.google.com:80/search?q=javascript#test
+                "location.hostname "      + location.hostname       + "<br>" +    // www.google.com
+                "location.pathname "      + location.pathname       + "<br>" +    // /search/example.html
+                "location.protocol "      + location.protocol       + "<br>" ;    // http:
+                
+                // "location.assign "        + location.assign("https://javascript.ru/");   
+                           
+
+    </script>
+
+</body>
+</html>

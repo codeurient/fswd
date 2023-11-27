@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{margin: 0; padding: 0;}
+        .d1-layer {width: 300px; background-color: #fc0; height: 100px;}
+        .p1-layer {width: 400px; background-color: red;}
+        .p1-layer-1 {width: 400px; background-color: blue;}
+
+        .d2-layer {width: 50%; background-color: #fc0; height: 100px;}
+        .p2-layer {width: 50%; background-color: red;}
+        .p2-layer-2 {width: 50%; background-color: blue;}
+        /**************************************************************************/
+        .d3-layer {max-width: 300px; background-color: #fc0; height: 100px;}
+        .p3-layer {max-width: 400px; background-color: red;}
+        .p3-layer-3 {max-width: 400px; background-color: blue;}
+
+        .d4-layer {max-width: 50%; background-color: #fc0; height: 100px;}
+        .p4-layer {max-width: 50%; background-color: red;}
+        .p4-layer-4 {max-width: 50%; background-color: blue;}
+        /**************************************************************************/
+        .d5-layer {min-width: 200px; background-color: #fc0; height: 100px;}
+        .p5-layer {min-width: 300px; background-color: red;}
+        .p5-layer-5 {min-width: 300px; background-color: blue;}
+
+        .d6-layer {min-width: 50%; background-color: #fc0; height: 100px;}
+        .p6-layer {min-width: 50%; background-color: red;}
+        .p6-layer-6 {min-width: 50%; background-color: blue;}
+
+        .d7-layer {min-width: 500px; background-color: #fc0; height: 100px; display: inline-block;}
+        .p7-layer {min-width: 500px; background-color: red; display: inline-block}
+        .p7-layer-7 {min-width: 500px; background-color: blue; display: inline-block}
+
+        .d8-layer {min-width: 50%; background-color: #fc0; height: 100px; display: inline-block}
+        .p8-layer {min-width: 50%; background-color: red; display: inline-block}
+        .p8-layer-8 {min-width: 50%; background-color: blue; display: inline-block}
+
+        .together {
+            width: 100%;
+            min-width: 50px;
+            max-width: 600px;
+            background-color: lime;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- width px-->
+    <span>width px</span>
+    <div class="d1-layer"><p class="p1-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p1-layer-1">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+    <!-- width  % -->
+    <span>width %</span>
+    <div class="d2-layer"><p class="p2-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p2-layer-2">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+    <!-- max-width px-->
+    <span>max-width px</span>
+    <div class="d3-layer"><p class="p3-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p3-layer-3">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+    <!-- max-width  % -->
+    <span>max-width %</span>
+    <div class="d4-layer"><p class="p4-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p4-layer-4">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+    <!-- min-width  px -->
+    <span>min-width px</span>
+    <div class="d5-layer"><p class="p5-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p5-layer-5">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+    <!-- min-width  % -->
+    <span>min-width %</span>
+    <div class="d6-layer"><p class="p6-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p6-layer-6">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+    <!-- min-width  px -->
+    <span>min-width px</span><br>
+    <div class="d7-layer"><p class="p7-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p7-layer-7">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+    <!-- min-width  % -->
+    <span>min-width %</span><br>
+    <div class="d8-layer"><p class="p8-layer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p></div>
+    <p class="p8-layer-8">Lorem ipsum dolor sit amet, consectetuerconsectetuer adipiscing elit,seddiem nonummy nibh euismod tincidunt ut lacreet dolore.</p><br><br><hr>
+
+
+    <!-- div -->
+    <div class="together"></div>
+</body>
+</html>
+

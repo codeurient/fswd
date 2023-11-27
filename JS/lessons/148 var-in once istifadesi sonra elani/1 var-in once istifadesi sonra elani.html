@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        JS-de deyiskenleri ilk once istifade ede sonra ise elan ede bilerik.
+
+     -->
+
+     <div id="netice1"></div>
+     <div id="netice2"></div>
+
+
+
+      <script>
+
+
+            var mesaj;
+            x = 7;
+            mesaj = document.getElementById('netice1');
+            mesaj.innerHTML = x;
+            var x;  // yuxarida ilk once deyiskeni istifade etmisik sonra ise burda deyiskeni elan etmisik. Buna hosting deyilir. Yeni yuxari cekmek. 
+
+
+
+
+            // Ancaq bu qayda meslehet deyildir. Cunki + toplama kimi bir emeliyyati bu qayda ile yazdirmaq ve netice elde etmek mumkun deyildir.
+            var mesaj2;
+            x2 = 7;
+            mesaj2 = document.getElementById('netice2');
+            mesaj2.innerHTML = x2 + " : " + y2;
+            var y2 = 5;                         // 7 : undefined
+
+      </script>
+
+</body>
+</html>

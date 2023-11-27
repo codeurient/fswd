@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+
+
+-->
+
+<script>
+
+    // 1
+    var test1 = [45, 100, 1, 8, 17, 30, 11];
+    test1.sort(function(x, y){
+        return x-y
+    });
+    document.write(typeof test1 + "<br>");              // object 
+
+
+
+
+    // 2
+    var test1 = [45, 100, 1, 8, 17, 30, 11];
+    test1.sort(function(x, y){
+        return x-y
+    });
+    document.write(Array.isArray(test1) + "<br>");      // true
+
+
+
+
+    // 3 - MIN - bu qayda ile minimum deyeri tapmaq dogru deyil CUNKI milyon deyer olsa ve hamisini tek-tek siralamaq keyfiyyeti duwurer
+    var test2 = [45, 100, 1, 8, 17, 30, 11];
+    test2.sort(function(x, y){
+        return x-y 
+    });
+    document.write(test2[0] + "<br>");     // 1
+
+
+
+
+    // 4 - MAX  bu qayda ile maksimum deyeri tapmaq dogru deyil CUNKI milyon deyer olsa ve hamisini tek-tek siralamaq keyfiyyeti duwurer
+    var test2 = [45, 100, 1, 8, 17, 30, 11];
+    test2.sort(function(x, y){
+        return y-x
+    });
+    document.write(test2[0] + "<br>");     // 100
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+
+        reduce() - azaltmaq demekdir
+
+        bu metod 2 dene mecbur parametre qebul edir.
+
+        1ci paramet accumulator-dir. Toplayici demekdir. Array-in ilk deyerini saxliyan parametrdir.
+        2ci parametr ise sirasi ile Arraydaki butun deyerlerdir. 
+
+     -->
+    
+
+<script>
+
+
+   // 1
+   const ededler = [1,2,3,4,5];
+
+   let total = 0;
+   ededler.forEach( ededler => total += ededler);
+   console.log(total); // 15
+
+
+   // 2
+   // forEach-den ferqli olaraq neticeni ozunde saxliyan elave deyisken yaratmaga ehtiyac yoxdur.
+   // Hemin deyisken onsuzda bu metodun birinci parametridir.
+   // Baslangicda her hansisa deyer vermediyimiz ucun varsayilan olaraq hemin parametrin deyeri sifirdir.
+   // Baslangic deyeri vermek istesem reduce() metodunda bunu gostermek olar.
+   let netice = ededler.reduce((acc, eded) => {
+        return acc + eded;
+   }, 5);
+   console.log(netice); // 5
+
+
+</script>
+</body>
+</html>

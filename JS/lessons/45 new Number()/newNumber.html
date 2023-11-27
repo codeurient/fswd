@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+    Normal reqemler NUMBER deyerine sahibdirler ancaq obyekt kimide onlari yazdirmaq mumkundur.
+    Bunun ucun new Number() metodundan istifade edilir ancaq meslehet gorulmur.
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+
+<script>
+
+    // 1
+    var sadeSay1 = 128;
+    document.getElementById("numune1").innerHTML = typeof sadeSay1; // Number
+
+    // 2
+    var obyektSay = new Number(128);
+    document.getElementById("numune2").innerHTML = typeof obyektSay; // Object
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- 
+
+5! - yeni 5 faktroial:         5! = 5*4*3*2*1 = 120
+    
+-->
+<p id="netice"></p>
+<input type="text" id="deyeriGotur">
+<button type="button" onclick="goster()">Goster</button>
+
+<script>
+
+
+    // 1  
+    function goster(){
+        var eded, i, faktor = 1;
+        eded = document.getElementById("deyeriGotur").value;
+        for(i=1; i <= eded; i++){
+            // 1 = 1 * 1    = 1;
+            // 1 = 1 * 2    = 2;
+            // 2 = 2 * 3    = 6;
+            // 6 = 6 * 4    = 24;
+            // 24 = 24 * 5  = 120;
+            faktor = faktor * i;
+        }
+        document.getElementById("netice").innerHTML = faktor;
+    }
+
+
+</script> 
+</body>
+</html>

@@ -1,0 +1,5 @@
+Eger 
+
+
+addEventListener()  IE ve Opera brauserlerinde iwlemez ise onda attachEvent() metodundan istifade edmek lazimdir.
+

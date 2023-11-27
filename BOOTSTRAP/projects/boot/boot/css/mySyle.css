@@ -1,0 +1,51 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+.mySearchBar {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    padding: 5px 12px;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    border-radius: 0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.mySearchBar input {
+    -webkit-transition: width 1s ease, opacity 0.5s ease 0.5s;
+    transition: width 1s ease, opacity 0.5s ease 0.5s;
+    opacity: 1;
+    width: 180px;
+    height: 25px;
+    border: 0;
+    outline: none;
+}
+.mySearchBar i {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    color: #333;
+    cursor: pointer;
+}
+.mySearchBar[data-state="close"] {
+    border-radius: 30px;
+    padding: 5px 5px;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.mySearchBar[data-state="close"]::after {
+    width: 0%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.mySearchBar[data-state="close"] i {
+    pointer-events: none;
+}
+.mySearchBar[data-state="close"] input {
+    width: 28px;
+    height: 25px;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-transition: opacity 0.5s ease, width 1s ease;
+    transition: opacity 0.5s ease, width 1s ease;
+    -webkit-appearance: none;
+}

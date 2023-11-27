@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--
+multi-collapse - bir duyme ile birden cox elementi acmaq
+-->
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-dark" data-bs-toggle="collapse" data-bs-target=".multi-collapse">Duyme ile ac</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="collapse multi-collapse mt-4">
+                    <div class="card border-info border-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem ipsum1.</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque, consectetur. Assumenda consequuntur ducimus magnam placeat quis reiciendis, rerum sed?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="collapse multi-collapse mt-4">
+                    <div class="card border-warning border-2">
+                        <img src="../images/1.jpg" class="img-fluid card-img-top" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem ipsum2.</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque, consectetur. Assumenda consequuntur ducimus magnam placeat quis reiciendis, rerum sed?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>

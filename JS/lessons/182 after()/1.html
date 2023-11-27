@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        Istenilen bir tag-den sonra basqa bir tag elave etmek istedikde "after()" metodundan
+        istifade etmek olar.
+
+    -->
+    
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+    <hr>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+
+
+<script>
+    var para = document.createElement("p");
+    para.innerText = "This is a paragraph.";
+
+    document.getElementsByTagName("div")[0].getElementsByTagName("p")[1].after(para);
+</script>
+
+
+</body>
+</html>

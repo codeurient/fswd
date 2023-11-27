@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" />
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box;}
+        #obj{
+            position: absolute;
+            background-color: burlywood;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="obj"></button>
+
+    <script>
+        var counter=0; obj;
+        obj = document.querySelector('#obj');
+
+        obj.onmouseover = function(){
+            var xpos, ypos;
+            counter++;
+            xpos = parseInt(Math.random()*1000);
+            ypos = parseInt(Math.random()*700);
+            obj.style.left = xpos + 'px';
+            obj.style.top = ypos + 'px';
+            // this dedikde nezerde tutalan 'obj.onmouseover' elementidir.
+            // clientWidth xassesi ise hemin elementin ölcusunu bize verir.
+            obj.style.width = this.clientWidth + 10 + 'px';
+            obj.style.height = this.clientHeight + 10 + 'px';
+        }
+        obj.onclick = function(){
+            alert(counter + ". səfərdə tutdun");
+            obj.style.width = "100px";
+            obj.style.height = "100px";
+            counter=0;
+        }
+    </script>
+</body>
+</html>

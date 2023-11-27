@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <form class="form-check" action="" id="formElementi"  name="formElementi">
+                <div>Ad      <input class="form-check" type="text" id="ad"     name="ad"></div>
+                <div>Soyad   <input class="form-check" type="text" id="soyad"  name="soyad"></div>
+                <div>Email   <input class="form-check" type="text" id="email"  name="email"></div>
+                <div>Parol   <input class="form-check" type="text" id="parol"  name="parol"></div>
+                <div><button type="button" onclick="ekranaYazdir()" name="duyme">Duymeni bas</button></div>
+            </form>
+        </div>
+    </div>
+
+    
+
+<script>
+// html senedinde form elementlerine muraciet etmek ucun "forms" kodundan istifade edilir
+// "forms" dedikde html senedindeki butun form-lara muraciet etmis oluruq.
+// bu form elementlerinin sirasi 0 (sifir)-dan basliyir ve "forms[0]" dedikde ise html 
+// senedinde ki, birinci sirada dayanan form elementini nezerde tutmus oluruq.
+function ekranaYazdir(){
+    // 1 - "form"-un icerisindeki elementlerin sayini elde etmek ucun "length" kodundan istifade edirik. 
+    // formDeyeri = document.forms[0].length;
+
+    // 2 - Asagidaki kod ile, "html" senedindeki 1ci "form"-un, "ad" id-li elementinin "value"-sunu yeni deyerini mene ver demis oluruq.
+    // Deyeri almaq ucun bu bir qaydadir ve deyer almaq ucun basqa qayda da vardir.
+    formDeyeri1 = document.forms[0].ad.value;
+    console.log(formDeyeri1);
+
+    // 3 - ikinci qayda: "forms[0]" bu kod evezine, "form" teginin NAME atributunun deyerinden de istifade etmek olar
+    // Bu 2ci qaydanin islemesi ucun "form" teginin icerisine name="formElementi" atributu ve deyer elave etmek lazimdir.
+    // Yeni "form" teg-i ucun teyin etdiyimiz "name" atributu vasitesi ile ona muraciet ede bilirik.
+    formDeyeri2 = document.formElementi.parol.value;
+    console.log(formDeyeri2);
+
+    // 4 - eger "name" atributunun icerisine verilen deyer adini elde etmek isteyirikse onda asagidaki qaydada yazmaq lazimdir.
+    formDeyeri3 = document.formElementi.parol.name;
+    console.log(formDeyeri3);
+
+    // 5 - basqa bir qayda ise "elements[ELEMENTIN SIRASI]" - elements kodundan istifade etmekdir. 
+    // Bu kod bize "form" elementi icerisindeki "elementlere" muraciet etmeye imkan saglayir ve elementin sirasini "[]" kvadrat moterize
+    // icerisinde qeyd ederek hemin elemente muraciet etmek mumkundur. 
+    // Nezerde saxliyinki 'elements' dedikde "form" icerisinde ki, ona mexsus olan "input" ve.s kimi teg-ler nezerde tutulur 
+    formDeyeri4 = document.forms[0].elements[2].name;
+    console.log(formDeyeri4);
+
+    // 6 - daha bir qayda ise "getElementById" vasitesi ile elementlere muraciet etme qaydasidir.
+    formDeyeri5 = document.getElementById("soyad").value;
+    console.log(formDeyeri5);
+
+    // 7 - daha ferqli bir muraciet qaydasi - Burada   forms["formElementi"]   icerisindeki deyer
+    // hem "ID" hemde "NAME" atributlarina verilen ad ola biler. 
+    formDeyeri6 = document.forms["formElementi"]["email"].value;
+    console.log(formDeyeri6);
+}
+</script>
+</body>
+</html>

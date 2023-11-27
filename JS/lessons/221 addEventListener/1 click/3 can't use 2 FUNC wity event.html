@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 
+
+        burada addEventListener() metodu istifade etmediyimiz ucun sadece bir "onclick" hadisesi gerceklesecek ve "goster2()" funksiyasi 
+        iwleyecekdir. 
+
+        
+        hem "goster1()" hemde "goster2()" funksiyalari caliwsin deye "addEventListener()" metodundan istifade etmeliyik
+        
+     -->
+
+        <button id="btn" type="button">Click</button>
+
+    <script>
+
+        var btn = document.querySelector('#btn');
+        btn.onclick = goster1;
+        btn.onclick = goster2;
+
+        function goster1(){
+            alert('mesaj1');
+        }
+        function goster2(){
+            alert('mesaj2');
+        }
+        
+    </script>
+</body>
+</html>
+
+

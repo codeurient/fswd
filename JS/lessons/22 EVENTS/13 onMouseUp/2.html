@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   
+</head>
+<body>
+
+     <!-- 
+
+        mausu basdiqda "onmousedown" buraxdiqda ise "onmouseup" hadisesi bas verir
+
+     -->
+
+    <p id="result"></p>
+    <input type="text" id="username">
+
+    <script>
+        var result = document.querySelector('#result');
+        var username = document.querySelector('#username');
+
+        username.onmousedown = function() {
+           this.style.backgroundColor = "blue";
+           this.innerHTML = "Hello";
+        }
+
+        username.onmouseup = function() {
+            this.style.backgroundColor = "red";
+            this.innerHTML = "Good bye";
+        }
+    </script>
+</body>
+</html>

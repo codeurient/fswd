@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1. JSON - JavaScript Object Notation - JavaScript Obyektlerinin Teyinati.
+        2. JSON datalari (melumatlari) yigmaq ve daşimaq ucun istifade edilen bir formatdir.
+        3. JSON, her hansisa bir serverden, bir web sehifesine melumat gonderildiyinde tez-tez istifade edilir. 
+        4. JSON formatinin yaradilma sebebi, melumat transferinde yeni oturulmesinde, gonderilimesinde
+        melumatlarin XML formatindan daha az yer tutmasidir. 
+     -->
+     <div id="numune1"></div>
+
+<script>
+
+    // JSON formati JavaScript-deki obyektlerin formati ile demek olarki eyndir.
+    // Meselen, asagidaki numunede JS-in obyekt formatina aid numune gosterilmisdir.
+    var obyekt1 = {ad: "Node", soyad: "JS"};
+
+    // Asagidaki numune ise JSON formatina aid numunedir. Hem "acar soz" hem "deyer" dirnaqciq arasindadir.
+    var obyekt2 = {"ad": "Node", "soyad": "JS"};
+
+    // obyektleri, [] kvadarat moterize ile Array icerisinede yerlesdirmek mumukundur.
+    // obyektleri Array icerisine yerlesdirdikde hemin Arraya ad vermek olur. Bu ad bizim acar sozumuzdur.
+    // burda "diller" acar sozdur ve deyerler ise [] kvadrat moterizedir, icindekilerle birlikde.
+    // hemin kvadrat moterize ozude {} bezekli moterize icerisinde olmalidir. sonuncu obyekt-e vergul qoyulmur.
+    var obyekt3 = {
+        "diller": [
+                {"ad": "Node",  "soyad": "JS"},
+                {"ad": "Vue",   "soyad": "JS"},
+                {"ad": "React", "soyad": "JS"}
+            ]
+        }
+
+
+    // Burda ilk once her seyi tek dirnaq icerisine almaliyiq ve belelikle JSON formatimizi yazmis oluruq.
+    // JS dili JSON melumatlarini normal JS obyektlerine cevire bacarir.
+    var obyekt3 = '{' +
+        '"diller": [' + 
+                ' {"ad": "Node",  "soyad": "JS"}, ' +
+                ' {"ad": "Vue",   "soyad": "JS"}, ' +
+                ' {"ad": "React", "soyad": "JS"}  ' +
+            ']' +
+        '}'
+        
+    // parse() - tehlil etmek. 
+    var obyekt4 = JSON.parse(obyekt3);
+    console.log(obyekt4);
+    document.getElementById('numune1').innerHTML = obyekt4.diller[0].ad + " " + obyekt4.diller[0].soyad;
+
+    // NOT! yuxaridaki numunede coxlu tek dirnaq onun ucun istifade edilibdirki, kodlar alt setrlere kecibdir.
+    // Eger bir setrde olsa idi onda bir defe tek dirnaq yazmaq kifayet edecekdi. Meselen:
+    var obyekt3 = '{"diller": [{"ad": "Node",  "soyad": "JS"}, {"ad": "Vue",   "soyad": "JS"}, {"ad": "React", "soyad": "JS"}]}'
+</script>
+</body>
+</html>

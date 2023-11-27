@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style> #result{ padding: 20px; background-color: yellow;}</style>
+</head>
+<body>
+
+    <!-- 
+
+       removeEventListener() - bu metod addEventListener() ozelliyini silir.
+
+     -->
+   
+
+        <div id="result"></div>
+        <button type="button" id="Btn">Click</button>
+
+    <script>
+        var result = document.querySelector("#result");
+
+        result.addEventListener("mousemove", hereket, false);
+        function hereket(){
+            document.querySelector("#result").innerText = Math.random();
+        }
+
+        var btn = document.querySelector("#Btn");
+        btn.onclick = function(){
+            result.removeEventListener("mousemove", hereket);
+        }
+
+</script>
+</body>
+</html>
+    
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+     Xetalar 2 cur olur
+     1. xeta mesajlari  - xeta mesajlari "message" kodu ile elde edilir.
+     2. xeta adlari.    - xeta adlari ise "name" kodu ile elde edilir.
+
+     "name" - xeta adlari 6 ferqli deyer geri qaytarir.
+     a) EvalError       - eval() funksiyasinda bir xeta bas verdikde
+     b) RangeError      - teyin olunan saydan daha boyuk bir sayi girdikde. toPrecision(400) meselen. 400 dene sifir elave et ancaq bele bir say yoxdur.
+     c) ReferenceError  - qaydaya uygun olmuyan kod yazdiqda, teyin olunmamis bir deyisken ile emeliyyat gerceklesdirmek istedikde ve.s kimi
+     d) SyntaxError     - soz xetasi bas verdikde
+     e) TypeError       - meselen, number tipinde olan bir deyer ile string metodlari ile isledikde. Meselen, 7.toUpperCase()
+     f) UriError        - EncodeURI ()  xetasi bas verdikde. Meselen, decodeURI("%") - bu metotda % simvolu ola bilmez, bunun ucun xeta alariq.
+       
+     -->
+
+
+      <div id="netice1"></div>
+      <div id="netice2"></div>
+
+
+      <script>
+
+            try{
+                alerd("JS");
+            } catch(e){
+                document.getElementById('netice1').innerHTML = e.name;      // ReferenceError
+                document.getElementById('netice2').innerHTML = e.message;   // alerd is not defined
+            } 
+
+      </script>
+
+</body>
+</html>

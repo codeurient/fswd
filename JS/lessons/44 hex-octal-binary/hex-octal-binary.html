@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    default - 10luq say sistemi
+    16li say sistemi    - hex
+    8li say sistemi     - octal
+    2li say sistemi     - binary
+    10luq say sistemini 2li say sistemine cevirmek ucun toString() metodundan istifade etmek olar.
+-->
+
+<div id="numune1"></div><hr>
+
+<script>
+    var onluqSaySistemi = 128;
+
+    // 128 / 16 = 88 qaliq 0. Ve 88 artiq 16 dan boyuk deyil. 88 ile 0 birlewdirilir = 80 ve netice olaraq
+    // Onaltiliq Say Sisteminde 128 ededeinin qarsiligini aliriq
+    var onAltiliqSaySistemi = onluqSaySistemi.toString(16);
+
+    // 128 / 88 = 16 qaliq 0.
+    // 16 / 88 = 2 qaliq 0.
+    // Ve 2 artiq 88 den boyuk deyil. 2 ile 00 birlewdirilir = 200 ve netice olaraq
+    // Sekkizlik Say Sisteminde 128 ededeinin qarsiligini aliriq
+    var sekkizlikSaySistemi = onluqSaySistemi.toString(8);
+
+    // 128 / 2 = 64 qaliq 0.
+    // 64  / 2 = 32 qaliq 0.
+    // 32  / 2 = 16 qaliq 0.
+    // 16  / 2 = 88 qaliq 0.
+    // 88  / 2 = 4  qaliq 0.
+    // 4   / 2 = 2  qaliq 0.
+    // 2   / 2 = 1  qaliq 0.
+    // 2 ile 0000000 birlewdirilir = 10000000 ve netice olaraq
+    // Ikilik Say Sisteminde 128 ededeinin qarsiligini aliriq
+    var ikilikSaySistemi    = onluqSaySistemi.toString(2);
+
+    document.getElementById("numune1").innerHTML =
+        " Onluq Say Sistemi:     "  +   onluqSaySistemi       + "<br>" +    // Onluq Say Sistemi:       128 - 128-dir
+        " Onaltiliq Say Sistemi: "  +   onAltiliqSaySistemi   + "<br>" +    // Onaltiliq Say Sistemi:   128 - 80-dir
+        " Sekkizlik Say Sistemi: "  +   sekkizlikSaySistemi   + "<br>" +    // Sekkizlik Say Sistemi:   128 - 200-dir
+        " Ikilik Say Sistemi:    "  +   ikilikSaySistemi      + "<br>";     // Ikilik Say Sistemi:      128 - 10000000-dir
+
+</script>
+
+</body>
+</html>

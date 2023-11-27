@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #demo{
+            width: 200px;
+            height: 60px;
+            color: white;
+            background-color: crimson;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+
+        mausu 2 defe basdiqda "ondblick" hadisesi bas verir
+
+    -->
+
+    <div id="demo">Lorem ipsum dolor sit.</div>
+
+    <script>
+        var demo = document.querySelector('#demo');
+
+        demo.ondblclick = function() {
+           this.style.backgroundColor = "blue";
+           this.innerHTML = "Hello";
+        }
+
+    </script>
+</body>
+</html>

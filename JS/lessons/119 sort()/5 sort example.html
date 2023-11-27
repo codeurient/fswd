@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="numune1"></div>
+
+<script>
+
+    var ededler = [
+        {adi: "Asus",   ram: "16gb",    il: "2018"},
+        {adi: "MSI",    ram: "8gb",     il: "2016"},
+        {adi: "HP",     ram: "32gb",    il: "2022"}
+    ];
+
+    ededler.sort(function(x,y){
+        return x.il-y.il;
+    });
+
+    function goster(parametrBir, parametrIki){
+        document.getElementById(parametrBir).innerHTML = parametrIki;
+    }
+
+    goster("numune1", 
+    ededler[0].adi + " : " + ededler[0].ram + " : " + ededler[0].il + "<br>" + 
+    ededler[1].adi + " : " + ededler[1].ram + " : " + ededler[1].il + "<br>" +
+    ededler[2].adi + " : " + ededler[2].ram + " : " + ededler[2].il + "<br>" );
+
+
+
+
+
+   
+</script>
+</body>
+</html>

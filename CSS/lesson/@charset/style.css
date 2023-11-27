@@ -1,0 +1,12 @@
+@charset "windows-1251";
+body {
+    font: 11pt Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #000;
+}
+p.new:after {
+    content: " codeurient!";
+}
+
+
+

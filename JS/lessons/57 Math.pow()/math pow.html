@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+   bu metod ededin üstünü teyin etmek ucun istifade edilir
+   Meselem, 2 ustu 4  (2^4) = 16
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+<script>
+    // 1
+    document.getElementById("numune1").innerHTML =  Math.pow(2, 4);        // 16
+
+    // 2
+    var a = 3.5
+    var b = 2.4
+    document.getElementById("numune2").innerHTML =  Math.pow(a, b);        // 20.219169193375105
+</script>
+
+</body>
+</html>

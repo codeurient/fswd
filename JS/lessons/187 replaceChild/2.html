@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+<script>
+    
+    // bir "li" tag-i yaradiriq
+    var element = document.createElement("li");
+    // createTextNode() metodu ile metn yaradiriq. bu metodun tipi ise Object-dir
+    var textNode = document.createTextNode("Water");
+    // "li" tag-inin icerisine "Water" metnini elave edirik
+  		element.appendChild(textNode);
+
+    // "ul" tegine muraciet edirik
+    var list = document.getElementById("myList");
+    // "ul" teginin icindeki birinci UWAQ element olan "li" tegini, eve edirik 
+    // "element" ile yaratmiw oldugumuz "li" teg-i ile 
+    list.replaceChild(element, list.children[0]);
+
+</script>
+
+
+</body>
+</html>

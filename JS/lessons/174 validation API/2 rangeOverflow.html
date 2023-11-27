@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        validity - bu xasse bize "input" elementi ile bagli kecerli deyer qaytararsa onda BOOLEAN deyer verecekdir.
+
+        Yeni, "validity.rangeOverflow" dedikde, bizim nezerde tutdugumuz odur ki, "input" elementine daxil 
+        etdiyimiz deyer max="7" atributunun icerisinde teyin etmis oldugumuz deyerden daha boyukdur. Eger
+        heqiqetende bu deyer 7 den daha boyuk olarsa onda netice olaraq "TRUE" elde etmis olariq.
+
+        Bunun kimi basqa deyerlerde movcuddur meselen:
+        1) rangeUnderflow - eger elemente daxil edilen deyer "min" atributunda olan deyerden azdirsa "TRUE" elde edirik.
+        2) rangeOverflow - eger elemente daxil edilen deyer "max" atributunda olan deyerden coxdursa "TRUE" elde edirik.
+        3) customError
+        4) patternMismatch
+        5) stepMismatch
+        6) tooLong - eger elemente daxil edilen deyer "maxLength" atributunda olan deyerden coxdursa "TRUE" elde edirik.
+        7) typeMismatch
+        8) valueMissing - eger elemente hec bir deyer yazilmaz ise onda "TRUE" deyerini elde edirik.
+        8) valid
+        
+        ve.s. Bu xetalari tek-tek yazmaqdansa, "checkValidity()" metodunu yazaraq butun xetalari elde etmek mumkundur. 
+
+        9) willValidate
+
+    -->
+            <input  type="number" name="number" id="number" min="4" max="7" style="width: 100px;" required>
+            <button type="button" onclick="formunValidasiyaEdilmesi()">Duymeni bas</button>
+
+            <p id="netice"></p>
+
+<script>    
+
+    function formunValidasiyaEdilmesi(){
+        var formDeyeri;
+
+        formDeyeri = document.getElementById("number");
+        
+        if(formDeyeri.validity.rangeOverflow){
+            document.getElementById("netice").innerHTML = formDeyeri.validationMessage; 
+        } else{
+            document.getElementById("netice").innerHTML = "Hec bir xeta tapilmadi";
+        }
+       
+
+    }
+    
+
+</script>
+</body>
+</html>

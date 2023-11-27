@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .line {
+            position: relative;
+        }
+        .line::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            right: 30%;
+            bottom: 0;
+            height: 1px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <span class="line">Yarıya qədər xətt</span>
+</body>
+</html>
+

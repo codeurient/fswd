@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="netice1"></div>
+    <div id="netice2"></div>
+
+<script>
+
+   /*
+
+   
+   ELave deyiskenler yaratmaq performansi azaldir.
+   Yeni, bir deyisken eger bir defe istifade edilecekse onda bu bir defelik deyisken ucun elave deyisken yaratmaga ehtiyac yoxdur.
+
+
+   */
+
+
+   // Meselen, eger "birinciAd" ve "ikinciAd" deyiskenleri bir defe istifade edilecekse onlari "tamAd" kimi elave bir deyiskene yazdirmaga ehtiyac yoxdur.
+   // cunki bu proqramin performansini asagi salar.
+   var birinciAd = "Node", ikinciAd = "JS", tamAd;
+   tamAd = birinciAd + ikinciAd;
+   document.getElementById('netice1').innerHTML = tamAd;
+
+
+
+
+   
+   // en dogru qayda asagida qayda olacaqdir.
+   var birinciAd2 = "Node", ikinciAd2 = "JS";
+   document.getElementById('netice2').innerHTML = birinciAd2 + ikinciAd2;
+
+
+
+</script>
+
+</body>
+</html>

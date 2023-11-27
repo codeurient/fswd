@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box;}
+        .hereket{
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hereket" onMouseMove="kursorHereketi(event);"></div>
+    <div  id="numune1" >   </div>
+
+<script>
+
+    function kursorHereketi(e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        document.getElementById("numune1").innerHTML="Koordinatlar X: " + x + " Y: " + y;
+    }
+
+</script>
+</body>
+</html>

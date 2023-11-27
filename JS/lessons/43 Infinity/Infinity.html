@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+
+
+<script>
+
+    var say1 = 70 / 0;
+    var say2 = -70 / 0;
+
+    document.getElementById("numune1").innerHTML = say1;    // Infinity
+    document.getElementById("numune2").innerHTML = say2;    // -Infinity
+
+    document.getElementById("numune3").innerHTML = typeof say2;    // Number
+
+
+</script>
+
+</body>
+</html>

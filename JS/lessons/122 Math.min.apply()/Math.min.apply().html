@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        bu metotdan ARRAY icindeki en kicik ededi elde etmek ucun istifade edilir.
+     -->
+    <div id="numune1"></div>
+
+<script>
+
+    // 1
+    var ededler = [45, 100, 1, 8, 17, 30, 11];
+    goster("numune1", enKicikEded(ededler));
+  
+
+    function enKicikEded(ededleriGotur){
+        return Math.min.apply(null, ededleriGotur);
+    }
+
+    function goster(parametrBir, parametrIki){
+        document.getElementById(parametrBir).innerHTML = parametrIki;
+    }
+
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        nodeType - bu xasse elementlerin düyünlərinin novunu qaytarir
+
+        düyün növü
+
+        düyün növləri 'eded' olaraq qaytarilir ve her ededin bir menasi vardir
+
+        ELEMENT_NODE - 1    
+        ATTRIBUTE_NODE - 2 - deprecated
+        TEXT_NODE - 3
+        COMMENT_NODE - 8
+        DOCUMENT_NODE - 9 
+        DOCUMENT_TYPE_NODE - 10
+
+    -->
+
+     <div id="divParent">
+        <h1 id="head" ajax="open">microsoft</h1>
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">js</p>
+        <p id="p4">php</p>
+        <p id="p5">css</p>
+        <p id="p6">html</p>
+        <p id="p7">boot</p>
+        <p id="p8">vue</p>
+        <!-- komment duyumu 8-dir -->
+    </div>
+      
+
+    <script>
+
+        // 1 - 'ajax' bir attributdur
+        var elementNodes1 = document.querySelector('#head').getAttributeNode('ajax').nodeType;           // 2
+        console.log(elementNodes1);
+
+        // 2 - 'head' bir elementdir
+        var elementNodes2 = document.querySelector('#head').nodeType;                                    // 1
+        console.log(elementNodes2);
+
+        // 3 - 'h1' elementinin alt elementi (firstChild), metin duyumudur
+        var elementNodes3 = document.querySelector('#head').firstChild.nodeType;                         // 3
+        console.log(elementNodes3);
+
+        // 4 
+        var elementNodes4 = document.querySelector('#head').firstChild.COMMENT_NODE;                     // 8
+        console.log(elementNodes4);
+
+        // 5
+        var elementNodes5 = document.nodeType;                                                          // 9
+        console.log(elementNodes5);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+        Popup
+
+        prompt() - bu metod popup penceresine girilen deyerleri almaq ucun istifade edilir.
+    -->
+
+    <p id="numune1"></p>
+    <button class="btn btn-outline-danger" type="button" onclick="acilanQutu1()">Acilan qutu duymesi</button>
+ 
+    <script>
+
+        // 1
+        var netice1;
+        netice1 = document.getElementById('numune1');
+        function acilanQutu1(){
+            var mesaj, deyeriEldeEt;
+            // popUp pencereye daxil edilen deyer "deyeriEldeEt" deyiskenine verilir.
+            // prompt() metodunun 1ci "parametri" PopUp penceresinde metin sahesinin uzerinde gosterilecek mesajdir
+            // prompt() metodunun 2ci "parametri" PopUp penceresinde metin sahesinin icerisinde gosterilecek mesajdir
+            deyeriEldeEt = prompt('Dersin adini daxil edin', "HTML");
+            if(typeof deyeriEldeEt !== 'undefined' || deyeriEldeEt == "") {
+                mesaj = "Bu sahe bow qala bilmez";
+            } else if(deyeriEldeEt == "JavaScript"){
+                mesaj = "Dersin adini " + deyeriEldeEt + " olaraq dogru daxil etsiniz!";
+            }
+            netice1.innerHTML = mesaj;
+        }
+
+    </script>
+</body>
+</html>

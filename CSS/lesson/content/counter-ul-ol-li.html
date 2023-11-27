@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li {
+            list-style: none;
+            counter-increment: elifbaSiralamasi;
+        }
+        /*
+        decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek,
+        lower-latin, upper-latin, georgian, lower-alpha, upper-alpha
+        */
+        ul li::before {
+            content: counter(elifbaSiralamasi, georgian) ") ";
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+
+</body>
+</html>
+

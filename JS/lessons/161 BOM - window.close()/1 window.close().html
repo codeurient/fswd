@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+
+        
+
+    -->
+
+     <button type="button" class="btn btn-primary m-3" onClick="openWindow()">Yeni pəncərə aç</button>
+     <button type="button" class="btn btn-primary m-3" onClick="resizeWindow()">Pəncərəni yenidən formalaşdır</button>
+     <button type="button" class="btn btn-primary m-3" onClick="moveWindow()">Pəncərəni hərəkət etdir</button>
+     <button type="button" class="btn btn-primary m-3" onClick="closeWindow()">Pəncərəni bağla</button>
+
+     <div id="netice"></div>
+
+    <script>
+
+        var netice, yeniPencere;
+
+        netice = document.getElementById('netice');
+
+        function openWindow(){
+            // 1ci parametr: hansi sayti acmaq isteyirikse onun URL adresini yaziriq. Eger hecne yazmasaq bos bir sehife acilacaq
+            // 2ci parametr: hemin URL ile acmaq istediyimiz sayt kenar penceredemi acilsin yoxsa oldugu penceredemi.Yeni target="_blank" kimi 
+            // 3ci parametr: yukseklik ve genislik bildirir
+            // 3cu parametrin deyerleri coxdur eslinde. En cox istifade edileni ise "width" ve "height" -dir
+            yeniPencere = window.open("", "", "width=600, height=600");
+        }
+        function resizeWindow(){
+            //  acilmis olan bir pencerenin olculerini yeniden teyin etmek ucun istifade edilir.
+            yeniPencere.resizeTo(300, 300);
+        }
+        function moveWindow(){
+            // bu metod acilan pencereni X ve Y oxu boyunca hereket etdirmek ucundur.
+            yeniPencere.moveTo(450, 150);
+        }   
+            // bu metod ise acilan pencereni yaxud hazirki pencereni baglamaq ucun istifade edilir
+        function closeWindow(){
+            yeniPencere.close();
+        }
+        
+
+    </script>
+
+
+</body>
+</html>

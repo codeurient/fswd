@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form {
+            width: 400px;
+        }
+        p {
+            display: flex;
+        }
+        label {
+            margin-right: 10px;
+           
+            flex-grow: 2;
+        }
+        input, select {
+            flex-grow: 1;
+        }
+        button{
+            flex-grow: 1;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+    <p>
+        <label for="ad">Ad</label>
+        <input id="ad">
+    </p>
+    <p>
+        <label for="soyad">Soyad</label>
+        <input id="soyad">
+    </p>
+    <p>
+        <label for="sec">Niyə səhifəni paylaşmırsız?</label>
+        <select id="sec">
+            <option>Yararsızdır</option>
+            <option>Xoşuma gəlmir</option>
+            <option>Paylaşacam</option>
+        </select>
+    </p>
+    <p><button>Göndər</button></p>
+</form>
+</body>
+</html>

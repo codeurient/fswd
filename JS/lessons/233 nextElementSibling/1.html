@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">sayt basliqlari bu tag icerisinde yazilir</title>
+</head>
+<body>
+    <!-- 
+        'nextSibling' - bu xasse ana element icindeki, eyni seviyyede olan bir elementden sonra gelen elementi qaytarir
+
+        Bu xasse Node duyumu qaytarir, Node duyumu metnler, bosluqlarda, simvollardan ve.s ibaret ola biler.
+
+        nextElementSibling - bu xasse ise bir basa elementi qaytarir.
+    -->
+   
+    <div id="divParent">
+        <h1 id="head">microsoft</h1>
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">js</p>
+        <p id="p4">php</p>
+        <p id="p5">css</p>
+        <p id="p6">html</p>
+        <p id="p7">boot</p>
+        <p id="p8">vue</p>
+    </div>
+
+
+    <script>
+        // 1
+        var elementNodes1 = document.querySelector('#head').nextElementSibling;
+        console.log(elementNodes1);     // <p id="p1">Angular</p>
+
+        // 2
+        var elementNodes2 = document.querySelector('#head').nextElementSibling.nextElementSibling;
+        console.log(elementNodes2);     // <p id="p2">React</p>
+
+        // 3
+        var elementNodes3 = document.querySelector('#head').nextElementSibling.nextElementSibling.nextElementSibling;
+        console.log(elementNodes3);     // <p id="p3">js</p>
+
+        // 4
+        var elementNodes4 = document.querySelector('#head').nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
+        console.log(elementNodes4);     // <p id="p4">php</p>
+    </script>
+</body>
+</html>
+    
+

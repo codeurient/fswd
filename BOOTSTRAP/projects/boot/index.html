@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="boot/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="boot/css/mySyle.css">
+    <style>
+        .mySecondNav {
+            display: flex !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+        }
+        .myOverlay{
+            max-width: 45% !important;
+        }
+        .myCard{
+            width: 96%;
+        }
+        @media (min-width: 992px) {
+            .myNavDivPos{
+                position: relative;
+            }
+            .myNavUlPos{
+                position: absolute;
+                left: 45%;
+                transform: translate(-50%);
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .myBannerText{
+                font-size: 4vw !important;
+            }
+        }
+        @media (max-width: 1400px) {
+            .myBannerBigText{
+                font-size: 2.2vw !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .myOverlay{
+                max-width: 51% !important;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .myCard{
+                width: 100% !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg border-bottom border-3 border-light py-3">
+                <div class="container-fluid g-0">
+                    <a class="navbar-brand" href="#">Subscribe</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse myNavDivPos" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 myNavUlPos h1 fw-bold" style="font-family: 'Times New Roman'">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Large</a>
+                            </li>
+                        </ul>
+                        <!-- This script got from frontendfreecode.com -->
+                        <form id="app" action="#" class="ms-auto">
+                            <label :data-state="state" for="search" class="mySearchBar">
+                                <input type="text" placeholder="Search" @click="state = 'opan'" @blur="state='close'"/>
+                                <i class="fa fa-search" @click="" aria-hidden="true"></i>
+                            </label>
+                        </form>
+
+                        <a class="btn btn-outline-success ms-0 ms-lg-3 mt-3 mt-lg-0" type="submit">Sign up</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid g-0">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mySecondNav ">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">World</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">U.S</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Techonology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Design</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Culture</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Business</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Politics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Opinion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Science</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Health</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Style</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Travel</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="container-fluid g-0 " style="max-height: 500px !important;">
+                <div class="card h-100">
+                    <img src="img/banner.jpg" alt="" class="img-fluid h-100 w-100" style="object-fit: cover">
+                    <div class="card-img-overlay text-white justify-content-center d-flex flex-column ms-5 myOverlay" >
+                        <h1 class="display-2 myBannerText" style="font-family: 'Times New Roman';" >Title of a longer featured blog post </h1>
+                        <p style="font-size: 24px;" class="myBannerBigText">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+                        <a class="text-white text-decoration-none fw-bold display-7" href="#">Continue reading...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-lg px-0 ps-lg-0">
+                <div class="mt-4 card mb-3 pe-0 myCard" style="width: 96%;">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="card-title">World</h6>
+                                <h3 class="card-title" style="font-family: 'Times New Roman';">Featured Post</h3>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="" class="text-decoration-none">Continue reading...</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/58.jpg" class="img-fluid h-100" alt="..." style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg px-0 pe-lg-0">
+                <div class="mt-4 card mb-3 pe-0  ms-auto myCard" style="width: 96%;">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="card-title">Design</h6>
+                                <h3 class="card-title" style="font-family: 'Times New Roman';">Post title</h3>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="" class="text-decoration-none">Continue reading...</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/58.jpg" class="img-fluid h-100" alt="..." style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="boot/js/bootstrap.bundle.min.js"></script>
+    <script src='boot/js/vue/2.1.10/vue.min.js'></script>
+    <script src="boot/js/myJs.js"></script>
+</body>
+</html>

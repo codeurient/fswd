@@ -1,0 +1,62 @@
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form{
+  max-width: 400px;
+  margin: 10px 40px;
+  border: 2px solid seagreen;
+  padding: 20px;
+}
+h1{
+  margin: 10px 40px;
+}
+.first, .second, .threed{
+  margin-top: 10px;
+}
+.first, .second, .threed{
+  display: flex;
+}
+label{
+  flex-grow: 1;
+}
+input{
+  flex-grow: 3;
+  outline: none;
+  height: 25px;
+}
+input{
+  padding: 0 5px;
+}
+.threed button{
+  flex-grow: 1;
+  height: 30px;
+  padding: 5px;
+  outline: none;
+  border: none;
+  color: dark;
+  background-color: deepskyblue;
+  cursor: pointer;
+}
+.btn{
+  margin-left: 40px;
+}
+button:not(.threed button){
+  cursor: pointer;
+  margin: 5px 5px;
+  padding: 5px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid darkcyan;
+  color: white;
+  background-color: rgb(1, 105, 70);
+}
+#output{
+  margin: 50px;
+}
+#output p{
+  padding: 10px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="message" name="message"></textarea>
+    <p id="result"></p>
+
+
+    <script>
+        
+        var message, result, chracter=150, chracterLength;
+
+        message = document.querySelector("#message");
+        result = document.querySelector("#result");
+
+        message.onkeydown = chracterControl;
+        message.onkeyup = chracterControl;
+
+        function chracterControl(){
+            chracterLength = this.value.length;
+            // 'textarea' elementi icerisindeki simvol uzunlugu 151 olduqda bu demekdirki 
+            // chracter (150) >= chracterLength (151) - den boyuk deyil ve 'if' instruksiyasi iwini dayandiracaq
+            if(chracter >= chracterLength){
+                var lastLength = chracter - chracterLength;
+                result.textContent = lastLength + " simvol qaldi";
+            } else{
+                // eger chracter (150) >= chracterLength (151)-den boyuk deyilse onda, 'textarea' elementinin 
+                // icerisine yazilan simvollar 'substr(0, chracter)'  yeni, 0-dan 150-ye qeder irelileyecek
+                this.value = this.value.substr(0, chracter);
+            }
+        }
+
+    </script>
+</body>
+</html>

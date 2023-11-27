@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main_menu {margin: 10px; padding: 0; list-style: none; background: #eee; width: 200px; cursor: pointer;}
+        #main_menu li {margin-bottom: 10px; padding: 5px;}
+        #main_menu li:hover {background: #ff4ef5;}
+</style>
+</head>
+<body>
+
+    <!-- 
+        Bu cur yazdiqda ise sehife yenile-yenilene duracaqdir
+
+        Nece etmek olarki browserin default işləməsini dayandıraq?
+
+        1ci qayda odurki onclick="return false;" yazaq ve broserin oz basina 
+        islemesini dayandiraq
+     -->
+        <a href="4 preventDefault.html" id="bas" type="button" data-toggle-id="main_menu">Open/Close</a>
+
+        <ul id="main_menu">
+            <li data-command="open">Acmaq</li>
+            <li data-command="save">Saxlamaq</li>
+            <li data-command="draw">Cekmek</li>
+            <li data-command="edit">Redakte</li>
+            <li data-command="customize">Ayarlar</li>
+        </ul>
+
+<script>
+
+    document.addEventListener("click", function(event) {
+        let id = event.target.dataset.toggleId;
+        if(!id) return;
+        let elem = document.getElementById(id);
+        if(!elem) return;
+        elem.hidden = !elem.hidden;
+    })
+
+    let menuActs = {
+        open()      {alert("ac....")},
+        save()      {alert("saxla....")},
+        draw()      {alert("cek....")},
+        edit()      {alert("redaket et....")},
+        customize() {alert("yaxsilasdir....")},
+    }
+    
+    main_menu.addEventListener("click", function(event) {
+        let li = event.target.closest('li');
+        if(li == null) return;
+        let act = li.dataset.command;
+        if(act && menuActs[act] !== undefined) menuActs[act]();
+    });
+
+</script>
+</body>
+</html>

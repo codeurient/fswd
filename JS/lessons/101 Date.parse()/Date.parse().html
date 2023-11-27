@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    Bu metod cari tarix ile 1 yanvar 1970 ci il arasindaki millisaniyeni elde etmek ucun istifade edilir.
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+
+<script>
+
+    // 1
+    var ms = Date.parse("April 21 1970");
+    document.getElementById("numune1").innerHTML =  ms;          // 9489600000 
+
+    var d = new Date(ms);
+    document.getElementById("numune2").innerHTML =  d;          // Tue Apr 21 1970 00:00:00 GMT+0400 (Азербайджан, стандартное время) 
+
+</script>
+
+
+</body>
+</html>

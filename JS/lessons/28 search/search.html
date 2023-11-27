@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+search() - bu string metodu, indexOf() metodu ile eynidir. Yeni birinci tapdigi deyeri bize verir.
+
+indexOf() metodundan ferqi ondadirki 2ci parametr olaraq necenci indeksden basla demek olmur ve
+search() metodunda axtaris ederken requlyar ifadelerden istifade etmek mumkundur.
+
+ -->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+
+<script>
+
+    // 1
+    var necenciIndeks = "JavaScript Angular JS, React JS, Node JS";
+    document.getElementById('numune1').innerHTML = necenciIndeks.search("JS");      // 19
+
+    
+    // 2
+    var myText = "s7t89ring0";
+    // ring - sozunun necenci indeksde oldugunu gosterir
+    document.getElementById('numune2').innerHTML = myText.search(/ring/);      // 5
+    // istenilen her hansisa bir reqemi axtar deyirik ve tapilan hemin reqemin necenci indeksde oldugunu oyrenirik
+    document.getElementById('numune3').innerHTML = myText.search(/  \d   /i);        // 1
+</script>
+</body>
+</html>
+
+

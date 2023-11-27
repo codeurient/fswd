@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!-- 
+    
+[] - array yaratmaq ucun kvadrat moterizelerden istifade edilir
+
+
+
+Array icinde
+a) obyekte sahib ola bilerik
+b) funksiyalara sahib ola bilerik
+c) basqa array-lara sahib ola bilerik
+
+
+
+array yaradarken 2 formadan istifade edile biler.
+a) new Array( deyerler ) - bu qayda meslehet deyildir.
+b) []
+-->
+
+
+    <div id="numune1"></div><hr>
+    <div id="numune2"></div><hr>
+    <div id="numune3"></div><hr>
+    <div id="numune4"></div><hr>
+    <div id="numune5"></div><hr>
+    <div id="numune6"></div><hr>
+    <div id="numune7"></div><hr>
+    <div id="numune8"></div><hr>
+
+
+<script>
+
+    // 1
+    var diller = ["html", "css", "boot", "js", "react"];     // (5) ['html', 'css', 'boot', 'js', 'react']
+    console.log(diller);
+
+
+
+    // 2
+    var diller2 = ["html", "css", "boot", "js", "react"];
+    console.log(diller2[0]);     // html
+    console.log(diller2[1]);     // css
+    console.log(diller2[2]);     // boot
+    console.log(diller2[3]);     // js
+    console.log(diller2[4]);     // react
+
+
+    
+
+    // 3
+    var diller3 = ["html", "css", "boot", "js", "react"];
+    var i;
+    for( i = 0;  i<diller3.length; i++){
+        /*console.log(diller3[i]);*/
+        document.getElementById("numune1").innerHTML = diller3[i] + "<br>";     // react
+        document.getElementById("numune2").innerHTML += diller3[i] + "<br>";    // html css boot js react
+    }
+
+
+    // 4
+    var langs = ["PHP", "Asp.Net", "JS", "NodeJS", "HTML", "CSS", "ReactJS", "Vue JS", "C++"];
+    document.getElementById('numune3').innerHTML = langs;       // PHP,Asp.Net,JS,NodeJS,HTML,CSS,ReactJS,Vue JS,C++
+
+
+    // 5
+    var langs2 = ["PHP", "Asp.Net", "JS", "NodeJS", "HTML", "CSS", "ReactJS", "Vue JS", "C++"];
+    document.getElementById('numune4').innerHTML = langs2[0];       // PHP
+
+
+    // 6
+    var test = ["html", "css", "boot", "js", "react"];
+    var metin, a;
+    
+    metin = "<ul>";
+        for( a = 0;  a<test.length; a++){
+            metin += "<li>" +  test[a] + "</li>";
+        }
+    metin+="</ul>";
+    document.getElementById('numune5').innerHTML = metin;
+
+
+    // 7
+    var metin6 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    metin6[12] = "angular";
+    var test2, i2;
+    test2 = "";
+    for(i2 = 0; i2<metin6.length; i2++){
+        test2 += metin6[i2] + "<br>";
+    }
+    document.getElementById("numune6").innerHTML = test2;
+
+
+    // 8
+    var test3 = ["a", "b", "c"];
+    test3[2] = "d";
+    document.getElementById('numune7').innerHTML = test3;       // a,b,d
+
+
+    // 9 - en sonuncu deyeri elde etmek ucun 'test4.length - 1' yaziriq.
+    var test4 = ["a", "b", "c", "e", "u", "i"];
+    document.getElementById('numune8').innerHTML =  test4[test4.length - 1];  
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  
+</head>
+<body>
+    <!-- 
+       ekran olcusu deyisdikde.
+     -->
+
+        <div id="result"></div>
+        <button id="result">Click</button>
+
+    <script>
+
+        var arg1 = 5, arg2 = 10;
+        var btn = document.querySelector("#Btn");
+
+      
+        window.addEventListener("dblclick", function(){
+            toplama(arg1, arg2);
+        });
+        
+        function toplama(p1, p2){
+            document.querySelector("#result").innerHTML = p1 + p2;
+        }
+
+    </script>
+</body>
+</html>
+    
+

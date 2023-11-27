@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ol {
+            list-style: none;
+            counter-reset: list1;
+        }
+        ol li::before {
+            counter-increment: list1;
+            content: counter(list1) ') ';
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>Sıra</li>
+        <li>Sıra</li>
+        <li>Sıra</li>
+        <li>Sıra</li>
+        <li>Sıra</li>
+    </ol>
+</body>
+</html>
+
+

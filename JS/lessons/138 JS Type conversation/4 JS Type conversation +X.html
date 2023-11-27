@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        +X - bu forma yazilis qaydasi String data tipini Number data tipine cevirir.
+
+    -->
+
+    <div id="netice"></div>
+
+    <script>
+
+        var x = "7"; 
+        var y = +x;
+        
+        var x2 = "JavaScript";  // NaN oldu ilk once ve NaN-nin tipi Number tipidir.
+        var y2 = +x2;
+
+
+        document.getElementById("netice").innerHTML = 
+        typeof x     + "<br>" +     // string
+        typeof y     + "<br>" +     // number
+        typeof x2    + "<br>" +     // string
+        typeof y2    + "<br>";      // number  -  NaN oldu ilk once ve NaN-nin tipi Number tipidir.
+        
+    </script>
+</body>
+</html>

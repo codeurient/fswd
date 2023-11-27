@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        "anchors" kodu bize "name" atributuna sahib olan "<a>" teglerini verir.
+
+        ancaq "name" atributu "<a>" tegi ucun kohnelmisdir.
+
+    -->
+
+    <a name="a" href="">php</a>
+    <a name="b" href="">css</a>
+    <a name="c" href="">js</a>
+
+    <p id="numune1"></p>
+    <p id="numune2"></p>
+    <p id="numune3"></p>
+    <p id="numune4"></p>
+
+<script>
+
+
+var aylin = ["turan", "togrul", "davud"];
+document.getElementById("numune1").innerHTML = aylin[0];
+
+
+   
+   document.getElementById("numune1").innerHTML = document.anchors;                 // [object HTMLCollection]
+   document.getElementById("numune2").innerHTML = document.anchors.length;          // 3
+   document.getElementById("numune3").innerHTML = document.anchors[0];              // file:///Users/untitled%20folder/domains/fswd/JS/lessons/188%20document.ANCHORS/1.html
+   document.getElementById("numune4").innerHTML = document.anchors[0].innerHTML;    // php  
+   
+</script>
+
+
+</body>
+</html>

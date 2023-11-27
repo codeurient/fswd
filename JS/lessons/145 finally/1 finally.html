@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+      try-catch metodundan sonra finally kodu aktivlesir ve ise dusur.
+
+      Meselen, finally olmasa input icerisinde yazdigimiz deyerler click duymesini basdiqdan sonrada orda olacaqdir.
+      Ancaq finally icerisinde try-catch bitdikden sonra kodda ne bas versin deye qeyd etmek mumkundur.
+       
+     -->
+
+
+      <input type="text" id="saheDeyeri">
+      <button type="button" onclick="duymeniBas()">Click</button>
+      <div id="netice"></div>
+
+
+      <script>
+
+       function duymeniBas(){
+
+        var xetaMesaji, sahedenGelenDeyer;
+
+        sahedenGelenDeyer = document.getElementById('saheDeyeri').value;
+        xetaMesaji = document.getElementById('netice');
+        xetaMesaji.innerHTML = "";
+
+            try{
+              if(sahedenGelenDeyer == "") throw "Bu sahe bos ola bilmez";
+              if(isNaN(sahedenGelenDeyer)) throw "Bu saheye sadece reqem yaza bilersiniz";
+
+              sahedenGelenDeyer = Number(sahedenGelenDeyer);
+              if(sahedenGelenDeyer < 5){
+                throw "Girilen reqem 5 den kicik ola bilmez";
+              } 
+              else if(sahedenGelenDeyer > 15){
+                throw "Girilen reqem 15 den boyuk ola bilmez";
+              } 
+              else {
+                throw "Ugurlu netice";
+              }
+            } catch(e){
+                xetaMesaji.innerHTML = e;
+            } finally {
+              document.getElementById('saheDeyeri').value = "";
+            }
+       }
+
+      </script>
+
+</body>
+</html>

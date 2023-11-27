@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    
+    <!-- 
+
+        onSubmit atributu o vaxt istifade edilirki, Biz "form" elementleri vasitesi ile bir seyler gonderek.
+
+        Eger "input" saheleri bow buraxilaraq "button" duymesine basilarsa onda yenede nese gondermis sayilariq.
+        Gonderilen deyer bos bir deyer olar ve bos deyer gondermek dogru olmadigindan "if" sorgumuzun icerisinde
+        "return false" deyerek form-un nese gonderme xususiyyetini legv edirik.
+
+     -->
+    <form action="" method="post" id="formElementi"  name="formElementi" onsubmit="return formunValidasiyaEdilmesi()">
+        Ad   <input  type="text"   name="ad" id="ad" >
+              <input type="submit">
+    </form>
+
+    <p class="alert alert-danger mt-3" id="netice" style="display: none;"></p>
+
+<script>
+
+    function formunValidasiyaEdilmesi(){
+        var formDeyeri, elementeElaveEt;
+
+        elementeElaveEt = document.getElementById("netice");
+        formDeyeri = document.getElementById("ad").value;
+        console.log(formDeyeri);
+        // eger "ad" input sahesi bos qalarsa "return false" deyerek, form-un
+        // bos bir seyler gondermesinin qarsini aliriq ve ekrana "Istifadeci adi bos qoyula bilmez";
+        // mesajini yazdiririq.
+        if(formDeyeri == ""){
+            elementeElaveEt.style.display = "block";
+            elementeElaveEt.innerHTML = "Istifadeci adi bos qoyula bilmez";
+            return false;
+        }
+    }
+    
+
+</script>
+</body>
+</html>

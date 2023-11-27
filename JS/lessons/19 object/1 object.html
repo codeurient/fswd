@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ugur</title>
+</head>
+<body>
+    
+<!-- 
+    
+{} - object yaratmaq ucun istifade edilir.
+
+obyektler ibaretdir: 1) xasselerden.    2) metodlardan
+
+Obyekt xasselerine 2 formada muraciet etmek mumkundur:
+a) obyektAdi.xasseAdi           - noqte ile
+b) obyektAdi["xasseAdi"]        - kvadrat moterize ile
+
+Obyekt metodlarina 1 formada muraciet etmek mumkundur:
+a) obyektAdi.metodAdi()           - noqte ile
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+<div id="numune4"></div><hr>
+<div id="numune5"></div><hr>
+<div id="numune6"></div><hr>
+<div id="numune7"></div><hr>
+<div id="numune8"></div><hr>
+<div id="numune9"></div><hr>
+
+
+<script>
+
+
+
+
+// 1
+let kitab = { 
+    movzu: "JavaScript",    // acar sozler dirnaqsiz, yaradila biler 
+    sehife: 7,
+    "ders": "obyektler",     // acar sozler, "cut" dirnaq yaxud 'tek' dirnaq ile yaradila biler 
+    acar1: function(){
+         return 5+6;
+    },
+};
+
+
+
+
+
+
+
+document.querySelector('#numune1').innerHTML = kitab;                       // [object Object]
+document.querySelector('#numune2').innerHTML = kitab.movzu;                 // JavaScript
+document.querySelector('#numune3').innerHTML = kitab["sehife"];             // 7 - acar sozleri cut dirnaq yaxud tek dirnaq ile cagirmaq olur.
+document.querySelector('#numune4').innerHTML = kitab['ders'];               // obyektler
+// document.querySelector('#numune4').innerHTML = kitab."ders";             // Yalnis muraciet qaydasi. Dirnaqli acarlara [kvadrat moterize] ile muraciet edilir.
+
+kitab.movzu = "PHP";                                                        // movcud acar soze muraciet ederek deyerin deyisdirilmesi
+kitab.avtor = "David";                                                      // eger olmayan acar soze deyer versek onda hemin acar sozu ve ona verilen deyeri yaratmis sayilariq.
+kitab["derece"] = "Senior";                                                 // yeni acar sozu [kvadrat moterize] ile de elave etmek mumkundur.
+
+document.querySelector('#numune5').innerHTML = kitab.movzu;                 // deyer deyisdirildikden sonra muraciet etdikde artiq yeni deyeri goreceyik.
+document.querySelector('#numune6').innerHTML = kitab.avtor;                 // yeni yaradilan acar sozun ve ona verilen deyerin ekrana yazdirilmasi.
+document.querySelector('#numune7').innerHTML = kitab.derece;                // [kvadrat moterize] ile elave edilen acar soze muraciet ederek deyeri ekrana yazdiririq.
+
+// 2 - kitab object-i icerisinde yeniObyekt adinda acar soz yaradiriq ve ona {bezekli moteri} ile Object veririk
+// Yeni Object icinde Object yaratmaq mumkundur. Ic-ice istenilen qeder Object yarada bilersiniz.
+kitab.yeniObyekt = {};
+
+// 3 - Object icinde Array yaratmaqda mumkundur. Ic-ice istenilen qeder Object yarada bilersiniz.
+kitab.yeniArray = [];
+
+// consol penceresinde kitab Object-inin sklet qurulusuna baxa bilersiniz.
+console.log(kitab);
+
+
+
+
+
+
+
+
+
+
+
+// 4 -  ? sual operatorundan istifade ederek acar sozlere ŞƏRTLİ muracietler etmek mumkundur.
+let istifadeci = {
+
+
+    
+};                        // Ilk once bos bir obyekt yaradiriq.
+console.log(istifadeci.adres);              // Bu obyektin icinde 'adres' adinda acar soz olmadigi ucun, muraciet etdikde 'UNDEFINED' cavab aliriq. Yeni qeyd edilmemis.
+// console.log(istifadeci.adres.kuce);      // TypeError - .kuce dedikde ise artiq qeyd edilmemis olan 'adres' acar sozune muraciet etdiyimiz ucun ERROR aliriq.
+
+// Bu cur xeta mesajlarinin qarsini almaq ucun '?' sual operatorundan istifade edilir. Yeni, eger bu acar soz varsa demekdir.
+console.log(istifadeci.adres?.kuce);        // yeni, sual verir. adres varmi?  varsa ireli get yoxdursa oldugun yerde qal.
+
+
+
+
+
+
+
+
+
+
+
+
+// 5 - Object icinde Array-lar yaratmaq mumkundur.
+let melumat = {
+    mexfi1: [ [ 11, "a"], [4, 9] ],
+    mexfi2: [ [ "dtx", "dsx"], [ "dgk", "din"] ]
+} 
+document.querySelector("#numune8").innerHTML = melumat.mexfi1;              // 11,a,4,9
+document.querySelector("#numune9").innerHTML = melumat.mexfi2[1][0];        // dgk
+
+
+
+</script>
+
+</body>
+</html>
+
+

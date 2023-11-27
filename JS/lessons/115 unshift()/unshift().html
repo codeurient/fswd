@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+
+1. unshift() - bu metod array-in bawina deyer elave edir
+
+
+2. unshift() - bu metod hemde PUSH() metodu kimi ARRAY icindeki deyerlerin INDEX-ini elde etmek ucun istifade edilir
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+<script>
+
+    // 1
+    var test1 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    test1.unshift("angular");
+    document.getElementById("numune1").innerHTML = test1;                       //  angular,php,js,css,html,bootstrap,react,vue
+
+
+
+
+    // 2
+    var test2 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    document.getElementById("numune2").innerHTML = test2.unshift();             // 7
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+MAX_VALUE          - js -deki en boyuk reqemi verir
+MIN_VALUE          - js -deki en kicik reqemi verir
+NEGATIVE_INFINITY  - menfi sonsuzluq verir
+POSITIVE_INFINITY  - musbet sonsuzluq verir
+NaN                - Not a Number verir
+
+-->
+
+<div id="numune1"></div>
+
+<script>
+    
+    // 1
+    document.getElementById("numune1").innerHTML =  
+    Number.MAX_VALUE            +   "<br>"   +  //  1.7976931348623157e+308
+    Number.MIN_VALUE            +   "<br>"   +  //  5e-324 - 5 vurulsun 10 ustu menfi 324
+    Number.NEGATIVE_INFINITY    +   "<br>"   +  //  -Infinity
+    Number.POSITIVE_INFINITY    +   "<br>"   +  //  Infinity
+    Number.NaN                  +   "<br>"   ;  //  NaN
+
+</script>
+
+</body>
+</html>

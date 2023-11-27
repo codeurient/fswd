@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+JS-de aylar 0 (sifirdan) baslayaraq 11 -e qeder siralanir. Yeni 0 eslinde Yanvar ayidir ve.s
+
+-->
+
+
+<b>new Date()</b>
+<div id="numune1"></div><hr>
+
+<b>typeof new Date()</b>
+<div id="numune2"></div><hr>
+
+<b>typeof new Date().toString();</b>
+<div id="numune3"></div><hr>
+
+<b>new Date("April 21, 2018 14:17:00");</b>
+<div id="numune4"></div><hr>
+
+<b>new Date(87000000);</b>
+<div id="numune5"></div><hr>
+
+<b>new Date(90, 4, 25, 13, 20, 0);</b>
+<div id="numune6"></div><hr>
+
+<b>new Date("2018-11-15T19:00:01Z");</b>
+<div id="numune7"></div><hr>
+
+
+<script>
+
+    // vaxti teyin etmek ucun istifade edilir.
+    document.getElementById("numune1").innerHTML =  new Date() // Tue Sep 06 2022 13:51:53 GMT+0400 (Азербайджан, стандартное время)
+
+    // tipi object - dir
+    document.getElementById("numune2").innerHTML =  typeof new Date()       // Object
+
+    // ancaq STRING modunada cevirmek mumkundur
+    document.getElementById("numune3").innerHTML =  typeof new Date().toString();   // String
+
+    // oz istediyimiz tarixide yazdirmaq mumkundur
+    document.getElementById("numune4").innerHTML =  new Date("April 21, 2018 14:17:00");
+
+    // tarixi millisaniye ile yazdirmaq mumkundur
+    document.getElementById("numune5").innerHTML =  new Date(87000000);
+
+    // il, ay, gun, saat, deq, saniye, millisaniye
+    document.getElementById("numune6").innerHTML =  new Date(90, 4, 25, 13, 20, 0);
+
+    // ISO tarixi deyilen yazilis qaydasi vardir. Bu js-de en dogru qebul edilen tarix yazdirmaq formasidir.
+    // Yeni birinci Il, Ay, Gun
+    // Saati yazdirmaq ucun ise boyuk "T" herfinden istifade edilir.
+    // UTC formatini elave etmek ucun ise boyuk "Z" herfinden istifade edilir.
+    // Her hansisa bir saat qeyd edilmedikde ferqli brazuerler oz saat formatlarini esas goturerler.
+    document.getElementById("numune7").innerHTML =  new Date("2018-11-15T19:00:01Z");
+
+</script>
+
+</body>
+</html>

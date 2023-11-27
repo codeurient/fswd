@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">sayt basliqlari bu tag icerisinde yazilir</title>
+  
+</head>
+<body>
+
+    <!-- 
+
+        childNodes[0] - evezine 'firstChild' xassesinden istifade etmek olar. Bu xasse, alt elementi bize verir. Hemin alt element metin duyumudur.
+
+        nodeValue (mətn düyümü) - bu xasseden, node deyerini qaytarmaq yaxud element icine deyer yazmaq ucun istifade edilir. Node deyeri elementin icindeki metin deyerdir.
+
+        'firstChild' - hemin tegin icerisini qaytarir
+
+        'firstElementChild' ise ana element icerisindeki tag-i qaytarir
+    -->
+   
+    <div>
+        <h1 id="head">microsoft</h1>
+        <p id="p1">Angular</p>
+        <p id="p2">React</p>
+        <p id="p3">js</p>
+        <p id="p4">php</p>
+        <p id="p5">css</p>
+        <p id="p6">html</p>
+        <p id="p7">boot</p>
+        <p id="p8">vue</p>
+    </div>
+      
+
+    <script>
+
+        var elementNodes = document.querySelector('#title').firstChild.nodeValue;
+        console.log(elementNodes);
+
+    </script>
+</body>
+</html>
+    
+

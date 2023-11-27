@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(12, [col] 1fr);
+            grid-template-rows: repeat(8, [row] 1fr);
+            grid-column-gap: 15px;
+            grid-row-gap: 15px;
+            border: 2px solid black;
+        }
+        .grid-item1{ background-color: #ff5900; }
+        .grid-item2{ background-color: #ffcc00; }
+        .grid-item3{
+            background-color: red;
+            grid-column: col 1 / span 4;
+            grid-row: row 3 / span 4;
+        }
+        .grid-item4{ background-color: #40c4c8; }
+        .grid-item5{ background-color: fuchsia; }
+        .grid-item6{ background-color: #4B846A; }
+        .grid-item7{ background-color: yellow; }
+        .grid-item8{ background-color: #ece89d; }
+        .grid-item9{ background-color: lightcoral; }
+        .grid-item10{ background-color: brown; }
+        .grid-item11{ background-color: lime }
+        .grid-item12{ background-color: #F0BA7D; }
+    </style>
+</head>
+<body>
+
+<div class="grid">
+    <div class="grid-item grid-item1">item1</div>
+    <div class="grid-item grid-item2">item2</div>
+    <div class="grid-item grid-item3">item3</div>
+    <div class="grid-item grid-item4">item4</div>
+    <div class="grid-item grid-item5">item5</div>
+    <div class="grid-item grid-item6">item6</div>
+    <div class="grid-item grid-item7">item7</div>
+    <div class="grid-item grid-item8">item8</div>
+    <div class="grid-item grid-item9">item9</div>
+    <div class="grid-item grid-item10">item10</div>
+    <div class="grid-item grid-item11">item11</div>
+    <div class="grid-item grid-item12">item12</div>
+</div>
+
+</body>
+</html>

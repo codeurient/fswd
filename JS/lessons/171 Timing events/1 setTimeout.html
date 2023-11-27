@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- 
+        JS kodlari mueyyen saat araligi (intervali) ile iwleme bacarigina malikdir.
+
+        Bunun ucun 2 metodan istifade edilir:
+        1) setTimeout(funksiya, millisaniye) - mueyyen bir millisaniye gozledikden sonra, funksiya islemeye baslar
+        2) setInterval(funksiya, millisaniye) - setTimeout ile eynidir, ancaq funksiya-nin isini daim tekrarladar. (dongu yaradir)
+    -->
+    
+    <button type="button" onclick="setTimeout(mueyyenVaxtSonraGoster, 2000)">Emeliyyati baslat</button>
+    <p id="numune1"></p>
+
+    
+    <script>
+            var netice = document.getElementById("numune1");
+            // 2 saniye sonra bu funksiya iwlemeye bawliyacaqdir.
+            function mueyyenVaxtSonraGoster(){
+                netice.innerHTML = "dirnaqciqlar icerisinde STRING-ler yazilir";
+            }
+    </script>
+</body>
+</html>

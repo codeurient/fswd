@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--  
+    offcanvas
+    offcanvas-start
+    offcanvas-header
+    offcanvas-title
+    offcanvas-body
+
+    data-bs-dismiss="offcanvas" - offcanvas-i bagla deiyirik
+    data-bs-backdrop="false" - arxa fona basdiqda qapatma
+-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="#myCanvas" data-bs-toggle ="offcanvas" class="btn btn-info" >Linke bas</a>
+                <button data-bs-target="#myCanvas"  data-bs-toggle="offcanvas" class="btn btn-info">Duymeye bas</button>
+                <!-- bir alt setrde show deyerek gormek olar neticeni -->
+                <div class="offcanvas offcanvas-start" id="myCanvas" data-bs-backdrop="false">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title">Lorem, ipsum</h5>
+                        <button type="button" data-bs-dismiss="offcanvas" class="btn-close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi expedita, earum quis perferendis asperiores error esse labore odit officiis magnam ad necessitatibus deserunt ab, nihil, commodi sit hic ipsa doloremque!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+<script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div>
+
+<script>
+
+
+    // 1 - Eger iki parametr istifade edib yalniz bir arqument daxil etsek, onda "NaN" cavabi alariq.
+    function multi(x,y){
+        return x*y;
+    }
+    function capEt(x){
+        document.getElementById("numune1").innerHTML = x;
+    }
+    capEt(multi(4));    // NaN
+
+
+
+
+    // 2 - "NaN" almamaq ucun default deyerden istifade ede bilerik.
+    function multi2(x,y){
+        if(y === undefined) {
+            y = 2;
+        } 
+        return x*y;
+    }
+   
+    function print2(x, y){
+        document.getElementById(y).innerHTML = x;
+    }
+    print2( multi2(564), "numune2" );
+
+
+
+    
+
+
+    // 3 - en rahat yolu - "NaN" almamaq ucun default deyerden istifade ede bilerik.
+    function multi3(x,y = 5){
+        return x*y;
+    }
+    function print3(a){
+        document.getElementById("numune3").innerHTML = a;
+    }
+    print3(multi3(4));    // 12
+    
+</script>
+
+</body>
+</html>

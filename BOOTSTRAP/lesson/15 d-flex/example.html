@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../projects/hosting/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../projects/hosting/css/bootstrap/bootstrap.min.css.map">
+
+</head>
+<body>
+
+<!--
+standart olaraq div tegləri bütün sətri tutaraq alt-alta sıralanan teglərdir.
+-->
+<div class="container-fluid my-2 p-3">
+    <div class="bg-dark p-3 mb-4">
+        <div class="p-2 bg-info">1</div>
+        <div class="p-2 bg-warning">2</div>
+    </div>
+</div>
+<!--
+ancaq biz ana elementə "d-flex" klası verdikdə. həmin ana element bütün sətri tutar ancaq içindəki
+uçaq elementlər məzmun qədər yer tutaraq yan-yana sırlanar, alt-alta yox.
+-->
+<div class="container-fluid my-2 p-3">
+    <div class="d-flex bg-dark p-3 mb-4">
+        <div class="p-2 bg-info">1</div>
+        <div class="p-2 bg-warning">2</div>
+    </div>
+</div>
+<!--
+həm ana ana element həmdəki uşaq elementlər məzmun qədər yer tutaraq yan-yana sıralansın istəyiriksə
+onda "d-inline-flex" klasından istifadə etməliyik.
+-->
+<div class="container-fluid my-2 p-3">
+    <div class="d-inline-flex bg-dark p-3 mb-4">
+        <div class="p-2 bg-info">1</div>
+        <div class="p-2 bg-warning">2</div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

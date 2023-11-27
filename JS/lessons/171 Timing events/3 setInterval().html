@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../BOOTSTRAP/projects/hosting/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- 
+
+        setInterval() - bu metod mueyyen interval ile funksiyani isledir.
+
+    -->
+    
+    <button type="button" onclick="clearInterval(vaxtIleCalisdir)">Stop Interval</button>
+    <p id="numune1"></p>
+
+    
+    <script>
+            var vaxtIleCalisdir, netice;
+
+            vaxtIleCalisdir = setInterval(mueyyenVaxtSonraGoster, 1000);
+            netice = document.getElementById("numune1");
+
+            function mueyyenVaxtSonraGoster(){
+                var d = new Date();
+                netice.innerHTML = d.toLocaleTimeString();
+            }
+    </script>
+</body>
+</html>

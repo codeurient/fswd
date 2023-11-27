@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        & - AND :    Eger iki deyerde 1 olarsa onda, cavab da, 1 olaraq bize qayidar.
+
+    -->
+
+    <div id="netice1"></div>
+    <div id="netice2"></div>
+    <div id="netice3"></div>
+    <div id="netice4"></div>
+
+    <hr>
+
+    <div id="netice5"></div>
+    <div id="netice6"></div>
+    <div id="netice7"></div>
+    <div id="netice8"></div>
+
+    <script>
+
+       document.getElementById('netice1').innerHTML = 0 & 0;    // 0
+       document.getElementById('netice2').innerHTML = 0 & 1;    // 0
+       document.getElementById('netice3').innerHTML = 1 & 0;    // 0
+       document.getElementById('netice4').innerHTML = 1 & 1;    // 1    
+       
+       
+       
+       document.getElementById('netice5').innerHTML = 1111 & 0000;    // 0
+       document.getElementById('netice6').innerHTML = 1111 & 0001;    // 1
+       document.getElementById('netice7').innerHTML = 1111 & 0010;    // 0
+       document.getElementById('netice8').innerHTML = 1111 & 0100;    // 64
+          
+    </script>
+
+
+<!-- 
+
+    
+
+
+
+
+
+ -->
+</body>
+</html>

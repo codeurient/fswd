@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 
+        Her sey "document" elementinin icerisinde yerlesir yeni "document" ana elementdir ve "document"
+        icerisinde yerlesen butun tag-lar bu ana elementin "child"-didir.
+
+        removeChild() metodu ana element icerisindeki alt elementleri silmek ucun istifade edilir.
+    -->
+
+    <div id="myList"> 
+        <p>1</p> 
+        <p>2</p> 
+        <p>3</p> 
+    </div>
+    <em>4</em>
+    <nav>5</nav>
+    <div id="myList2">6</div>
+
+
+    <script>
+        // 1 - "myList2" adina sahib 'div' tag-inin ana elementi "document"-dir.
+        // "parentNode" dedikde biz hemin "document" olan ana elemente muraciet etmis oluruq ve 
+        // "removeChild(a2)" deyerek hemin ana elemntin usaq elemnti olan 'div' tag-ini silirik.
+        var a2 = document.getElementById("myList2");
+        a2.parentNode.removeChild(a2);
+    </script>
+</body>
+</html>
+
+

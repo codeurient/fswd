@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+    bu metod verilen deyerleri reqemsal deyere cevirmek ucun istifade edilir.
+
+-->
+
+<div id="numune1"></div>
+
+<script>
+
+    // 1
+    document.getElementById("numune1").innerHTML =  
+    Number(true)        +   "<br>"   +     // 1     
+    Number(false)       +   "<br>"   +     // 0     
+    Number(new Date())  +   "<br>"   +     // 1662222181711     
+    Number("7")         +   "<br>"   +     // 7     
+    Number("6 ")        +   "<br>"   +     // 6     
+    Number(" 5")        +   "<br>"   +     // 5     
+    Number("7 80")      +   "<br>"   +     // NaN     
+    Number("JS")        +   "<br>";        // NaN 
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        createElement   - yeni bir element yaratdiqda istifade edilen JS kodudur
+
+        
+        type            - elementin "type" atributudur ve bu atributa deyer elave etmek istedikde istifade edilir.
+        src             - elementin "src"  atributudur ve bu atributa deyer elave etmek istedikde istifade edilir.
+
+        "createElement" ile yaratmis oldugumuz "script" tag-lerini "body" taglerinin icerisinde elave etmek ucun
+        "appendChild" - JS kodundan faydalaniriq. append ingilizce elave etmek demekdir.   
+     -->
+
+    
+
+<script>
+
+    window.onload = function(){
+
+        // "elementiEldeEtmek" bu deyiskenimiz bizim "script" taglerimiz oldu
+        var elementiEldeEtmek = document.createElement("script");
+        // .type deyib "script" teginin type atributuna muraciet etmis ve ona deyer elave etmis oluruq asagidaki kod ile
+        elementiEldeEtmek.type = "text/javascript";
+        // .src deyib "script" teginin src atributuna muraciet etmis ve ona deyer elave etmis oluruq asagidaki kod ile
+        elementiEldeEtmek.src = "js/mesaj.js";
+        // "body" teglerinin icerisine,  usaq element olaraq elave et demis oluruq asagidaki kod ile. 
+        // "append" elave etmek demekdir. "appendChild" dedikde "body" teglerinin en sonuna "script" taglarini elave etmis oluruq.
+        // "body" teglerinin sonuna "script" tegleri avtomatik olaraq elave edilir.
+        document.body.appendChild(elementiEldeEtmek);
+    }
+</script>
+
+
+
+<!-- 
+    tam da burda "script" teglerimiz yaranacaqdir.
+-->
+
+
+</body>
+</html>

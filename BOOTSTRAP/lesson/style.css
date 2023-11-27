@@ -1,0 +1,16 @@
+/**{
+    margin: 0 !important;
+    padding: 0 !important;
+}*/
+
+.myHeight{
+    height: 600px;
+}
+.item-oruc{
+    font-weight: bold;
+}
+
+.my-slide{
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}

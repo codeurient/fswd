@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ol { list-style-type: none; counter-reset: list1; }
+
+        ol li::before {
+            counter-increment: list1;
+            content: counter(list1) ". ";
+        }
+        ol ol { counter-reset: list2; }
+        ol ol li::before {
+            counter-increment: list2;
+            content: counter(list1) "." counter(list2) ". ";
+        }
+        .iki{
+            counter-reset: list3;
+        }
+    </style>
+</head>
+<body>
+<h1>Text 1</h1>
+    <ol>
+        <li>Sıra
+            <ol>
+                <li>Alt sıra</li>
+                <li>Alt sıra</li>
+                <li>Alt sıra</li>
+                <li>Alt sıra</li>
+                <li>Alt sıra</li>
+            </ol>
+        </li>
+        <li>Sıra
+            <ol>
+                <li>Alt sıra</li>
+                <li>Alt sıra</li>
+            </ol>
+        </li>
+    </ol>
+
+
+
+    <h1>Text 2</h1>
+
+
+
+    <ol class="iki">
+        <li>Sıra
+            <ol>
+                <li>Alt sıra</li>
+                <li>Alt sıra</li>
+            </ol>
+        </li>
+        <li>Sıra
+            <ol>
+                <li>Alt sıra</li>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>
+
+

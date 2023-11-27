@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ol{ list-style: none;}
+        ol { counter-reset: deyisken1 -1; }
+        li::before {
+            counter-increment: deyisken1 deyisken1;
+            content: counter(deyisken1) ") ";
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>Iphone</li>
+        <li>Noki</li>
+        <li>Samsung</li>
+    </ol>
+</body>
+</html>
+

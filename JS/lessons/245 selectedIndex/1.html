@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="frmValidate" name="frmValidate">
+        <div>
+            <label for="city">City</label>
+            <select id="city">
+                <option value="JS">JavaScript</option>
+                <option value="Angular">Angular JS</option>
+                <option value="React">React JS</option>
+                <option value="Vue">Vue JS</option>
+                <option value="Node">Node JS</option>
+            </select>
+        </div>
+
+        <button type="button" id="Btn">Click</button>
+    </form>
+
+
+    <script>
+        var Btn=document.querySelector('#Btn');
+        var getIndex = document.querySelector('#city');
+
+        Btn.addEventListener('click', function(){
+            // options - JS xassesi, bize 'select' tag-i icerisindeki butun 'option' elementlerini qaytarir
+            // selectedIndex - bu xasse secili olan elementin INDEX-ini qaytarir
+            // value - bu xasse option elementinin value="JS" atributunun deyerini qaytarir
+            // Metni qaytarmaq ucun ise - 'text' demek olardi
+            var valueSelected = getIndex.options[getIndex.selectedIndex].value;
+            console.log(valueSelected);
+        })
+
+    </script>
+</body>
+</html>

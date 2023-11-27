@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+bu metod stringleri bolmelere ayriqmaq ucun istifade edilir
+
+bu metod substring ve slice ile eynidir onlardan ferqi sadece baslangic deyeri verdikden sonra
+nece pozisiya irelilesin demek olur. Yeni:
+slice(11, 21); - burda 21-11=10
+substr(11, 10); - burda ise 11den sonra 10 pozisiya ireli
+
+ -->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+
+<script>
+
+    // 1
+    var testNomre1 = "JavaScript Angular JS, React JS, Node JS ";
+
+    
+    // 11ci pozisiyadan basla (bosluq olan yer) ve 10000-e qeder ne varsa her seyi gotur demekdir
+    // yaxud 2ci parametri hec yazmamaqda olar eger her seyi almaq isteyirikse
+    document.getElementById('numune1').innerHTML = testNomre1.substr(11, 10);      // Angular JS
+
+
+    // minus deyer verdikde sola dogru birini hereket eder ve meselen 7 dedikde basliyar hemin
+    // minus deyer qeder gelmis oldugu yerden ireli dogru saymaga 1,2,3,4,5,6,7
+    document.getElementById('numune2').innerHTML = testNomre1.substr(-8, 7);      // Node JS
+
+</script>
+</body>
+</html>
+

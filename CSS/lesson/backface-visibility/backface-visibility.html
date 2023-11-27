@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flip {
+            perspective: 900px;
+        }
+        .card {
+            position: relative;
+            width: 250px; height: 273px;
+            transition: transform 1s;
+            /* figcaption tegi, tərsinə çevrildiyi üçün
+             hidden dəyərinin köməkliyi ilə gizlədilir.
+             preserve-3d dəyərinin köməkliyi ilə bu 2-not important teg üçün
+             3D məkanı yaradırıq ki, ana element olan div tegi
+             tərsinə fırlananda figcaption tegi düzünə çevrilsin.
+             O, düz çevrildiyindən, hidden dəyəri figcaption
+             tegi üçün deaktiv olur və o görsənir. Ancaq bu
+             səfərdə img tegi tərsinə çevrilir və hidden dəyəri
+             img tegi üçün aktiv olur və onu gizlədir. */
+            transform-style: preserve-3d;
+        }
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            top: 0; bottom: 0;
+            backface-visibility: hidden;
+        }
+        .card-face.back {
+            font: 18px/1.6 Arial;
+            padding: 20px;
+            transform: rotateY(180deg);
+            background: #4B846A;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<figure class="flip">
+
+    <div class="card">
+
+        <img src="//webref.ru/example/image/squirrel.jpg" class="card-face front" alt="">
+        <figcaption class="card-face back">
+            Dələlər qorxaq və dəcəldirlər. Çox çalışqan,
+            iştahalı, səmimi, cəld, şən və pozitivdirlər.
+        </figcaption>
+
+    </div>
+
+</figure>
+
+
+</body>
+</html>

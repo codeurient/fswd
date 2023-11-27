@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #abc{
+            font-size: 12px;
+            width: 200px;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            animation: myfirst 5s infinite;
+        }
+        .normal{
+            animation-direction: normal;
+            background: red;
+        }
+        .alternate{
+            animation-direction: alternate;
+            background: blue;
+            top:20px;
+        }
+        .reverse{
+            animation-direction: reverse;
+            background: green;
+            top:40px;
+        }
+        .alternate-reverse{
+            animation-direction: alternate-reverse;
+            background: yellow;
+            top:60px;
+        }
+        @keyframes myfirst {
+            from { left: 0; }
+            to { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div id="abc">
+    <div class="box normal">normal</div>
+    <div class="box alternate">alternate</div>
+    <div class="box reverse">reverse</div>
+    <div class="box alternate-reverse">alternate-reverse</div>
+</div>
+
+
+
+</body>
+</html>

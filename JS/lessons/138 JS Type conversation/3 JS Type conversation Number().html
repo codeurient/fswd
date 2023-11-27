@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        Number() global metodundan - JS deyisenlerini number tipine cevirmek ucun istifade edilir.
+
+    -->
+
+    <div id="netice"></div>
+
+    <script>
+
+        var x = "3.14"; 
+        document.getElementById("netice").innerHTML = 
+
+        Number(x)                   + "<br>" +  //  3.14
+        Number("10")                + "<br>" +  //  10
+        Number("")                  + "<br>" +  //  0
+        Number(" ")                 + "<br>" +  //  0
+        Number("10 17")             + "<br>" +  //  NaN
+        Number("JavaScript")        + "<br>" +  //  NaN  
+        Number(" 100")              + "<br>" +  //  100  
+        Number(true)                + "<br>" +  //  1  
+        Number(false)               + "<br>" +  //  0  
+        Number(new Date())          + "<hr>" +  //  1666354455765
+  
+
+        "1 "  + typeof Number(x)             + "<br>" +  // number
+        "2 "  + typeof Number("10")          + "<br>" +  // number
+        "3 "  + typeof Number("")            + "<br>" +  // number
+        "4 "  + typeof Number(" ")           + "<br>" +  // number
+        "5 "  + typeof Number("10 17")       + "<br>" +  // number
+        "6 "  + typeof Number("JavaScript")  + "<br>" +  // number  
+        "7 "  + typeof Number(" 100")        + "<br>" +  // number
+        "8 "  + typeof Number(true)          + "<br>" +  // number
+        "9 "  + typeof Number(false)         + "<br>" +  // number
+        "10 " + typeof Number(new Date())    + "<br>";   // number
+        
+    </script>
+</body>
+</html>
