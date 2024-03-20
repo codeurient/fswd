@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <p></p>
+
+    <script>
+        havaPraqnozu = ["gunes","yagis","qar", "bulud"];
+        hava = ["Gunesli","Yagisli","Qarli", "Buludlu"];
+
+        tag = "<select id='secim' onchange='havaProqnozunuSecin()'>"
+            tag += "<option selected disabled>Secim edin</option>";
+            for( i = 0;  i<havaPraqnozu.length; i++){
+                tag += `<option value=${havaPraqnozu[i]}>${hava[i]}</option>`;
+            }
+        tag +="</select>"
+        document.querySelector('div').innerHTML = tag;
+
+
+        let tagP = document.getElementsByTagName("p")[0];
+        let secmek = document.querySelector("#secim");
+
+        function havaProqnozunuSecin() {
+            let secmisOldugunDeyer = secmek.value;
+
+            acixlamaMetni = {
+                "metn1" : "Bu gun hava gozeldir.",
+                "metn2" : "Yagis yagir pencereni bagla.",
+                "metn3" : "Qar yagir, eynini qalin et.",
+                "metn4" : "Hava buludludur.",
+            }
+
+            for (acarSozler in acixlamaMetni) {
+                if (secmisOldugunDeyer === havaPraqnozu[0]) {
+                    tagP.textContent = acixlamaMetni[acarSozler];
+                } else if (secmisOldugunDeyer === havaPraqnozu[1]) {
+                    tagP.textContent = acixlamaMetni[acarSozler];
+                } else if (secmisOldugunDeyer === havaPraqnozu[2]) {
+                    tagP.textContent = acixlamaMetni[acarSozler];
+                } else if (secmisOldugunDeyer === havaPraqnozu[3]) {
+                    tagP.textContent = acixlamaMetni[acarSozler];
+                } else {
+                    tagP.textContent = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

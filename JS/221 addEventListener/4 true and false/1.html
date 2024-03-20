@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{ background-color: yellow; padding: 20px;}
+        p{ background-color: red;}
+    </style>
+</head>
+<body>
+    <!-- 
+       elementler ana ve usaq elementlerden ibaretdir.
+
+       addEventListener() metodunun 3cu parametrine "FALSE" verdikde 1ci esas goturulen element 'USAQ' elementdir 2ci ise 'ANA' element
+
+       addEventListener() metodunun 3cu parametrine "TRUE" verdikde 1ci esas goturulen element 'ANA' elementdir 2ci ise 'USAQ' element
+    -->
+    <div id="div1">
+        <p id="p1">Lorem, ipsum dolor.</p>
+    </div><hr>
+
+    <div id="div2">
+        <p id="p2">Lorem, ipsum dolor.</p>
+    </div>
+
+    <script>
+            var P1, P2, DIV1, DIV2;
+            P1   = document.querySelector("#p1");
+            P2   = document.querySelector("#p2");
+            DIV1 = document.querySelector("#div1");
+            DIV2 = document.querySelector("#div2");
+
+            P1.addEventListener("click", function(){
+                alert("p1 elementine klikledin");
+            }, false);
+
+            DIV1.addEventListener("click", function(){
+                alert("div1 elementine klikledin");
+            }, false);
+
+            P2.addEventListener("click", function(){
+                alert("p2 elementine klikledin");
+            }, true);
+
+            DIV2.addEventListener("click", function(){
+                alert("div2 elementine klikledin");
+            }, true);
+    </script>
+</body>
+</html>
+    
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" id="zaqatalaCheckbox" onchange="secildikdeAktivlesdir()"> Zaqatala
+    <input type="checkbox" id="qaxCheckbox" onchange="secildikdeAktivlesdir()"> Qax
+    <br><br>
+    <form></form>
+    <p></p>
+    <button onclick="havayaGoreDeyis(secmek.value)">Sebekeni idare et</button>
+    
+    <script>
+        let havaPraqnozu = ["gunes","yagis"];
+        let hava         = ["Gunesli","Yagisli"];
+        const aciqObjekt = { "gunes": "Kafe açildi",  "yagis": "Kafe bağlandi" };
+
+        tag = "<select id='secim' disabled>"
+            tag += "<option selected disabled>Secim edin</option>";
+            let i = 0;
+            while (i < havaPraqnozu.length) {
+                tag += `<option value=${havaPraqnozu[i]}>${hava[i]}</option>`;
+                i++;
+            }
+        tag +="</select>"
+
+        document.querySelector('form').innerHTML = tag;
+        let tagP = document.getElementsByTagName("p")[0];
+        let secmek = document.querySelector("#secim");
+        let zaqatalaCheckbox = document.getElementById("zaqatalaCheckbox");
+        let qaxCheckbox = document.getElementById("qaxCheckbox");
+
+        function secildikdeAktivlesdir() {
+            if (zaqatalaCheckbox.checked || qaxCheckbox.checked) {
+                secmek.disabled = false;
+            } else {
+                secmek.disabled = true;
+            }
+        }
+        function havayaGoreDeyis(secmisOldugunDeyer) {
+            let zaqatalaChecked = zaqatalaCheckbox.checked;
+            let qaxChecked = qaxCheckbox.checked;
+            switch(secmisOldugunDeyer) {
+                case secmisOldugunDeyer:
+                    tagP.textContent = (zaqatalaChecked || qaxChecked) ? aciqObjekt[secmisOldugunDeyer] : '';
+                    break;
+                case secmisOldugunDeyer:
+                    tagP.textContent = (zaqatalaChecked || qaxChecked) ? aciqObjekt[secmisOldugunDeyer] : '';
+                    break;
+                default:
+                    tagP.textContent = "";
+            }
+        }
+    </script>
+</body>
+
+
+
+
+</html>
+

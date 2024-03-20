@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<div id="numune1"></div><hr>
+<div id="numune2"></div>
+
+<script>
+
+    // 1
+    // funksiya icerisindeki Arqument sayini almaq ucun "arguments.lenth" kodundan istifade edilir.
+    // "arguments" bir OBJECT-dir. Her arqumentinin bir indeksi vardir ve "arguments[1]" deyerek bu indeks ile
+    // hemin arqumentlere muraciet etmek mumkundur.
+    function multi(){
+        return arguments.length;
+    }
+    function print(x){
+        document.getElementById("numune1").innerHTML = x;
+    }
+    print(multi(4,3,7,16));  // 4 - yeni dord dene arqument var.
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    // 2
+    function showMax(){
+
+        var menfiSonsuzluq = Number.NEGATIVE_INFINITY;
+        var i, Max = menfiSonsuzluq;
+        for(i=0; i<arguments.length; i++){
+            // eger 8 kicikdirse (<) -Infinity-den ki, 8 ededi boyukdur onda "Max" olasidi 8
+            // 2,3 boyuk deyil ona gore hecne olmur
+            // 64 boyukdu ona gore 8 pozulur ve onun evezine "Max" deyiskenine 64 yazdirilasidi
+            // 56,21 kicik oldugu ucun 64-den hecne olmur
+            // 78 boyukdu deye 64 pozulur ve evezine 78 yazdirilir
+            // 99 da boyuk oldugu ucun 78 pozulur ve onun evezine 99 yazdirilir
+            // ve belelikle arqumentlerden en boyuyunu tapmis oluruq.
+            if(arguments[i] > Max){
+                Max = arguments[i];
+            }
+       }
+       return Max;
+    }
+    function print2(a){
+        document.getElementById("numune2").innerHTML = a;
+    }
+    print2(showMax(8,2,3,64,56,21,78,99));
+
+
+
+
+</script>
+
+</body>
+</html>

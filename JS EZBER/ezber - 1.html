@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="metn"></p>
+    <input id="duyme" type="button" value="Hesablayin" onclick="istediyinizAdiYazin(5, 6)">
+
+    <script>
+
+        let tagP = document.getElementById("metn");
+        const duyme = document.querySelector("#duyme");
+
+        function istediyinizAdiYazin (eded1, eded2, eded3 = 30) {
+            
+            tagP.innerHTML = "Toplamanin neticesi: " + (eded1 + eded2 + eded3);
+
+            duyme.value = "Hesablama tamamlandi";
+            
+        }
+
+    </script>
+</body>
+</html>

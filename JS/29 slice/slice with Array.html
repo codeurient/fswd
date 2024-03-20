@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+bu metod STRİNG-leri yaxud ARRAY-lari bolmelere ayriqmaq ucun istifade edilir.
+
+ -->
+
+<script>
+
+    // 1 - Birinci ve Ikinci deyerleri silir ve ondan sonra gelenleri ekrana yazdirir
+    var test1 = ["a", "b", "c", "d"];
+    document.write(test1.slice(2) + "<br>");        // c,d
+
+
+
+    console.log( test1.slice(2) ); // slice() metodu ARRAY qaytarir
+
+
+    
+
+    // 2 - Birinci deyeri silir ucuncuden baslayir ve  ucuncuden sonra gelen deyerleri yene silir
+    var test2 = ["a", "b", "c", "d", "e", "f"];
+    document.write(test2.slice(1, 3) + "<br>");     // b,c
+
+
+</script>
+</body>
+</html>
+

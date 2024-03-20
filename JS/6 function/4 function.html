@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+<!-- 
+    
+function - funksiyalar cagirmasan iwe duwmezler
+
+-->
+
+<!-- <div id="numune1"></div>
+<div id="numune2"></div>
+<button type="button" onclick="hesabla();">Hesabla1</button>
+<button type="button" onclick="dahaDinamikFunksiya2(5, 10);">Hesabla2</button> -->
+
+<script>
+
+    // 1 - birinci qayda funksiyani ozumuz cagirirq. Buna avtomatik cagirma deyirler
+    function goster() {
+        alert("Bir funksiya yaratdiq");
+    }
+    goster();
+
+
+
+
+
+    // 2 - ikinci qaydada funksiyani HTML ile cagirirq onclick() komekliyi vasitesi ile.
+    function hesabla() {
+        var x = 5;
+        var y = 6;
+        var z = x + y;
+        alert(z);
+    }
+ 
+
+
+
+
+    // 3 - parametrler teyin ederek onlara funksiyani cagirdigimizda deyerler teyin etmek mumkundur.
+    // bu cur yazilis qaydasina dinamik funksiya deyirler.
+
+    // funksiya yaradilan zaman yumru moterize icinde yazilan yazilara parametr deyilir.
+    function toplama(say1, say2) {
+        console.log( say1 + say2 );
+    }
+    // funksiya cagrilan zaman yumru moterize icinde yazilan yazilara arqument (deyer) deyilir.
+    toplama(5, 7)
+   
+
+
+
+
+    // 4 - return ile daha dinamik funksiya yaratmaq ucun istifadde edilir.
+    // return dedikde funksiyadan cix demis oluruq.
+    function dahaDinamikFunksiya(say1, say2) {
+         return say1 + say2;
+    }
+    document.getElementById('numune1').innerHTML = dahaDinamikFunksiya(3, 5);   // 8
+
+
+
+
+
+
+
+    // 5 - button ile cagirmaqda mumkundur
+    function dahaDinamikFunksiya2(say1, say2) {
+        document.write(say1 + say2);
+    }
+
+
+    // 6 - funksiyalari deyiskenlere vermek mumkundur. Bele etdikde deyisken adi funksiya adi olur.
+    var multi = function(){
+        alert("funksiya adini deyiskene yazdirdiq");
+    }
+    multi();
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tələbə Qiymətləndirmə Sistemi</title>
+  <link rel="stylesheet" href="student-example.css">
+</head>
+<body>
+  <h1>Tələbə Qiymətləndirmə Sistemi</h1>
+
+  <form id="addStudentForm">
+    <div class="first">
+      <label for="name">Tələbənin adı:</label>
+      <input type="text" id="name" required>
+    </div>
+    <div class="second">
+      <label for="scores">Test xalları <br>(vergüllə-ayrıla bilər):</label>
+      <input type="text" id="scores" required>  
+    </div>
+    <div class="threed">
+      <button type="submit">Tələbə əlavə edin</button>
+    </div>
+  </form>
+
+  <div class="btn">
+    <button id="displayStudentsBtn">Tələbələri göstərin</button>
+    <button id="gradeSummaryBtn">Tələbə sayı</button>
+    <button id="highestScoringBtn">Ən yüksək bal toplayan tələbə</button>
+  </div>
+
+  <div id="output"></div>
+
+  <script>
+    const students = [];
+
+    function addStudent(name, scores) {
+      const student = {
+        name: name,
+        scores: scores.split(',').map(score => parseInt(score.trim())),
+        average: calculateAverage(scores),
+        grade: '',
+      };
+      students.push(student);
+    }
+
+    function calculateAverage(scores) {
+      const scoreArray = scores.split(',').map(score => parseInt(score.trim()));
+      const total = scoreArray.reduce((sum, score) => sum + score, 0);
+      return total / scoreArray.length;
+    }
+
+    function assignGrades() {
+      students.forEach(student => {
+        if (student.average >= 90) {
+          student.grade = 'A';
+        } else if (student.average >= 80) {
+          student.grade = 'B';
+        } else if (student.average >= 70) {
+          student.grade = 'C';
+        } else if (student.average >= 60) {
+          student.grade = 'D';
+        } else {
+          student.grade = 'F';
+        }
+      });
+    }
+
+    function displayStudents() {
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+      
+      students.forEach(student => {
+        outputDiv.innerHTML += `
+          <p>Ad: ${student.name}</p>
+          <p>Qiymet: ${student.scores.join(', ')}</p>
+          <p>Ortalama qiymet: ${student.average.toFixed(2)}</p>
+          <p>Derece: ${student.grade}</p>
+          <hr>
+        `;
+      });
+    }
+
+    document.getElementById('addStudentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const scores = document.getElementById('scores').value;
+      addStudent(name, scores);
+      document.getElementById('name').value = '';
+      document.getElementById('scores').value = '';
+    });
+
+    document.getElementById('displayStudentsBtn').addEventListener('click', function() {
+      displayStudents();
+    });
+
+    document.getElementById('gradeSummaryBtn').addEventListener('click', function() {
+      assignGrades();
+      const gradeSummary = {};
+      students.forEach(student => {
+        if (!gradeSummary[student.grade]) {
+          gradeSummary[student.grade] = 1;
+        } else {
+          gradeSummary[student.grade]++;
+        }
+      });
+
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+      for (const grade in gradeSummary) {
+        outputDiv.innerHTML += `<p>Derece ${grade}: ${gradeSummary[grade]} telebe</p>`;
+      }
+    });
+
+    document.getElementById('highestScoringBtn').addEventListener('click', function() {
+      assignGrades();
+      let highestScoringStudent = students[0];
+      students.forEach(student => {
+        if (student.average > highestScoringStudent.average) {
+          highestScoringStudent = student;
+        }
+      });
+
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = `
+        <p>En yuksek bal toplayan telebe:</p>
+        <p>Ad: ${highestScoringStudent.name}</p>
+        <p>Ortalama qiymet: ${highestScoringStudent.average.toFixed(2)}</p>
+        <p>Derece: ${highestScoringStudent.grade}</p>
+      `;
+    });
+  </script>
+</body>
+</html>

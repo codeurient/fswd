@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    
+split - bolmek, ayirmaq menasina gelir. Bu metoda verilen parametr, deyiskeni hardan bolmek istediyimize isaret edir
+
+split metodu STRING-i Array-a cevirir join metodu ARRAY-i STRING-e
+
+-->
+
+<div id="numune1"></div><hr>
+<div id="numune2"></div><hr>
+<div id="numune3"></div><hr>
+<div id="numune4"></div><hr>
+
+<script>
+
+    // 1 - normalda deyiskenlere indeksleri ile muraciet etdikde sadece bir deyer elde edirik
+    // ancaq split ile ayirdiqda meselen vergul ile, onda vergulden vergule qeder olan mesafe bir indeks kimi qebul edilir
+    var testNomre1 = "JavaScript, React JS, Angular JS, HTML, CSS, Bootstrap";
+    document.getElementById('numune1').innerHTML = testNomre1[0]        // J
+
+    // 2 - ancaq split ile ayirdiqda meselen vergul ile, onda vergulden vergule qeder olan mesafe bir indeks kimi qebul edilir
+    var testNomre2 = "JavaScript, React JS, Angular JS, HTML, CSS, Bootstrap";
+    var testNomre3 = testNomre2.split(",");
+    document.getElementById('numune2').innerHTML = testNomre3[0]    // JavaScript
+
+    // 3
+    var testNomre4 = "JavaScript-React JS-Angular JS-HTML-CSS-Bootstrap";
+    var testNomre5 = testNomre4.split("-");
+    document.getElementById('numune3').innerHTML = testNomre5[1]
+
+
+
+
+
+    // 4
+    var testNomre6 = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
+
+    var testNomre7 = testNomre6.split(/\s*(?:;|$)\s*/);
+    document.getElementById('numune4').innerHTML = testNomre7;  // Harry Trump,Fred Barney,Helen Rigby,Bill Abel,Chris Hand 
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+      throw - ozel xetalar yaratmagimiza icaze verir.
+
+
+      Meselen e.message deyerek Js-in oz xeta mesajlarini yazdirirdiq ekrana. Ancaq throw deyerek 
+      oz xeta mesajlarimizi yazdira bilerik ekrana ve onda message koduna ehtiyacimiz olmur.
+        
+     -->
+
+
+      <input type="text" id="saheDeyeri">
+      <button type="button" onclick="duymeniBas()">Click</button>
+      <div id="netice"> </div>
+
+
+      <script>
+
+       function duymeniBas(){
+
+        var xetaMesaji, sahedenGelenDeyer;
+ 
+        // input-a yazilan deyer (metn yaxud ededler ve.s)
+        sahedenGelenDeyer = document.getElementById('saheDeyeri').value;
+        // DIV tag-i
+        xetaMesaji = document.getElementById('netice');
+        xetaMesaji.innerHTML = "";
+
+            try{
+              if(sahedenGelenDeyer == "") throw "Bu sahe bos ola bilmez";
+              if(isNaN(sahedenGelenDeyer)) throw "Bu saheye sadece reqem yaza bilersiniz";
+
+              sahedenGelenDeyer = Number(sahedenGelenDeyer);
+              if(sahedenGelenDeyer < 5){
+                throw "Girilen reqem 5 den kicik ola bilmez";
+              } 
+              else if(sahedenGelenDeyer > 15){
+                throw "Girilen reqem 15 den boyuk ola bilmez";
+              }
+              else{
+                throw "Emeliyyat ugurla neticelendi.";
+              }
+            } catch(e){
+                xetaMesaji.innerHTML = e;
+            } finally {
+              document.getElementById('saheDeyeri').value = "";
+            }
+       }
+
+      </script>
+
+</body>
+</html>

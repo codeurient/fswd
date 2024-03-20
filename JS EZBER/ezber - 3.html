@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select id="secim" onchange="havaProqnozunuSecin()">
+        <option selected disabled>Secim edin</option>
+        <option value="gunes">Gunesli</option>
+        <option value="yagis">Yagisli</option>
+        <option value="qar">Qarli</option>
+        <option value="bulud">Buludlu</option>
+    </select>
+    <p></p>
+
+    <script>
+        let tagP = document.getElementsByTagName("p")[0];
+        let secmek = document.querySelector("#secim");
+
+        function havaProqnozunuSecin() {
+            let secmisOldugunDeyer = secmek.value;
+
+            if (secmisOldugunDeyer === "gunes") {
+                tagP.textContent ="Bu gun hava gozeldir.";
+            } else if (secmisOldugunDeyer === "yagis") {
+                tagP.textContent ="Yagis yagir pencereni bagla.";
+            } else if (secmisOldugunDeyer === "qar") {
+                tagP.textContent ="Qar yagir, eynini qalin et.";
+            } else if (secmisOldugunDeyer === "bulud") {
+                tagP.textContent ="Hava buludludur.";
+            } else {
+                tagP.textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>

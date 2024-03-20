@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="metn"></p>
+    <input id="duyme" type="button" value="Hesablayin" onclick="ekranaYazdir( vurma(66, 4), 'Hesablama tamamlandi' )">
+
+    <script>
+
+        let tagP = document.getElementById("metn");
+        const duyme = document.querySelector("#duyme");
+
+        function topla (eded1, eded2, eded3) {
+            return eded1 + eded2 + eded3;
+        }
+
+        function vurma (eded1, eded2, eded3 = 7) {
+            return topla(eded1, eded2, eded3) * topla(eded1, eded2, eded3)
+        }
+
+        function ekranaYazdir (netice, duymeninAdi) {
+            tagP.innerHTML = "Toplamanin neticesi: " + netice;
+            duyme.value = duymeninAdi;
+        }
+
+    </script>
+</body>
+</html>
