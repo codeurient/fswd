@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+    const produktlar = ['Apple', 'Banana', 'Orange', 'Peach', 'Grapes'];
+
+    function lokalaGoreSiralamaq(produkt) {
+
+        produkt.sort((a, b) => a.localeCompare(b));      // (5) ['Apple', 'Banana', 'Grapes', 'Orange', 'Peach']
+        // products.sort();                              // (5) ['Apple', 'Banana', 'Grapes', 'Orange', 'Peach']
+
+        // 1) praduklari yuxarida istifadecinin local-ina gore siraladiqdan sonra neticesini RETURN edirik. 
+
+        // 2) Sadece sort() yazaraqda eyni neticeni elde ede bilerdik ancaq localeCompare() metodu ferqli olkelerden daxil olan istifadecilerin
+        // local-ina gore siralamani daha deqiq heyata kecire bilmemiz ucun istifade edilir.
+        return produkt;
+    }
+
+    console.log(    lokalaGoreSiralamaq(produktlar)     );
+
+
+    </script>
+</body>
+</html>

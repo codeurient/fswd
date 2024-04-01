@@ -47,11 +47,18 @@
                 ' {"ad": "React", "soyad": "JS"}  ' +
             ']' +
         '}'
+
+
+       
         
     // parse() - tehlil etmek. 
     var obyekt4 = JSON.parse(obyekt3);
+
     console.log(obyekt4);
     document.getElementById('numune1').innerHTML = obyekt4.diller[0].ad + " " + obyekt4.diller[0].soyad;
+
+
+
 
     // NOT! yuxaridaki numunede coxlu tek dirnaq onun ucun istifade edilibdirki, kodlar alt setrlere kecibdir.
     // Eger bir setrde olsa idi onda bir defe tek dirnaq yazmaq kifayet edecekdi. Meselen:

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+
+    </div>
+
+  
+     
+
+    <script>
+
+        let siyahi  = [   
+            'Nadir Qarayev',
+            'Ilkin Babayev',
+            'Sahin Memmedov',
+            'Sahin Memmedov',
+            'Sahin Memmedov',
+            'Davud Mehdiyev',
+        ]
+
+
+        
+        let tagDiv = document.querySelector('div');
+
+        let yeniTag = '<ul>';
+            for(let i = 0;   i <  siyahi.length;  i++  ) {
+                
+                yeniTag += '<li>' + siyahi[i] + '</li>';
+
+            }
+        yeniTag += '</ul>';
+
+
+
+
+
+
+        tagDiv.innerHTML = yeniTag;
+
+
+    </script>
+
+</body>
+</html>

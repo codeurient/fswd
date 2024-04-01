@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        // localeCompare() funksiyasi, istifadəçilerin yerli (local) dil parametrlerinden asılı olan qaydalarina esasen sətirləri (stringleri) müqayisə etmək üçün istifadə olunur. 
+        // Yerli dil parametrleri dedikde nezerde tutulan sayta daxil olan istifadecinin yerlesmis oldugu region, komputer dil parametrleri kimi parametrler nezerde tutulur.
+
+        // Bu funksiyas 1, -1, ve 0 kimi reqemler qaytarir. Bu reqemler çeşidləmə zamanı hansı string birinci olmalıdır onu bildirir:
+        // -1      -eger 1ci string 2ci stringden once gelmelidirse onda menfi bir qayidir
+        // 0       -eger stringler beraber olarsa onda sifir qayidir
+        // 1       -eger 1ci string 2ci stringden evvel gelmelidirse onda musbet bir qayidir
+
+        // 1)  
+        const str1 = 'hello';
+        const str2 = 'world';
+        console.log(    str1.localeCompare(str2)    );  // -1
+
+
+
+        // 2)
+        const str3 = 'hello';
+        const str4 = 'hello';
+        console.log(    str3.localeCompare(str4)    );  // 0
+
+
+
+        //! 3) 
+        const str5 = 'hello';
+        const str6 = 'apple';
+        console.log(    str5.localeCompare(str6)    );  // 1
+
+    </script>
+</body>
+</html>
