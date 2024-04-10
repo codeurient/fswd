@@ -45,14 +45,18 @@
     }
     
     main_menu.addEventListener("click", function(event) {
+       
+        // console.log(event);
         // ona gore closest() metodundan istifade edilir ki, li tag-lerinin arasinda basdiqda EVENT islemesin.
         // Bu metod en yaxin li tag-ini elde edir ve iki li taginin arasina basdiqda EVENT islemir.
         let li = event.target.closest('li');
 
+
+
         // Eger li NULL olarsa onda hecne etme ve ne vaxt li NULL olur ? Iki li arasi secildikde NULL olur.
         if(li == null) return;
 
-        //console.log(li.dataset.command);
+        // console.log(li.dataset);
         // Eks teqdirde act deyiskenine atributun deyerini yazdiririq.
         let act = li.dataset.command;
         
@@ -64,6 +68,7 @@
         if(act && menuActs[act] !== undefined) menuActs[act]();
 
     });
+
 
 </script>
 </body>
