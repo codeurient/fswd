@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        // a) 
+        const numbers = [1, 2, 3, 4, 5];
+
+        // 1) isEven bir funksiyadir.
+        const isEven = (num) => num % 2 === 0;
+
+        // 2) some() metoduda funksiya qebul edir. Tek-tek array deyerlerini goturur ve NUM parametrine verir.
+        // Bu deyerleri 2 ye bolerek muqayise edirik. Eger sert dogrudursa TRUE yaxud FALSE elde edirik
+        console.log(   numbers.some(isEven)    ); 
+
+
+
+        // b) 
+
+        const numbers2 = [1, 2, 3, 4, 5];
+        // 1) Daha qisa bele yaza bilerik. En azi birdene bele olsa uygunluq varsa yeni axtarilan o deyer movcuddursa TRUE qaytar.
+        console.log(   numbers2.some((num) => num % 2 === 0)   );           // true
+
+
+
+        // c) 
+        const numbers3 = [1, 2, 3, 4, 5];
+        // 1) map() metodu ile de eyni isi gormek olardi ancaq map() umumi olaraq butun deyerleri muqayise edir ve array qaytarir.
+        console.log(   numbers3.map((num) => num % 2 === 0)   );            // (5) [false, true, false, true, false]
+
+
+
+        // d)
+        const numbers4 = [1, 2, 3, 4, 5];
+        // 1) forEach ile etseydik onda funksiya icinde neticeni islemeli idik ve geriye tek tek birden cox deyer qayidacaqdi.
+        numbers4.forEach((num) => console.log(num % 2 === 0));              // false,  true,   false,   true,   false
+
+
+
+        // e)
+        const numbers5 = [1, 2, 3, 4, 5];
+        // 1) filter() metodu deyerlerin ozunu qaytarir
+        const evenNumbers = numbers5.filter((num) => num % 2 === 0);
+        console.log(evenNumbers);                                           // [2, 4]
+
+
+    </script>
+    
+</body>
+</html>

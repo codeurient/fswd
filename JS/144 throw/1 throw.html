@@ -37,23 +37,23 @@
         xetaMesaji.innerHTML = "";
 
             try{
-              if(sahedenGelenDeyer == "") throw "Bu sahe bos ola bilmez";
-              if(isNaN(sahedenGelenDeyer)) throw "Bu saheye sadece reqem yaza bilersiniz";
+                  if(sahedenGelenDeyer == "") throw "Bu sahe bos ola bilmez";
+                  if(isNaN(sahedenGelenDeyer)) throw "Bu saheye sadece reqem yaza bilersiniz";
 
-              sahedenGelenDeyer = Number(sahedenGelenDeyer);
-              if(sahedenGelenDeyer < 5){
-                throw "Girilen reqem 5 den kicik ola bilmez";
-              } 
-              else if(sahedenGelenDeyer > 15){
-                throw "Girilen reqem 15 den boyuk ola bilmez";
-              }
-              else{
-                throw "Emeliyyat ugurla neticelendi.";
-              }
+                  sahedenGelenDeyer = Number(sahedenGelenDeyer);
+                  if(sahedenGelenDeyer < 5){
+                    throw "Girilen reqem 5 den kicik ola bilmez";
+                  } 
+                  else if(sahedenGelenDeyer > 15){
+                    throw "Girilen reqem 15 den boyuk ola bilmez";
+                  }
+                  else{
+                    throw "Emeliyyat ugurla neticelendi.";
+                  }
             } catch(e){
-                xetaMesaji.innerHTML = e;
+                    xetaMesaji.innerHTML = e;
             } finally {
-              document.getElementById('saheDeyeri').value = "";
+                  document.getElementById('saheDeyeri').value = "";
             }
        }
 
