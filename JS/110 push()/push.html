@@ -40,6 +40,10 @@
 <div id="numune8"></div><hr>
 
 
+<div id="numune9"></div><hr>
+<button onclick="elaveEt4()">Elave et</button>
+
+
 <script>
 
 
@@ -122,17 +126,17 @@
 
 
 
-    let metin6 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
-    function elaveEt3() {
-        if(metin6.length > 7){
-            metin6.pop();
+    let metin7 = ["php", "js", "css", "html", "bootstrap", "react", "vue"];
+    function elaveEt4() {
+        if(metin7.length > 7){
+            metin7.pop();
         }
         else {
-            metin6[metin6.length] = "angular";
-          document.querySelector("div").innerHTML = metin6;
+            metin7[metin7.length] = " angular";
+            document.querySelector("#numune9").innerHTML = metin7;
         }
     }
-    document.querySelector("div").innerHTML = metin6;
+    document.querySelector("#numune9").innerHTML = metin7;
 
 </script>
 </body>
