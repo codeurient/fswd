@@ -9,18 +9,24 @@
 </head>
 <body>
 
-    <p id="demo"></p>
+    <p id="demo">  </p>
 
 <script>
 
         let text = "";
+
+
         let i = 6;
         do {
-            text += i + "<br>";
+            text += i + "<br>";    // text = text + i;
             i++;
         }
         while (i < 5);
+
+
+
         document.getElementById("demo").innerHTML = text;
+
 
 </script> 
 </body>
