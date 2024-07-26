@@ -12,33 +12,33 @@
 
     <script>
 
-        var people, x, message="", y, message2=""; 
+        var people, x, message="", y; 
 
         function person(first, last, age, color) {
-                this.firstName = first;
-                this.lastName = last;
-                this.age = age;
-                this.eyeColor = color;
-                this.fullName = function (){
-                    return this.firstName + " " + this.lastName;
-                }
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = color;
+            this.fullName = function (){
+                return this.firstName + " " + this.lastName;
+            }
         }
 
         people = new person("Fatih", "Sultan", 20, "black");
-        // Obyektlere colden mudaxile etmek mumkundur. Yeni, nese elave ede bilerik. Asagida gosterildiyi kimi.
         people.hair = true;
 
-        // 1
         for (x in people) {
-            message += people[x] + "<br>"
+
+            if ( typeof people[x] !== 'function' ) {
+                message += people[x] + "<br>"
+            }
+            
         }
 
-        // 2
-        delete people.eyeColor;
-        for (y in people) {
-            message2 += people[y] + "<br>"
-        }
-        document.getElementById("numune1").innerHTML = message + "<hr><br>" + message2;
+        message += people.fullName();
+
+        
+        document.getElementById("numune1").innerHTML = message;
 
 
     </script>
