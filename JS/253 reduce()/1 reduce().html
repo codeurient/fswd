@@ -26,7 +26,7 @@
    const ededler = [1,2,3,4,5];
 
    let total = 0;
-   ededler.forEach( ededler => total += ededler);
+   ededler.forEach( (ededler) => total += ededler);
    console.log(total); // 15
 
 
@@ -37,7 +37,7 @@
    // Baslangic deyeri vermek istesem reduce() metodunda bunu gostermek olar.
    let netice = ededler.reduce((acc, eded) => {
         return acc + eded;
-   }, 5);
+   }, 0);
 
    
    console.log(netice); // 5

@@ -1,0 +1,85 @@
+:root{
+    --primary: #6c38cc;
+    --secondary: #e47ad5;
+    --total-black: #101114;
+    --black: #16171d;
+    --gray-dark: #1e1f29;
+    --violet-dark: #2e2d3d;
+    --gray-stroke: #4d5064;
+    --gray-light: #dad9de;
+    --gray: #afb2bf;
+    --gradient: linear-gradient(93.33deg, #d77be6 9.26%, #be63e6 42.32%, #9f5be2 71.89%, #6d38cc 100%);
+    --white: #fafafa;
+    --green: #38cc6c;
+    --yellow: #fdf41a;
+    --radius: 10px;
+    --primary-hover: #452481;
+    --primary-link: #a97bff;
+    --layout-max-width: #1220px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: var(--black);
+    color: var(--white);
+    --webkit0-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    /**     @CONTAINER onunde duran adı dəyişmək kifayətdir ki, istədiyimiz elementdən asılı salaq.    **/
+    /**     Daha qısa isə belə yaza bilərik:   container: body / inline-size;                          **/
+    container-type: inline-size;    
+    container-name: body;
+
+    
+}
+
+.container{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    /**     container-type,    container-name                                                           **/
+    /**     Daha qısa isə belə yaza bilərik:   container: blog / inline-size;                           **/
+    container-type: inline-size;    
+    container-name: blog;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    background-color: var(--violet-dark);
+    border-radius: 10px;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 300px;
+}
+
+@container blog (max-width: 1920px) {
+    article{
+        /**          cqw  - container query width        **/
+        min-width: calc(50cqw - 30px/2);
+    }
+}
+
+@container blog (max-width: 768px) {
+    article{
+        flex-direction: row;
+        min-width: 100%;
+    }
+}
+
+
+aside{
+    background-color: var(--violet-dark);
+    min-width: 400px;
+    padding: 20px;
+    margin-left: 20px;
+}
