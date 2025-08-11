@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <button>Hesabla</button>
+
+    <div class="main "></div>
+
+
+    
+    <script>
+
+        let duyme = document.querySelector('button');
+
+        duyme.addEventListener('click', ()=>{
+
+            let tagDiv = document.querySelector('div');
+
+            if(tagDiv.classList.contains('active')) {
+                tagDiv.classList.remove('active');
+            } else {
+                tagDiv.classList.add('active');
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>
