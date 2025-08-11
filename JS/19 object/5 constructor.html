@@ -20,7 +20,7 @@
 
     <script>
 
-        var people, people2;
+        var people;
 
         function Person(first, last, age, color) {
                 this.firstName = first;
@@ -36,7 +36,6 @@
         }
 
         people = new Person("Fatih", "Sultan", 20, "black");
-        people2 = new Person("Abdul", "Hamid", 21, "green");
         
         people.hair = true;                     // obyekte xasseni xaricden elave edirik
         people.changeName("Osman");             // metod ile xassenin deyerini deyismek
@@ -59,29 +58,6 @@
 
 
 
-
-
-             * @returns {String} - The new last name
-             */
-            this.changeName = function (name){
-                return this.lastName = name;
-            }
-
-
-
-
-            
-
-        var mehdi1;
-        function Mekteb(ad, soyad) {
-            this.birinciAdi = ad; 
-            this.birinciSoyadi = soyad;
-            this.tamAdi = function() {
-                return this.birinciAdi + " " + this.birinciSoyadi;
-            }
-        }
-        mehdi1 = new Mekteb("cavan", "cavanov");
-        document.write(mehdi1.tamAdi());
     </script>
 </body>
 </html>

@@ -5,6 +5,11 @@
     <title>Title</title>
     <link rel="stylesheet" href="../bootstrap.min.css">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: green !important;
+        }
+    </style>
 </head>
 <body >
 
@@ -18,11 +23,11 @@
             <div class="col-12">
 
                 <nav style="--bs-breadcrumb-divider:'>';">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="">Elektronika</a></li>
-                        <li class="breadcrumb-item"><a href="">Telefonlar</a></li>
-                        <li class="breadcrumb-item"><a href="">Iphone</a></li>
-                    </ol>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">    <a href="">Elektronika</a>   </li>
+                        <li class="breadcrumb-item">    <a href="">Telefonlar</a></li>
+                        <li class="breadcrumb-item">    <a href="">Iphone</a></li>
+                    </ul>
                 </nav>
                 
             </div>

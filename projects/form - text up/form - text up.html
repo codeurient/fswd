@@ -13,14 +13,19 @@
     }
     .input-box label {
         position: absolute;
-        left: 6px;
+        left: 13px;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-35%);
         pointer-events: none;
         color: #162938;
         font-size: 17px;
         font-weight: 500;
         transition: all ease .45s;
+        background-color: white;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .input-box input {
         background: transparent;
@@ -31,6 +36,7 @@
         color: #162938;
         padding: 0 30px 0 6px;
         outline: none;
+        border: 1px solid grey;
     }
     .input-box label.active {
         top: -3px;

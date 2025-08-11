@@ -14,7 +14,6 @@ function randomEdedYaratmaq(min, max){
     return eded;
 }
 
-
 function yeniSual(){
     let emeliyyatlar = ["+", "-", "*", "/"];
     // 4 - 0 = 4 + 0 = 4 sonra meselen 4*0.4 = 1.6 ve Math.floor awagiya yuvarlaqlawdiraraq 1 edir
@@ -36,7 +35,6 @@ function yeniSual(){
         }
     }
 }
-
 window.onload = function(){
     yeniSual();
 }
