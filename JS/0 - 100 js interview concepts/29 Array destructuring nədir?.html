@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // Array destructuring — bu, JavaScript-də massivdəki elementləri birbaşa dəyişənlərə ayırmaq 
+        // üçün istifadə olunan sintaksisdir. Bu xüsusiyyət ECMAScript 6 (ES6) ilə əlavə olunub.
+
+
+        // Bir massivdəki elementləri indeksləri ilə ayrıca dəyişənlərə təyin etmək üçün ənənəvi üsulda belə yazırdıq:
+        const arr = [10, 20, 30];
+        const a1 = arr[0];
+        const b1 = arr[1];
+        const c1 = arr[2];
+
+
+
+
+
+
+
+
+
+
+
+        // Amma array destructuring ilə bunu daha qısa yaza bilərik: Burada, sol tərəfdə kvadrat mötərizələr [ ] içində 
+        // dəyişənlər yazılır və massivdəki uyğun indeksli elementlərə avtomatik olaraq təyin edilir.
+        const [a2, b2, c2] = [10, 20, 30];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Daha Geniş İstifadə
+        // - İndekslə seçmək
+        // - Default dəyərlər vermək
+        // - Rest operatoru ilə qalan elementləri toplamaq
+        const numbers = [1, 2];
+
+        // Default dəyər
+        const [x = 5, y = 7, z = 9] = numbers;
+        console.log(x, y, z); // 1 2 9
+
+        // Rest operatoru
+        const [first, ...rest] = [10, 20, 30, 40];
+        console.log(first); // 10
+        console.log(rest);  // [20, 30, 40]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // İkili Dəyişiklik (Swap)
+        // Array destructuring ən faydalı olduğu hallardan biri dəyişənlərin dəyərini asanlıqla dəyişməkdir:
+        let a = 5, b = 10;
+        [a, b] = [b, a];
+        console.log(a, b); // 10 5
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // Object Destructuring Nədir?
+        // Object destructuring — obyektin xüsusiyyətlərini (property) birbaşa dəyişənlərə ayırmaq üçün istifadə olunan sintaksisdir.
+
+
+        // Ənənəvi üsulla:
+        const person = { name: "John", age: 30 };
+        const name1 = person.name;
+        const age1 = person.age;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Destructuring ilə:  sol tərəfdə {} içində dəyişən adları yazılır, və həmin adlar obyektin müvafiq property-ləri ilə uyğunlaşır.
+        const { name2, age2 } = { name: "John", age: 30 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Daha Geniş İstifadə
+        // - İstədiyimiz property-ləri ayırmaq
+        // - Default dəyərlər təyin etmək
+        // - Property-lərə başqa ad vermək (aliasing)
+        // - Nested object destructuring (daxili obyektlərin ayırılması)
+
+        const user = {
+            id: 42,
+            isVerified: true,
+
+            profile: {
+                name: "Alice",
+                email: "alice@example.com"
+            }
+        };
+
+        // Default dəyər - xassə adları üst-üstə düşməlidir. Yəni, eyni olmalıdır.
+        const { id, isVerified, country = "Unknown" } = user;
+
+        // Alias - burada “tərsinə atama” kimi görünür, amma əslində bu Object Destructuring-də alias (başqa ad vermə) mexanizmidir.
+        const { name: userName, email } = user.profile;
+
+        console.log(id);         // 42
+        console.log(country);    // Unknown
+        console.log(userName);   // Alice
+        console.log(email);      // alice@example.com
+
+
+
+        // Normal halda:   const { name, email } = user.profile;
+        //      -    Burada { name, email } yazdığımızda JavaScript obyektin içində həmin property adlarını tapır.
+        //      -    name property-si  → name adlı dəyişənə,
+        //      -    email property-si → email adlı dəyişənə təyin edilir.
+
+
+
+        // Bəzən dəyişən adının obyektdəki property adı ilə eyni olmasını istəmirik. O zaman alias sintaksisindən istifadə edirik:
+        // Bu sintaksis “name property-sini götür, amma onu userName adlı dəyişənə yaz” mənasına gəlir.
+        // Sən “tərsinə atama” kimi hiss edirsən, çünki solda name var, sağda userName yoxdur.
+        //      -    const { name: userName } = user.profile;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Parametr olaraq Object Destructuring
+        // Funksiyalara obyektin property-lərini parametrlər kimi birbaşa vermək çox yayılmış praktikadır:
+        function greet({ name, age }) {
+            console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+        }
+
+        greet({ name: "John", age: 25 });  // Hello, my name is John and I am 25 years old.
+
+
+
+
+        
+    </script>
+</body>
+
+</html>
