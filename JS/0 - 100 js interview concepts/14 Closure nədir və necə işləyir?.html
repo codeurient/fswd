@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <!-- 
+
+    Closure — JavaScript-də bir funksiya öz xarici (enclosing) scope-unda olan dəyişənləri xatırlama və 
+              onlara giriş imkanı saxlama qabiliyyətidir, hətta həmin funksiya xarici funksiyanın işi bitdikdən sonra belə.
+
+    Başqa sözlə:
+        Funksiya öz daxilində başqa bir funksiya yaradanda,
+        Xarici funksiyanın lokal dəyişənlərinə daxil olmaq üçün həmin daxili funksiya “closure” yaradır.
+        Bu daxili funksiya xarici funksiyanın dəyişənlərini yadda saxlayır və istifadə edə bilir.
+
+
+    Closure necə işləyir?
+        JavaScript-də funksiya çağırıldıqda, onun daxili dəyişənləri, parametr və lokal state müvəqqəti yaddaşda (execution context) saxlanır.
+
+        Amma closure yarananda:
+            - Xarici funksiyanın execution context-i dəyişənləri ilə birlikdə saxlanır (garbage collector tərəfindən dərhal silinmir).
+            - Daxili funksiya həmin dəyişənləri yadda saxlayır, onlara referans (istinad) edir.
+            - Nəticədə, daxili funksiya xarici funksiyanın lokal dəyişənlərini “canlı” saxlayır, istənilən vaxt istifadə edə bilir.
+
+
+-->
+    <script>
+        // Closure nümunəsi:
+        function outer() {
+            let count = 0;
+
+            return function inner() {
+                count++;
+                console.log("Count:", count);
+            }
+        }
+
+        const counter = outer(); // outer çağrıldı, count=0 ilə yaddaşda saxlandı
+
+        counter(); // Count: 1
+        counter(); // Count: 2
+        counter(); // Count: 3
+
+
+    // Burada:
+    // - inner funksiyası closure-dur, çünki o outer funksiyasının count dəyişəninə daxil olur.
+    // - outer() çağırıldığı zaman, count lokal dəyişən yaddaşda saxlanılır.
+    // - counter dəyişəni inner funksiyasını saxlayır və count-un dəyərini yadda saxlayır, artırır.
+
+
+
+    
+    </script>
+</body>
+
+</html>

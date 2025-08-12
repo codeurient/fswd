@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- 
+    
+JavaScript-də Məlumat Tipləri (Data Types)
+
+JavaScript-də məlumat tipləri iki böyük kateqoriyaya bölünür:
+    - Primitive (Sadə) tiplər – dəyişməz (immutable) məlumatlardır.
+    - Non-primitive (Mürəkkəb) tiplər – dəyişdirilə bilən (mutable) məlumatlardır.
+
+
+1. Primitive Data Types
+    Bunlar sadə dəyərlərdir və birbaşa yaddaşda saxlanılır. Dəyişdirildikdə yeni dəyər yaradılır.
+
+
+| **Tip**       | **Məsələn**    | **İzah**                                  |
+| ------------- | ---------------| ----------------------------------------- |
+|   String      | "Salam"        | Mətn saxlamaq üçün istifadə olunur.       |
+|   Number      | 42 ,  3.14     | Tam ədəd və onluq ədəd saxlamaq üçün.     |
+|   Boolean     | true ,  false  | Doğru/Yanlış məntiqi dəyərlər.            |
+|   Undefined   | let x;         | Dəyər təyin edilməyib.                    |
+|   Null        | let y = null;  | Boş və ya mövcud olmayan dəyəri göstərir. |
+|   Symbol      | Symbol('id')   | Unikal identifikator yaratmaq üçün.       |
+|   BigInt      | 123n           | Çox böyük tam ədədləri saxlamaq üçün.     |
+
+
+
+
+2. Non-Primitive Data Types
+Bunlar mürəkkəb strukturlardır və obyekt şəklində saxlanılır. Bir neçə dəyəri özündə birləşdirə bilər.
+
+| **Tip**      | **Məsələn**              | **İzah**                                   |
+| ------------ | ------------------------ | ------------------------------------------ |
+|   Object     |  { ad: "Ali", yas: 25 }  | Açarlara əsaslanan verilənlər toplusu.     |
+|   Array      |  [1, 2, 3]               | Sıralanmış verilənlər toplusu.             |
+|   Function   |  function salam(){}      | Yenidən istifadə oluna bilən kod blokları. |
+|   Date       |  new Date()              | Tarix və vaxt məlumatı saxlamaq üçün.      |
+|   RegExp     |  /abc/                   | Mətndə nümunə (pattern) axtarmaq üçün.     |
+
+-->
+
+<script>
+
+    // Primitive
+    let a = 5;
+    let b = a;
+    b = 10;
+    console.log(a); // 5 (dəyişmir)
+
+
+
+    // Non-primitive
+    let obj1 = { ad: "Ali" };
+    let obj2 = obj1;
+    obj2.ad = "Veli";
+    console.log(obj1.ad); // "Veli" (dəyişdi)
+
+</script>
+    
+</body>
+</html>

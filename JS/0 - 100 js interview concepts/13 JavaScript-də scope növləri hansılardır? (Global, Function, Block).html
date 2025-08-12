@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        // Scope — dəyişənlərin və funksiyaların kodun hansı hissəsində əlçatan olduğunu göstərən anlayışdır.
+        // JavaScript-də əsasən 3 növ scope var:
+
+        // 1. Global Scope
+        // Əgər dəyişən heç bir funksiya və ya blok içində elan edilməyibsə, o global scope-da olur.
+        // Global dəyişənlər kodun istənilən yerindən istifadə edilə bilər.
+        // Browser-də global dəyişənlər window obyektinə aid olur.
+        let globalVar = "Salam";
+
+        function test() {
+            console.log(globalVar); // "Salam"
+        }
+
+        test();
+        console.log(globalVar); // "Salam"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 2. Function Scope
+        // var, let, const ilə funksiya içində elan olunan dəyişənlər yalnız həmin funksiyada əlçatandır.
+
+        // Funksiya xaricindən həmin dəyişənə çıxış yoxdur.
+        function myFunc() {
+            let localVar = 42;
+            console.log(localVar); // 42
+        }
+
+        myFunc();
+        console.log(localVar); // ReferenceError
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 3. Block Scope
+        // let və const ilə { } süslü mötərizələr içində elan edilən dəyişənlər yalnız həmin blokda mövcuddur.
+
+        // var block scope-a tabe olmur, yalnız function scope-a tabedir.
+        {
+            let a = 10;
+            const b = 20;
+            var c = 30;
+            console.log(a, b, c); // 10 20 30
+        }
+
+        console.log(c); // 30 (çünki var block scope-a tabe deyil)
+        console.log(a); // ReferenceError
+
+    </script>
+</body>
+
+</html>

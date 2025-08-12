@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        // Funksiya Bəyannaməsi (Function Declaration) və Funksiya İfadəsi (Function Expression) 
+        // JavaScript-də funksiya yaratmağın iki əsas yoludur. Onlar arasındakı ən vacib fərq hoisting (yuxarı qaldırılma) mexanizmindədir.
+
+
+
+
+        // Function Declaration (Funksiya Bəyannaməsi)
+        // // Funksiya Bəyannaməsi adi funksiya yaratmaq üçün istifadə olunan ənənəvi üsuldur. Bu funksiyalar kodun istənilən 
+        // yerindən çağırıla bilir, hətta elan edilməmişdən əvvəl belə. Bu, JavaScript-in hoisting xüsusiyyəti sayəsində baş verir, hansı 
+        // ki funksiyanın bütövlüklə yaddaşa qaldırılmasını təmin edir.
+
+        // Funksiya elan edilməmişdən əvvəl çağırılır
+        sayHello();
+
+        function sayHello() {
+            console.log("Salam!");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Function Expression (Funksiya İfadəsi)
+        // Funksiya İfadəsi funksiyanın bir dəyişənə (variable) mənimsədilməsidir. Dəyişən ya anonim funksiyaya, ya da adı olan funksiyaya mənimsədilə bilər.
+
+        // Funksiya ifadələri hoisting-ə məruz qalmadığı üçün yalnız elan edildikdən sonra çağırıla bilər. Dəyişənin özü (məsələn, let və ya const ilə) 
+        // hoisted olsa da, ona mənimsədilən funksiya dəyəri yalnız kodun həmin hissəsi işlədikdən sonra mövcud olur.
+
+        // Bu kod səhvə səbəb olacaq, çünki funksiya hələ mövcud deyil
+        greet(); // ReferenceError
+
+        const greet = function () {
+            console.log("Xoş gəlmisiniz!");
+        };
+
+        // Funksiya yalnız elan edildikdən sonra çağırıla bilər
+        greet();
+    </script>
+</body>
+
+</html>

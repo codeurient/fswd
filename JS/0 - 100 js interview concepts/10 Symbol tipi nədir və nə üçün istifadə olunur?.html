@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // Symbol — JavaScript-də unikal və dəyişməz (immutable) identifikator yaratmaq üçün istifadə olunan primitive tipdir.
+
+        // Xüsusiyyətləri
+        // Hər Symbol() çağırışı yeni və unikal dəyər yaradır.
+
+        // Əsasən obyekt açarları kimi istifadə olunur ki, digər açarlarla toqquşmasın.
+
+        // String-ə avtomatik çevrilmir.
+
+        let id1 = Symbol("id");
+        let id2 = Symbol("id");
+
+        console.log(id1 === id2); // false (unikaldır)
+
+
+
+
+
+
+
+
+
+
+        // İstifadə sahələri
+        // Obyekt açarlarını unikal etmək
+        // Kodda gizli açarlar yaratmaq
+
+
+
+
+
+
+
+
+
+
+
+
+        // Bu, Symbol-un ən vacib istifadə sahəsidir. Təsəvvür edin ki, başqası tərəfindən yazılmış bir obyektiniz var və 
+        // siz ona öz xüsusiyyətlərinizi əlavə etmək istəyirsiniz. Əgər siz bunu bir string açarı ilə etsəniz, gələcəkdə 
+        // bu obyektin müəllifi də eyni adlı bir string açarı əlavə edərsə, sizin əlavə etdiyiniz dəyər üzərinə yazılmış olacaq.
+
+        // Symbol istifadə etdikdə isə, bu problem aradan qalxır, çünki hər bir Symbol unikaldır.
+
+        let myObject = {};
+
+        // Başqası tərəfindən əlavə edilmiş xüsusiyyət
+        myObject.id = 123;
+
+        // Sizin unikal Symbol açarınız
+        const mySymbol = Symbol('unique_id');
+        myObject[mySymbol] = 'Mənim xüsusi dəyərim';
+
+        // Heç bir ad toqquşması yoxdur
+        console.log(myObject.id); // 123
+        console.log(myObject[mySymbol]); // Mənim xüsusi dəyərim
+
+
+
+
+
+        // Symbol ilə yaradılan obyekt xüsusiyyətləri, for...in dövrü və ya Object.keys() kimi 
+        // standart üsullarla asanlıqla sadalana bilmir. Bu, obyektə istifadəçinin görməsini istəmədiyiniz 
+        // "gizli" metadata və ya daxili funksionallıq əlavə etmək üçün faydalıdır.
+        const user = {
+            name: 'Ayxan',
+        };
+
+        const internalId = Symbol('internal_id');
+        user[internalId] = 456;
+
+        for (let key in user) {
+            console.log(key); // Yalnız 'name' çıxarılır
+        }
+
+        console.log(Object.keys(user)); // ['name']
+
+        // Symbol xüsusiyyətləri üçün xüsusi metodlar istifadə etmək lazımdır
+        console.log(Object.getOwnPropertySymbols(user)); // [ Symbol(internal_id) ]
+
+
+
+    </script>
+</body>
+
+</html>

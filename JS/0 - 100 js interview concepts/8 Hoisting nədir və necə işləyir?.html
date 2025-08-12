@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+
+        // Hoisting — JavaScript-in variable və funksiya elanlarını icra başlamadan əvvəl yuxarı qaldırmasıdır.
+
+
+        // Necə işləyir?
+
+        // var                  → elan yuxarı qaldırılır, dəyər undefined olur. Çünki JS tərəfindən var ilə yaradılan dəyişkənlərə onlar yaradılmasalarda belə UNDEFİNED dəyəri təyin edilib.s
+        // let və const         → elan yuxarı qalxır, amma Temporal Dead Zone (buna sonra baxacağıq) səbəbindən istifadə edilə bilməz.
+        // Function Declaration → bütün funksiyalar yuxarı qaldırılır və dərhal istifadə edilə bilir. Yəni, funksiyanı 5ci sətrdə yaradıb 3cü sətrdə çağırsan işləyir.
+
+
+
+        console.log(a); // undefined
+        var a = 5;
+
+        console.log(b); // Xəta
+        let b = 10;
+
+
+
+
+
+    </script>
+</body>
+
+</html>

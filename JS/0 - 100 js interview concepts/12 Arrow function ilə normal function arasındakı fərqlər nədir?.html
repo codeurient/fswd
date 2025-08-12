@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Arrow Funksiyaları (Arrow Functions) və normal funksiyalar JavaScript-də funksiya yaratmaq üçün istifadə olunan 
+        // iki fərqli sintaksisdir və onlar arasında bir neçə əsas fərq var. Bu fərqlər xüsusilə this açar sözünün davranışı, 
+        // sintaksis və "hoisting" (yuxarı qaldırılma) mexanizmində özünü göstərir.
+
+
+        // 1. this açar sözünün davranışı
+        // Bu, ən vacib fərqlərdən biridir.
+
+        // Normal Funksiyalar: this dəyəri funksiyanın necə çağırılmasından asılıdır. Məsələn, obyekt metodu kimi çağırıldıqda 
+        // this həmin obyektə, tək başına çağırıldıqda isə (strict mode-da olmamaq şərtilə) qlobal obyektə (window və ya global) istinad edir.
+
+        // Arrow Funksiyaları: Arrow funksiyalarının öz this konteksti yoxdur. Onlar this dəyərini əhatə edən (parent) scope-dan 
+        // miras alırlar. Bu, asinxron əməliyyatlarda və ya obyektlər daxilində callback funksiyaları yazarkən çox faydalıdır, çünki this 
+        // dəyərini əl ilə bind etməyə (bağlamağa) ehtiyac qalmır.
+
+
+        // Normal funksiya
+        const user = {
+            name: 'Elvin',
+            sayName: function () {
+                console.log(this.name); // 'this' user obyektinə istinad edir
+            }
+        };
+        user.sayName(); // Çıxış: Elvin
+
+
+
+        // Arrow funksiyası (bu nümunədə eyni nəticə verir, lakin fərq daha mürəkkəbdir)
+        const user2 = {
+            name: 'Samir',
+            sayName: () => {
+                console.log(this.name); // 'this' qlobal obyektə istinad edir. Ancaq qlobalda name deyilen bir şey olmadığı üçün undefined qayıdır.
+            }
+        };
+        user2.sayName(); // Çıxış: undefined (və ya qlobal obyektdə `name` varsa, onun dəyəri)
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Bu fərq daha çox, normal funksiyanın içərisində Arrow funksiyası istifadə edildikdə özünü göstərir:
+        const obj = {
+            count: 0,
+            start: function () {
+                // Normal funksiya, 'this' bu obyektdir (OBJ)
+                console.log(this.count); // Çıxış: 0
+
+                // Arrow funksiyası, 'this' əhatə edən normal funksiyanın?  'this'-ini miras alır. Onun üçün 0 ədədini əldə edə bacarır.
+                const timer = () => {
+                    this.count++;
+                    console.log(this.count);
+                };
+
+                // timer funksiyası hər saniyə işləyir və 'this.count' dəyərini artırır
+                setInterval(timer, 1000);
+            }
+        };
+
+        obj.start();
+
+
+
+
+
+
+
+
+        // Arrow funksiyalarının sintaksisi daha yığcamdır.
+        // Tək parametr: Mövzuya daxil olan bir parametr varsa, mötərizə (()) atıla bilər.
+        // Tək sətirlik ifadə: Funksiya tək bir ifadədən ibarətdirsə, curly braces ({}) və return açar sözü atıla bilər.
+        // Normal funksiya
+        function sum(a, b) {
+            return a + b;
+        }
+
+        // Arrow funksiyası (yığcam sintaksis)
+        const sumArrow = (a, b) => a + b;
+
+        // Tək parametrlə Arrow funksiyası
+        const square = num => num * num;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Hoisting
+        // Normal Funksiyalar: Funksiya Bəyannamələri "hoisting" olunur və elan edildikdən əvvəl çağırıla bilər.
+
+        // Arrow Funksiyaları: Funksiya İfadələri (Function Expressions) kimi, Arrow funksiyaları da "hoisting" olunmur. 
+        // Onlar yalnız elan edildikdən sonra istifadə edilə bilər.
+        // Normal funksiya
+
+        sayHi(); // Çıxış: Salam!
+        function sayHi() {
+            console.log("Salam!");
+        }
+
+        // Arrow funksiyası (səhv verəcək)
+        sayHello(); // ReferenceError: Cannot access 'sayHello' before initialization
+        const sayHello = () => {
+            console.log("Salam!");
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+        // Normal funksiyalarda (function) öz arguments obyekti olur.
+        // Arrow funksiyalarda isə öz arguments obyekti yoxdur, yəni onlar ən yaxın normal funksiyanın arguments-ını istifadə edirlər.
+
+        // Bu fərqi göstərmək üçün nümunə:
+        function normalFunction(a, b) {
+            console.log("Normal function arguments:", arguments); // Öz arguments obyekti
+        }
+
+        const arrowFunction = (a, b) => {
+            console.log("Arrow function arguments:", arguments); // Burada arguments yoxdur, səhv verəcək
+        };
+
+        normalFunction(1, 2, 3);
+        // Çıxış: [Arguments] { '0': 1, '1': 2, '2': 3 }
+
+        try {
+            arrowFunction(1, 2, 3);
+        } catch (err) {
+            console.log("Arrow function error:", err.message);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+        // Doğru istifadə — Arrow funksiyada ...args istifadə etmək:
+        const arrowWithRest1 = (...args) => {
+            console.log("Arrow with rest params:", args);
+        };
+
+        arrowWithRest1(1, 2, 3);
+        // Çıxış: [ 1, 2, 3 ]
+
+
+        const arrowWithRest2 = () => {
+            let box = [1, 2, 3];
+            const newBox = [...box, 4, 5, 6];       // 'box' massivinə yeni elementlər əlavə edir
+            console.log("Yeni massiv:", newBox);
+        };
+        arrowWithRest2();
+        // Çıxış: [ 1, 2, 3, 4, 5, 6 ]
+
+    </script>
+</body>
+
+</html>

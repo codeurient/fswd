@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        // 1. var
+        // Function scope-a malikdir.
+        // Yenidən elan edilə və yenidən dəyər verilə bilər.
+        var x = 5;
+        var x = 10; // icazə var
+
+
+
+
+        
+
+
+
+        // 2. let
+        // Block scope-a malikdir 
+        // Yenidən elan edilə bilməz, amma dəyəri dəyişdirilə bilər.
+        let y = 5;
+        // let y = 10; // Xəta
+        y = 10; // olar
+
+
+
+
+
+
+
+
+        // 3. const
+        // Block scope-a malikdir.
+        // Yenidən elan edilə bilməz.
+        const z = 5;
+        // z = 10; // Xəta
+
+        const obj = { ad: "Ali" };
+        obj.ad = "Veli"; // olar
+
+
+
+    </script>
+</body>
+
+</html>
