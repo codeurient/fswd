@@ -21,15 +21,10 @@ olsun. 1 variant doğru digər 2si yanlış.
 
 <script>
 
-
-{
-    let x = 5;
-    var y = 10;
-}
-
-console.log(typeof x);
-console.log(typeof y);
-
+function sum(...numbers) {
+            return numbers[0] + numbers[1] + numbers[2] + numbers[3];
+        }
+        console.log(     sum(10, 20, 30, 40)      ); // 100
 
 </script>
 

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">Click me</button>
+
+    <!-- 
+    
+    this nədir?
+        - JavaScript-də this — cari icra mühitində (execution context) funksiyanın hansı obyekt üzərində çağırıldığını göstərən xüsusi açar sözdür.
+        - this-in dəyəri funksiyanın harada yazıldığına görə yox, necə çağırıldığına görə müəyyən olunur.
+
+
+-->
+
+
+    <script>
+
+        // 1. Global Scope
+        //      - Non-strict mode-da ("use strict" olmadan) qlobal scope-da this window (browser) və ya global (Node.js) obyektinə işarə edir.
+        //      - Strict mode-da isə this undefined olur.
+        console.log(this); // Browser: window, Node: global
+        "use strict";
+        console.log(this); // undefined
+
+
+
+
+        // 2. Obyekt metodunda
+        // - Bir obyektin metodu çağırıldıqda, this həmin obyektə istinad edir.
+        const user1 = {
+            name: "Aysel",
+            sayHi: function () {
+                console.log(this.name);
+            }
+        };
+        user1.sayHi(); // "Aysel"
+
+
+
+
+
+
+
+
+
+
+        // 3. Sadə funksiya çağırışında
+        // - Normal funksiya çağırıldıqda, strict mode-da this → undefined,
+        // - non-strict mode-da this → global obyekt (window və ya global).
+        function test() {
+            console.log(this);
+        }
+        test(); // Browser: window, Node: global (strict mode: undefined)
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 4. Constructor (new ilə)
+        // new operatoru ilə çağırılan funksiyada this → yaradılan yeni obyektə işarə edir.
+        function Person(name) {
+            this.name = name;
+        }
+
+        const p = new Person("Orxan");
+        console.log(p.name); // "Orxan"
+
+
+
+
+
+
+
+
+
+
+        // 5. Arrow Function
+        // Arrow function-da this öz dəyərini yarandığı mühitdən miras alır (lexical this).
+        // Yəni arrow function-un öz this-i yoxdur.
+        const obj = {
+            name: "Leyla",
+            sayHi: () => {
+                console.log(this.name);
+            }
+        };
+        obj.sayHi(); // undefined (çünki arrow function `this`-i globaldan götürür)
+
+
+
+
+
+
+
+
+        //  6. call, apply, bind ilə this dəyişmək
+        // this-in dəyərini istədiyimiz obyektə yönləndirmək mümkündür.
+        function greet() {
+            console.log(`Salam, ${this.name}`);
+        }
+
+        const user2 = { name: "Aygün" };
+        greet.call(user2);  // Salam, Aygün
+        greet.apply(user2); // Salam, Aygün
+
+        const boundGreet1 = greet.bind(user2);
+        boundGreet1(); // Salam, Aygün
+
+
+
+
+
+
+
+
+        // JavaScript-də call, apply, bind metodları
+        function greet(a, b) {
+            console.log(`${a}, ${this.name}${b}`);
+        }
+        const user = { name: "Aygün" };
+
+
+        // 1. greet.call(user, arg1, arg2, ...);                        - Funksiyanı dərhal çağırır. İlk parametr → this olacaq obyekt.  Sonrakı parametrlər → funksiya arqumentləri, vergül ilə verilir.
+        greet.call(user, "Salam", "!");
+
+
+
+        // 2. greet.apply(user, [arg1, arg2, ...]);                     - Funksiyanı dərhal çağırır. İlk parametr → this olacaq obyekt.  İkinci parametr → arqumentlərin array şəklində verilməsi.
+        greet.apply(user, ["Salam", "!"]);
+
+
+        // 3. const newFunc = greet.bind(user, arg1, arg2, ...);
+        //    newFunc();                                                - Funksiyanı çağırmır, əvəzində this-i sabitləşdirilmiş yeni funksiya qaytarır. Sonra həmin funksiyanı istənilən vaxt çağırmaq olar.
+        const boundGreet2 = greet.bind(user, "Salam", "!");
+        boundGreet2();
+
+
+        // this → user
+        // a → "Salam"
+        // b → "!"
+        // Çıxış: Salam, Aygün!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // HTML elementlərlə this istifadəsi
+        // Bəli  — Əgər bir funksiya bir HTML elementin event listener-i olaraq təyin olunubsa (normal function ilə), this həmin elementi göstərir.
+        document.getElementById("btn").addEventListener("click", function () {
+            console.log(this); // <button id="btn">Click me</button>
+        });
+
+        // Diqqət: Əgər arrow function istifadə etsən, this elementi göstərməyəcək, əvəzinə yaranma mühitinin this-ini götürəcək.
+        document.getElementById("btn").addEventListener("click", () => {
+            console.log(this); // Window və ya undefined
+        });
+
+    </script>
+</body>
+
+</html>

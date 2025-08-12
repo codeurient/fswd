@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+        // Currying — çox arqument götürən bir funksiyanı (məsələn f(a, b, c)) bir- birinə bağlı unary (yəni tək arqumentli) funksiyalar zəncirinə çevirməkdir: f(a)(b)(c). 
+
+
+        // 1) Sadeləşdirilmiş (manual) curried funksiya — tam unary zəncir:
+        const add = a => b => a + b;
+        console.log(add(2)(3)); // 5
+
+
+
+
+
+        // 2 - function açar sözü ilə
+        function add(a) {
+            return function (b) {
+                return function (c) {
+                    return function (d) {
+                        return a + b + c + d;
+                    };
+                };
+            };
+        }
+        console.log(      add(1) (2) (3) (4)      ); // Çıxış: 10
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

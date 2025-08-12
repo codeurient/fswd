@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        // Higher-Order Function — parametr olaraq başqa funksiyanı qəbul edən və ya nəticə olaraq başqa funksiyanı qaytaran funksiyadır.
+        // Yəni, bu cür funksiyalar funksiyalar üzərində işləyir.
+
+
+        // Xüsusiyyətləri
+        // - Funksiyanı parametr kimi ala bilər
+        // Bu, adətən "callback function" (geriyə çağırış funksiyası) ilə həyata keçirilir: Burada repeatAction funksiyası başqa funksiyanı (action) parametr kimi qəbul edir.
+        function repeatAction(times, action) {
+            for (let i = 0; i < times; i++) {
+                action(i);
+            }
+        }
+
+        repeatAction(3, function (num) {
+            console.log("Iteration:", num);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+        // Funksiyanı nəticə olaraq qaytara bilər
+        // Bu, adətən "function factory" (funksiya istehsalçısı) kimi istifadə olunur: Burada createMultiplier yeni funksiya qaytarır.
+        function createMultiplier(multiplier) {
+            return function (number) {
+                return number * multiplier;
+            };
+        }
+
+        const double = createMultiplier(2);
+        console.log(double(5)); // 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Callback-lar, Array metodları, Event listener-lər — bunlar Higher-Order Function istifadəsinin ən çox rast gəlinən yerləridir.
+        const numbers = [1, 2, 3, 4];
+        const doubled = numbers.map(num => num * 2); // map Higher-Order Function-dır
+        console.log(doubled); // [2, 4, 6, 8]
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+    
+    
+    1.  Object.create()
+
+        Məqsəd: Yeni bir obyekt yaratmaq və onun prototipini təyin etmək.
+
+        Xüsusiyyətləri:
+        - Object.create(proto) — proto obyektini yeni yaranan obyektin prototipi kimi təyin edir.
+        - İstəyə görə ikinci parametr (Object.create(proto, propertiesObject)) ilə yaradılan obyektin xassələrini (properties) dərhal müəyyən etmək olar.
+        - Əgər proto null olsa, obyekt heç bir prototip zəncirinə sahib olmur.
+
+
+-->
+
+
+    <script>
+
+        // Misal 1 — Sadə istifadə:
+        let person = {
+            greet() {
+                console.log("Salam!");
+            }
+        };
+
+        let user = Object.create(person);
+        user.name = "Ali";
+
+        user.greet();                                           // Salam!  (prototipdən gəlir)
+        console.log(Object.getPrototypeOf(user) === person);    // true
+
+
+
+
+
+
+        // Misal 2 — Xüsusiyyətləri dərhal təyin etmək:         Yadda saxla: Object.create() obyektin "DNA"sını" təyin edir — yəni prototipini.
+        let user = Object.create({}, {
+            name: { value: "Ali", writable: true, enumerable: true },
+            age: { value: 25, writable: false }
+        });
+        console.log(user.name); // Ali
+
+    </script>
+</body>
+
+</html>

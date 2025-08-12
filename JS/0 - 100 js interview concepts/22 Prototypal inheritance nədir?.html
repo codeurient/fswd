@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // JavaScript-də Prototypal Inheritance (Prototip əsaslı irsiyyət) obyektlərin digər obyektlərdən xassə 
+        // (property) və metodları (method) miras almasına imkan verən bir mexanizmdir. Bu, class-based dillərdəki
+        // klass irsiyyətinə bənzəsə də, JavaScript-də obyektlər əsasən obyektlərdən törəyir, yəni "object-to-object inheritance"
+        // prinsipi ilə işləyir.
+
+
+
+        // Əsas məqamlar:
+
+        // 1) Prototype Nədir?
+        //      - Hər bir JavaScript obyektinin daxili bir gizli bağlantısı olur — [[Prototype]] (bəzi brauzerlərdə __proto__ kimi görünür).
+        //      - Bu bağlantı başqa bir obyektə (prototype obyektinə) işarə edir.
+        //      - Əgər obyektin özündə istənilən xassə/metod tapılmazsa, JavaScript bu bağlantı vasitəsilə həmin xassəni parent (ata) obyektin prototipində axtarır. Bu axtarış zənciri prototype chain adlanır.
+
+
+        // 2) Niyə istifadə olunur?
+        //      - Kodun təkrar istifadəsini azaldır.
+        //      - Eyni funksiyaları bir neçə obyekt üçün yenidən yazmaq əvəzinə onları bir prototipdə saxlayıb paylaşmaq olur.
+
+
+        // 3) Necə işləyir?
+        //      - Məsələn, biz Person adlı konstruktor funksiyası yaradırıq və onun prototype obyektinə sayHello metodunu əlavə edirik. Bu funksiyadan yaradılmış bütün obyektlər sayHello metodunu miras alacaq.
+
+
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.sayHello = function () {
+            console.log(`Salam, mənim adım ${this.name}`);
+        };
+
+        let user1 = new Person("Ali");
+        let user2 = new Person("Leyla");
+
+        user1.sayHello(); // Salam, mənim adım Ali
+        user2.sayHello(); // Salam, mənim adım Leyla
+
+
+        // Burada sayHello metodu hər iki obyekt üçün eyni yerdən — Person.prototype-dən gəlir.
+        // Yəni, user1 və user2-nin özündə sayHello yoxdur, amma prototip zəncirində var.
+
+
+
+
+
+
+
+
+
+
+
+
+        // Əks halda uzun uzadı belə yaza bilərdik:
+        function Person(name) { this.name = name; }
+
+        let user3 = new Person("Ali");
+        user3.sayHello = function () { console.log(`Salam, mənim adım ${this.name}`); };
+
+
+        let user4 = new Person("Leyla");
+        user4.sayHello = function () { console.log(`Salam, mənim adım ${this.name}`); };
+
+
+        user3.sayHello(); // Salam, mənim adım Ali
+        user4.sayHello(); // Salam, mənim adım Leyla
+
+
+
+
+        
+
+
+
+
+
+
+
+        // Ancaq belə yazmaq olmur: 
+        function Person(name) { this.name = name; }
+
+        Person.sayHello = function () {
+            console.log(`Salam, mənim adım ${this.name}`);
+        };
+
+        let user5 = new Person("Ali");
+        let user6 = new Person("Leyla");
+
+        user5.sayHello(); // Uncaught TypeError: user1.sayHello is not a function
+        user6.sayHello(); // Uncaught TypeError: user1.sayHello is not a function
+
+
+
+    </script>
+</body>
+
+</html>

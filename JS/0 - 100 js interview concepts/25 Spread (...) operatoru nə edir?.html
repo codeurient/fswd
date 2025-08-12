@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Spread (...) Operatoru Nədir?
+
+        // JavaScript-də ... (üç nöqtə) spread operatoru kimi istifadə edildikdə, bir iterable (məsələn, massiv, string) 
+        // və ya obyektin elementlərini ayrı-ayrı dəyərlərə “yayır” (expand edir). Bu, obyekti və ya massivi kopyalamaq, 
+        // birləşdirmək, arqument kimi ötürmək və s. üçün çox rahatdır.
+
+        // Əslində ... operatorunun iki istifadəsi var:
+        //      - Spread → genişləndirmək (məsələn, massiv elementlərini ayrı arqumentlərə çevirmək)
+        //      - Rest → toplamaq (funksiya arqumentlərini bir massivdə toplamaq).
+
+
+
+
+        // 1. Massivlərdə Spread İstifadəsi
+        // a) Massivi Kopyalamaq
+        let arr1 = [1, 2, 3];
+        let arr2 = [...arr1];
+
+        console.log(arr2); // [1, 2, 3]
+        console.log(arr1 === arr2); // false (yeni massivdir)
+
+
+
+
+
+        // b) Massivləri Birləşdirmək
+        let a = [1, 2];
+        let b = [3, 4];
+        let combined = [...a, ...b];
+
+        console.log(combined); // [1, 2, 3, 4]
+
+
+
+
+
+        // c) Funksiyaya Arqumentləri Ayrı-ayrı Göndərmək
+        function sum(a, b, c) {
+            return a + b + c;
+        }
+
+        let numbers = [10, 20, 30];
+        console.log(sum(...numbers)); // 60
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 2. Obyektlərdə Spread İstifadəsi
+        // a) Obyekti Kopyalamaq
+        let obj1 = { name: "Ali", age: 25 };
+        let obj2 = { ...obj1 };
+
+        console.log(obj2); // { name: "Ali", age: 25 }
+        console.log(obj1 === obj2); // false (yeni object)
+
+
+
+
+
+
+        // b) Obyektləri Birləşdirmək
+        let user = { name: "Ali" };
+        let details = { age: 25, city: "Baku" };
+
+        let merged = { ...user, ...details };
+        console.log(merged); // { name: "Ali", age: 25, city: "Baku" }
+
+
+
+
+
+
+
+
+
+
+        // 3. String-lərdə Spread İstifadəsi
+        // String də iterable olduğu üçün hər bir hərf ayrı elementə çevrilir:
+        let word = "Salam";
+        let letters = [...word];
+
+        console.log(letters); // ["S", "a", "l", "a", "m"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 4. Dərin Kopyalama Məsələsi
+        // ... operatoru yalnız shallow copy (səthi kopya) yaradır. Yəni, massiv və ya obyekt içində başqa obyekt/massiv varsa, onlar eyni referansı paylaşır.
+        let ob1 = { name: "Ali", skills: ["JS", "PHP"] };
+        let ob2 = { ...ob1 };
+
+        ob2.skills.push("Python");
+
+        console.log(ob1.skills); // ["JS", "PHP", "Python"]  (daxili massiv eyni qaldı)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Spread (...) və Rest (...) operatorlarının fərqi
+
+        // - Spread → "YAYMAQ" → Böyük bir şeyi (massiv, obyekt, string) kiçik hissələrə ayırmaq            - Spread = açmaq (expand)
+        // - Rest → "TOPLAMAQ" → Bir neçə ayrı element/arqumenti bir dəyişəndə toplamaq                     - Rest = toplamaq (collect)
+
+
+        // Rest Operatoru (...)
+        // - İstifadə məqsədi: Bir neçə elementi bir massiv və ya obyekt daxilinə toplamaq.
+        // - Əsasən funksiyanın parametrlərində istifadə olunur.
+
+        // Misal – Funksiya arqumentlərini toplamaq:
+        function sum(...numbers) {
+            return numbers[0] + numbers[1] + numbers[2] + numbers[3];
+        }
+        console.log(sum(10, 20, 30, 40)); // 100
+
+
+
+
+
+
+
+
+        // Obyektdə qalan xassələri toplamaq:
+        let user2 = { name: "Ali", age: 25, city: "Baku" };
+        let { name, ...restInfo } = user2;
+
+        console.log(name);     // "Ali"
+        console.log(restInfo); // { age: 25, city: "Baku" }
+
+    </script>
+</body>
+
+</html>

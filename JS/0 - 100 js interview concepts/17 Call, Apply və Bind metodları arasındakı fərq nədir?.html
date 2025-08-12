@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+        // JavaScript-də call, apply, bind metodları
+        function greet(a, b) {
+            console.log(`${a}, ${this.name}${b}`);
+        }
+        const user = { name: "Aygün" };
+
+
+        // 1. greet.call(user, arg1, arg2, ...);                        - Funksiyanı dərhal çağırır. İlk parametr → this olacaq obyekt.  Sonrakı parametrlər → funksiya arqumentləri, vergül ilə verilir.
+        greet.call(user, "Salam", "!");
+
+
+
+        // 2. greet.apply(user, [arg1, arg2, ...]);                     - Funksiyanı dərhal çağırır. İlk parametr → this olacaq obyekt.  İkinci parametr → arqumentlərin array şəklində verilməsi.
+        greet.apply(user, ["Salam", "!"]);
+
+
+        // 3. const newFunc = greet.bind(user, arg1, arg2, ...);
+        //    newFunc();                                                - Funksiyanı çağırmır, əvəzində this-i sabitləşdirilmiş yeni funksiya qaytarır. Sonra həmin funksiyanı istənilən vaxt çağırmaq olar.
+        const boundGreet2 = greet.bind(user, "Salam", "!");
+        boundGreet2();
+
+
+        // this → user
+        // a → "Salam"
+        // b → "!"
+        // Çıxış: Salam, Aygün!
+
+
+
+
+
+    </script>
+</body>
+
+</html>

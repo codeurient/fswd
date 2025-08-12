@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Object.freeze()
+        // Məqsəd: Obyekti tam olaraq dəyişməz (immutable) etmək.
+
+        // Xüsusiyyətləri:
+        // - Xassələrin dəyəri dəyişdirilə bilməz.
+        // - Yeni xassələr əlavə edilə bilməz.
+        // - Mövcud xassələr silinə bilməz.
+        // - Mövcud xassələrin konfiqurasiyası dəyişdirilə bilməz (descriptor dəyişməz).
+        // - Ancaq dərin freeze deyil, yalnız birinci səviyyə dəyişməz olur (nested obyektlər yenə dəyişə bilər).
+
+        // Misal:   
+        let user = { name: "Ali", skills: ["JS", "PHP"] };
+
+        Object.freeze(user);
+
+        user.name = "Leyla"; // dəyişmir
+        user.age = 30; // əlavə edilmir
+        delete user.name; // silinmir
+
+        console.log(user); // { name: "Ali", skills: ["JS", "PHP"] }
+
+        user.skills.push("Python"); // Dəyişir! (nested obyektlər dondurulmayıb). Tam dondurma (deep freeze) üçün əlavə funksiya yazmaq lazımdır.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+
+
+<!-- 
+
+
+
+| Xüsusiyyət / Metod       | `Object.create()`                             | `Object.freeze()`          | `Object.seal()`                                                            |
+| ------------------------ | --------------------------------------------  | -------------------------- | -------------------------------------------------------------------------  |
+| **Təyinat**              | Yeni obyekt yaratmaq və prototip təyin etmək  | Obyekti tam dəyişməz etmək | Yeni xassə əlavə/silməyi bloklamaq, amma dəyərləri dəyişməyə icazə vermək  |
+| **Yeni property əlavə**  | ✅ Bəli                                       | ❌ Yox                      | ❌ Yox                                                                     |
+| **Property silmək**      | ✅ Bəli                                       | ❌ Yox                      | ❌ Yox                                                                     |
+| **Dəyər dəyişmək**       | ✅ Bəli                                       | ❌ Yox                      | ✅ Bəli                                                                    |
+| **Prototip təyin etmək** | ✅ Bəli                                       | ❌ Yox                      | ❌ Yox                                                                     |
+| **Deep təsir**           | ❌ Xeyr                                       | ❌ Xeyr (yalnız 1 səviyyə)  | ❌ Xeyr                                                                    |
+
+
+
+
+-->
+</body>
+
+</html>
