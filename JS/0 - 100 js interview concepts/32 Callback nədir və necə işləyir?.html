@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // Callback — başqa bir funksiyaya parametr kimi ötürülən və həmin funksiyanın icrası zamanı çağırılan funksiyadır.
+
+
+
+        // JavaScript single-threaded dillərdəndir (yəni eyni anda yalnız bir əməliyyatı icra edə bilər), amma asinxron 
+        // əməliyyatlar üçün gözləmə zamanı proqramın digər işlərini davam etdirməsinə imkan vermək üçün callback-lər istifadə olunur.
+
+
+        // Callback Necə İşləyir?
+
+        // Addım-addım iş prinsipi:
+        //      - Bir funksiyanı yazırsan.
+        //      - Bu funksiyanı başqa bir funksiyaya parametr kimi verirsən.
+        //      - Digər funksiya müəyyən bir vaxtda (məsələn, iş bitəndə) həmin funksiyanı çağırır.
+
+
+        function greet(name) {
+            console.log(`Salam, ${name}!`);     // Salam, Ali!  
+        }
+
+        function processUserInput(callback) {
+            const name = "Ali";
+            callback(name); // callback funksiyasını çağırır
+        }
+
+        processUserInput(greet);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Asinxron Callback Nümunəsi:   Burada setTimeout-a verilən funksiya callback-dir və 2 saniyə sonra çağırılır.
+
+        console.log("Başladı");
+
+        setTimeout(() => {
+
+            console.log("2 saniyə keçdi");
+
+        }, 2000);
+
+        console.log("Bitdi");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Callback-lər çox iç-içə istifadə olunanda kod oxunmaz və idarəolunmaz olur: 
+        // Buna Callback Hell deyilir və bunun qarşısını almaq üçün Promise və async/await istifadə olunur.
+        getData(function (a) {
+            getMoreData(a, function (b) {
+                getEvenMoreData(b, function (c) {
+                    console.log(c);
+                });
+            });
+        });
+
+
+
+
+
+
+        // Callback-in Xüsusiyyətləri
+        //      * Callback özbaşına işləməz, onu çağıran başqa bir funksiya lazımdır.
+        //      * Sən callback funksiyasını adi funksiya kimi də çağıra bilərsən, amma əsas məqsədi — onu başqa funksiyaya ötürməkdir.
+        //      * Callback həm sinxron, həm də asinxron ola bilər:
+        //              - Sinxron callback — dərhal çağırılır.
+        //              - Asinxron callback — müəyyən vaxt sonra çağırılır (məsələn, setTimeout, fetch, event listener).
+
+
+
+        // JavaScript-də:
+        //      - Event listener-lərdə
+        //      - setTimeout / setInterval
+        //      - API çağırışlarında (XHR, fetch)
+        //      - Array metodlarında (map, forEach, filter və s.)
+        // çox istifadə olunur.
+
+        
+    </script>
+</body>
+
+</html>

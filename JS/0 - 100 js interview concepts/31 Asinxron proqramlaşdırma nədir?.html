@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+        // Asinxron proqramlaşdırma — proqramın eyni vaxtda birdən çox işi “gözləmədən” icra edə bilməsinə imkan verən proqramlaşdırma modelidir.
+
+        // Sadə dildə:
+        //      - Senkron (synchronous) icra — tapşırıq bir-birinin ardınca işləyir, biri bitmədən digəri başlamır.
+        //      - Asenkron (asynchronous) icra — bəzi tapşırıqlar (məsələn, fayl oxuma, API çağırışı, verilənlər bazasına sorğu)
+        //        nəticəni gözləyərkən proqramın digər işləri davam etdirə bilməsi.
+
+
+
+        // Niyə Lazımdır?
+
+        // Proqramlarda çox vaxt gözləmə müddəti olan əməliyyatlar olur:
+        //      - Serverə HTTP sorğu göndərmək
+        //      - Fayl sistemi ilə işləmək
+        //      - Verilənlər bazasına sorğu göndərmək
+        //      - Şəbəkə üzərindən məlumat ötürmək
+
+
+        // Əgər bu əməliyyatlar sinxron işləsə, proqram həmin əməliyyatın nəticəsini gözləyən zaman bloklanar. Bu isə istifadəçi təcrübəsini pisləşdirər.
+
+        // Asinxron model isə:
+        //      - Bu uzunmüddətli əməliyyatları başlatır,
+        //      - Onlar işləyərkən proqramın digər işləri davam edir,
+        //      - Nəticə hazır olanda xəbərdar olunur (callback, promise və ya async/await vasitəsilə).
+
+
+
+
+        // JavaScript-də Asinxronluq
+        // JavaScript single-threaded dillərdən biridir, amma `event loop` və `callback queue` sayəsində asinxron işləri idarə edə bilir.
+
+        // Əsas vasitələr:
+        //      - Callback functions
+        //      - Promise
+        //      - async / await sintaksisi
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
