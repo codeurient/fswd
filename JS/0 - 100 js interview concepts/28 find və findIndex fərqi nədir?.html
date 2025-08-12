@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+
+        JavaScript-də find() və findIndex() hər ikisi array metodlarıdır və ECMAScript 6 (ES6) ilə gəlmişdir.
+        İkisi də elementlər üzərində müəyyən bir şərtə görə axtarış aparmaq üçün istifadə olunur, amma nəticələri fərqlidir.
+
+
+
+
+        | Xüsusiyyət                | `find()`                                                                             | `findIndex()`                                                         |
+        | ------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+        |   Geri qaytardığı dəyər   | Tapılan **elementin özünü** qaytarır                                                 | Tapılan elementin **indeksini** (sıra nömrəsini) qaytarır             |
+        |   Tapılmazsa              | `undefined` qaytarır                                                                 | `-1` qaytarır                                                         |
+        |   İstifadə məqsədi        | Elementin özünü əldə etmək üçün                                                      | Elementin indeksini əldə etmək üçün                                   |
+        |   Tip                     | Geri dönüş tipi: elementin tipi nədirsə o                                            | Geri dönüş tipi: `number`                                             |
+        |   İş prinsipi             | Soldan sağa bütün elementləri yoxlayır, şərtə uyğun ilk elementi qaytarır və dayanır | Eyni şəkildə, şərtə uyğun ilk elementin indeksini qaytarır və dayanır |
+
+    
+    
+    -->
+
+
+    <script>
+
+
+
+        // find()        -  array.find    (    callback(element, index, array),    thisArg    );
+        // findIndex()   - array.findIndex(    callback(element, index, array), thisArg       );
+
+        // callback — hər element üçün işə düşən funksiya.
+
+        // Parametrlər:
+        //      element — hazırda yoxlanılan element
+        //      index   — həmin elementin indeksi
+        //      array   — orijinal massiv
+        //      thisArg — istəyə bağlı, callback içində istifadə ediləcək this dəyəri.
+
+
+
+
+
+        // Sadə Nümunə
+        const numbers1 = [5, 12, 8, 130, 44];
+
+        // find - elementin özünü qaytarır
+        const found = numbers1.find(num => num > 10);
+        console.log(found); // 12
+
+        // findIndex - elementin indeksini qaytarır
+        const foundIndex = numbers1.findIndex(num => num > 10);
+        console.log(foundIndex); // 1
+
+
+
+
+
+
+        // Tapılmazsa Nəticə
+        const numbers2 = [1, 2, 3];
+
+        console.log(numbers2.find(num => num > 10));      // undefined
+        console.log(numbers2.findIndex(num => num > 10)); // -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Daha Real Həyat Nümunəsi
+        // Məsələn, istifadəçilər siyahısında müəyyən bir id-yə sahib olan istifadəçini tapmaq istəsək:
+
+        const users = [
+            { id: 1, name: "Ali" },
+            { id: 2, name: "Veli" },
+            { id: 3, name: "Ayşe" }
+        ];
+
+        // İstifadəçinin özünü tapmaq
+        const user = users.find(u => u.id === 2);
+        console.log(user); // { id: 2, name: "Veli" }
+
+        // İstifadəçinin indeksini tapmaq
+        const userIndex = users.findIndex(u => u.id === 2);
+        console.log(userIndex); // 1
+
+    </script>
+</body>
+</html>
