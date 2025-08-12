@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // Promise chaining — JavaScript-də bir sıra asinxron əməliyyatları ardıcıl şəkildə icra etmək üçün Promise-lərin bir-birinə zəncirlənməsi texnikasıdır.
+        // Sadə dildə desək: Bir Promise bitdikdən sonra onun nəticəsini növbəti .then()-ə ötürürük və beləliklə mərhələli şəkildə əməliyyatlar davam edir.
+
+
+
+
+
+        // Niyə Promise chaining lazımdır?
+        // Əgər bir neçə asinxron əməliyyat bir-birindən asılıdırsa (yəni ikinci əməliyyat birincinin nəticəsinə ehtiyac duyursa), 
+        // onları ardıcıllıqla icra etmək üçün Promise chaining istifadə olunur. Əks halda, əməliyyatlar paralel icra oluna bilər, amma nəticə qarışa bilər.
+
+
+
+
+        // Promise chaining-in iş prinsipi:
+        // 1) Bir Promise qaytarılır
+        // 2) .then() içində istəsək yeni bir dəyər, istəsək yeni bir Promise qaytara bilərik.
+        // 3) Əgər .then() içində Promise qaytarırıqsa, növbəti .then() həmin Promise-in nəticəsini alır.
+        // 4) .catch() ilə bütün zəncirdə baş verən səhvləri tuta bilirik.
+
+
+
+        // Real həyat nümunəsi. Məsələn, API-dən istifadəçi məlumatını gətirmək → onun postlarını yükləmək → post detalları ilə işləmək:
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+            .then(response => response.json())
+            .then(user => {
+                console.log("İstifadəçi:", user.name);
+                return fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`);
+            })
+            .then(response => response.json())
+            .then(posts => {
+                console.log("Post sayı:", posts.length);
+                return posts[0];
+            })
+            .then(firstPost => {
+                console.log("İlk post başlığı:", firstPost.title);
+            })
+            .catch(error => {
+                console.error("Xəta baş verdi:", error);
+            });
+
+
+    </script>
+</body>
+
+</html>
