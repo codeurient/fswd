@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // Promise — JavaScript-də asinxron əməliyyatların idarə olunması üçün istifadə olunan obyekt növüdür.
+        // Bir Promise gələcəkdə bir nəticə ilə tamamlanacaq (və ya uğursuz olacaq) asinxron əməliyyatı təmsil edir.
+
+        // Sadə dillə: Promise = “İndi nəticə yoxdur, amma gələcəkdə olacaq — ya uğurla, ya da səhvlə”.
+
+
+
+        // Promise üç əsas vəziyyətdə ola bilər:
+        //      - pending:    başlanğıc vəziyyət 
+        //      - fulfilled:  əməliyyat uğurla başa çatıb 
+        //      - rejected:   əməliyyat uğursuz olub 
+
+        // Promise ya fulfilled, ya da rejected olduqdan sonra artıq başqa vəziyyətə keçmir.
+
+
+
+
+
+
+
+        // Promise, Promise konstruktoru ilə yaradılır və iki parametrli callback qəbul edir:
+        //      - resolve:  əməliyyat uğurlu olduqda çağırılır
+        //      - reject:   əməliyyat uğursuz olduqda çağırılır
+        const myPromise = new Promise((resolve, reject) => {
+            const success = true;
+
+            if (success) {
+                resolve("Əməliyyat uğurla başa çatdı!");
+            } else {
+                reject("Səhv baş verdi!");
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Promise obyektinin nəticəsini almaq üçün .then() və .catch() metodları istifadə olunur.
+        myPromise
+            .then(result => {
+                console.log("Uğur:", result);
+            })
+            .catch(error => {
+                console.log("Xəta:", error);
+            })
+            .finally(() => {
+                console.log("Bitdi");
+            });
+
+        // .then() — Promise uğurla nəticələndikdə (fulfilled) işləyir
+        // .catch() — Promise uğursuz olduqda (rejected) işləyir
+        // .finally() — Promise necə bitməsindən asılı olmayaraq işləyir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Asinxron Əməliyyat Nümunəsi
+        function fetchData() {
+            return new Promise((resolve, reject) => {
+                console.log("Məlumat yüklənir...");
+
+                setTimeout(() => {
+                    const success = true;
+                    if (success) {
+                        resolve("Məlumat uğurla gəldi!");
+                    } else {
+                        reject("Məlumat gətirilərkən xəta baş verdi!");
+                    }
+                }, 2000);
+            });
+        }
+
+        fetchData()
+            .then(data => console.log(data))
+            .catch(err => console.error(err))
+            .finally(() => console.log("İş tamamlandı"));
+
+
+
+
+        // Promise Chain (Zəncir) - .then() bir Promise qaytardığı üçün zəncir şəklində bir neçə əməliyyatı ard-arda yerinə yetirmək mümkündür:
+        // Növbəti dərsdə ətraflı məlumat olacaq.
+        fetchData()
+            .then(data => {
+                console.log(data);
+                return "İkinci addım";
+            })
+            .then(step => {
+                console.log(step);
+            })
+            .catch(err => {
+                console.error("Xəta:", err);
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Promise və async/await
+        // async/await sintaksisi Promise-lərlə işləməyi daha sadə və oxunaqlı edir:
+        // Növbəti dərsdə ətraflı məlumat olacaq.
+        async function getData() {
+            try {
+                const data = await fetchData();
+                console.log(data);
+            } catch (err) {
+                console.error(err);
+            } finally {
+                console.log("İş tamamlandı");
+            }
+        }
+        getData();
+
+    </script>
+</body>
+
+</html>
