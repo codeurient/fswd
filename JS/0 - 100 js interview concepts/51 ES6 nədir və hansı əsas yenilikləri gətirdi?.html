@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+    
+    1. ES6 nədir?
+
+    ES6, yəni ECMAScript 2015, JavaScript-in 6-cı əsas versiyasıdır.
+
+    2015-ci ildə təqdim olunub və JavaScript-i daha modern və güclü etmək üçün bir çox yeni imkanlar gətirib.
+
+    JavaScript-in əvvəlki versiyaları (ES5 və əvvəlkilər) bəzi hallarda kodu çətin və uzun edirdi. ES6 ilə bu məsələlər sadələşdirildi.
+
+
+
+-->
+
+
+    <script>
+        // a) Let və Const
+        // var əvəzinə let və const istifadə olunur.
+        // let → dəyişkənlər üçün, const → sabit dəyərlər üçün.
+        let x = 10;
+        const y = 20;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // b) Arrow Functions - Funksiyaları qısa və oxunaqlı yazmaq üçün.
+        const sum = (a, b) => a + b;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // c) Template Literals - String birləşdirmə və formatlaşdırma daha rahat oldu (${} istifadə olunur).
+        let name = "Ali";
+        console.log(`Salam, ${name}!`);
+
+
+
+
+
+
+
+
+
+
+
+        // d) Default Parameters - Funksiyaya parametr verilməsə belə default dəyər istifadə olunur.
+        function greet(name = "Dünya") {
+            console.log(`Salam, ${name}!`);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // e) Destructuring - Array və obyektlərin elementlərini asan çıxarmaq.
+        const user = { name: "Ali", age: 25 };
+        const { name, age } = user;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // f) Modules (import/export) - Kodları modul şəklində yazmaq və başqa fayllarda istifadə etmək.
+        // math.js
+        export const sum = (a, b) => a + b;
+
+        // main.js
+        import { sum } from './math.js';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // g) Classes - JavaScript-də obyekt yönümlü proqramlaşdırma üçün siniflər.
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+            greet() {
+                console.log(`Salam, mənim adım ${this.name}`);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // h) Promises - Asinxron əməliyyatları idarə etmək üçün.
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => console.log(data));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // i) Enhanced Object Literals - Obyektləri daha qısa və oxunaqlı yazmaq imkanı.
+        let x = 10;
+        let obj = { x, greet() { console.log(x); } };
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+        // j) New Data Structures - Map, Set, WeakMap, WeakSet əlavə olundu.
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

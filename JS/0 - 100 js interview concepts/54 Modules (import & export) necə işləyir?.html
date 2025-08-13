@@ -10,28 +10,16 @@
 <body>
 
 
-    <!-- 
-    
-    
-    1. ES6 nədir?
-
-    ES6, yəni ECMAScript 2015, JavaScript-in 6-cı əsas versiyasıdır.
-
-    2015-ci ildə təqdim olunub və JavaScript-i daha modern və güclü etmək üçün bir çox yeni imkanlar gətirib.
-
-    JavaScript-in əvvəlki versiyaları (ES5 və əvvəlkilər) bəzi hallarda kodu çətin və uzun edirdi. ES6 ilə bu məsələlər sadələşdirildi.
-
-
-
--->
 
 
     <script>
-        // a) Let və Const
-        // var əvəzinə let və const istifadə olunur.
-        // let → dəyişkənlər üçün, const → sabit dəyərlər üçün.
-        let x = 10;
-        const y = 20;
+
+
+        // Modules nədir?
+
+        //      - Module – JavaScript fayllarını daha kiçik, ayrı və idarə edilə bilən hissələrə bölmək üsuludur.
+        //      - Hər modul özündə funksiyalar, dəyişənlər, siniflər saxlaya bilər və digər fayllarda istifadə oluna bilər.
+        //      - Bunun üçün export və import açar sözlərindən istifadə olunur.
 
 
 
@@ -42,64 +30,16 @@
 
 
 
-
-
-
-
-        // b) Arrow Functions - Funksiyaları qısa və oxunaqlı yazmaq üçün.
-        const sum = (a, b) => a + b;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // c) Template Literals - String birləşdirmə və formatlaşdırma daha rahat oldu (${} istifadə olunur).
-        let name = "Ali";
-        console.log(`Salam, ${name}!`);
-
-
-
-
-
-
-
-
-
-
-
-        // d) Default Parameters - Funksiyaya parametr verilməsə belə default dəyər istifadə olunur.
-        function greet(name = "Dünya") {
-            console.log(`Salam, ${name}!`);
+        // a) Named Export (adla export)
+        // math.js faylı yaradaraq içində aşağıdakı kodları yazırıq: 
+        export function sum(a, b) {
+            return a + b;
         }
 
+        export const pi = 3.14;
 
-
-
-
-
-
-
-
-
-
-
-
-
-        // e) Destructuring - Array və obyektlərin elementlərini asan çıxarmaq.
-        const user = { name: "Ali", age: 25 };
-        const { name, age } = user;
-
-
+        // - Burada sum və pi ayrı-ayrı adlarla export olunur.
+        // - Hər birini istədiyimiz zaman import edə bilərik.
 
 
 
@@ -115,23 +55,64 @@
 
 
 
-        // f) Modules (import/export) - Kodları modul şəklində yazmaq və başqa fayllarda istifadə etmək.
-        // math.js
-        export const sum = (a, b) => a + b;
+        // b) Default Export (təhlükəsiz bir əsas export)
+        // box.js faylı yaradaraq içində aşağıdakı kodu yazırıq: 
+        export default function box(size) {
+            return `Box ölçüsü: ${size}`;
+        }
+
+        // - Bu faylda yalnız bir default export var.
+        // - Default export istənilən adla import oluna bilər.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Import necə işləyir?
+        // a) Named Import
 
         // main.js
-        import { sum } from './math.js';
+        import { sum, pi } from './math.js';
 
+        console.log(sum(2, 3)); // 5
+        console.log(pi);       // 3.14
 
 
+        // { } içində göstərilən adlar faylda export edilmiş adlarla tam eyni olmalıdır.
+        // Hər birini seçə bilərik, hamısını da import etmək olar:
+        import * as math from './math.js';
+        console.log(math.sum(2, 3));
+        console.log(math.pi);
 
 
 
 
 
 
+        // Default Import
+        // main.js
+        import box from './box.js';
 
+        console.log(box(10)); // Box ölçüsü: 10
 
+        // Default export istənilən adla import edilə bilər, { } istifadə olunmur.
 
 
 
@@ -143,90 +124,21 @@
 
 
 
-        // g) Classes - JavaScript-də obyekt yönümlü proqramlaşdırma üçün siniflər.
-        class Person {
-            constructor(name) {
-                this.name = name;
-            }
-            greet() {
-                console.log(`Salam, mənim adım ${this.name}`);
-            }
-        }
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // h) Promises - Asinxron əməliyyatları idarə etmək üçün.
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => console.log(data));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // i) Enhanced Object Literals - Obyektləri daha qısa və oxunaqlı yazmaq imkanı.
-        let x = 10;
-        let obj = { x, greet() { console.log(x); } };
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // import box və import {box} arasındakı fərq
         
+        // 1) import box from './box.js'
+        //          - box.js-də default export varsa işləyir.
+        //          - İstənilən adla import edə bilərik (box, myBox, b və s.).
 
-
-
-
-
-        // j) New Data Structures - Map, Set, WeakMap, WeakSet əlavə olundu.
-
-
-
-
+        // 2) import {box} from './box.js'
+        //          - box.js-də named export olmalıdır.
+        //          - Adın faylda export edilmiş adla tam eyni olması vacibdir.
 
 
     </script>

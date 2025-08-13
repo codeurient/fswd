@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // Destructuring Assignment nədir?
+        // Destructuring Assignment JavaScript-də array və obyektlərdən dəyərləri asanlıqla çıxarmaq üçün istifadə olunur.
+
+        // Əvvəlki üsul:
+        let user = { name: "Ali", age: 25 };
+        let name = user.name;
+        let age = user.age;
+
+
+
+        // Destructuring ilə çox daha qısa və oxunaqlı yazılır:
+        let { name, age } = user;
+
+
+
+
+
+
+
+
+
+
+        // 2. Array destructuring
+        //      - Array-lardan elementləri sıra ilə çıxarmaq üçün istifadə olunur.
+        let numbers = [1, 2, 3];
+        let [a, b, c] = numbers;
+
+        console.log(a); // 1
+        console.log(b); // 2
+        console.log(c); // 3
+
+
+
+
+        // İstəyə görə bəzi elementləri ötürə bilərik:
+        let [first, , third] = numbers;
+        console.log(first); // 1
+        console.log(third); // 3
+
+
+
+        // Default values də təyin etmək olar:
+        let [x, y, z = 10] = [5, 6];
+        console.log(z); // 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 3. Object destructuring
+        // Object-lardan key (ad) ilə çıxarılır:
+        let user = { name: "Ali", age: 25, city: "Bakı" };
+        let { name, city } = user;
+
+        console.log(name); // Ali
+        console.log(city); // Bakı
+
+
+
+
+        // Adı dəyişdirmək də mümkündür:
+        let { name: userName, age: userAge } = user;
+        console.log(userName); // Ali
+        console.log(userAge);  // 25
+
+
+
+
+
+        // Default dəyər də verə bilərik:
+        let { country = "Azərbaycan" } = user;
+        console.log(country); // Azərbaycan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Nested destructuring
+        // İç-içə array və obyektlərdən məlumat çıxarmaq:
+        let user = {
+            name: "Ali",
+            address: { city: "Bakı", zip: 1000 }
+        };
+
+        let { name, address: { city, zip } } = user;
+        console.log(city); // Bakı
+        console.log(zip);  // 1000
+
+    </script>
+</body>
+
+</html>

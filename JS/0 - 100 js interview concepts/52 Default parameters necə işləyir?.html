@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    Default Parameters nədir?
+
+    - Default Parameters JavaScript-də funksiyalara parametr verilmədikdə avtomatik istifadə olunan dəyərlərdir.
+
+    - Başqa sözlə, əgər funksiya çağırılarkən bəzi parametrlər ötürülməzsə, onlara əvvəlcədən təyin edilmiş dəyər
+    istifadə olunur.
+
+    - Bu ES6 ilə gəldi və əvvəlki üsullara (param || default) nisbətən daha sadə və oxunaqlıdır.
+
+
+    <script>
+
+
+        function greet(name = "Dünya") {
+            console.log(`Salam, ${name}!`);
+        }
+
+        greet("Ali");
+        greet();
+
+
+
+    </script>
+</body>
+
+</html>

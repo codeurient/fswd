@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+
+        // Nullish Coalescing Operator (??) nədir ?
+
+        // Sadə izah:  ?? operatoru bir dəyərin null və ya undefined olub-olmadığını yoxlayır və əgər belədirsə, başqa bir dəyər təyin edir.
+        let userName = null;
+        let defaultName = "Guest";
+
+        console.log(userName ?? defaultName);   // Guest
+
+
+        // Yuxarıdakı nümunədə userName null olduğu üçün ?? operatoru defaultName-i qaytarır.
+        // Əgər userName boş string "" olsa belə, ?? onu null saymır:
+
+
+        let userName = "";
+        console.log(userName ?? "Guest");  // ""  (boş string olduğu üçün öz dəyərini saxlayır)
+
+
+
+        // Əsas fərq || operatorundan:
+        // || operatoru hər "falsy" dəyərdə default dəyəri qaytarır (0, "", false, null, undefined), amma ?? yalnız null və undefined üçün default verir.
+
+
+    </script>
+</body>
+
+</html>

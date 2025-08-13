@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        // Optional Chaining (?.) nədir?
+
+        // Sadə izah:
+        //      - Optional chaining operator (?.) JavaScript-də bir obyektin və ya dəyişənin içindəki 
+        //      - dəyərlərə təhlükəsiz şəkildə çatmaq üçün istifadə olunur. Əgər yolun hər hansı hissəsi 
+        //      - null və ya undefined olsa, səhv (error) vermir, sadəcə undefined qaytarır.
+
+
+        const user = {
+            name: "Ali",
+            address: {
+                city: "Baku"
+            }
+        };
+
+        console.log(user.address.city);      // Baku
+        console.log(user.contact.phone);     // Error: Cannot read property 'phone' of undefined
+
+
+
+
+
+
+        // Yuxarıdakı nümunədə user.contact.phone yazanda səhv yaranır, çünki contact undefined-dir.
+        // Optional chaining ilə bunu təhlükəsiz edə bilərik:
+        console.log(user.contact?.phone);                       // undefined, amma səhv vermir
+
+        // Yəni    ?.    deyir: "Əgər soldakı dəyər null və ya undefined deyilsə, sağdakını al, yoxsa undefined qaytar."
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

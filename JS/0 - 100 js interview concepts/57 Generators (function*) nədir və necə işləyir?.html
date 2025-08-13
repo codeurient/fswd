@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        // JavaScript-də generator funksiyaları (function*) xüsusi funksiyalardır ki, icrası zamanı dayandırıla və sonra eyni yerdən davam etdirilə bilər.
+
+        //      - Normal funksiyalar bir dəfə çağırılır və bir dəyər qaytarır.
+        //      - Generator funksiyaları isə istəyə görə bir neçə dəyər qaytara bilər və yield açar sözü ilə icranı dayandıra bilər.
+
+
+
+        function* myGenerator() {
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+
+
+        // function* – generator funksiyasını yaratmaq üçün.
+        // yield – generatorun bir dəyər qaytarmasını və icranın dayandırılmasını təmin edir.
+
+
+
+
+
+
+        // Generator funksiyasını çağıranda normal funksiya kimi icra olunmur, əvəzinə generator obyekti qaytarılır:
+        const gen = myGenerator();
+        console.log(gen);  // Generator { }
+
+
+
+
+
+
+        // Generator obyektinin next() metodu var. Hər next() çağırışı yield-lə dayandırılmış nöqtədən davam edir və { value, done } obyektini qaytarır:
+        console.log(gen.next());  // { value: 1, done: false }
+        console.log(gen.next());  // { value: 2, done: false }
+        console.log(gen.next());  // { value: 3, done: false }
+        console.log(gen.next());  // { value: undefined, done: true }
+
+        // value – yield-dən qaytarılan dəyər
+        // done – generatorun bitib-bitmədiyini göstərir (true olduqda artıq daha dəyər yoxdur)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Generator ilə real dünya nümunəsi
+        // Tutaq ki, çox böyük bir siyahı var və biz bütün elementləri bir anda işlətmək istəmirik, generator istifadə edə bilərik:
+        function* numbers(limit) {
+            for (let i = 1; i <= limit; i++) {
+                yield i;  // hər dəfə çağıranda növbəti rəqəmi qaytar
+            }
+        }
+
+        const nums = numbers(5);
+
+        console.log(nums.next().value); // 1
+        console.log(nums.next().value); // 2
+        console.log(nums.next().value); // 3
+
+        // Beləliklə generatorlar lazım olanda dəyərləri istehsal edir, böyük verilənlərdə yaddaşa qənaət edir.
+
+
+
+
+        // Generatorların üstünlükləri:
+        //      1) İcra dayandırıla bilir – lazım olanda davam etdirilə bilər.
+        //      2) Lazy evaluation – yalnız tələb olunan dəyərləri yaradır.
+        //      3) Asinxron işləmə – async generator ilə Promise-ləri ardıcıl işlətmək mümkündür.
+
+
+
+
+
+    </script>
+</body>
+
+</html>
