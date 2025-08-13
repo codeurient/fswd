@@ -20,7 +20,13 @@ olsun. 1 variant doğru digər 2si yanlış.
 
 
 <script>
+console.log("A");
 
+setTimeout(() => console.log("B"), 0);
+
+Promise.resolve().then(() => console.log("C"));
+
+console.log("D");
 
 
 </script>

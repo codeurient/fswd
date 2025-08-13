@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+
+    // JavaScript single-threaded bir dildir — yəni kodlar bir anda yalnız bir iş icra edir.
+    // Ancaq bizdə asinxron əməliyyatlar var (setTimeout, Promise, fetch, I/O əməliyyatları və s.) — bunların 
+    // icrası Event Loop və Task Queue mexanizmi ilə idarə olunur.
+
+
+    // Bu “tapşırıqlar” iki əsas kateqoriyaya bölünür:
+    //      - Macrotask (böyük tapşırıq)
+    //      - Microtask (kiçik tapşırıq)
+
+
+
+
+
+
+
+
+
+
+
+    // Macrotask (Böyük Tapşırıq)
+    // Macrotask — əsas növbə (main task queue)-də yer alan tapşırıqlardır. Hər macrotask tamamlandıqdan sonra microtask 
+    // queue tamamilə işlədilir, sonra yenidən macrotask-ın növbəti elementi icra olunur.
+
+    // Macrotask nümunələri:
+    //      - setTimeout()
+    //      - setInterval()
+    //      - setImmediate() (Node.js-də)
+    //      - DOM Event-lər (click, keypress və s.)
+    //      - AJAX callback-ləri (köhnə XMLHttpRequest-lə)
+    //      - requestAnimationFrame()
+
+    // İcra qaydası: Event loop bir macrotask götürür → icra edir → sonra bütün microtask-ları işləyir → sonra növbəti macrotask-a keçir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Microtask (Kiçik Tapşırıq)
+    // Microtask — macrotask-ın içində yaranan xüsusi sürətli tapşırıqlardır. Microtask-lar microtask 
+    // queue adlı ayrıca növbədə saxlanılır və hər macrotask bitdikdən dərhal sonra icra olunur (amma növbəti macrotask başlamazdan öncə).
+
+    // Microtask nümunələri:
+    //      - Promise.then() və Promise.catch() callback-ləri
+    //      - process.nextTick() (Node.js-də xüsusi microtask mexanizmi)
+    //      - MutationObserver (DOM dəyişikliklərini izləmək üçün)
+
+    // İcra qaydası:
+    //      - Event loop bir macrotask icra edir.
+    //      - İcra bitdikdən dərhal sonra bütün microtask queue icra olunur (queue boşalana qədər).
+    //      - Sonra növbəti macrotask-a keçir.
+
+
+
+    console.log("1");
+
+    setTimeout(() => {
+    console.log("2 (Macrotask)");
+    }, 0);
+
+    Promise.resolve().then(() => {
+    console.log("3 (Microtask)");
+    });
+
+    console.log("4");
+
+
+    // İcra sırası:
+    // 1. console.log("1") → 1 (synchronous)
+    // 2. setTimeout(...) → macrotask queue-ya əlavə olundu
+    // 3. Promise.then(...) → microtask queue-ya əlavə olundu
+    // 4. console.log("4") → 4 (synchronous)
+    // 5. Macrotask bitdi → microtask queue işlənir → 3 (Microtask)
+    // 6. Növbəti macrotask → 2 (Macrotask)
+
+    </script>
+    
+</body>
+</html>

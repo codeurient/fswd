@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        // Event Loop JavaScript-in asinxron davranışının ürəyidir.
+
+
+        // Event Loop — JavaScript-in single-threaded icra modelində, asinxron əməliyyatların idarə olunduğu mexanizmdir. 
+        // Sadə desək: call stack-də işləyən sinxron kodu, brauzer, Node API-ləri və callback-ləri koordinasiya edən döngüdür. 
+        // Event Loop sayəsində asinxron əməliyyatlar (timers, network, DOM hadisələri və s.) bloklamadan icra oluna bilir.
+
+
+
+
+
+
+
+
+        // Əsas komponentlər (qısa xülasə)
+        // 1) Call Stack (çağırış yığını) — hazırda icra edilən funksiyalar yığılır.
+
+        // 2) Web APIs / Host APIs — brauzer və ya Node tərəfindən təmin olunan asinxron funksiyalar (setTimeout, fetch, DOM, filesystem və s.). 
+        //    Bunlar öz işlərini aparır və nəticə hazır olan zaman callback-i uyğun növbəyə atırlar.
+
+        // 3) Task Queue (macrotask queue) — setTimeout, setInterval, I/O callbacks, UI events və s. kimi macrotask-ların növbəsi.
+
+        // 4) Microtask Queue (job queue) — Promise.then/catch/finally, queueMicrotask, MutationObserver (və Node-da process.nextTick özəl sıra kimi) 
+        //    kimi daha yüksək prioritetli kiçik işlərin növbəsi.
+
+        // 5) Rendering / Repaint — brauzer, macrotask və microtask-lardan sonra (mənbəyə görə) tərtibat (reflow/repaint) işlərini edə bilir.
+
+
+
+
+
+
+
+
+        // Event Loop-un yüksək səviyyəli qaydası (browser üçün)
+        // 1) Event Loop bir macrotask götürür (məsələn, page load callback, click handler və ya timer callback).
+        // 2) Call Stack-i bu macrotask üçün doldurur və funksiyaları icra edir.
+        // 3) Macrotask başa çatdıqda (call stack boşaldıqda) microtask queue-dakı bütün microtask-lar tamamilə işlənir (hamısı boşalana qədər).
+        // 4) Microtask-lar bitəndən sonra brauzer lazım bilsə rendering (repaint/reflow) edər.
+        // 5) Sonra növbəti macrotask-ı götürüb eyni dövrü təkrar edir.
+
+        // Vacib: microtask-lar hər macrotask-dan sonra, rendering-dən əvvəl işlənir. Bu səbəbdən Promise.then-callback-ləri tez-tez setTimeout(...,0) callback-dən əvvəl işləyir.
+
+
+
+
+
+
+
+
+
+
+
+
+        // Tipik praktik nümunə
+        console.log('start');
+
+        setTimeout(() => console.log('timeout'), 0);
+
+        Promise.resolve().then(() => console.log('promise'));
+
+        console.log('end');
+
+        // Çıxış:
+        //      start
+        //      end
+        //      promise
+        //      timeout
+
+
+        // Niyə belə olur (addım-addım)?
+        //      - console.log('start') — sinxron.
+        //      - setTimeout(...,0) — callback macrotask növbəsinə qoyulur.
+        //      - Promise.resolve().then(...) — microtask növbəsinə qoyulur.
+        //      - console.log('end') — sinxron.
+        //      - Call stack boşalır; microtask queue işlənir → promise.
+        //      - Microtask-lar boşalanda browser macrotask-lardan birini götürür → timeout.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // async/await və Event Loop
+        async function f() {
+            console.log('async start');
+            await null;
+            console.log('after await');
+        }
+
+        console.log('script start');
+        f();
+        console.log('script end');
+
+        // Çıxış:
+        //  - script start
+        //  - async start
+        //  - script end
+        //  - after await
+
+        // İzah: await null Promise.resolve(null)-a çevrilir, və after await microtask daxilində icra olunur — yəni cari call stack başa çatdıqdan sonra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Microtask-ların macrotask-ları "sbasit" etməsi (starvation):
+        //    - Əgər microtask-lar hər dəfə yeni microtask yaratmağa davam edərsə, macrotask-lar heç işlənməyə 
+        //      bilər — bu starvation yaradır. Məsələn: Promise.resolve().then(()=> Promise.resolve().then(...)) 
+        //      sonsuz microtask zənciri qursa macrotask-lar gecikir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // BURANI OXUMA !!!
+
+
+        // Niyə Event Loop-u bilmək vacibdir?
+        //      - UI donmalarını (long-running sync kod) anlamaq və qarşısını almaq.
+        //      - Asinxron əməliyyatların gözlənilən sırasını düzgün təxmin etmək (Promise vs setTimeout).
+        //      - performans optimizasiyası (web workers, chunking, requestAnimationFrame və s.)
+        //      - Callback/starvation və race şərtlərini anlaya bilmək.
+
+        // Praktik tövsiyələr və “best practices”
+        //      - Əgər əməliyyat UI-i bloklayırsa — onu requestIdleCallback, setTimeout(...,0) ilə bölmək ya da Web Worker istifadə et.
+        //      - Bir neçə asinxron işi paralel icra etmək lazımdırsa Promise.all istifadə et; əgər ardıcıl lazımdırsa await və ya promise chaining.
+        //      - process.nextTick və setImmediate-in Node-da fərqli yerlərdə icra olunduğunu yadda saxla.
+        //      - Microtask-ları ehtiyatla istifadə et; onlar macrotask-ları bloklaya bilərlər.
+
+
+
+    </script>
+</body>
+
+</html>
