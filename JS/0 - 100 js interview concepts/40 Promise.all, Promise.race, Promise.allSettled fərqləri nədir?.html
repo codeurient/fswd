@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // JavaScript-də Promise — gələcəkdə tamamlanacaq (və ya səhvlə nəticələnəcək) asinxron əməliyyatı təmsil edən obyekt-dir. 
+
+        // Promise-lərin üç əsas vəziyyəti var:
+        //      - pending (gözləyir)
+        //      - fulfilled (uğurla bitdi)
+        //      - rejected (səhvlə bitdi)
+
+
+        // Bu haqqda əvvəlki dərslərdə danışmışdıq.
+
+
+
+
+
+
+
+
+        // Promise.all
+        // İzah:
+        //      - Bir neçə Promise-i paralel işlətmək üçün istifadə olunur.
+        //      - Bütün Promise-lər uğurla tamamlananda nəticə qaytarır.
+        //      - Əgər bir dənə Promise belə səhv verərsə, dərhal reject olur və qalan nəticələr nəzərə alınmır.
+
+
+        // Sintaksis:
+        // Promise.all([promise1, promise2, promise3])
+        //   .then(results => console.log(results))
+        //   .catch(err => console.error(err));
+
+
+        // Nümunə:
+        Promise.all([
+            Promise.resolve("A"),
+            Promise.resolve("B"),
+            Promise.resolve("C")
+        ])
+            .then(results => console.log(results)) // ["A", "B", "C"]
+            .catch(err => console.error(err));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Promise.race
+
+        // İzah:
+        // Bir neçə Promise-i paralel icra edir.
+        // İlk tamamlanan (fulfilled və ya rejected) Promise-in nəticəsini qaytarır.
+        // Digər Promise-lər işləməyə davam edir, amma nəticəyə təsir etmir.
+
+        // Sintaksis:
+        // Promise.race([promise1, promise2, promise3])
+        //   .then(result => console.log(result))
+        //   .catch(err => console.error(err));
+
+
+        // Nümunə:
+        Promise.race([
+            new Promise(resolve => setTimeout(() => resolve("A"), 2000)),
+            new Promise(resolve => setTimeout(() => resolve("B"), 1000))
+        ])
+        .then(result => console.log(result)); // "B" (çünki tez bitdi)
+
+        // Xüsusiyyətlər:
+        //      - Yarış ("race") prinsipinə görə ən tez bitən Promise-in nəticəsini verir.
+        //      - Əgər ən tez bitən Promise reject olsa, nəticə də reject olur.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Promise.allSettled
+
+        // İzah:
+        //      - Bir neçə Promise-i paralel icra edir.
+        //      - Hamısı bitənə qədər gözləyir (fulfilled və ya rejected).
+        //      - Heç vaxt reject olmur, həmişə bütün nəticələri qaytarır (uğurlu və ya uğursuz).
+
+
+        // Sintaksis:
+        // Promise.allSettled([promise1, promise2, promise3])
+        //      .then(results => console.log(results));
+
+
+        // Nümunə:
+        Promise.allSettled([
+            Promise.resolve("A"),
+            Promise.reject("Xəta"),
+            Promise.resolve("B")
+        ])
+        .then(results => console.log(results));
+
+        // Çıxış:
+        [
+            { status: "fulfilled", value: "A" },
+            { status: "rejected", reason: "Xəta" },
+            { status: "fulfilled", value: "B" }
+        ]
+
+        // Xüsusiyyətlər:
+        //      - Uğursuz Promise olsa belə, nəticə massivdə saxlanılır.
+        //      - Ən uyğun seçimdir, əgər hamısının nəticəsini görmək istəyirsənsə.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Real Həyat Analogiyası
+        //      - Promise.all → "Bütün dostlar yığılanda çıxaq" (Bir nəfər gəlməsə, plan pozulur)
+        //      - Promise.race → "Kim birinci restorana çatsa, masa tutsun" (İlk gələn nəticə müəyyən edir)
+        //      - Promise.allSettled → "Hamı restorana gəlsin, gəlməyən də gəlib-gəlmədiyini desin" (Hamının nəticəsi görünür)
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>
