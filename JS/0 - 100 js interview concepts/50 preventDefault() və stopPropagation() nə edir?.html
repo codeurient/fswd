@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href=""></a>
+
+
+
+
+    <div class="parent">
+        <p class="child">child</p>
+    </div>
+
+
+
+    <script>
+
+
+        // 1. preventDefault() nədir?
+
+        //      - Bu metod HTML elementinin standart davranışını dayandırmaq üçün istifadə olunur.
+
+        //      - Standart davranış dedikdə, məsələn:
+        //           - <a> linkinə klikləyəndə səhifənin başqa URL-ə keçməsi
+        //           - <form>-u submit etdikdə səhifənin yenidən yüklənməsi
+        //           - <input type="checkbox"> işarələndikdə avtomatik dəyişmə
+
+        //      - JavaScript-də bunu belə istifadə edirik:
+
+
+        let link = document.querySelector("a");
+
+        link.addEventListener("click", function (event) {
+            // Linkin keçid etməsinin qarşısını alır. Elementin standart davranışını dayandırır, amma hadisənin digər səviyyələrə yayılmasına mane olmur.
+            event.preventDefault();
+            alert("Link klikləndi, amma səhifə keçmədi!");
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 2. stopPropagation() nədir?
+
+        //      - Bu metod hadisənin “yayılmasını” (propagation) dayandırır.
+
+        //      - Hadisələr HTML-də bubbling və capturing mərhələləri ilə yayılır:
+        //           - Bubbling: Event uşaqlardan valideynə doğru yayılır
+        //           - Capturing: Event valideyndən uşağa doğru yayılır
+
+        //      - stopPropagation() metodunu istifadə etdikdə, hadisə artıq valideyn elementlərə ötürülmür:
+        let parent = document.querySelector(".parent");
+        let child = document.querySelector(".child");
+
+        child.addEventListener("click", function (event) {
+            event.stopPropagation(); // Uşaq element klikləndikdə, valideynə klik getməyəcək. Əks halda valideynində alert() mesajını görərdik.
+            alert("Child klikləndi");
+        });
+
+        parent.addEventListener("click", function () {
+            alert("Parent klikləndi");
+        });
+
+
+    </script>
+</body>
+
+</html>

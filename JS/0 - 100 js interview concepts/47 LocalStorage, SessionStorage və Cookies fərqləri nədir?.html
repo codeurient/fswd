@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    
+    1. LocalStorage - Brauzerdə uzunmüddətli məlumat saxlamaq üçün istifadə olunur.
+
+        Xüsusiyyətləri:
+            - Məlumat brauzeri bağladıqdan sonra da silinmir.
+            - Ancaq istifadəçi özü silsə və ya kodla localStorage.clear()/localStorage.removeItem() etsək silinir.
+            - Limit adətən 5-10 MB civarındadır (brauzerdən asılı olaraq dəyişir).
+            - Domain-ə görə işləyir – yəni yalnız həmin domenin səhifələrində oxunur.
+            - Serverə avtomatik getmir – yalnız brauzerdə qalır.
+
+        İstifadə nümunəsi: İstifadəçi mövzu seçimi (dark/light mode), tətbiq konfiqurasiyası, uzunmüddətli istifadəçi seçimləri.
+
+
+
+
+
+    2. SessionStorage - Brauzer sekməsi (tab) açıq olduğu müddətdə məlumat saxlamaq üçün istifadə olunur.
+
+        Xüsusiyyətləri:
+            - Tab və ya pəncərə bağlananda məlumat silinir.
+            - Eyni domenin fərqli tablarında ayrı-ayrı yaddaş olur (LocalStorage-dan fərqli olaraq).
+            - Limit adətən 5 MB civarındadır.
+            - Serverə avtomatik getmir – yalnız brauzerdə qalır.
+
+        İstifadə nümunəsi: Form doldurma zamanı müvəqqəti yadda saxlama, tab qapandıqda silinməli olan sessiya məlumatları.
+
+
+
+
+
+
+        3. Cookies - Kiçik ölçülü məlumat parçalarıdır, brauzerdə saxlanılır və lazım olduqda hər HTTP sorğusunda serverə göndərilir.
+
+        Xüsusiyyətləri:
+            - Limit adətən 4 KB civarındadır (çox kiçik).
+            - Avtomatik olaraq serverə gedir, bu səbəbdən autentifikasiya və sessiya idarəsində çox istifadə olunur.
+            - Həm müvəqqəti, həm də müddətli ola bilər (expiry date təyin etməklə).
+            - JavaScript ilə (document.cookie) oxumaq və yazmaq mümkündür, amma server də yaza bilər (HTTP header vasitəsilə).
+
+        İstifadə nümunəsi: İstifadəçi login sessiyası, dil seçimi, analitika izləmə (tracking).
+
+
+
+
+
+
+
+
+        | Xüsusiyyət           | LocalStorage                      | SessionStorage          | Cookies                  |
+        | -------------------- | --------------------------------  | ----------------------  | -----------------------  |
+        | Saxlama müddəti      | Limitsiz (silinənə qədər)         | Tab bağlanana qədər     | Müəyyən tarixə qədər     |
+        | Yaddaş limiti        | \~5-10 MB                         | \~5 MB                  | \~4 KB                   |
+        | Serverə göndərilir?  | ❌ Yox                            | ❌ Yox                   | ✅ Bəli                  |
+        | Domain əsaslı        | ✅ Bəli                           | ✅ Bəli                  | ✅ Bəli                  |
+        | Əsas istifadə sahəsi | Uzunmüddətli brauzer məlumatları  | Müvəqqəti tab məlumatı  | Autentifikasiya, izləmə  |
+
+
+-->
+</body>
+</html>

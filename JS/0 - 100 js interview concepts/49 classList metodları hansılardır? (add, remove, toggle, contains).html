@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+    
+    HTML elementinin class atributu üzərində işləmək üçün JavaScript-də istifadə olunan xüsusi obyekt.
+        - Normalda element.className ilə bütün class-ları bir string kimi alırıq.
+        - Amma classList bizə həmin class-larla əlavə etmək, silmək, yoxlamaq kimi əməliyyatları asan metodlarla etməyə imkan verir.
+
+
+-->
+
+    <button id="myBtn" class="btn">Click me</button>
+
+
+
+
+
+    <script>
+
+        // 1. add(className)
+        //      - Verilən class-ı elementin class siyahısına əlavə edir.
+        //      - Əgər həmin class artıq varsa, təkrar əlavə etmir.
+
+        element.classList.add("active");
+
+
+
+
+
+        // 2. remove(className)
+        //      - Verilən class-ı elementdən silir.
+        //      - Əgər class yoxdursa, heç nə etmir.
+
+        element.classList.remove("active");
+
+
+
+
+
+        // 3. toggle(className)
+        //      - Əgər class yoxdursa → əlavə edir.
+        //      - Əgər class varsa → silir.
+        //      - İkinci parametr olaraq true və ya false verərək məcburi əlavə/silmə etmək olar.
+
+        element.classList.toggle("active"); // var idisə silir, yox idisə əlavə edir
+        element.classList.toggle("active", true);  // hər halda əlavə edəcək
+        element.classList.toggle("active", false); // hər halda siləcək
+
+
+
+
+
+        // 4. contains(className)
+        //      - Elementin class siyahısında verilən class olub-olmadığını yoxlayır.
+        //      - Boolean (true/false) qaytarır.
+        if (element.classList.contains("active")) {
+            console.log("Element aktivdir");
+        }
+
+
+
+
+
+
+
+
+
+        // Nümunə
+        let btn = document.getElementById("myBtn");
+
+        // Add
+        btn.classList.add("active"); // btn class="btn active"
+
+        // Remove
+        btn.classList.remove("btn"); // btn class="active"
+
+        // Toggle
+        btn.classList.toggle("hidden"); // btn class="active hidden"
+
+        // Contains
+        console.log(btn.classList.contains("active")); // true
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

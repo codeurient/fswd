@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+        dataset atributu nədir?
+
+        HTML-də bəzən elementlərə əlavə məlumat (metadata) vermək istəyirik ki, bu məlumat nə görünüşdə, 
+        nə də məzmunun bir hissəsi olsun. Bu zaman data-* atributları istifadə olunur.
+            - HTML5 standartı deyir ki, özəl (custom) atribut yaratmaq istəsən, onu data- ilə başlatmalısan.
+            - JavaScript ilə bu atributlara dataset obyekti vasitəsilə asanlıqla çatmaq olur.
+            
+            
+            
+            
+        
+            
+        Vacib məqamlar
+        
+        1) data-* formatı
+            - data- ilə başlayır, sonra atribut adı gəlir: data-user-id
+            - JavaScript-də oxuyanda camelCase formatına çevrilir: data-user-id → dataset.userId
+
+        2) Məqsəd
+            - HTML elementinə gizli əlavə məlumat saxlamaq (JavaScript işlədə bilsin deyə).
+            - Dizayn və məzmundan ayrı, ancaq proqram lojiqası üçün lazım olan məlumat.
+
+        3) Faydalıdır çünki:
+            - HTML ilə JS arasında əlavə data ötürmək asan olur.
+            - Kod daha oxunaqlı və standartlara uyğun qalır.
+
+        4) Məhdudiyyət
+            - Böyük həcmli məlumat saxlamaq üçün nəzərdə tutulmayıb.
+        - Təhlükəsizlik üçün gizli məlumat (şifrə, token) saxlamaq olmaz – çünki hər kəs HTML kodu görə bilər.
+
+
+
+        
+    -->
+
+
+    <button id="myBtn" data-user-id="42" data-role="admin">
+        İstifadəçi məlumatı
+    </button>
+
+
+
+
+
+
+    <script>
+
+        let btn = document.getElementById("myBtn");
+        console.log(btn.dataset.userId); // "42"
+        console.log(btn.dataset.role);   // "admin"
+
+
+    </script>
+</body>
+
+</html>
