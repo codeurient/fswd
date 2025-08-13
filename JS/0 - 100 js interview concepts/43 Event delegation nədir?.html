@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="buttonsParentTag">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+    </div>
+
+
+
+
+
+
+
+    <div id="list">
+        <button>Item 1</button>
+    </div>
+    <button id="add">Yeni element əlavə et</button>
+
+
+
+
+    <!-- 
+    
+    
+    Event Delegation nədir?
+
+    Event Delegation — JavaScript-də event listener-ləri birbaşa hər elementə ayrı-ayrılıqda əlavə etmək 
+    əvəzinə, hadisələri valideyn element üzərindən idarə etmə texnikasıdır.
+
+    Yəni, sən DOM ağacında bubble mərhələsini (event propagation — hadisə yuxarıya doğru yayılma) istifadə 
+    edərək, uşaq elementlərin hadisələrini valideyn elementdə “dinləyirsən”.
+
+
+
+
+
+
+
+
+    Event delegation-ın əsas məqsədi:
+        - Performans — Məsələn, 1000 düymə varsa, hər birinə ayrıca addEventListener əlavə etmək RAM və CPU üçün çox bahalıdır. Əvəzində, yalnız bir valideynə listener əlavə edilir.
+        - Dinamik elementlər — Sayta sonradan JS ilə əlavə edilən elementlər üçün əvvəlcədən listener yazmağa ehtiyac qalmır. Çünki valideyn üzərindəki listener yeni gələn elementləri də avtomatik əhatə edir.
+        - Təmiz kod — Daha az kod yazılır, idarə etmək rahatdır.
+
+
+
+
+
+
+
+    JavaScript-də hadisələr üç mərhələdə işlənir:
+        - Capturing (yuxarıdan aşağıya enmə)
+        - Target (hadisənin baş verdiyi element)
+        - Bubbling (aşağıdan yuxarı qalxma)
+
+    Event delegation əsasən bubbling mərhələsindən istifadə edir. Hadisə baş verən uşaq elementdən başlayır, 
+    valideynlərə doğru qalxır. Biz valideyn üzərində hadisəni tuturuq və event.target ilə hansı uşaqda baş verdiyini müəyyənləşdiririk.
+
+
+
+
+
+-->
+
+    <script>
+
+
+        // Ənənəvi üsul: Burada hər düyməyə ayrı listener əlavə olunur.
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                console.log("Button clicked:", btn.textContent);
+            });
+        });
+
+
+
+
+
+
+
+
+        // Event Delegation üsulu:
+        document.getElementById('buttonsParentTag').addEventListener('click', function (e) {
+            if (e.target.tagName === 'BUTTON') {
+                console.log("Button clicked:", e.target.textContent);
+            }
+        });
+
+        // Burada:
+        //     #buttonsParentTag — valideyn div elementidir.
+        //     Hadisə yalnız bir dəfə valideynə əlavə olunur.
+        //     if (e.target.tagName === 'BUTTON') ilə süzmə aparılır ki, yalnız düymələr reaksiya versin.
+
+
+
+
+
+
+
+
+
+
+
+
+        //Event Delegation çatışmazlıqları:
+        //  - Hadisənin valideynə çatması üçün event bubbling olmalıdır. stopPropagation() (bu mövzu haqqında sonra) istifadə edilərsə, bu işləməyəcək.
+        //  - Valideynin içində çoxlu fərqli elementlər varsa, if və matches() ilə filtrasiya etmək lazımdır, əks halda istənməyən reaksiyalar ola bilər.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const list = document.getElementById('list');
+        const addBtn = document.getElementById('add');
+
+        list.addEventListener('click', function (e) {
+            if (e.target.tagName === 'BUTTON') {
+                console.log('Klikləndi:', e.target.textContent);
+            }
+        });
+
+        // Burada yenidən əlavə olunan düymələr də avtomatik klik hadisəsini tutacaq — çünki listener yalnız valideynə bağlıdır.
+        addBtn.addEventListener('click', function () {
+            const newBtn = document.createElement('button');
+            newBtn.textContent = 'Item ' + (list.children.length + 1);
+            list.appendChild(newBtn);
+        });
+
+    </script>
+
+</body>
+
+</html>
