@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <!-- 
+    
+    Fibonacci — hər ədədi ondan əvvəlki iki ədədin cəmi olan sıra:  0, 1, 1, 2, 3, 5, 8, 13, 21...
+
+    İzahat
+        - 0 və 1 başlanğıc ədədlərdir.
+        - Sonrakı hər ədəd = əvvəlki iki ədədin cəmi.
+
+-->
+
+    <script>
+
+        function fibonacci(n) {
+            let seriya = [0, 1];
+            for (let i = 2; i < n; i++) {
+                seriya[i] = seriya[i - 1] + seriya[i - 2];
+            }
+            return seriya;
+        }
+
+        console.log(fibonacci(10));
+        // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+    </script>
+    
+</body>
+
+</html>
