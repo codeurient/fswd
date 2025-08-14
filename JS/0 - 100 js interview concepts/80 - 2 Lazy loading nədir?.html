@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .placeholder {
+            background: #ccc;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Placeholder şəkillər -->
+    <img data-src="../../image/bir.jpg" class="placeholder" alt="Şəkil 1">
+    <img data-src="../../image/iki.jpg" class="placeholder" alt="Şəkil 2">
+    <img data-src="../../image/uc.jpg" class="placeholder" alt="Şəkil 3">
+
+
+    <!-- 
+
+    Daha aydın başa düşmək üçün JavaScript ilə işləyən Lazy Loading nümunəsi verim.
+    Bu nümunədə şəkillər ekrana görünən anda JavaScript vasitəsilə yüklənəcək.
+
+-->
+
+
+
+    <script>
+
+
+        // Intersection Observer ilə Lazy Loading
+        const images = document.querySelectorAll('img[data-src]');
+
+        const loadImage = (img) => {
+            img.src = img.dataset.src; // real şəkili src-ə yazırıq
+            img.onload = () => img.classList.remove('placeholder');
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { // şəkil görünürsə
+                    loadImage(entry.target);
+                    obs.unobserve(entry.target); // artıq izləməyə ehtiyac yoxdur
+                }
+            });
+        });
+
+        images.forEach(img => observer.observe(img));
+
+
+
+
+
+        // Necə işləyir:
+        //      1) HTML-də şəkillər əvvəlcə data-src atributunda saxlanır — bu o deməkdir ki, səhifə açılan kimi yüklənmirlər.
+        //      2) IntersectionObserver izləyir ki, şəkil ekranda görünürmü.
+        //      3) Görünən kimi data-src dəyəri src-ə yazılır və şəkil yüklənir.
+        //      4) Yükləndikdən sonra izləmə dayandırılır.
+
+
+        // Bu üsul sayəsində:
+        //      - İstifadəçi şəkli görməsə, heç vaxt yüklənməyəcək.
+        //      - Səhifə çox daha sürətli açılacaq.
+        //      - Mobil internetdə istifadəçi üçün trafikə qənaət olacaq.
+
+
+        
+
+        // Lazy Loading ilə Lazy Script Loading-i birləşdirən nümunə də  yazmaq olar ki, təkcə şəkillər yox, böyük 
+        // JavaScript faylları da yalnız lazım olanda yüklənsin. Bu, daha peşəkar optimizasiya üsuludur. Ancaq indi yox.
+
+
+
+
+    </script>
+</body>
+
+</html>

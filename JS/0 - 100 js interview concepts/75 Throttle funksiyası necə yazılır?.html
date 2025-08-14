@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // Throttle funksiyası
+
+        // Throttle — bir funksiyanın müəyyən zaman aralığında yalnız 1 dəfə işləməsini təmin edir.
+        // 💡 Məsələn: Scroll edərkən hər 200ms-də bir dəfə işləsin.
+
+        // İş prinsipi
+        //      - Funksiya çağrılır.
+        //      - Müəyyən müddət bitənə qədər təkrar işləməsinə icazə verilmir.
+
+
+
+        function throttle(func, limit) {
+            let icaze = true;
+            return function (...args) {
+                if (icaze) {
+                    func.apply(this, args);
+                    icaze = false;
+                    setTimeout(() => icaze = true, limit);
+                }
+            };
+        }
+
+        // İstifadə
+        window.addEventListener("scroll", throttle(() => {
+            console.log("Scroll oldu!");
+        }, 200));
+
+    </script>
+</body>
+
+</html>

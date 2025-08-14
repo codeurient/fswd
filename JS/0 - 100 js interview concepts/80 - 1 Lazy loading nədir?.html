@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!-- 
+
+
+    // Lazy Loading nədir?
+
+    // Sadə izah: Lazy loading (“tənbəl yükləmə”) — bütün resursları səhifə açılan kimi yükləmək əvəzinə, yalnız lazım olan anda yükləməkdir.
+    // Bu metod saytı daha sürətli açır və az internet trafiki istifadə edir.
+
+    // Məsələn:
+    //  - Saytda aşağı hissədə şəkillər var. İstifadəçi hələ ora scroll etməyibsə, şəkillər yüklənmir. Yalnız istifadəçi ora çatanda şəkillər yüklənir.
+    //  - JavaScript modulunu yalnız istifadəçi müəyyən bir düyməyə basanda yükləmək.
+
+
+
+
+
+-->
+
+    <img src="placeholder.jpg" data-src="real-image.jpg" loading="lazy">
+
+<!-- 
+
+    Burada üç əsas element var:
+        - src="placeholder.jpg": Bu, şəkilin hələ yüklənmədiyi müddətdə istifadəçiyə göstərilən kiçik bir "yer tutan" (placeholder) şəkildir. Bu şəkil çox kiçik və yüngül olur.
+        - data-src="real-image.jpg": Şəkilin əsl linki burada saxlanılır. Brauzer bu linki dərhal yükləmir, yaddaşda saxlayır.
+        - loading="lazy": Bu, brauzerə bu şəkli lazy loading metodundan istifadə edərək yükləməyi bildirən xüsusi bir atributdur. Brauzer bu işi avtomatik olaraq idarə edir.
+
+
+-->
+
+
+
+    <script>
+
+
+ 
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        // 1. Memory Leak nədir və necə qarşısı alınır?
+
+        // Memory leak (yaddaş sızması) — proqram işləyərkən istifadə olunmayan obyektlərin yaddaşda qalmasıdır. 
+        // Normalda, JavaScript-in garbage collector (zibil yığan) sistemi lazımsız obyektləri avtomatik silir. 
+        // Amma bəzən biz səhv kod yazanda, həmin obyektlərə birbaşa və ya dolayı yollarla hələ də istinad olduğu 
+        // üçün silinmir. Bu da zamanla yaddaşın dolmasına və proqramın yavaşlamasına səbəb olur.
+
+        // Bu kod hər saniyə yeni massiv yaradır, amma heç vaxt təmizləmir. Nəticədə yaddaş get-gedə artır.
+        let data = [];
+        setInterval(() => {
+            data.push(new Array(1000).fill("test"));
+        }, 1000);
+
+
+
+
+        // Qarşısını alma yolları:
+        //      * İstifadə olunmayan dəyişənləri null etmək (variable = null;).
+        //      * Event listener-ləri silmək (xüsusilə addEventListener ilə əlavə etdiklərinizi removeEventListener ilə silmək).
+        //      * Interval və timeout-ları dayandırmaq (clearInterval, clearTimeout).
+        //      * WeakMap / WeakSet istifadə etmək — obyektlərə istinad saxlayanda garbage collector tərəfindən təmizlənməsinə mane olmur.
+        //      * Profiling — Chrome DevTools-da “Memory” tabından istifadə edərək yaddaş sızmasını tapmaq.
+
+
+
+
+
+
+
+
+        // Metod 1: Köhnə Elementləri Silmək
+        // Bu yanaşmada, massivə yeni element əlavə etməzdən əvvəl, ən köhnə elementi silərək massivin ölçüsünü sabit 
+        // saxlaya bilərsiniz. Beləliklə, yaddaşda həddindən artıq böyük bir massiv yaranmasının qarşısını alırsınız.
+        let data = [];
+        const MAX_SIZE = 5; // Massivin maksimum ölçüsünü müəyyən edin
+
+        setInterval(() => {
+            // Massiv maksimum ölçüyə çatıbsa, ən köhnə elementi silin
+            if (data.length >= MAX_SIZE) {
+                data.shift();
+            }
+
+            // Yeni massivi əlavə edin
+            data.push(new Array(1000).fill("test"));
+
+            console.log(data);
+
+        }, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Metod 2: Intervalı dayandırmaq
+        // Əgər proqramın bu hissəsinə müəyyən bir müddətdən sonra artıq ehtiyac yoxdursa, setInterval 
+        // funksiyasını dayandıraraq yaddaş sızmasının qarşısını ala bilərsiniz.
+
+        let data = [];
+
+        // Intervalı bir dəyişənə təyin edirik ki, sonra dayandıra bilək
+        const intervalId = setInterval(() => {
+            data.push(new Array(1000).fill("test"));
+
+            console.log(data);
+
+        }, 1000);
+
+        // Məsələn, 10 saniyə sonra intervalı dayandırın
+        setTimeout(() => {
+            clearInterval(intervalId);
+            console.log("Interval dayandırıldı. Yaddaş sızması dayandırıldı.");
+        }, 4500);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // "Memory leak" texniki terminlərdən biri olduğu üçün ilk oxuyanda çətin gələ bilər. Gəlin onu daha sadə bir şəkildə izah edim.
+
+        // Təsəvvür edin ki, bir restoranda ofisiant işləyirsiniz. Müştəri yeməyini bitirəndə, ofisiant boşqabı götürür və masa təmizlənir. 
+        // Bu, yaddaşın normal işləmə prosesinə bənzəyir: proqram bir obyektə (məsələn, bir dəyişənə) ehtiyacı bitdikdə, garbage collector 
+        // (zibil yığan) adlı avtomatik sistem onu yaddaşdan silir.
+
+
+        // Bəs "memory leak" (yaddaş sızması) nədir?
+        // "Yaddaş sızması", ofisiantın boşqabı götürməyi unutması kimidir. Müştəri getdikdən sonra belə boşqab masanın üstündə qalır. İndi 
+        // təsəvvür edin ki, bir neçə müştəri gəlib gedir, amma heç birinin boşqabı götürülmür. Bir müddət sonra bütün masalar boşqablarla 
+        // dolar və yeni müştərilər üçün yer qalmaz.
+
+    </script>
+</body>
+
+</html>

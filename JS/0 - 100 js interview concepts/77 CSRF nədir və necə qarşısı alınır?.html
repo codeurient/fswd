@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+    
+    
+    CSRF nədir?
+
+    CSRF (Cross-Site Request Forgery) — istifadəçinin xəbəri olmadan onun adından icazəsiz əməliyyat etdirən hücum növüdür.
+
+    Sadə dillə: Sən brauzerdə bir sayta login olursan, sonra başqa bir pis niyyətli sayta girirsən, o sayt isə sənin sessiyanı istifadə edərək login olduğun sayta gizli sorğu göndərir. Nəticədə sən heç bilmədən əməliyyat icra olunur.
+
+
+
+
+    Niyə təhlükəlidir?
+    
+    Çünki:
+        - Hücumçu istifadəçi adından pul köçürə bilər.
+        - Hücumçu istifadəçi adından şifrəni dəyişə bilər.
+        - Hücumçu istifadəçi adından post paylaşa, mesaj göndərə bilər.
+        - İstifadəçi heç bir klik etməsə də əməliyyat ola bilər — sadəcə pis niyyətli səhifəni açması kifayətdir.
+
+-->
+
+    <!-- action="https://bank.com/transfer": Bu, formanın hansı ünvana göndəriləcəyini göstərir. Yəni, bu sorğu bankın pul köçürmə səhifəsinə göndəriləcək. -->
+    <form action="https://bank.com/transfer" method="POST">
+        <input type="hidden" name="amount" value="1000">
+        <input type="hidden" name="to" value="hacker_account">
+    </form>
+    <script>document.forms[0].submit();</script>
+
+    <!-- Bu forma avtomatik göndərilir, brauzer isə sənin login sessiyanı istifadə edir. Bank saytı bunu sənin əmrin kimi qəbul edir. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+    
+    
+
+
+        CSRF ilə XSS fərqi
+            - XSS → Hücum kodu birbaşa sənin brauzerində işləyir (sayta kod yeridilir).
+            - CSRF → Hücumçu başqa saytdan sorğu göndərir, amma sənin sessiyanla.
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        CSRF-dən necə qorunmaq olar?
+
+        1. CSRF Token istifadə etmək
+
+            - Hər POST formuna unikal və təsadüfi “token” əlavə edilir.
+            - Server sorğunu qəbul edərkən tokenin düzgün olub-olmadığını yoxlayır.
+            - Hücumçu bu tokeni bilmədiyi üçün sorğunu uğurla göndərə bilmir.
+
+        PHP nümunəsi:
+
+        // Form yaradan hissədə
+        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['token']; ?>">
+
+        // Serverdə yoxlama
+        if ($_POST['csrf_token'] !== $_SESSION['token']) {
+            die("CSRF hücumu aşkarlanıb!");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        2. SameSite Cookie ayarı
+
+        Cookie-ləri yalnız eyni domen içində göndərməyə məcbur edir.
+
+        HTTP cavabında:   Set-Cookie: sessionid=abc123; SameSite=Strict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        3. İstifadəçi əməliyyatlarını təsdiqləmək
+
+        Pul köçürmə, şifrə dəyişmə kimi kritik əməliyyatlarda əlavə təsdiq (şifrə və ya SMS kodu) istəmək.
+
+    -->
+
+    
+</body>
+
+</html>

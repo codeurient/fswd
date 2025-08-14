@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+        
+        
+        Debounce funksiyası
+
+        Debounce — bir funksiyanın çox tez-tez çağrılmasının qarşısını alır.
+        Məsələn: İstifadəçi yazı yazırsa, hər hərfdə yox, yalnız yazı bitəndən 500ms sonra axtarış başlasın.
+
+        İş prinsipi
+            - Hər çağrıldığında əvvəlki taymeri ləğv edir.
+            - Verilən vaxt (ms) keçdikdən sonra funksiyanı işə salır.
+
+
+    -->
+
+
+    <script>
+
+
+
+        function debounce(func, delay) {
+
+            let timer;
+
+            return function (...args) {
+
+                clearTimeout(timer);
+
+                timer = setTimeout(() => {
+                    func.apply(this, args);
+                }, delay);
+
+            };
+
+        }
+
+        // İstifadə
+        window.addEventListener("resize", debounce(() => {
+            console.log("Pəncərə ölçüsü dəyişdi!");
+        }, 500));
+
+
+
+
+
+
+// Sətr-sətr izahı:
+
+// 1) function debounce(func, delay) {
+
+//      * Bu, debounce adlı bir funksiya təyin edir. Bu funksiya iki parametr qəbul edir:
+//          -func: Gecikmədən sonra çağırılmalı olan funksiyadır. Sənin nümunəndə bu, console.log("Pəncərə ölçüsü dəyişdi!") funksiyasıdır.
+//          -delay: Funksiyanın nə qədər gecikməli olduğunu göstərən müddətdir (milisaniyə ilə).
+
+
+
+// 2) let timer;
+//      * Bu, bir timer dəyişəni yaradır. Bu dəyişən, setTimeout funksiyasının qaytardığı ID-ni saxlamaq üçün istifadə olunur. Bu ID sayəsində biz sonradan clearTimeout ilə vaxtlayıcını ləğv edə bilərik.
+
+
+
+// 3) return function(...args) {
+//      * Bu, debounce funksiyasının geri qaytardığı funksiyadır. Həmin funksiyanı hadisə dinləyicisi (addEventListener) kimi istifadə edə bilərik.
+//      * ...args hissəsi, JavaScript-in rest parameters sintaksisidir. Bu, funksiyaya ötürülən bütün arqumentləri toplayıb bir massivə çevirir. resize hadisəsində bu arqumentlər hadisə obyekti (event) ola bilər. Bu, funksiyanı daha universal edir, yəni funksiya istənilən sayda arqumenti qəbul edə bilir.
+
+
+
+// 4) clearTimeout(timer);
+//      * Geri qaytarılan funksiya hər çağırıldığında ilk edilən iş budur. Əgər əvvəlki setTimeout işə salınmışdısa, bu sətr onu ləğv edir. Bu, funksiyanın təkrar-təkrar işə düşməsinin qarşısını alan əsas mexanizmdir.
+
+
+
+// 5) timer = setTimeout(() => {
+//      * Burada yeni bir vaxtlayıcı (timer) yaradılır. Bu vaxtlayıcı, delay müddətindən sonra içindəki kodu işə salacaq.
+
+
+
+// 6) func.apply(this, args);
+//      * Bu, setTimeout içində işləyən əsas hissədir.
+//      * apply() metodu, bir funksiyanı müəyyən bir this dəyəri və bir massiv şəklində ötürülmüş arqumentlərlə çağırmaq üçün istifadə olunur.
+//      * this: Kontekstin nəzərdə tutulan dəyəridir. Bizim nümunəmizdə resize hadisəsi ilə əlaqəli olduğu üçün window obyekti olacaq.
+//      * args: Funksiyaya ötürülən arqumentləri saxlayan massivdir (xatırla, ...args onları massivə çevirmişdi).
+//      * apply() sayəsində debounce funksiyasına ötürülən orijinal funksiya (func), öz arqumentləri ilə və düzgün this kontekstində çağırılır.
+
+
+
+// 7) }, delay);
+//      * Bu, setTimeout metodunun vaxt parametrini tamamlayır.
+
+
+
+// 8) window.addEventListener("resize", debounce(...));
+//      * Pəncərənin ölçüsü dəyişəndə debounce funksiyasını çağırır. debounce özü funksiya qaytardığı üçün, addEventListener məhz bu qaytarılan funksiyanı icra edir. Hər resize hadisəsində clearTimeout işə düşür, vaxtlayıcı ləğv edilir və yenisi yaradılır. Nəticədə, console.log yalnız pəncərənin ölçüsünü dəyişdirməyi dayandırdıqdan 500ms sonra görünür.
+
+
+
+
+
+
+
+// Qısacası, debounce bir funksiyanı çağırıb onun dərhal işləməsinə icazə vermək əvəzinə, bir vaxtlayıcı yaradır. 
+// Əgər həmin funksiya vaxt bitməmişdən əvvəl yenidən çağırılsa, vaxtlayıcı ləğv edilir və yeni bir vaxtlayıcı yaradılır. 
+// Bu proses funksiya çağırışları dayananadək davam edir. Beləliklə, funksiya yalnız sonuncu dəfə çağırılandan sonra 
+// müəyyən bir vaxt keçdikdə işə düşür. 
+
+
+
+
+    </script>
+</body>
+
+</html>

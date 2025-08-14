@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+    WebSockets nədir?
+
+    WebSocket — brauzer (və ya istənilən müştəri proqram) ilə server arasında daimi açıq bağlantı saxlayan bir texnologiyadır.
+    Bu sayədə məlumat real vaxtda (real-time) iki istiqamətli ötürülür.
+
+
+
+
+    Real həyat analoqu:
+        - Adi HTTP — məktub göndərmək kimidir: Hər dəfə yazıb poçta aparırsan, cavabı gözləyirsən.
+        - WebSocket — telefon danışığı kimidir: Bir dəfə əlaqə qurursan, istədiyin qədər danışa, məlumat ötürə bilərsən.
+
+
+
+    Niyə WebSocket lazım olur?
+        - Real vaxtda məlumat yeniləmək üçün (çatsistemləri, oyunlar, canlı idman nəticələri, ticarət panelləri və s.).
+        - HTTP-də hər məlumat üçün sorğu göndərmək əvəzinə, bir dəfə bağlantı qurmaqla sürəti artırmaq üçün.
+
+
+
+    
+
+
+
+    WebSocket necə işləyir?
+
+    1) Əvvəlcə HTTP sorğusu ilə başlayır
+
+        - Müştəri (brauzer) serverə WebSocket handshake adlanan xüsusi sorğu göndərir.
+        - Məsələn: GET /chat HTTP/1.1 və Upgrade: websocket başlıqları ilə.
+
+    2) Server cavab verir və əlaqəni WebSocket-ə çevirir
+
+        - Server 101 Switching Protocols cavabı göndərir və HTTP protokolu WebSocket protokoluna dəyişir.
+
+    3) Daimi iki istiqamətli əlaqə yaranır
+
+        - Artıq həm müştəri, həm də server istənilən vaxt məlumat göndərə bilər.
+        - Heç bir əlavə "request-response" lazım deyil.
+
+    4) Mesajlar Frame-lər şəklində ötürülür
+
+        - Bu, məlumatın yüngül və sürətli göndərilməsini təmin edir.
+
+-->
+
+    <script>
+
+        // Sadə brauzer nümunəsi
+
+
+        // Serverə WebSocket bağlantısı yaradırıq
+        const socket = new WebSocket('ws://localhost:8080');
+
+        // Bağlantı açıldıqda
+        socket.addEventListener('open', () => {
+            console.log('🔗 Bağlantı açıldı');
+            socket.send('Salam, server!');
+        });
+
+        // Serverdən mesaj gəldikdə
+        socket.addEventListener('message', (event) => {
+            console.log('📩 Gələn mesaj:', event.data);
+        });
+
+        // Bağlantı bağlandıqda
+        socket.addEventListener('close', () => {
+            console.log('❌ Bağlantı bağlandı');
+        });
+
+
+    </script>
+</body>
+
+</html>

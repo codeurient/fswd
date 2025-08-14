@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+    
+    XSS Hücumu nədir?
+
+        XSS (Cross-Site Scripting) — veb tətbiqlərdəki təhlükəsizlik boşluğudur. Hücumçu, saytın koduna 
+        icazəsiz JavaScript və ya digər skriptləri “yerləşdirərək” ziyarətçilərin brauzerində işlədə bilir.
+
+        Sadə dillə: Sanki kimsə sizin web saytınızın içində gizlənib öz kodunu yerləşdirib və 
+        bu kod ziyarətçilərin kompüterində avtomatik işləyir.
+
+
+        Niyə təhlükəlidir?
+            - Şifrə oğurlaya bilər (formlara qoyduğu gizli kodla).
+            - İstifadəçi sessiyasını ələ keçirə bilər (cookie-ləri oğurlayaraq).
+            - İstifadəçini başqa səhifəyə yönləndirə bilər (phishing məqsədi ilə).
+            - Saytın görünüşünü poza bilər (məsələn, səhifəyə saxta mesaj çıxara bilər).
+
+
+-->
+
+
+    <script>
+
+
+        // XSS necə işləyir?
+
+        // Təsəvvür et:
+        //      - Sənin saytda şərh yazmaq bölməsi var.
+        //      - İstifadəçi normalda sadəcə mətn yazmalıdır:   Salam, çox gözəl məqalədir!
+        //      - Amma hücumçu belə yaza bilər:                 <script>alert("Hacked!")</ script> 
+
+
+        // Əgər sayt bu kodu yoxlamadan göstərərsə, həmin səhifəni açan hər kəsin brauzerində 
+        // alert pəncərəsi çıxacaq — deməli hücumçu artıq oraya kod işlədə bilir.
+
+
+
+
+
+
+        // XSS hücumlarının növləri:
+        //      - Stored XSS — Hücum kodu serverdə saxlanır (məsələn, şərhlərdə, profil məlumatlarında).
+        //      - Reflected XSS — Hücum kodu URL və ya form parametrlərində olur, cavab olaraq dərhal brauzerdə işləyir.
+        //      - DOM-based XSS — Kod, HTML/JS-də DOM manipulyasiyası zamanı işləyir (serverə getmədən, brauzer tərəfində).
+
+
+
+
+
+
+
+
+
+
+        // JavaScript-də qarşısını alma yolları
+
+
+
+        // 1. İstifadəçi girişini təmizləmək (sanitize)
+        // Gələn məlumatda <, >, ", ' kimi HTML/JS üçün təhlükəli simvolları dəyişdirin.
+
+        // Məsələn:
+        function sanitize(input) {
+            return input
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // XSS (Cross-Site Scripting) hücumlarının qarşısını almaq üçün göstərdiyin sanitize funksiyası, 
+        // əsas prinsipləri özündə əks etdirsə də, həqiqətən də sadə bir yanaşmadır. Bu üsul, bütün mümkün 
+        // XSS vektorlarını əhatə etmədiyi üçün çoxsaylı boşluqlara səbəb ola bilər.
+
+
+        // Daha peşəkar və etibarlı bir yanaşma üçün xüsusi olaraq XSS-dən qorunma üçün hazırlanmış 
+        // kitabxanalardan istifadə etmək lazımdır. Bu kitabxanalar, əllə yazılmış replace funksiyalarından 
+        // qat-qat güclü və təhlükəsizdir, çünki bütün XSS boşluqlarını (həm məlum, həm də naməlum) nəzərə alırlar.
+
+
+        // Niyə özünüz sanitize funksiyası yazmaq təhlükəlidir?
+        //      1) Tam əhatə etmir: XSS hücumları sadəcə < və > ilə məhdudlaşmır. Onlar həmçinin javascript:, data:, 
+        //      onload, onerror kimi hadisə idarəediciləri və digər mürəkkəb HTML atributları vasitəsilə həyata keçirilə 
+        //      bilər. Sizin yazdığınız funksiya bu halları nəzərə almır.
+
+        //      2) Kontekstdən asılılıq: Səhv məkanlarda (məsələn, HTML atributlarının dəyərlərində) istifadə olunan datanı 
+        //      təmizləmək fərqli yanaşma tələb edir. Bu, sadə bir replace ilə həll edilə biləcək qədər sadə deyil.
+
+
+
+        // Peşəkar yanaşma: Kitabxanalar:
+
+        // 1. DOMPurify - Bu, HTML-i təmizləyən və yalnız təhlükəsiz tag və atributları saxlayan bir kitabxanadır.
+        // Əvvəlcə npm ilə quraşdırın: npm install dompurify
+        import DOMPurify from 'dompurify';
+        const user_input = '<img src=x onerror=alert(1)>' +
+                        '<p>Hello world</p>';
+
+        const clean_html = DOMPurify.sanitize(user_input);
+        console.log(clean_html);
+        // Çıxış: <p>Hello world</p>  (təhlükəli hissə tamamilə silindi)
+
+
+
+
+
+
+
+        // 2. XSS (kitabxana) - Bu kitabxana da XSS hücumlarını neytrallaşdırmaq üçün istifadə olunur. Məqsədi DOMPurify ilə eynidir, lakin bəzən daha sadə istifadəyə malikdir.
+        // Əvvəlcə npm ilə quraşdırın: npm install xss
+        const xss = require("xss");
+
+        const user_input = '<a onmouseover="alert(document.cookie)">link</a>';
+        const clean_html = xss(user_input);
+
+        console.log(clean_html);
+        // Çıxış: <a>link</a> (təhlükəli atribut silindi)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 2. HTML daxilində təhlükəsiz göstərmək
+
+        // Məlumatı birbaşa innerHTML ilə yazmaq olmaz, çünki orada kod işləyə bilər.
+        // Bunun əvəzinə textContent istifadə edin:
+        document.getElementById("msg").textContent = userMessage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        // 3. Content Security Policy (CSP) istifadə etmək
+
+        // Serverdən brauzerə deyirik ki, haradan script yükləmək olar, haradan olmaz.
+
+        // Nümunə HTTP header:  Content-Security-Policy: default-src 'self';
+
+
+    </script>
+
+</body>
+
+</html>

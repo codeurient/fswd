@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 
+    
+    
+
+    Service Worker nədir?
+
+    Service Worker — brauzer ilə server arasında “aralıq işləyən” xüsusi bir skriptdir. O, brauzerin fonunda işləyir 
+    və istifadəçinin gördüyü səhifədən ayrı olaraq fəaliyyət göstərir.
+
+
+    Yəni, onu belə təsəvvür edin: Siz bir veb sayt açmısınız. Service Worker isə həmin saytın “görünməyən köməkçisi”dir — internet 
+    olsa da, olmasa da, müəyyən funksiyaları yerinə yetirir.
+    
+    
+
+
+    Nə üçün istifadə olunur?
+
+    Service Worker əsasən PWA (Progressive Web App) texnologiyalarında işlədilir və əsas məqsədləri bunlardır:
+
+
+    1. Offline işləmə imkanı
+        - Sayt ilk dəfə açıldıqda bəzi faylları (HTML, CSS, JS, şəkillər və s.) keşə (cache) yazır.
+        - İstifadəçi növbəti dəfə internet olmadıqda belə həmin faylları keşdən yükləyərək sayt işləməyə davam edir.
+        - Məsələn: Gmail offline, Google Docs offline.
+
+
+
+    2. Sürətli yükləmə
+        - Keşdən fayllar yükləndiyi üçün internetdən hər dəfə gətirməyə ehtiyac qalmır.
+        - Bu da saytın sürətini artırır.
+
+
+
+
+    3. Push bildirişlər
+        - İnternet aktiv olduqda serverdən gələn bildirişləri qəbul edə bilər.
+        - Məsələn: Facebook və ya YouTube sizə yeni mesaj və ya yeni video barədə bildiriş göndərir.
+
+
+
+
+    4. Fon sinxronizasiya
+        - Məsələn, siz internetsiz bir mesaj göndərmisiniz.
+        - Service Worker gözləyir ki, internet gəlsin və avtomatik mesajı göndərir.
+
+
+
+
+
+
+
+    Xüsusiyyətləri
+        - Brauzerin fonunda işləyir (sayt açıq olmasa belə bəzi funksiyaları icra edə bilər).
+        - Birbaşa DOM-a çıxışı yoxdur (yəni HTML-i dəyişdirə bilmir, amma mesaj göndərərək səhifə ilə ünsiyyət qura bilər).
+        - HTTPS üzərində işləyir (təhlükəsizlik üçün).
+
+
+
+
+
+
+    Qısaca iş prinsipi
+        - Quraşdırma (Install) – Brauzer ilk dəfə service worker skriptini yükləyir.
+        - Aktivləşmə (Activate) – Skript aktiv olur və köhnə keşləri təmizləyir.
+        - Sorğu tutma (Fetch) – İstifadəçi bir fayl istəyəndə, service worker yoxlayır:
+           * Keşdə varsa → ordan gətirir.
+           * Keşdə yoxdursa → serverdən çəkir, sonra keşə əlavə edir.
+
+
+
+    -->
+    
+</body>
+</html>
