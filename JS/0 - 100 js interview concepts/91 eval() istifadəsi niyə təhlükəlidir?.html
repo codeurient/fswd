@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+
+        // eval() nədir?
+
+        // eval() funksiyası bir string (mətn) içərisində yazılmış JavaScript kodunu işlətməyə imkan verir.
+
+
+        let x = 5;
+        let y = 10;
+        let result = eval("x + y");
+        console.log(result); // Çap edəcək: 15
+
+
+
+
+
+        // eval() istifadəsinin təhlükəsi
+        // JavaScript-də eval() istənilən kodu icra edə bilər, buna görə də istifadəçi tərəfindən daxil edilən məlumat təhlükəli ola bilər.
+        let userInput = "alert('Sistem hack olundu!')";
+        eval(userInput); // İcra olunacaq və popup çıxacaq
+
+
+
+
+
+
+
+
+
+        // Əgər kod daha zərərli olsa, məsələn istifadəçinin məlumatını oğurlayacaq və ya səhifəni pozacaqsa, eval() bunu icra edəcək.
+
+        // Təhlükələrin səbəbləri
+        //      - İstifadəçi kodu icra edə bilər – hacker-lər üçün açıq qapı yaradır.
+        //      - Məlumat oğurlana bilər – cookies, localStorage, sessionStorage.
+        //      - Səhifə və ya server zərər görə bilər – səhifədəki digər skriptlər pozula bilər.
+        //      - Kod çətin oxunur və təmir etmək çətinləşir – debugging çox çətin olur.
+
+
+
+    </script>
+</body>
+
+</html>

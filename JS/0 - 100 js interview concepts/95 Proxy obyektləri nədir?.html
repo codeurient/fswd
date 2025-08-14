@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+
+
+        // Proxy obyektləri nədir?
+
+        // Proxy – JavaScript-də bir obyektin başqa bir obyekt üzərindəki davranışını “aralıq” vasitəsilə izləmək və dəyişdirmək imkanı verən obyekt növüdür.
+
+        // Sadə dildə desək: Proxy, obyektin “qabığı”dır. Siz orijinal obyektə gedən əməliyyatları ələ keçirə və onları dəyişdirə bilərsiniz.
+
+
+
+
+
+        // Proxy niyə lazımdır?
+        //      - Obyektə daxilolma, oxuma, yazma və silmə əməliyyatlarını ələ keçirmək.
+        //      - Məlumatların doğruluğunu yoxlamaq.
+        //      - Log (jurnal) aparmaq.
+        //      - Dinamik davranış yaratmaq.
+
+
+
+
+
+
+
+
+        // Proxy iki hissədən ibarətdir:
+        //      1) Target – Proxy tərəfindən qorunan orijinal obyekt.
+        //      2) Handler – Target üzərində əməliyyatları ələ keçirən funksiyalar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Obyektin oxunmasını izləmək
+        let user = { name: "Ali", age: 25 };
+
+        let proxyUser = new Proxy(user, {
+            get(target, property) {
+                console.log(`Property ${property} oxundu`);
+                return target[property];
+            }
+        });
+
+        console.log(proxyUser.name);
+        // Çap edəcək: Property name oxundu
+        // Sonra: Ali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Obyektin yazılmasını yoxlamaq
+        let proxyUser2 = new Proxy(user, {
+            set(target, property, value) {
+                if (property === "age" && value < 0) {
+                    console.log("Yaş mənfi ola bilməz!");
+                    return false;
+                }
+                target[property] = value;
+                console.log(`${property} dəyişdi`);
+                return true;
+            }
+        });
+
+        proxyUser2.age = 30;  // age dəyişdi
+        proxyUser2.age = -5;  // Yaş mənfi ola bilməz!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Niyə Proxy faydalıdır?
+        //      - Obyekt davranışını izləmək: oxuma, yazma, silmə əməliyyatlarını ələ keçirir.
+        //      - Məlumat doğrulama: set handler ilə dəyərləri yoxlaya bilərsiniz.
+        //      - Dinamik proqramlaşdırma: obyektləri runtime-da dəyişdirə bilərsiniz.
+        //      - Debug və log: kodun işləməsini asanlıqla izləyə bilərsiniz.
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

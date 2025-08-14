@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+    
+    Garbage Collection nədir -  JavaScript-in yaddaşı təmizləmə sistemidir.
+        - Proqram işləyərkən yaddaşda obyektlər, array-lər, funksiyalar yaradılır.
+        - Bəzən bunlar artıq istifadə olunmur (məsələn, bir dəyişən silinib və ya funksiyanın içindəki obyekt sona çatıb).
+        - GC həmin artıq istifadə olunmayan məlumatları avtomatik silir ki, yaddaş dolmasın və proqram yavaşlamasın.
+
+
+    Misal:
+        - Siz otaqda oyuncaq oynayırsınız, sonra oyuncağı atıb kənara qoyursunuz.
+        - Garbage Collector isə otaqda artıq istifadə edilməyən oyuncaqları yığır və anbara qaytarır ki, yer boşalsın.
+
+
+
+
+
+
+
+    JavaScript-də necə işləyir?
+
+    1. Reference counting (istifadə sayına görə)
+        - Hər obyektin neçə yerdən istinad edildiyi sayılır.
+        - Əgər obyekt heç bir dəyişən və ya obyekt tərəfindən istifadə olunmursa, GC onu silir.
+        
+    Problem: Döngüvi referanslar (A → B → A) reference counting ilə həll olunmur.
+    "Döngüvi referanslar"ın (circular references) nə olduğunu izah etmək üçün, yenə də sadə bir nümunədən istifadə edək.
+
+    Təsəvvür edin ki, iki dostunuz var: Ali və Vəli.
+        - Ali deyir: "Mənim ən yaxşı dostum Vəlidir." (Ali → Vəli)
+        - Vəli də deyir: "Mənim ən yaxşı dostum Alidir." (Vəli → Ali)
+
+    Bu vəziyyətdə, onlar bir-birlərinə "referans" verirlər. Yəni hər ikisi bir-biri haqqında məlumat saxlayır.
+
+
+
+
+
+
+
+
+    Döngüvi referanslar proqramlaşdırmada necə işləyir?
+
+    Proqramlaşdırmada "döngüvi referans" eyni məntiqlə işləyir. Bir obyekt A başqa bir obyekt B-yə istinad (referans) 
+    verdikdə, eyni zamanda obyekt B də obyekt A-ya istinad verir.
+
+    let objectA = {};
+    let objectB = {};
+
+    objectA.property = objectB; // A, B-yə istinad edir
+    objectB.property = objectA; // B, A-ya istinad edir
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    Problem nədir?
+
+    Bəzi köhnə Garbage Collection (zibil yığma) üsulları (məsələn, Reference Counting) referansların 
+    sayını hesablayırdı. Yəni, bir obyektə neçə yerdən istinad edildiyini sayırdı. Əgər bu say sıfır 
+    olarsa, obyektin lazımsız olduğunu düşünür və onu yaddaşdan silirdi.
+
+    Amma bu "döngüvi" vəziyyətdə, hər iki obyektin referans sayı həmişə 1 olacaq, çünki onlar bir-birlərinə 
+    işarə edirlər. Garbage Collector bu obyektlərə artıq ehtiyac olmadığı halda belə, onların referans sayını 
+    1 gördüyü üçün onları yaddaşdan silmir. Bu da yaddaş sızmasına (memory leak) səbəb olur.
+
+    Daha müasir Garbage Collection üsulları (məsələn, Mark and Sweep) isə bu problemi həll edir. Onlar sadəcə 
+    referans sayını deyil, obyektlərin "əlçatan" olub-olmadığını yoxlayırlar. Yəni, proqramın əsas hissəsindən 
+    həmin obyektlərə çatmaq mümkün deyilsə, onları lazımsız hesab edib təmizləyirlər.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2. Mark-and-sweep (Əsas üsul)
+
+    - JavaScript-in əsas GC üsuludur.
+    - İş prinsipi:
+        * Root obyektləri (global dəyişənlər, aktiv funksiyalar) mark edilir.
+        * Root-da olan bütün obyektlər “alive” (canlı) hesab olunur.
+        * Mark edilməyən obyektlər “dead” (ölü) sayılır və yaddaşdan silinir.
+
+
+
+
+
+
+
+    
+    
+
+    GC-nin xüsusiyyətləri
+        - Avtomatik işləyir — developer onu manual idarə etmir.
+        - Performansa diqqət edir — GC işləyərkən proqramda kiçik dayanmalar ola bilər.
+        - Yaddaş sızmalarını azaldır — artıq obyektlər silinir.
+
+
+
+
+    
+    -->
+
+
+    <script>
+
+
+        let a = { name: "Ali" };
+        let b = a; // a və b eyni obyektə işarə edir
+        a = null; // a artıq obyektə işarə etmir
+        // Bu zaman obyekt hələ b vasitəsilə mövcuddur
+        b = null; // indi heç bir dəyişən obyektə işarə etmir
+        // Garbage Collector bu obyekti silə bilər
+
+
+
+    </script>
+</body>
+
+</html>

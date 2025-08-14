@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+
+
+        // Tail Call Optimization (qısaca TCO) — proqramlaşdırmada funksiya özü daxilində 
+        // başqa bir funksiyanı çağırarkən yaddaşdan qənaətli istifadə üsulu deməkdir.
+
+
+        // Sadə dildə desək: əgər bir funksiya son əməliyyat olaraq başqa funksiyanı çağırırsa, 
+        // kompilyator və ya interpreter bu çağırışı optimallaşdıraraq yeni çağırışı mövcud stack (yığın) 
+        // üzərinə qoyur, yeni stack yaratmır. Bu, stack overflow riskini azaldır və proqramı daha sürətli edir.
+
+
+
+
+
+        // Stack overflow riski olmadan: Burada factorial(n - 1, n * acc) son əməliyyatdır, yəni TCO tətbiq oluna bilər. Stack overflow riski çox böyük n üçün belə minimumdur.
+        function factorial(n, acc = 1) {
+            if (n <= 1) return acc;
+            return factorial(n - 1, n * acc); // Tail call - burada factorial() bir dəfə çağrılır.
+        }
+
+        console.log(factorial(5)); // Çap edəcək: 120
+
+
+
+
+
+
+
+
+
+        // Stack overflow riski olan adi rekursiya: Burada n * factorial(n - 1) əməliyyatı son çağırış deyil, ona görə hər çağırış üçün stack saxlanır.
+        function factorial(n) {
+            if (n <= 1) return 1;
+            return n * factorial(n - 1); // Son əməliyyat deyil. Burada n, hər dəfə dəyişdiyi üçün factorial(), n dəfə çağrılır.
+        }
+
+        console.log(factorial(5)); // Kiçik n üçün işləyir, amma böyük n overflow verə bilər
+
+
+
+
+
+
+
+
+
+        // Niyə TCO vacibdir?
+        //      - Yaddaş qənaəti: Stack overflow riski azalır.
+        //      - Performans artır: Rekursiv funksiyalar daha sürətli işləyir.
+        //      - Rekursiya problemi həll edir: Uzun rekursiya zəncirlərini təhlükəsiz icra edir.
+
+        // Qeyd: JavaScript-də TCO yalnız strict mode ('use strict';) daxilində bəzi müasir interpreterlərdə dəstəklənir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Stack Overflow nədir?
+
+        // Stack Overflow — Call Stack-in (yəni liftin) dolub daşmasıdır. Yəni, proqramımız həddindən artıq 
+        // funksiya çağırışı etdikdə və bu funksiyalar işlərini bitirməyib üst-üstə yığıldıqda, Call Stack-in 
+        // yaddaşı tükənir. Bu, liftə 11-ci adamın girməsi kimidir. Nəticədə, lift dayandığı kimi, proqram da 
+        // qəza ilə dayanır və işləmir.
+
+        // Bu vəziyyət adətən rekursiv (öz-özünü çağıran) funksiyalarla baş verir. Əgər bir funksiya özünü 
+        // dəfələrlə, bəzən də sonsuz sayda çağırsa, hər yeni çağırış Stack-in yuxarısına əlavə olunur. Bu yığılma 
+        // nəticəsində Stack-in həcmi aşıb daşır.
+
+
+
+
+
+    </script>
+</body>
+
+</html>

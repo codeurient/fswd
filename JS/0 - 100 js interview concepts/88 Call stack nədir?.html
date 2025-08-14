@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+    
+    
+    Call Stack nədir?
+
+    Call Stack — JavaScript-in hansı funksiyanın işlədiyini izlədiyi yerdir.
+        - Funksiya işə düşəndə, stack-in yuxarısına qoyulur (push).
+        - Funksiya bitəndə, stack-dən çıxarılır (pop).
+        - Bu “yığın” qaydası LIFO (Last In, First Out) ilə işləyir.
+
+
+
+
+    Təsəvvür edin ki, mətbəxdə qabları üst-üstə yığırsınız. Hər dəfə yeni bir qab gəldikdə, 
+    onu ən yuxarıya qoyursunuz. Qabları yığarkən, ilk gələn qab ən altda, ən son gələn qab isə ən üstdə olur.
+
+    İndi qabları götürmək istəyirsiniz. Hansı qabı birinci götürəcəksiniz? Əlbəttə ki, ən yuxarıdakı qabı. 
+    Bütün yığımı dağıtmamaq üçün ən son qoyduğunuz qabdan başlayıb bir-bir götürəcəksiniz.
+
+
+    
+
+    JavaScript-də "Call Stack" də eyni qaydada işləyir:
+        - Qablar — sizin funksiyalarınızdır.
+        - Qab yığımı — isə Call Stack-dir.
+
+
+
+
+
+
+    JavaScript hər hansı bir funksiyanı işlətdikdə, onu Call Stack-in yuxarısına qoyur (buna "push" deyilir). 
+    Funksiya öz işini bitirdikdə isə, JavaScript onu Stack-dən çıxarır (buna "pop" deyilir).
+
+
+
+
+
+    Bu proses aşağıdakı prinsiplə işləyir:
+        - LIFO (Last In, First Out) — "Son gələn, ilk çıxar". Yəni, ən son işə düşən funksiya, işi bitən kimi ilk olaraq Stack-dən çıxarılır.
+
+
+
+
+
+    Qısası, Call Stack JavaScript-in funksiyaları ardıcıl və nizamlı şəkildə necə idarə 
+    etdiyini göstərən bir mexanizmdir. Bu, sizin proqramınızın hansı funksiyanı, hansı 
+    funksiyadan sonra işlətdiyini izləməyə kömək edir.
+
+    -->
+
+    <script>
+
+        function birinciFunksiya() {
+            console.log('Birinci funksiya başladı.');
+            ikinciFunksiya(); // İkinci funksiyanı çağırırıq
+            console.log('Birinci funksiya bitdi.');
+        }
+
+        function ikinciFunksiya() {
+            console.log('İkinci funksiya başladı.');
+            ucuncuFunksiya(); // Üçüncü funksiyanı çağırırıq
+            console.log('İkinci funksiya bitdi.');
+        }
+
+        function ucuncuFunksiya() {
+            console.log('Üçüncü funksiya başladı.');
+            console.log('Üçüncü funksiya bitdi.');
+        }
+
+        birinciFunksiya(); // Proqramı işə salırıq
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

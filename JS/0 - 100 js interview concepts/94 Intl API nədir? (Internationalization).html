@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+
+        // 1. Intl API nədir? (Internationalization)
+
+        // Intl – JavaScript-də qlobal dillərə və bölgələrə uyğun məlumat formatlama üçün istifadə olunan daxili API-dir.
+
+        // Sadə dildə: Tarix, valyuta, rəqəm və dilləri lokalizasiya etmək üçün istifadə olunur.
+
+
+
+
+
+
+
+
+        // Rəqəmlərin formatlanması
+        let number = 1234567.89;
+
+        console.log(new Intl.NumberFormat('en-US').format(number)); // 1,234,567.89
+        console.log(new Intl.NumberFormat('de-DE').format(number)); // 1.234.567,89
+
+
+
+
+
+
+
+
+        // Valyuta formatlanması
+        let amount = 123456.78;
+        console.log(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount)); // $123,456.78
+        console.log(new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(amount)); // ￥123,457
+
+
+
+
+
+
+
+
+
+
+
+
+        // Tarix və zaman formatlanması
+        let date = new Date();
+        console.log(new Intl.DateTimeFormat('en-US').format(date)); // 8/14/2025
+        console.log(new Intl.DateTimeFormat('de-DE').format(date)); // 14.8.2025
+
+
+
+
+
+
+
+
+
+
+        // Xülasə: Intl API sayəsində proqramınız dünya dillərinə uyğun işləyir və istənilən region üçün formatlama rahat olur.
+
+    </script>
+
+</body>
+
+</html>

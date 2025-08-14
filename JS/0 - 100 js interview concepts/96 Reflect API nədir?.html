@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+
+
+
+
+
+        // Reflect API nədir?
+
+        // Reflect – JavaScript-də obyektlərin davranışını idarə etmək üçün alətlər təqdim edən daxili API-dir.
+
+        // Sadə dildə: obyektlər üzərində əməliyyatları icra etmək üçün “güvənli və standart” üsul verir.
+
+
+
+
+        // Xassə oxumaq
+        let obj = { name: "Ali", age: 25 };
+        console.log(Reflect.get(obj, 'name')); // Ali
+
+
+
+
+
+
+
+
+
+
+
+        // Xassə yazmaq
+        Reflect.set(obj, 'age', 26);
+        console.log(obj.age); // 26
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Xassə yazmaq
+        Reflect.deleteProperty(obj, 'name');
+        console.log(obj.name); // undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Xassə yaradılması və funksiyaların çağırılması
+        let person = { greet() { return "Hello"; } };
+        console.log(Reflect.apply(person.greet, null, [])); // Hello
+
+
+
+    </script>
+</body>
+
+</html>

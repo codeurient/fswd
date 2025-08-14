@@ -1,38 +1,40 @@
-<style>
-  img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    display: block;
-  }
-  .placeholder {
-    background: #ccc;
-    height: 300px;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
 
-<!-- Placeholder şəkillər -->
-<img data-src="bir.jpg" class="placeholder" alt="Şəkil 1">
-<img data-src="iki.jpg" class="placeholder" alt="Şəkil 2">
-<img data-src="uc.jpg" class="placeholder" alt="Şəkil 3">
+  <script>
 
-<script>
-  // Intersection Observer ilə Lazy Loading
-  const images = document.querySelectorAll('img[data-src]');
 
-  const loadImage = (img) => {
-    img.src = img.dataset.src; // real şəkili src-ə yazırıq
-    img.onload = () => img.classList.remove('placeholder');
-  };
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { // şəkil görünürsə
-        loadImage(entry.target);
-        obs.unobserve(entry.target); // artıq izləməyə ehtiyac yoxdur
-      }
-    });
-  });
+function birinciFunksiya() {
+            console.log('Birinci funksiya başladı.');
+            ikinciFunksiya(); // İkinci funksiyanı çağırırıq
+            console.log('Birinci funksiya bitdi.');
+        }
 
-  images.forEach(img => observer.observe(img));
-</script>
+        function ikinciFunksiya() {
+            console.log('İkinci funksiya başladı.');
+            ucuncuFunksiya(); // Üçüncü funksiyanı çağırırıq
+            console.log('İkinci funksiya bitdi.');
+        }
+
+        function ucuncuFunksiya() {
+            console.log('Üçüncü funksiya başladı.');
+            console.log('Üçüncü funksiya bitdi.');
+        }
+
+        birinciFunksiya(); // Proqramı işə salırıq
+
+        
+    
+    </script>
+
+
+</body>
+</html>
