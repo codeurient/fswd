@@ -12,14 +12,18 @@
 <script>
 
 
-console.time("hesablama");
 
-let cem = 0;
-for (let i = 0; i < 1000000; i++) {
-    cem += i;
+function isPalindrome(str) {
+
+let temiz = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+
+
+return temiz;
 }
 
-console.timeEnd("hesablama");
+console.log(isPalindrome("Madam")); // true
+
 
 
 

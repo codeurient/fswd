@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <!-- 
+    
+    Palindrome yoxlayan funksiya
+
+    Palindrome — tərsinə oxunanda eyni olan söz/sayı. 
+    
+    Məs: "level", "madam", "1221"
+
+    İzahat
+        - String-i tərs çevir.
+        - Əsl ilə tərsini müqayisə et. 
+
+-->
+
+
+    <script>
+
+
+        function isPalindrome(str) {
+
+            // replace ilə ara boşluqlarını silirik.
+            let temiz = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+            let ters = temiz.split("").reverse().join("");
+
+            return temiz === ters;
+        }
+
+        console.log(isPalindrome("Madam")); // true
+        console.log(isPalindrome("Hello")); // false
+
+
+
+    </script>
+
+
+</body>
+
+</html>
