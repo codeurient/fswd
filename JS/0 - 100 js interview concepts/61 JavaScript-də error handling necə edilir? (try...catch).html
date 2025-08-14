@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Error handling nədir?
+
+        // Proqram işləyərkən gözlənilməz hallar (sıfıra bölmə, olmayan faylı oxumaq, səhv API cavabı və s.) baş verə bilər.
+        // Error handling bu halları idarə etmək, proqramın çökməsinin qarşısını almaq və istifadəçiyə uyğun mesaj göstərmək üçündür.
+
+        // JavaScript-də səhvləri idarə etməyin əsas yolu try...catch blokudur.
+
+        try {
+            // Səhv yarada biləcək kod
+            let result = JSON.parse("{name: 'Ali'}"); // səhv sintaksis
+
+            // let result = JSON.parse('{"name": "Ali"}');     // Doğru sintaksis belə olmalıdır:
+        } catch (error) {
+            // Səhv baş verəndə işləyən kod
+            console.log("Xəta baş verdi:", error.message);
+        }
+
+
+        // try – daxilində səhv baş verə biləcək kod yazılır.
+        // catch – əgər try içində səhv olarsa, buradakı kod işləyir.
+        // Əgər səhv olmazsa, catch işləməz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // throw nə edir?
+        // throw – əllə (manual) səhv atmaq üçündür.
+        // Proqram normal işləyərkən müəyyən şərtlərdə səhv atmaq istəyə bilərik.
+        function divide(a, b) {
+            if (b === 0) {
+                throw new Error("Sıfıra bölmək olmaz!");
+            }
+            return a / b;
+        }
+
+        try {
+            console.log(divide(4, 0));
+        } catch (err) {
+            console.log("Xəta:", err.message);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Custom error necə yaradılır?
+        // Öz xüsusi error sinifimizi yarada bilərik. Bu, böyük layihələrdə səhvləri qruplaşdırmaq üçün faydalıdır.
+        class MyCustomError extends Error {
+            constructor(message) {
+                // super() açar sözü, child class-ın (övlad sinfin) parent class-ın (əsas sinfin) constructor-unu çağırmaq üçün istifadə olunur.
+                super(message);
+                this.name = "MyCustomError";
+            }
+        }
+
+        try {
+            throw new MyCustomError("Bu mənim xüsusi səhvimdir!");
+        } catch (err) {
+            console.log(err.name);     // MyCustomError
+            console.log(err.message);  // Bu mənim xüsusi səhvimdir!
+        }
+        // Bu kodda heç bir xəta yoxdur. Bu kodun məqsədi, proqramın normal axışını dayandıran bir xəta 
+        // yaratmaq (throw etmək) və sonra onu catch blokunda tutaraq emal etməkdir.
+
+
+
+
+
+
+        // Funksiya ilə Custom error  (ES5 tərzi) - daha qəliz
+        function CustomError(message) {
+            this.name = "CustomError";
+            this.message = message || "Default message";
+            this.stack = (new Error()).stack;
+        }
+        CustomError.prototype = Object.create(Error.prototype);
+        CustomError.prototype.constructor = CustomError;
+
+        // İstifadəsi
+        try {
+            throw new CustomError("Xəta baş verdi!");
+        } catch (err) {
+            console.log(err.name);    // CustomError
+            console.log(err.message); // Xəta baş verdi!
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // finally nə üçün istifadə olunur?
+        // finally bloku, səhv olsun və ya olmasın, həmişə axırda işləyir.
+        // Bu, məsələn, fayl bağlama, bağlantı kəsmə, resurs təmizləmə kimi işlər üçün istifadə olunur.
+        try {
+            console.log("Try içindəyəm");
+            throw new Error("Səhv oldu!");
+        } catch (err) {
+            console.log("Catch içindəyəm:", err.message);
+        } finally {
+            console.log("Finally həmişə işləyir");
+        }
+
+
+    </script>
+</body>
+
+</html>

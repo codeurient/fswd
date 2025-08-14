@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+        // WeakSet – Set-ə bənzəyir, amma yalnız obyektləri saxlayır və bu obyektlər zəif istinad (weak reference) ilə yadda saxlanılır.
+        // Yəni, əgər WeakSet-də saxlanılan obyekt başqa yerdə istifadə olunmursa, JavaScript-in garbage collector-u (yaddaş təmizləyicisi) onu avtomatik silir.
+        // Bu, yaddaş optimizasiyası üçündür.
+
+        // Xüsusiyyətləri:
+        //      - Yalnız obyektləri saxlaya bilər (number, string kimi primitivləri saxlamır).
+        //      - Təkrarlanan obyektləri saxlamır.
+        //      - İterasiya (dövr) etmək mümkün deyil (for...of işləməz).
+
+
+        let obj1 = { name: "Ali" };
+        let obj2 = { name: "Veli" };
+
+        const weakSet = new WeakSet();
+        weakSet.add(obj1);
+        weakSet.add(obj2);
+
+        console.log(weakSet.has(obj1)); // true
+
+        // artıq obj1 başqa yerdə yoxdur. Garbage Collector onu yaddaşdan silə bilər
+        obj1 = null;
+
+        console.log(weakSet.has(obj1)); // false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // WeakMap – Map-ə bənzəyir, amma yalnız obyektləri açar (key) kimi istifadə edir.
+
+        // Fərqləri:
+        //      - Açarlar yalnız obyekt ola bilər (string, number olmaz).
+        //      - Zəif istinad (weak reference) istifadə olunur → açar obyekt başqa yerdə istifadə olunmursa, avtomatik yaddaşdan silinir.
+        //      - İterasiya etmək mümkün deyil (for...of, keys(), values() yoxdur).
+        let person = { name: "Ali" };
+
+        const weakMap = new WeakMap();
+        weakMap.set(person, "developer");
+
+        console.log(weakMap); // [[Entries]]
+        console.log(weakMap.get(person)); // developer
+
+        person = null; // artıq obyekt yoxdur. Garbage Collector onu siləcək
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        // WeakSet obyektinin daxilindəki dəyərlərə birbaşa müraciət etmək və ya onları yoxlamaq 
+        // üçün birbaşa metod yoxdur. Bu, WeakSet-in əsas xüsusiyyətlərindən biridir.
+
+        // Əgər name xassəsinin adını yazaraq Ali dəyərini əldə etmək istəsən, bu, WeakSet-in işləmə prinsipinə ziddir. 
+        // WeakSet-lər yalnız obyektləri saxlamaq üçün nəzərdə tutulub və bu obyektlərə birbaşa girişə icazə vermir. 
+        // Məqsəd, bir obyektin WeakSet-də olub-olmadığını yoxlamaqdır (has()) və ya oradan silməkdir (delete()).
+
+        // Bu məhdudiyyətin səbəbi, Garbage Collection (Zibil Toplanması) mexanizminə bağlıdır. WeakSet daxilindəki 
+        // obyektlər üçün güclü istinad saxlamır. Əgər obyektə heç bir yerdən istinad yoxdursa, Garbage Collector onu 
+        // silə bilər. Əgər WeakSet-in elementlərinə birbaşa müraciət mümkün olsaydı, bu, Garbage Collector-un işinə mane olardı.
+
+        // Əgər sən Ali dəyərini əldə etmək istəyirsənsə, bunu WeakSet-dən kənarda, yəni obyektin özü üzərindən etməlisən.
+
+        // Beləliklə, WeakSet-i sadəcə obyektin kolleksiyada olub olmadığını yoxlamaq üçün istifadə etməlisən. Dəyərin 
+        // özünü almaq üçün isə orijinal obyektə istinadın olmalıdır.
+        console.log(obj1.name); // Çıxış: Ali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // WeakSet və WeakMap – nə üçün “weak” adlanır?
+        // “Weak” – zəif istinad deməkdir. Yəni JavaScript həmin obyektləri garbage collector-dan qorumaq üçün “güclü” istinad saxlamır.
+        // Bu, böyük və müvəqqəti obyektlərdə yaddaş sızmasının (memory leak) qarşısını alır.
+
+
+
+
+    </script>
+</body>
+
+</html>

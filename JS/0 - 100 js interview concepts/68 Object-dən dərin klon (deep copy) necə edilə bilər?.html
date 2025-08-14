@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Object-dən dərin klon (Deep Copy)
+        // Deep copy o deməkdir ki, obyektin içindəki nested obyektlər də ayrıca kopyalanır (yəni sadəcə link verilmir).
+
+
+
+        // A) structuredClone() (modern JS)
+        let obj = { ad: "Ali", detallar: { yas: 20 } };
+        let yeniObj = structuredClone(obj);
+        yeniObj.detallar.yas = 25;
+
+        console.log(obj.detallar.yas); // 20 (təsir etmir)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // B) JSON.parse(JSON.stringify()) (köhnə, amma işlək üsul)
+        let obj = { ad: "Ali", detallar: { yas: 20 } };
+        let yeniObj = JSON.parse(JSON.stringify(obj));
+        yeniObj.detallar.yas = 25;
+
+        console.log(obj.detallar.yas); // 20
+
+        // Amma bu üsul Date, Function, undefined kimi tipləri itirir.
+
+
+
+        // JSON.stringify(obj): Obyekti JSON formatında bir string-ə çevirir. Bu proses zamanı obyektin 
+        // bütün daxili strukturu, o cümlədən daxilindəki obyektlər və massivlər də string-ə çevrilir. 
+        // Bu kodun nəticəsi belə bir string olacaq:  '{"ad":"Ali","detallar":{"yas":20}}'
+
+
+
+        // JSON.parse(...): Həmin JSON string-i yenidən tamamilə yeni bir JavaScript obyektinə çevirir. 
+        // Bu yeni obyekt yaddaşda tamamilə fərqli bir ünvana malik olur və orijinal obyektlə heç bir əlaqəsi qalmır.
+
+
+
+        
+    </script>
+</body>
+
+</html>

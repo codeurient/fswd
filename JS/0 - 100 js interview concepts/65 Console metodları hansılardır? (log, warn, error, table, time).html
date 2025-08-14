@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // Console — brauzer və ya Node.js-də işləyən JavaScript kodunun nəticəsini görmək üçün 
+        // istifadə olunan bir obyekt/metoddur. Bu metodlar əsasən kodun işləməsini yoxlamaq, səhvləri 
+        // tapmaq (debug etmək) və məlumat göstərmək üçündür.
+
+        // Ən çox istifadə olunan metodlar bunlardır:
+        console.log("Salam, dünya!");
+        console.warn("Bu bir xəbərdarlıqdır!");
+        console.error("Bir səhv baş verdi!");
+
+
+        // İşlənmə məqsədi: Obyekt və ya massiv məlumatlarını cədvəl şəklində göstərmək.
+        // Nə edir: Dataları gözəl və oxunaqlı formada konsolda göstərir.
+        let telebeler = [
+            { ad: "Ali", yas: 20 },
+            { ad: "Aysel", yas: 22 }
+        ];
+        console.table(telebeler);
+
+
+
+
+
+
+        // console.time() və console.timeEnd()
+        // İşlənmə məqsədi: Kodun işləmə müddətini ölçmək.
+        // Nə edir: Kodun hansı qədər vaxtda icra olunduğunu göstərir.
+        console.time("hesablama");
+
+        let cem = 0;
+        for (let i = 0; i < 1000000; i++) {
+            cem += i;
+        }
+
+        console.timeEnd("hesablama");
+
+
+    </script>
+</body>
+
+</html>

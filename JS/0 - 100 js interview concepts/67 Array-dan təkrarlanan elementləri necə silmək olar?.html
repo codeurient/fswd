@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // Array-də eyni dəyərlər varsa, onları silmək üçün bir neçə üsul var.
+
+
+
+
+
+
+        // A) Set istifadə etmək (ən sadə üsul)
+        // - Set yalnız unikal (təkrar olmayan) dəyərləri saxlayır.
+        // - Sonra yenidən Array-a çeviririk.
+
+        let arr = [1, 2, 2, 3, 3, 4];
+        let unikal = [...new Set(arr)];
+        console.log(unikal); // [1, 2, 3, 4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // B) filter() və indexOf() istifadə etmək
+        let arr = [1, 2, 2, 3, 3, 4];
+        let unikal = arr.filter((value, index) => arr.indexOf(value) === index);
+        console.log(unikal); // [1, 2, 3, 4]
+
+
+        // Burada indexOf həmin elementin `İLK` tapıldığı index-i verir, filter isə yalnız birinci görünüşü saxlayır.
+
+
+
+    </script>
+</body>
+
+</html>
