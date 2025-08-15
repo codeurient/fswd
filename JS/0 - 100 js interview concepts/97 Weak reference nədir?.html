@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+
+        // Weak Reference — obyektə zəif (weak) bir referans saxlamağa imkan verən bir üsuldur.
+
+        // Sadə dildə:
+        //      - Normal referans obyektin garbage collector (GC) tərəfindən silinməsinə mane olur.
+        //      - Weak reference isə obyektin hələ də mövcud olub-olmamasına görə onu GC-nin silməsinə imkan verir, yəni zəif referans obyekti “tutmur”, sadəcə göstəriş verir.
+
+
+
+
+
+
+        // Niyə Weak Reference lazımdır?
+        //      - Yaddaş qənaəti: Obyekt artıq lazım deyilsə, Weak Reference GC tərəfindən sərbəst buraxılır.
+        //      - Caching üçün ideal: Məsələn, obyektləri müvəqqəti yaddaşda saxlamaq istəyirsinizsə, WeakMap istifadə edə bilərsiniz.
+        //      - Memory leaks riskini azaldır: Normal referanslarla uzun ömürlü obyektlər yaddaşda qalaraq proqramı yavaşlada bilər.
+
+
+
+
+
+
+
+
+        // Normalda bir dəyişənə obyekt təyin etdiyinizdə, bu dəyişən həmin obyektə güclü (strong) bir referans yaradır. 
+        // Bu o deməkdir ki, Garbage Collector (GC) (zibil toplayıcı) həmin obyektin yaddaşdan silinməsinin qarşısını alır. 
+        // Nə qədər ki, obyektə istənilən güclü referans mövcuddur, GC onu silmir.
+
+        // Weak Reference isə bunun tam əksidir. Weak Reference bir obyektə olan zəif (weak) referansdır. Bu, GC-yə "bu obyekt 
+        // lazım deyil və yaddaşdan silinə bilər" siqnalını verir. Yəni, əgər bir obyektə heç bir güclü referans qalmayıbsa, 
+        // ancaq Weak Reference-i varsa, GC onu yaddaşdan sərbəst şəkildə silə bilər.
+
+
+
+
+        // 1. WeakMap -dən, açarı (key) yalnız bir obyekt ola bilən key-value (açar-dəyər) cütlərini saxlamaq üçün istifadə olunur. 
+        // Əsas məqsədi budur ki, əgər açar olan obyektə kənardan heç bir güclü referans qalmayıbsa, WeakMap həmin açarı və ona bağlı 
+        // olan dəyəri avtomatik olaraq silir. Bu, yaddaş sızmasının qarşısını almaq üçün çox faydalıdır. 
+
+        // Nümunə: Təsəvvür edin ki, hər bir DOM elementinə əlavə məlumat əlavə etmək istəyirsiniz. Map istifadə etsəniz, həmin DOM 
+        // elementi səhifədən silinsə belə, Map daxilindəki referans qalıcı olaraq saxlanılır. Nəticədə, yaddaşda lazımsız bir obyekt 
+        // saxlanılır. WeakMap istifadə etsəniz isə, element səhifədən silinən kimi (güclü referans olmadığı üçün), WeakMap daxilindəki 
+        // məlumat da avtomatik olaraq təmizlənir.
+    
+        // - Açarı (key) yalnız obyekt ola bilər.
+        // - Əgər obyektə başqa heç bir normal referans yoxdursa, garbage collector onu silə bilər.
+
+        let obj = { name: "Ali" };
+        let weakMap = new WeakMap();
+
+        weakMap.set(obj, "some value");
+
+        console.log(weakMap.get(obj)); // "some value"
+
+        // Artıq obj-yə başqa referans yoxdursa, GC onu siləcək
+        obj = null;
+
+        console.log(weakMap.get(obj)); // "some value"
+
+
+
+
+
+
+
+
+
+        // 2. WeakRef isə birbaşa olaraq bir obyektə zəif referans yaratmaq üçündür. WeakRef yaradaraq siz 
+        // həmin obyektin hələ də yaddaşda olub-olmadığını yoxlaya bilərsiniz. deref() metodu ilə obyektə 
+        // daxil olmaq olar. Əgər obyekt GC tərəfindən silinibsə, deref() null dəyərini qaytarır.
+
+        // Nümunə: Məsələn, böyük bir şəkil obyektiniz var və siz onun yaddaşda olub olmadığını yoxlamaq istəyirsiniz. 
+        // WeakRef yaradaraq şəkli silməyəcəyinizə, sadəcə olaraq onun statusunu izlədiyinizə əmin olursunuz.
+        
+        let obj = { data: 123 };
+        let weakRef = new WeakRef(obj);
+
+        console.log(weakRef.deref()); // { data: 123 }
+
+        // Artıq obj-ə normal referans yoxdursa, GC obyektə toxuna bilər
+        obj = null;
+        console.log(weakRef.deref()); // null (GC silibsə) əks halda obyekt görəcəyik
+
+
+    </script>
+</body>
+
+</html>

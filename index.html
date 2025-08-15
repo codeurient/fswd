@@ -12,25 +12,17 @@
 
 
 
-function birinciFunksiya() {
-            console.log('Birinci funksiya başladı.');
-            ikinciFunksiya(); // İkinci funksiyanı çağırırıq
-            console.log('Birinci funksiya bitdi.');
-        }
 
-        function ikinciFunksiya() {
-            console.log('İkinci funksiya başladı.');
-            ucuncuFunksiya(); // Üçüncü funksiyanı çağırırıq
-            console.log('İkinci funksiya bitdi.');
-        }
 
-        function ucuncuFunksiya() {
-            console.log('Üçüncü funksiya başladı.');
-            console.log('Üçüncü funksiya bitdi.');
-        }
+        // 2. WeakRef (modern JS)
+        let obj = { data: 123 };
+        let weakRef = new WeakRef(obj);
 
-        birinciFunksiya(); // Proqramı işə salırıq
+        console.log(weakRef.deref()); // { data: 123 }
 
+        // Artıq obj-ə normal referans yoxdursa, GC obyektə toxuna bilər
+        obj = null;
+        console.log(weakRef.deref()); // null (GC silibsə)
         
     
     </script>

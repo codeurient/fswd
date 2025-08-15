@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- 
+    
+
+    Modul nədir?
+
+    JavaScript-də modul — kodu hissələrə ayırmaq və bu hissələri başqa fayllarda istifadə etmək üçün bir sistemdir.
+    Bu, kodun təkrar istifadə edilə bilməsi, təmizliyi və asand idarə olunması üçün çox vacibdir.
+    
+
+
+    -->
+
+
+    <script>
+
+        // 1. ESM (ECMAScript Modules)
+
+        // - Standart JavaScript modul sistemi (2015-dən, ES6 ilə gəlib).
+        // - import və export sözləri ilə işləyir.
+        // - Brauzerlərdə və Node.js-də dəstəklənir.
+        // - Fayl uzantısı çox vaxt .mjs olur (Node.js-də).
+
+
+        // math.mjs
+        export function add(a, b) {
+            return a + b;
+        }
+
+        // main.mjs
+        import { add } from './math.mjs';
+        console.log(add(2, 3)); // 5
+
+
+
+
+
+
+
+
+
+
+
+        // 2. CJS (CommonJS)
+        //      - Node.js-in köhnə standart modul sistemi.
+        //      - require() və module.exports istifadə olunur.
+        //      - Fayl uzantısı .js olur.
+        //      - Brauzerdə işləməsi üçün bundler (Webpack, Browserify) lazımdır.
+
+
+        // math.js
+        module.exports.add = function (a, b) {
+            return a + b;
+        };
+
+        // main.js
+        const { add } = require('./math');
+        console.log(add(2, 3)); // 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 3. AMD (Asynchronous Module Definition)
+
+        //      - Əsasən brauzer üçün hazırlanmış modul sistemi.
+        //      - require.js kimi kitabxanalar tərəfindən istifadə olunur.
+        //      - Asinxron yükləmə dəstəkləyir (səhifə açılarkən modullar paralel yüklənir).
+
+        // AMD format
+        define(['math'], function (math) {
+            console.log(math.add(2, 3));
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 4. UMD (Universal Module Definition)
+
+        //      - Həm brauzerdə, həm də Node.js-də işləyən universal modul sistemi.
+        //      - Əsas məqsəd — bir kodu hər yerdə işlədə bilmək.
+        //      - CJS və AMD ilə uyğun işləyə bilir.
+        (function (root, factory) {
+
+            if (typeof define === 'function' && define.amd) {
+                
+                define(['math'], factory); // AMD
+                
+            } else if (typeof module === 'object' && module.exports) {
+                
+                module.exports = factory(require('math')); // CJS
+                
+            } else {
+                
+                root.myModule = factory(root.math); // Browser global
+                
+            }
+
+        }(this, function (math) {
+            return {
+                add: math.add
+            };
+        }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

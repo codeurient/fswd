@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <!-- 
+    
+    WebAssembly (Wasm) – veb brauzerlərdə yüksək performanslı kod icra etmək üçün hazırlanmış ikilik (binary) formatlı proqramlaşdırma dili və ya virtual maşındır.
+
+    Sadə dildə desək: 
+        - JavaScript-dən çox daha sürətlidir.
+        - Brauzerdə C, C++, Rust kimi dillərdə yazılmış proqramları işlətməyə imkan verir.
+        - JavaScript ilə birlikdə istifadə olunur, performans tələb edən hissələr WebAssembly ilə yazılır.
+
+
+
+
+
+    WebAssembly-nin əsas xüsusiyyətləri
+        - Sürətli icra – ikilik formatda olduğu üçün brauzer onu tez yükləyir və icra edir.
+        - Çoxdilli dəstək – C, C++, Rust, Go və digər dillərdə yazılmış kodlar WebAssembly-ə çevrilə bilər.
+        - Təhlükəsizlik – Sandboxed mühitdə icra olunur, yəni sistemə birbaşa zərər vermir.
+        - Brauzer və serverdə işləyə bilər – həm veb, həm də Node.js mühitində istifadə olunur.
+
+
+
+
+    -->
+
+    <script>
+
+        // Məsələn: JavaScript ilə WebAssembly
+
+        // WebAssembly modulunu fetch edib yükləmək: Burada simple.wasm faylı WebAssembly formatında yazılmış 
+        // add funksiyasını ehtiva edir. JavaScript onu çağırır və nəticəni alır.
+        fetch('simple.wasm')
+            .then(response => response.arrayBuffer())
+            .then(bytes => WebAssembly.instantiate(bytes))
+            .then(results => {
+                console.log(results.instance.exports.add(2, 3)); // add funksiyası WebAssembly-dədir
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+        // WebAssembly-nin istifadəsi harada faydalıdır?
+
+            //      - Oyunlar – yüksək performans tələb edən oyun mühərrikləri
+            //      - Video və şəkil emalı – real-time media işləmə
+            //      - Elmi hesablamalar – böyük hesablama gücü tələb edən proqramlar
+            //      - Kriptoqrafiya və təhlükəsizlik – sürətli əməliyyatlar
+
+
+
+            
+    </script>
+</body>
+
+</html>

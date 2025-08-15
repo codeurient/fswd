@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+
+
+
+        // 1. SharedArrayBuffer nədir - bir yaddaş blokunu birdən çox thread (işçi iplik) arasında paylaşmağa imkan verən obyekt növüdür.
+
+        // Sadə dildə:
+        //      - Normal ArrayBuffer yalnız bir thread üçün işləyir.
+        //      - SharedArrayBuffer isə bir neçə web worker və ya əsas thread arasında məlumat paylaşmağa imkan verir.
+        //      - Bu, multi-threaded proqramlarda məlumatın sinxronizasiyasını asanlaşdırır.
+
+        // 8 baytlıq shared buffer yaratmaq
+        let sharedBuffer = new SharedArrayBuffer(8);
+        let sharedArray = new Int32Array(sharedBuffer);
+
+        // İndi sharedArray birdən çox worker tərəfindən oxuna və yazıla bilər
+        sharedArray[0] = 42;
+        console.log(sharedArray[0]); // 42
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 2. Atomics nədir - JavaScript-də multi-threaded mühitdə shared memory üzərində əməliyyatların təhlükəsiz və “atomik” şəkildə icra olunması üçün obyekt.
+
+        // Sadə dildə:
+        //      - Multi-threaded proqramlarda eyni yaddaş üzərində eyni anda bir neçə thread əməliyyat edə bilər, bu isə data race riskini artırır.
+        //      - Atomics əməliyyatları bölünməz (atomic) olduğundan, eyni anda birdən çox thread məlumatı pozmur.
+        let sharedBuffer = new SharedArrayBuffer(4);
+        let sharedArray = new Int32Array(sharedBuffer);
+
+        // Atomic increment əməliyyatı
+        Atomics.add(sharedArray, 0, 1);
+        console.log(sharedArray[0]); // 1
+
+        // Atomic exchange (dəyişdirmək)
+        Atomics.exchange(sharedArray, 0, 10);
+        console.log(sharedArray[0]); // 10
+
+
+
+
+        // Əsas əməliyyatlar:
+        //      - Atomics.add, Atomics.sub – toplama və çıxma
+        //      - Atomics.load, Atomics.store – oxuma və yazma
+        //      - Atomics.exchange – yeni dəyər qoymaq
+        //      - Atomics.compareExchange – müqayisə və dəyişdirmə
+
+
+
+
+
+        // Niyə Atomics və SharedArrayBuffer vacibdir?
+        //     - Multi-threading üçün: Web Worker və ya digər paralel JavaScript əməliyyatlarında məlumat paylaşmaq.
+        //     - Sinxronizasiya: Eyni məlumatı birdən çox thread pozmur.
+        //     - Performance: Məlumat paylaşımı üçün mesaj göndərmək əvəzinə, birbaşa shared memory istifadə olunur.
+
+
+
+
+
+        // Sadə xülasə
+        //     - SharedArrayBuffer: Birdən çox thread üçün paylaşılmış yaddaş.
+        //     - Atomics: SharedArrayBuffer üzərində təhlükəsiz əməliyyatlar aparmaq üçün istifadə olunur.
+        //     - Fayda: Multi-threaded proqramlarda data race və yaddaş problemlərinin qarşısını almaq.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Başqa sözlə SharedArrayBuffer nədir?
+
+        // Təsəvvür edin ki, bir sənəd üzərində bir neçə nəfər eyni anda işləyir.
+
+        // Normal ArrayBuffer: Bu, sənədin hər bir nəfər üçün ayrı-ayrı kopyasının yaradılması kimidir. 
+        // Siz sənəddə dəyişiklik etdikdə, bu dəyişikliklər yalnız sizin kopyanızda olur. Başqaları sizin 
+        // dəyişikliyinizi görmək üçün sizə sənədin yenilənmiş versiyasını göndərməlisiniz. Bu proses səmərəli 
+        // deyil və vaxt itkisinə səbəb olur.
+
+        // SharedArrayBuffer: Bu isə bir sənədin bütün işçilər tərəfindən birgə istifadə olunan, mərkəzi bir 
+        // nüsxəsini yaratmaq kimidir. Hər kəs eyni sənədə daxil olur və edilən dəyişikliklər dərhal hər kəs 
+        // üçün görünür. Bu, daha sürətli və effektiv bir əməkdaşlıq təmin edir.
+
+        // Yəni, SharedArrayBuffer bir yaddaş blokunu müxtəlif işçi ipliklər (threads) arasında paylaşmağa imkan 
+        // verən bir obyektdir. Bu, məlumat mübadiləsini mesaj göndərməkdən daha sürətli edir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Atomics nədir?
+        // Mərkəzi sənəd nümunəmizə qayıdaq. Bir neçə nəfər eyni anda sənəddə dəyişiklik etmək istədikdə nə baş 
+        // verər? Məsələn, eyni cümlənin üzərində iki nəfər eyni anda işləsə, məlumat pozula bilər.
+
+        // Atomics, bu cür qarışıqlığın qarşısını almaq üçün istifadə olunur. Atomics, SharedArrayBuffer üzərində 
+        // əməliyyatların bölünməz (atomic) şəkildə icra edilməsini təmin edir. 
+
+        // Yəni:
+        //      - Bir thread bir əməliyyat (məsələn, dəyəri artırma) icra edərkən, başqa bir thread həmin əməliyyatı poza bilməz.
+        //      - Bu, "data race" (məlumat yarışması) deyilən və proqram səhvlərinə səbəb olan vəziyyətin qarşısını alır.
+
+
+
+
+
+
+        // Sadə bir nümunə: Təsəvvür edin ki, bir sayğacınız var (count). İki fərqli thread eyni anda count++ əməliyyatını yerinə yetirir.
+
+        //      - Atomics olmadan: Birinci thread sayğacın dəyərini oxuyur (məsələn, 0). İkinci thread də eyni anda sayğacın 
+        //        dəyərini oxuyur (yenə 0). Sonra hər ikisi dəyəri 1 artırır. Nəticədə sayğacın dəyəri 1 olur, halbuki iki dəfə 
+        //        artırıldığı üçün 2 olmalı idi.
+
+        //      - Atomics ilə: Atomics.add(sharedArray, 0, 1) istifadə edildikdə, birincinin əməliyyatı tamamilə bitdikdən sonra 
+        //        ikinci əməliyyat başlayır. Birinci thread dəyəri 1 edir, sonra ikinci thread dəyəri oxuyur (artıq 1-dir) və 2-yə 
+        //        artırır. Nəticə düzgün, yəni 2 olur.
+
+
+
+
+
+
+
+
+
+
+        // Əsas nəticə:
+        //  - SharedArrayBuffer - bir neçə thread arasında ümumi bir yaddaş sahəsi yaratmaq üçündür.
+        //  - Atomics isə, həmin ümumi yaddaş sahəsində məlumatların təhlükəsiz və düzgün şəkildə idarə olunması üçün istifadə olunan alətlərdir.
+
+
+    </script>
+</body>
+</html>
