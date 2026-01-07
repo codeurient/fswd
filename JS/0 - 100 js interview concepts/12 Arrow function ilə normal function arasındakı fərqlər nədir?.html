@@ -27,7 +27,6 @@
         // miras alırlar. Bu, asinxron əməliyyatlarda və ya obyektlər daxilində callback funksiyaları yazarkən çox faydalıdır, çünki this 
         // dəyərini əl ilə bind etməyə (bağlamağa) ehtiyac qalmır.
 
-
         // Normal funksiya
         const user = {
             name: 'Elvin',
@@ -150,11 +149,11 @@
         // Arrow funksiyalarda isə öz arguments obyekti yoxdur, yəni onlar ən yaxın normal funksiyanın arguments-ını istifadə edirlər.
 
         // Bu fərqi göstərmək üçün nümunə:
-        function normalFunction(a, b) {
+        function normalFunction(a, b, c) {
             console.log("Normal function arguments:", arguments); // Öz arguments obyekti
         }
 
-        const arrowFunction = (a, b) => {
+        const arrowFunction = (a, b, c) => {
             console.log("Arrow function arguments:", arguments); // Burada arguments yoxdur, səhv verəcək
         };
 
@@ -192,7 +191,11 @@
         // Çıxış: [ 1, 2, 3 ]
 
 
+
+
+
         const arrowWithRest2 = () => {
+            
             let box = [1, 2, 3];
             const newBox = [...box, 4, 5, 6];       // 'box' massivinə yeni elementlər əlavə edir
             console.log("Yeni massiv:", newBox);

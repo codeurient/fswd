@@ -67,7 +67,9 @@
 
 
         // Əks halda uzun uzadı belə yaza bilərdik:
-        function Person(name) { this.name = name; }
+        function Person(name) { 
+            this.name = name; 
+        }
 
         let user3 = new Person("Ali");
         user3.sayHello = function () { console.log(`Salam, mənim adım ${this.name}`); };

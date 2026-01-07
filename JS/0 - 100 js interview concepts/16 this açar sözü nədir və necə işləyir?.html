@@ -32,6 +32,10 @@
 
 
 
+
+        
+
+
         // 2. Obyekt metodunda
         // - Bir obyektin metodu çağırıldıqda, this həmin obyektə istinad edir.
         const user1 = {
@@ -114,6 +118,7 @@
         }
 
         const user2 = { name: "Aygün" };
+        
         greet.call(user2);  // Salam, Aygün
         greet.apply(user2); // Salam, Aygün
 
@@ -172,12 +177,13 @@
 
 
         // HTML elementlərlə this istifadəsi
-        // Bəli  — Əgər bir funksiya bir HTML elementin event listener-i olaraq təyin olunubsa (normal function ilə), this həmin elementi göstərir.
+
+        // Əgər bir funksiya bir HTML elementin event listener-i olaraq təyin olunubsa (normal function ilə), this həmin elementi göstərir.
         document.getElementById("btn").addEventListener("click", function () {
             console.log(this); // <button id="btn">Click me</button>
         });
 
-        // Diqqət: Əgər arrow function istifadə etsən, this elementi göstərməyəcək, əvəzinə yaranma mühitinin this-ini götürəcək.
+        // Diqqət: Əgər arrow function istifadə etsən, this, elementi göstərməyəcək, əvəzinə yaranma mühitinin this-ini götürəcək.
         document.getElementById("btn").addEventListener("click", () => {
             console.log(this); // Window və ya undefined
         });

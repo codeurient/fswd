@@ -34,7 +34,9 @@
 
         // Pure function mövcud obyekt və array-ləri dəyişmir, onların kopyasını yaradıb qaytarır.
         function addToArray(arr, value) {
+
             return [...arr, value];
+
         }
 
 
@@ -48,8 +50,10 @@
 
         // Impure function nümunəsi 
         let total = 0;
+
         function addToTotal(value) {
             total += value;
+            
             return total;
         }
 
